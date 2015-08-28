@@ -11,7 +11,7 @@ Let's see how we integrate Firebase with an Angular app. Watch the following vid
 ####Questions
 
 * What is AngularFire?
-* Can you use Firebase with and an Angular app without AngularFire?
+* Can you use Firebase with an Angular app without AngularFire?
 * What does it mean that AngularFire supports 3-way data binding?
 
-**Be careful which AngularFire docs you use. We want verison 1.0 and greater.  1.0 is a signficant update that broke all the old tutorials and existing projects.**
+**Be careful which AngularFire docs you use. We want version 1.0 and greater.  1.0 is a significant update that broke all the old tutorials and existing projects.**
