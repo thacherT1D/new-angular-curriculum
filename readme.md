@@ -36,3 +36,4 @@ Unit 3:
  * [Angular + Express Setup](/Unit-3/07-angular-with-express-setup.md)
  * [Angular + Express Project](/Unit-3/08-angular-with-express-project.md)
  * [Angular + Rails Setup](/Unit-3/09-angular-with-rails-setup.md)
+ * [Angular + Rails Resources and HTML5 Pushstate](/Unit-3/10-angular-with-rails-resources-and-paths.md)
