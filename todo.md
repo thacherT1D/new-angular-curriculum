@@ -7,7 +7,7 @@
 - Data Binding
   - **ADD "WORKING WITH SCOPE" SECTION**
 - **ADD TEMPLATING LESSON**
-- Expressions and Filters
+- Expressions and Filters (**TODO move the expressions to the templating lesson**)
 - **ADD MADLIBS ASSIGNMENT**
 - Intro to Controllers
 - **UPDATE MADLIBS - refactor with a controller**
