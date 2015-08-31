@@ -6,7 +6,7 @@ Unit 1 - The Basics
 
  * [Intro and Setup](/Unit-1/01-intro-and-setup.md)
  * [Angular MVC](/Unit-1/02-angular-mvc.md)
- * [2 Way Data Binding](/Unit-1/03-data-binding.md)
+ * [Data Binding](/Unit-1/03-data-binding.md)
  * [Expressions and Filters](/Unit-1/04-expressions-and-filters.md)
  * [Intro to Controllers](/Unit-1/05-intro-to-controllers.md)
  * [Built-In Directives](/Unit-1/06-built-in-directives.md)
