@@ -82,6 +82,18 @@ Create a simple tip calculator using the Angular concepts that we've covered so 
 
 With one single expression, prove that the context angular expressions run is not the window object.  What is it instead?
 
+**EXERCISE**
+
+Let's test out your data binding and templating skills by building a [Mad Libs](http://en.wikipedia.org/wiki/Mad_Libs) application.
+
+When a user adds text to any of the form inputs, the text at the bottom should update automatically. For example, when you set the value of "boy's name" to "Michael" in the form, all instances of the `{{boy's name}}` placeholder text should be updated/replaced with "Michael".
+
+Be sure to define all of the Angular code within a single *index.html* file. The final project should look like this:
+
+![](./examples/ngmadlibs-p1.png)
+
+![](./examples/ngmadlibs-p2.png)
+
 <hr>
 
 ## Questions
