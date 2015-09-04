@@ -75,7 +75,7 @@ Question: what would happen if you put the `ng-repeat` directive on the `ul` ele
 
 **EXERCISE**
 
-Add a property called `symbols` with the value `["&spades;", "&clubs;", "&hearts;", "&diams;"]`.  Use an `ng-repeat` to display each one in the template.  
+Add a property called `symbols` with the value `["&spades;", "&clubs;", "&hearts;", "&diams;"]`.  Use an `ng-repeat` to display each one in the template.
 
 BONUS: Figure out how to make these entity codes actually display as symbols,like the following image:
 
