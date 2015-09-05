@@ -94,16 +94,14 @@ Staying true to an iterative approach to coding, we'll start slow, defining ever
 </html>
 ```
 
-<hr>
-
-**Questions:**
+## Questions
 
 * Why learn Angular JS over other frameworks like Ember, Backbone, Knockout, etc?
 * People have some very strong opinions about Angular. What are 3 common complaints people have about Angular?
 * Is Angular an MVC framework?
 * Turn to the Angular docs. Find `ng-app`. What is it and what does it do? What does `ng` stand for?
 
-**Resources:**
+## Resources
 
 * [Angular Docs](https://docs.angularjs.org/api)
 * [Thinking in Angular](http://stackoverflow.com/questions/14994391/thinking-in-angularjs-if-i-have-a-jquery-background/15012542#15012542)

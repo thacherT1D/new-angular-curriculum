@@ -48,7 +48,7 @@ Use `ng-model` with a dropdown menu (select tag). Give the user the following fo
 * Explain what two-way data binding is.
 * BONUS: Research the `$digest` loop
 
-Resources:
+## Resources
 
 * [Data Binding Reference](https://docs.angularjs.org/guide/databinding)
 * [ng-model Docs](https://docs.angularjs.org/api/ng/directive/ngModel)
