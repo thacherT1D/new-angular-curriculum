@@ -105,8 +105,6 @@ angular.module("myapp", [])
 </script>
 ```
 
-<hr>
-
-**Resources:**
+## Resources
 
 - [MVC and MVVM with AngularJS](http://codechutney.in/blog/javascript/mvc-and-mvvm-with-angularjs/)

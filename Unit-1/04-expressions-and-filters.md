@@ -88,7 +88,7 @@ Let's test out your data binding and templating skills by building a [Mad Libs](
 
 When a user adds text to any of the form inputs, the text at the bottom should update automatically. For example, when you set the value of "boy's name" to "Michael" in the form, all instances of the `{{boy's name}}` placeholder text should be updated/replaced with "Michael".
 
-Be sure to define all of the Angular code within a single *index.html* file. The final project should look like this:
+Be sure to define all of the Angular code within a single `index.html` file. The final project should look like this:
 
 ![](./examples/ngmadlibs-p1.png)
 

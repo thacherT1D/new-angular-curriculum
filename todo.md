@@ -5,7 +5,6 @@
 - Intro and Setup
 - Angular MVC
 - Data Binding
-  - **ADD "WORKING WITH SCOPE" SECTION**
 - **ADD TEMPLATING LESSON**
 - Expressions and Filters (**TODO move the expressions to the templating lesson**)
 - Intro to Controllers
