@@ -1,12 +1,12 @@
 # Built-In Directives
 
-Directives are Angular's way of extending HTML.  Angular uses directives to add functionality to HTML elements and attributes. According to the docs:
+Directives are Angular's way of extending HTML. Angular uses directives to add functionality to HTML elements and attributes. Coupled with Angular templating, directives create dynamic components that re-render whenever the underlying data changes. According to the docs-
 
 > At a high level, directives are markers on a DOM element (such as an attribute, element name, comment or CSS class) that tell AngularJS's HTML compiler to attach a specified behavior to that DOM element or even transform the DOM element and its children.
 
 There are 4 ways of writing directives, but it's best practice to only write them using **tag names** like `<pop-up-dialog></pop-up-dialog>` or `<side-bar>`, and **attributes** like `<span fav-spell="expecto patronum"></span>` or `<div weather-widget="94114"></div>`.
 
-Angular comes with a bunch of built-in directives, some of which we've already used.  We will focus on built-in directives for now, but soon we will write our own custom directives.
+Angular comes with a bunch of built-in directives, some of which we've already used. We will focus on built-in directives for now, but soon we will write our own custom directives.
 
 **EXERCISE: Name at least 3 built-in directives that we have used so far.**
 
@@ -47,15 +47,15 @@ For a complete list see https://docs.angularjs.org/api/ng/directive
 
 ### ng-repeat
 
-`ng-repeat` will iterate over a collection and create a template for every item in the collection.  Think of it as the Angular equivalent of a `forEach`.  It's extremely useful. Let's try an example:
+`ng-repeat` will iterate over a collection and create a template for every item in the collection. Think of it as the Angular equivalent of a `forEach`. It's extremely useful. Let's look at an example.
 
 Let's start by defining a collection. In a controller, add the following:
 
-```js
-  $scope.names = ["Harry", "Ron", "Hermione", "Sirius", "Hedwig", "Tonks"];
+```javascript
+$scope.names = ["Harry", "Ron", "Hermione", "Sirius", "Hedwig", "Tonks"];
 ```
 
-Now let's iterate through the `names` array in the template.  In `index.html`(make sure you have declared `ng-controller` correctly) add the following:
+Now let's iterate through the `names` array in the template. In `index.html`(make sure you have declared `ng-controller` correctly) add the following:
 
 ```html
 <ul>
@@ -75,15 +75,15 @@ Question: what would happen if you put the `ng-repeat` directive on the `ul` ele
 
 **EXERCISE**
 
-Add a property called `symbols` with the value `["&spades;", "&clubs;", "&hearts;", "&diams;"]`.  Use an `ng-repeat` to display each one in the template.
+Add a property called `symbols` with the value `["&spades;", "&clubs;", "&hearts;", "&diams;"]`. Use an `ng-repeat` to display each one in the template.
 
-BONUS: Figure out how to make these entity codes actually display as symbols,like the following image:
+BONUS: Figure out how to make these entity codes actually display as symbols, like the following image:
 
 ![](http://content.screencast.com/users/ColtSteele1/folders/Jing/media/d75c95af-4729-4b8f-bf84-3b98a87f3213/00000003.png)
 
 **EXERICSE**
 
-Try using `ng-repeat` to iterate through an array with some duplicates, like `[1,1,2,5,6,9,9,9]`.  What happens?  Research how `ng-repeat` handles duplicate data and how to "fix" this issue.
+Try using `ng-repeat` to iterate through an array with some duplicates, like `[1,1,2,5,6,9,9,9]`. What happens?  Research how `ng-repeat` handles duplicate data and how to "fix" this issue.
 
 **EXERCISE**
 
@@ -91,7 +91,7 @@ Use `ng-repeat` to iterate through the attributes (keys) of an object and list t
 
 ### ng-show/hide
 
-`ng-show` and `ng-hide` will show or hide a specific HTML element based off of a provided expression.  Let's take a look at some examples.
+`ng-show` and `ng-hide` will show or hide a specific HTML element based off of a provided expression. Let's take a look at some examples.
 
 ```html
 <div ng-show="3 + 4 == 5">
@@ -111,15 +111,15 @@ Use `ng-repeat` to iterate through the attributes (keys) of an object and list t
 </div>
 ```
 
-The element is hidden when the expression provided to `ng-show` attribute is false. `ng-hide` will hide an element when the expression given to ng-hide is true.
+The element is hidden when the expression provided to `ng-show` attribute is `false`. `ng-hide` will hide an element when the expression given to ng-hide is true.
 
 **EXERCISE**
 
-Inspect an element that is hidden by ng-show/hide in the browser.  What does Angular do to hide an element?
+Inspect an element that is hidden by ng-show/hide in the browser. What does Angular do to hide an element?
 
 **EXERCISE**
 
-Create a simple password validator like the one shown below.  If the password is less than 6 characters, hide the submit button and show the error message.  Otherwise, show the button and hide the error
+Create a simple password validator like the one shown below. If the password is less than 6 characters, hide the submit button and show the error message. Otherwise, show the button and hide the error
 
 ![](http://zippy.gfycat.com/FelineEqualElectriceel.gif)
 
@@ -144,14 +144,14 @@ We can use `ng-class` to selectively apply our "highlight" class to elements.
 
 **EXERCISE**
 
-Build on top of the previous password validator exercise.  Use `ng-class` to make the form and character count green when valid and red when invalid.  Take a look at the following gif:
+Build on top of the previous password validator exercise. Use `ng-class` to make the form and character count green when valid and red when invalid. Take a look at the following gif:
 
 ![](http://zippy.gfycat.com/ActualBeautifulIzuthrush.gif)
 
 
 **FINAL EXERCISE**
 
-Build a simple camera shop interface using the data provided below.  Display each camera's title, image (look into `ng-src`), price, and rating.  If an item's `onSale` property is true, display the words "ON SALE!!" and give the price a yellow color.  A user should be able to sort by price or rating.  You'll need to research how to accomplish this.
+Build a simple camera shop interface using the data provided below. Display each camera's title, image (look into `ng-src`), price, and rating. If an item's `onSale` property is true, display the words "ON SALE!!" and give the price a yellow color. A user should be able to sort by price or rating. You'll need to research how to accomplish this.
 
 ![](http://zippy.gfycat.com/UnsteadyDampCanine.gif)
 
@@ -185,8 +185,9 @@ Use the following data:
 
 ## Questions
 
+* What is the purpose of `ng-init`?
 * Why use `ng-src` and `ng-href`?
 * What are directives?
-* Does ng-class require an object to be passed in?
+* Does `ng-class` require an object to be passed in?
 * What order does an ng-repeat display items in?
-* How does ng-repeat handle duplicate data?
+* How does `ng-repeat` handle duplicate data?
