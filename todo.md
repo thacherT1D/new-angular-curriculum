@@ -14,6 +14,7 @@
 ## Unit 2
 
 - A New Structure
+- **ADD FORM VALIDATION LESSON**
 - **ADD FORM VALIDATION ASSIGNMENT**
 - UPDATE MADLIBS - handle form validation
 - Routing
