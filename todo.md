@@ -8,7 +8,6 @@
 - **ADD TEMPLATING LESSON**
 - Expressions and Filters (**TODO move the expressions to the templating lesson**)
 - Intro to Controllers
-- **UPDATE MADLIBS - refactor with a controller**
 - Built-In Directives
 - Angular Events
 - Unit 1 Assessment Reddit Clone
