@@ -111,11 +111,11 @@ Use `ng-repeat` to iterate through the attributes (keys) of an object and list t
 </div>
 ```
 
-The element is hidden when the expression provided to `ng-show` attribute is `false`. `ng-hide` will hide an element when the expression given to ng-hide is true.
+The element is hidden when the expression provided to `ng-show` attribute is `false`. `ng-hide` will hide an element when the expression given to `ng-hide` is `true`.
 
 **EXERCISE**
 
-Inspect an element that is hidden by ng-show/hide in the browser. What does Angular do to hide an element?
+Inspect an element that is hidden by `ng-show`/`hide` in the browser. What does Angular do to hide an element?
 
 **EXERCISE**
 
