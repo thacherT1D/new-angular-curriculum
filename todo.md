@@ -5,8 +5,7 @@
 - Intro and Setup
 - Angular MVC
 - Data Binding
-- **ADD TEMPLATING LESSON**
-- Expressions and Filters (**TODO move the expressions to the templating lesson**)
+- Expressions and Filters
 - Intro to Controllers
 - Built-In Directives
 - Angular Events
