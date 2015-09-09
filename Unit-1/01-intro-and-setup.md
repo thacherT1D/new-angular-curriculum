@@ -8,8 +8,8 @@ Unit 1 - The Basics
  * [Angular MVC](/Unit-1/02-angular-mvc.md)
  * [Data Binding](/Unit-1/03-data-binding.md)
  * [Expressions and Filters](/Unit-1/04-expressions-and-filters.md)
- * [Intro to Controllers](/Unit-1/05-intro-to-controllers.md)
- * [Built-In Directives](/Unit-1/06-built-in-directives.md)
+ * [Built-In Directives](/Unit-1/05-built-in-directives.md)
+ * [Intro to Controllers](/Unit-1/06-intro-to-controllers.md)
  * [Angular Events](/Unit-1/07-intro-to-events.md)
  * [Unit 1 Assessment Reddit Clone](/Unit-1/08-reddit-clone.md)
 
