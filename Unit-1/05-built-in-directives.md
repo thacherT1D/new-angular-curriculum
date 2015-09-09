@@ -19,7 +19,7 @@ Here's a complete-ish list of Angular's built-in directives in no particular ord
 * ng-src
 * ng-app
 * ng-show
-* ng-click
+* ng-click - ([examples](https://github.com/mjhea0/thinkful-mentor/tree/master/angular/fundamentals/built-in-directives/ngClass/ngClass-more-examples))
 * ng-disabled
 * ng-checked
 * ng-selected
