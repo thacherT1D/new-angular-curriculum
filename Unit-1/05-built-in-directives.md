@@ -19,7 +19,7 @@ Here's a complete-ish list of Angular's built-in directives in no particular ord
 * ng-src
 * ng-app
 * ng-show
-* ng-click - ([examples](https://github.com/mjhea0/thinkful-mentor/tree/master/angular/fundamentals/built-in-directives/ngClass/ngClass-more-examples))
+* ng-click
 * ng-disabled
 * ng-checked
 * ng-selected
@@ -141,6 +141,8 @@ We can use `ng-class` to selectively apply our "highlight" class to elements.
 <div ng-class="{highlight: 4 + 4 == 8}"> 4 + 4 = 8</div>
 <div ng-class="{highlight: 4 + 4 == 10}">4 + 4 = 10</div>
 ```
+
+> Want more [examples](https://github.com/mjhea0/thinkful-mentor/tree/master/angular/fundamentals/built-in-directives/ngClass/ngClass-more-examples)?
 
 **EXERCISE**
 
