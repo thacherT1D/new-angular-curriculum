@@ -94,6 +94,8 @@ Be sure to define all of the Angular code within a single `index.html` file. The
 
 ![](./examples/ngmadlibs-p2.png)
 
+> Grab the text [here](./examples/madlibs-text.md)
+
 <hr>
 
 ## Questions
