@@ -54,7 +54,7 @@ Change the above code so that our currency filter uses a Euro symbol instead of 
 
 **EXERCISE**
 
-Add a text input to a page that displays user input in all caps and all lowercase. You will need to use two of the other built-in filters. Use the following gif as a reference:
+Add a text input to a page that displays user input in all caps and all lowercase. You will need to use two of the other built-in filters<sup id="a1">[1](#f1)</sup>. Use the following gif as a reference:
 
 ![](http://zippy.gfycat.com/CookedWelcomeDesertpupfish.gif)
 
@@ -110,4 +110,5 @@ Be sure to define all of the Angular code within a single `index.html` file. The
 ## Resources
 
 - https://docs.angularjs.org/guide/expression
-- https://docs.angularjs.org/guide/filter
+- <b id="f1">https://docs.angularjs.org/guide/filter</b> [↩](#a1)
+
