@@ -54,7 +54,7 @@ Change the above code so that our currency filter uses a Euro symbol instead of 
 
 **EXERCISE**
 
-Add a text input to a page that displays user input in all caps and all lowercase. You will need to use two built-in filters that we haven't covered. Use the following gif as a reference:**
+Add a text input to a page that displays user input in all caps and all lowercase. You will need to use two of the other built-in filters. Use the following gif as a reference:
 
 ![](http://zippy.gfycat.com/CookedWelcomeDesertpupfish.gif)
 
