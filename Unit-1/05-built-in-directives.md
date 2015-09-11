@@ -193,3 +193,7 @@ Use the following data:
 * Does `ng-class` require an object to be passed in?
 * What order does an ng-repeat display items in?
 * How does `ng-repeat` handle duplicate data?
+
+## Bonus
+
+Check out this `ng-cloak` [example](./examples/ng-cloak). What's happening? What's the purpose of the directive?
