@@ -199,4 +199,4 @@ Use the following data:
 What's happening in each of these examples? What's the purpose of the directive?
 
 - [ng-cloak](./examples/ng-cloak)
-- [ng-cloak](./examples/ng-include)
+- [ng-include](./examples/ng-include)
