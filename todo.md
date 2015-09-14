@@ -7,7 +7,7 @@
 - Data Binding
 - Expressions and Filters
 - Intro to Controllers
-- Built-In Directives
+- Built-In Directives **ADD MORE DIRECTIVE EXAMPLES**
 - Angular Events
 - Unit 1 Assessment Reddit Clone
 
