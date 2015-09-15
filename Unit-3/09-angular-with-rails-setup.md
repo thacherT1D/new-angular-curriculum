@@ -107,7 +107,7 @@ First, add the angularjs script tag in your `app/views/layouts/application.html.
 </head>
 <body>
  
-   <%= yeild %>
+   <%= yield %>
    
 </body>
 </html>
