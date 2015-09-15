@@ -200,3 +200,4 @@ What's happening in each of these examples? What's the purpose of the directive?
 
 - [ng-cloak](./examples/ng-cloak)
 - [ng-include](./examples/ng-include)
+- [ng-pluralize](./examples/ng-pluralize)
