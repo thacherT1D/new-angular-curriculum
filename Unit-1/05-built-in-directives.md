@@ -89,6 +89,8 @@ Try using `ng-repeat` to iterate through an array with some duplicates, like `[1
 
 Use `ng-repeat` to iterate through the attributes (keys) of an object and list them on in the template
 
+> View some more examples [here](./examples/ng-repeat).
+
 ### ng-show/hide
 
 `ng-show` and `ng-hide` will show or hide a specific HTML element based off of a provided expression. Let's take a look at some examples.
