@@ -20,7 +20,7 @@ This defines a service called Contact that will create a new resource to talk to
 
 **EXERCISE**
 
-Look at the angular docs on the [$resrouce service](https://docs.angularjs.org/api/ngResource/service/$resource).  What does each parameter in this example do?  What happens if you replace the `{id: "@id"}` line with `null`?  What does removing `{update: {method: "PUT"}}` do?  Both parameters are necessary for our example.
+Look at the angular docs on the [$resource service](https://docs.angularjs.org/api/ngResource/service/$resource).  What does each parameter in this example do?  What happens if you replace the `{id: "@id"}` line with `null`?  What does removing `{update: {method: "PUT"}}` do?  Both parameters are necessary for our example.
 
 One of the advantages of the `$resource` service is that it helps to eliminate callback code.  From the angular docs:
 
@@ -50,23 +50,23 @@ Any service call that you want to make that changes the state of the server is a
   };
 ```
 
-Notice that we are createing a new instance of a Contact resource and then assigning it to a variable called contact.  We are doing this in order to call the `$save` method.  This method actually makes the service call for us to update the api.
+Notice that we are creating a new instance of a Contact resource and then assigning it to a variable called contact.  We are doing this in order to call the `$save` method.  This method actually makes the service call for us to update the api.
 
 ## HTML5 Pushstate
 
-HTML5 Pushstate is a new brwoser feature that allows programtic access to the history of the browser.  You can read more about the details of the feature on [the MDN docs](https://developer.mozilla.org/en-US/docs/Web/API/History_API).
+HTML5 Pushstate is a new browser feature that allows programmatic access to the history of the browser.  You can read more about the details of the feature on [the MDN docs](https://developer.mozilla.org/en-US/docs/Web/API/History_API).
 
-Angular supports modifying the browsers history through the `$locationProvider`.
+Angular supports modifying the browser's history through the `$locationProvider`.
 
-The goal of this section is to get links working in our contacts app without using the `#` symbol.  To get the links to work, we need both the angular app and the rails app to work together.  First, let's add html5 support to angular.
-
-**EXERCISE**
-
-Add html5 push state support to your angular router.  If you are getting an immediate error after adding html5 support, look into the base path tag.  Make sure you have added it.
+The goal of this section is to get links working in our contacts app without using the `#` symbol.  To get the links to work, we need both the angular app and the rails app to work together.  First, let's add html5mode support to angular.
 
 **EXERCISE**
 
-Why is adding html5 push state support not enough to get links to work?  For example if I send a link to `http://www.mydomain.com/contacts/1`, the show page should be displayed.  Why doesn't this work if only the angular code supports html5 paths?  **HINT**: When does angular get a chance to take over the view?
+Add html5mode support to your angular router.  If you are getting an immediate error after enabling html5mode, look into the base tag.  Make sure you have added it.
+
+**EXERCISE**
+
+Why is adding html5 pushState support not enough to get links to work?  For example if I send a link to `http://www.mydomain.com/contacts/1`, the show page should be displayed.  Why doesn't this work if only the angular code supports pushState?  **HINT**: When does angular get a chance to take over the view?
 
 ![](https://cms-assets.tutsplus.com/uploads/users/12/posts/22160/preview_image/html5.jpg)
 
@@ -96,7 +96,7 @@ Remember we created the `html_layout` method in `app/controllers/application_con
 
 **EXERCISE**
 
-Now that the `before_action` is in the `ContactsController`, try copying some links from your app and reloading them on the page.  Is everything working?  You may have to change some links from `#` to normal links on your page.  Try using the browsers back button.  Does that work as expected?  Make sure you get everything working as if your angular app were a normal rails CRUD app.
+Now that the `before_action` is in the `ContactsController`, try copying some links from your app and reloading them on the page.  Is everything working?  You may have to change some links from `#` to normal links on your page.  Try using the browser's back button.  Does that work as expected?  Make sure you get everything working as if your angular app were a normal rails CRUD app.
 
 **EXERCISE**
 
