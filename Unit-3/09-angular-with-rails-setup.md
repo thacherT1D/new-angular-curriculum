@@ -113,9 +113,9 @@ First, add the angularjs script tag in your `app/views/layouts/application.html.
 </html>
 ```
 
-Note that the angular js sript tag is **before** the erb tag that includes javascript.
+Note that the angular js script tag is **before** the erb tag that includes javascript.
 
-Also, since we are not using rails views from our controllers, remove the `<%= yeild %>` tag.  Add, `ng-app` on the body tag and put an angular expression in the body to verify it's working:
+Also, since we are not using rails views from our controllers, remove the `<%= yield %>` tag.  Add `ng-app` on the body tag and put an angular expression in the body to verify it's working:
 
 ```html
 <!DOCTYPE html>
@@ -133,7 +133,7 @@ Also, since we are not using rails views from our controllers, remove the `<%= y
 </html>
 ```
 
-Lastly, turbolinks is a gem that rails uses to cache ajax requests.  It can cause problems with angular, so let's remove it:
+Lastly, turbolinks is a gem that rails uses to update page content.  It can cause problems with angular, so let's remove it:
 
 In the `app/assets/javascript/applications.js`, **remove** this line:
 
@@ -156,7 +156,7 @@ And finally, in `app/views/layouts/application.html.erb`, change your `javascrip
 
 **EXERCISE**
 
-Go to the root of your application and see what happens.  Are we getting the angular app to show up?  Why not?  What could you do to your applicatoin to get it to return the layout when the user visits the root path.  **HINT** You'll probably have to change the `routes.rb` file and add a new controller.
+Go to the root of your application and see what happens.  Are we getting the angular app to show up?  Why not?  What could you do to your application to get it to return the layout when the user visits the root path?  **HINT** You'll probably have to change the `routes.rb` file and add a new controller.
 
 ![](http://www.amtrak.com/servlet/BlobServer?blobkey=id&blobwhere=1249232678738&blobheader=image%2Fgif&blobcol=urldata&blobtable=MungoBlobs)
 ![](http://ecx.images-amazon.com/images/I/81Q0l1t%2BaJL._SL1500_.jpg)
@@ -171,7 +171,7 @@ Rails.application.routes.draw do
 end
 ```
 
-You could add a method to 	`app/controllers/applicaiton_controller.rb` that helps us render the layout file when we need it:
+You could add a method to 	`app/controllers/application_controller.rb` that helps us render the layout file when we need it:
 
 ```ruby
 class ApplicationController < ActionController::Base
@@ -205,7 +205,7 @@ Now your rails app should return your layout page when you visit the root route 
 
 ### Adding Angular Code
 
-Next, we want to add some angular code to our rails app.  Inside `app/assets/javascript`, make a directory called `angular`.  Create the normal directory sturcture for you angular app inside of the angular directory.  You'll also have to make sure that the `app.js` file you created is the first angular file that gets loaded.  Your `app/assets/javascripts/application.js` file should look similar to this:
+Next, we want to add some angular code to our rails app.  Inside `app/assets/javascript`, make a directory called `angular`.  Create the normal directory sturcture for your angular app inside of the angular directory.  You'll also have to make sure that the `app.js` file you created is the first angular file that gets loaded.  Your `app/assets/javascripts/application.js` file should look similar to this:
 
 ```js
 //= require jquery
@@ -224,9 +224,9 @@ contactsApp.config(['$httpProvider', function($httpProvider) {
 }]);
 ```
 
-Also, we need a place to put out partials (when you eventually start using the angular router).  In the `public` directory, make a new directory called `partials`.  Add an empty file inside of the `partials` directory called `.keep` just so the directory if you want to check this into github.
+Also, we need a place to put our partials (when you eventually start using the angular router).  In the `public` directory, make a new directory called `partials`.  Add an empty file inside of the `partials` directory called `.keep` just so the directory will be preserved if you check this into github.
 
-Next, Add this to your `app/assets/javascripts/angular/controllers.js`:
+Next, add this to your `app/assets/javascripts/angular/controllers.js` file:
 
 ```js
 contactsApp.controller("ContactsController", ['$scope', function($scope) {
@@ -241,9 +241,9 @@ Lastly, in your `app/views/layouts/application.html.erb`, modify the layout to l
 <html>
 <head>
   <title>ContactsApp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => false %>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
   <%= csrf_meta_tags %>
 </head>
 <body ng-app="ContactsApp">
