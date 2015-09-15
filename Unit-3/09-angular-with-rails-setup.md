@@ -144,7 +144,7 @@ In the `app/assets/javascript/applications.js`, **remove** this line:
 Also, you need to **remove** the following line from the `Gemfile`:
 
 ```ruby
-gem 'trubolinks'
+gem 'turbolinks'
 ```
 
 And finally, in `app/views/layouts/application.html.erb`, change your `javascript_include_tag` to not include turbolinks:
