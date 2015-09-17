@@ -2,13 +2,12 @@
 
 Way back in [Unit 1, Lesson 5](https://github.com/gSchool/angular-curriculum/blob/master/Unit-1/5-built-in-directives.md), we went over built in directives.  These are directives that angular comes with.  In this lesson, we're going to build our own custom directives. But first...
 
-**EXERCISE**
-
-Name at least 5 built in directives you've used so far.
+- Name at least 5 built in directives you've used so far.
+- Watch [AngularJS Directives Tutorial - Part 1 - Demystifying Angular Directives](https://www.youtube.com/watch?v=0r5QvzjjKDc)
 
 ### Simple Custom Directive
 
-We are going to make a simple directive that just puts some html on the page.  This is not a great use for directives, but we'll get to more complicated examples later. 
+We are going to make a simple directive that just puts some html on the page.  This is not a great use for directives, but we'll get to more complicated examples later.
 
 `app.js`:
 
@@ -127,7 +126,7 @@ app.directive('gsYoyoDetails', function() {
 </html>
 ```
 
-We can see here that the directive has access to the yoyo from the controller's scope.  This is nice, but it's often not a good idea to have your directives so tightly coupled to your controller.  If you change the variable name in the  controller or try to use the directive again somewhere else, you may run into errors.  
+We can see here that the directive has access to the yoyo from the controller's scope.  This is nice, but it's often not a good idea to have your directives so tightly coupled to your controller.  If you change the variable name in the  controller or try to use the directive again somewhere else, you may run into errors.
 
 **Isolated Scope**
 
