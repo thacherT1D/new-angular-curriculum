@@ -125,6 +125,8 @@ Create a simple password validator like the one shown below. If the password is 
 
 ![](http://zippy.gfycat.com/FelineEqualElectriceel.gif)
 
+> View another example [here](./examples/ng-show-hide).
+
 ### ng-class
 
 `ng-class` will dynamically set an element's class depending on a provided expression.
