@@ -93,27 +93,20 @@ Make sure all of your new controller methods are working.  First, make a few con
 
 Next, we'll set up angular in our app.  There is a gem for doing this called [angularjs-rails](https://github.com/hiravgandhi/angularjs-rails), but we're going to do it manually to get an idea of what is going on.
 
-First, add the angularjs script tag in your `app/views/layouts/application.html.erb` file:
+First, create the following directories if they don't exist:  `app/assets/javascripts/angular/lib`.  Next, download the latest angular js script file and put it into the following path:  `app/assets/javascripts/angular/lib/angular.min.js`.
 
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>ContactsApp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
- 
-   <%= yield %>
-   
-</body>
-</html>
+Now we want the angular library to be loaded before other scripts.  To achieve this, make your `app/assets/javascripts/application.js` look like the following:
+
+```
+//= require jquery
+//= require jquery_ujs
+//= require angular/lib/angular.min
+//= require_tree ./angular/lib
+//= require turbolinks
+//= require_tree .
 ```
 
-Note that the angular js script tag is **before** the erb tag that includes javascript.
+The order of operations matters in the above file.  The `//= require angular/lib/angular.min` line makes sure that angular.min is loaded before any other angular files in the lib directory (currently we do not have any other files in the lib directory but the lib directory is where you would add things other angular files like the angular router).
 
 Also, since we are not using rails views from our controllers, remove the `<%= yield %>` tag.  Add `ng-app` on the body tag and put an angular expression in the body to verify it's working:
 
@@ -171,50 +164,36 @@ Rails.application.routes.draw do
 end
 ```
 
-You could add a method to 	`app/controllers/application_controller.rb` that helps us render the layout file when we need it:
-
-```ruby
-class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
-
-  protected
-    def html_layout
-      # check the request format
-      if request.format.symbol == :html
-        render "layouts/application"
-      end
-    end
-end
-
-```
-
-Next, add a new `StaticsController` like this:
+Add a new `StaticsController` like this:
 
 ```
 class StaticsController < ApplicationController
-  before_action :html_layout
   
   def index
+  	render "layouts/application"
   end
 end
 ```
+
+The render method about tells the index action to render a specific template rather than rendering the default.  We want to do this because angular gets loaded from the `applications.html.erb` file
 
 Now your rails app should return your layout page when you visit the root route and angular should load.
 
 ### Adding Angular Code
 
-Next, we want to add some angular code to our rails app.  Inside `app/assets/javascript`, make a directory called `angular`.  Create the normal directory sturcture for your angular app inside of the angular directory.  You'll also have to make sure that the `app.js` file you created is the first angular file that gets loaded.  Your `app/assets/javascripts/application.js` file should look similar to this:
+Next, we want to add some angular code to our rails app.  Inside 
+the `app/assets/javascript/angular` directory, create the normal files you'll need for an angular app.  You'll also have to make sure that the `app.js` file you created is the first angular file that gets loaded.  Your `app/assets/javascripts/application.js` file should look similar to this:
 
 ```js
 //= require jquery
 //= require jquery_ujs
+//= require angular/lib/angular.min
+//= require_tree ./angular/lib
 //= require angular/app
 //= require_tree .
 ```
 
-Let's verify our angular files are being loaded correctly.  Add this to your `app/assets/javascripts/angular/app.js` file.  Note that we are adding an `app.config` method to handle the CSRF token:
+Let's verify our angular files are being loaded correctly.  Add this to your `app/assets/javascripts/angular/app.js` file.  Note that we are adding a `.config` to handle the CSRF token:
 
 ```js
 var contactsApp = angular.module("ContactsApp", []);
