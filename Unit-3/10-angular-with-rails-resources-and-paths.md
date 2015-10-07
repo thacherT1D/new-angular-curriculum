@@ -4,7 +4,7 @@ The lesson will build off of [this solution](https://github.com/gSchool/contacts
 
 ## Resources
 
-In the solution to the angular contacts app, the `$resource` was used instead of the `$http` service.  The `$resource` service is a higher level service that tries to make dealing with restful apis easier.  First take a look at the code in `app/assests/javascript/angular/services.js`:
+In the solution to the angular contacts app, the `$resource` service was used instead of the `$http` service.  The `$resource` service is a higher level service that tries to make dealing with restful apis easier.  First take a look at the code in `app/assests/javascript/angular/services.js`:
 
 ```js
 contactsApp.service('Contact', ['$resource', function($resource) {
@@ -70,34 +70,41 @@ Why is adding html5 pushState support not enough to get links to work?  For exam
 
 ![](https://cms-assets.tutsplus.com/uploads/users/12/posts/22160/preview_image/html5.jpg)
 
-Now that you have the router working, we need to add some code on the rails side to support the links as well.  Open up `app/controllers/contacts_controller.rb` and add a before action that calls the `html_layout` method:
+Now that you have the router working, we need to add some code on the rails side to support the links as well.
 
-```ruby
-class ContactsController < ApplicationController
-  before_action :set_contact, only: [:show, :update, :destroy]
-  before_action :html_layout
+The first step is separate api routes in our rails app and all other routes.  The api routes are any routes that our front end will send ajax requests to.  For the current app, we just have the contacts route for our api.  All other requests are going to be requests for the HTML template of our angular app.  For example, we want a GET request for `/` and a GET request  `/contacts/1` to return the same HTML, which gets the same angular app files.  The angular app then loads on the front end and takes over the routing of the front end.
 
-  // Code left out
+To separate traffic, we'll use the `rack-rewrite` gem.  In your `Gemfile` add `gem rack-rewrite`.
 
+Next, in `config/application.rb` add the following rewrite rule inside of the `module ContactsApp` block:
+
+
+```
+config.middleware.insert_before(Rack::Runtime, Rack::Rewrite) do
+  rewrite %r{^(?!.*(api|auth|omniauth|\.)).*$}, '/'
 end
 ```
 
-Remember we created the `html_layout` method in `app/controllers/application_controller.rb`.  The method is inherited by all controllers that inherit from the `ApplicaitonController`.  Earlier we included the `html_layout` method as a before action for the `StaticsController`.  As a reminder, the method looks like this:
+The above rule tells your server to rewrite any incoming request to `/`.  The exception to that rule is any path starting with api, auth or omniauth.  So as long as the path doesn't start with any of those 3 strings, your router will see all other requests as requests to `/`.  This means we only need 1 rule in the router to match any traffic that will be handled by the angular router:
 
-```ruby
-  protected
-    def html_layout
-      # check the request format
-      if request.format.symbol == :html
-        render "layouts/application"
-      end
-    end
+```
+root to: 'statics#index'
 ```
 
+Next, we have to change the route for our api.  Add a scope for the resources :contacts line in the `routes.rb` file:
+
+```ruby
+  scope '/api' do
+    resources :contacts, only: [:index, :show, :create, :update, :destroy]
+  end
+```
+
+The scope changes the path for contacts app to /api/contacts/...
+
 **EXERCISE**
 
-Now that the `before_action` is in the `ContactsController`, try copying some links from your app and reloading them on the page.  Is everything working?  You may have to change some links from `#` to normal links on your page.  Try using the browser's back button.  Does that work as expected?  Make sure you get everything working as if your angular app were a normal rails CRUD app.
+Execute `rake routes` in the terminal.  Does everything look correct.  Try opening up your app in the browser with the path `/api/contacts`.  Does your rails app return the json response?  In other words, are you getting through to your api rather than getting your request rewritten to `/`.
 
 **EXERCISE**
 
-Is the `StaticsController` needed anymore?  Figure out how to remove it from the app and still have everything working.
+Now that the rewrite rule is in place, try copying some links from your app and reloading them on the page.  Is everything working?  You may have to change some links from `#` to normal links on your page.  Try using the browser's back button.  Does that work as expected?  Make sure you get everything working as if your angular app were a normal rails CRUD app.  __HINT__: There is most likely an issue with your api requests. Make sure you've updated the paths for the ajax requests correctly.
