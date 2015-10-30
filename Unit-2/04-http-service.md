@@ -80,7 +80,7 @@ $http.get('https://api.github.com/zen').then(function(data){
 **EXERCISE:** Try making a request to an invalid URL.  Write code to properly handle a request that fails.  Does Angular have any built-in functionality that could help you?**
 
 
-**EXERCISE:** Use `$http.get()` and `$http.post()` to interact with this [Rails API that we've made for you](https://shielded-peak-6345.herokuapp.com/).  It's a simple collaborative chat app.  The API has two endpoints:
+**EXERCISE:** Use `$http.get()` and `$http.post()` to interact with this [Rails API that we've made for you](https://still-tundra-8387.herokuapp.com/).  It's a simple collaborative chat app.  The API has two endpoints:
 
 The app is one Rails model, Message, which has two attributes: name and content.
 
@@ -92,10 +92,10 @@ Create a simple app that displays a list of all the messages coming from the API
 Remember that most Rails apps expect your data for a given model to be nested inside of a single object with the name of the model.  So the data you send should follow this format:
 
 ```js
-message: {
-	name: "Mary",
-	content: "This is such a cool API!"
-}
+{message: {
+  name: "Mary",
+  content: "This is such a cool API!"
+}}
 ```
 
 ## Questions
