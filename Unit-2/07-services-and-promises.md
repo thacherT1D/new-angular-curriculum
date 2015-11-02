@@ -69,33 +69,26 @@ Another popular library for promises is [q](https://github.com/kriskowal/q)
 
 #### Creating a Service With Dependencies
 
-Your service could also have dependencies.  We have seen the `$http` service.  In the example we will also used the `$q` service to add deferreds to our service:
+Your service could also have dependencies. We have seen the `$http` service. Imagine the OMDB API would only return full data for a movie if you're querying for the movie directly. Building out the logic to search against the API for movies, and then fetching all the data for each of the movies is pretty onerous. We can use $q to simplify all of that:
 
 ```js
 app.factory('omdbapi', ["$http", "$q", function($http, $q) {
   var omdbservice = {};
-  var baseUrl = "http://www.omdbapi.com/?plot=short&r=json&s=";
-  var searchTerm = '';
-
-  omdbservice.setSearchTerm = function(term) {
-    searchTerm = encodeURIComponent(term);
-  }
-
-  omdbservice.getSearchTerm = function() {
-    return decodeURIComponent(searchTerm);
-  }
+  var baseUrl = "http://www.omdbapi.com/?r=json";
 
   omdbservice.search = function(term) {
-    if (term !== undefined) {
-      omdbservice.setSearchTerm(term);
-    }
-
-    var url = baseUrl + searchTerm;
+    var url = baseUrl + "&plot=short&s=" + encodeURIComponent(term);
 
     var deferred = $q.defer();
 
     $http.get(url).success(function(data) {
-      deferred.resolve(data);
+      $q.all(data.Search.map(function(movie) {
+        return $http.get(baseUrl + "&plot=long&i=" + movie.imdbID)
+      })).then(function(data) {
+        deferred.resolve(data.map(function(movie) {
+          return movie.data; 
+        }));
+      });
     }).error(function() {
       deferred.reject("Error!")
     });
