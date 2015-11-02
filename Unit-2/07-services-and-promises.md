@@ -100,4 +100,4 @@ app.factory('omdbapi', ["$http", "$q", function($http, $q) {
 }]);
 ```
 
-**EXERCISE:** Use the [Giphy Api](https://github.com/Giphy/GiphyAPI) to add a feature to your app.  Whenever a new user is submitted, do a search for a gif using the person's name.  If you get a result, save that along with the users name email and phone number.  Show the user's gif on the show page.  HINT: you probably want to use the embedded url froom the giphy search resutls.
+**EXERCISE:** Use the [Giphy Api](https://github.com/Giphy/GiphyAPI) to add a feature to your app.  Whenever a new user is submitted, do a search for a gif using the person's name.  If you get a result, save that along with the users name email and phone number.  Show the user's gif on the show page.  HINT: you will NOT want to use the embedded url from the giphy search resutls.
