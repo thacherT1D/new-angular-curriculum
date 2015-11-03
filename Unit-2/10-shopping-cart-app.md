@@ -156,7 +156,7 @@
 **BONUS**:
 ## Angular Custom Directive: Caffeine Meter
 
-Let's add aa custom directive to graphically display the amount of caffeine in each tea.
+Let's add a custom directive to graphically display the amount of caffeine in each tea.
 
 **The caffeine display should look something like this:**
 ![](https://i.gyazo.com/666d37af0d208915f33386ee47e80fb5.png)
