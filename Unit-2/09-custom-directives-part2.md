@@ -20,7 +20,7 @@ app.directive('gsChangeBackground', function() {
     link: function(scope, element, attrs) {
 
       var oldColor = element.css('background-color');
-      
+
       element.on('mouseenter', function(event) {
         element.css('background-color', 'yellow');
       });

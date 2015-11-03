@@ -152,3 +152,21 @@
 	}
 ]
 ```
+
+**BONUS**:
+## Angular Custom Directive: Caffeine Meter
+
+Let's add aa custom directive to graphically display the amount of caffeine in each tea.
+
+**The caffeine display should look something like this:**
+![](https://i.gyazo.com/666d37af0d208915f33386ee47e80fb5.png)
+
+ The CSS for the caffeine meter can be obtained from here: [Caffeine Meter CSS](http://codepen.io/Sambego/pen/zKLar)
+
+**The code should look someting like this:**
+
+```html
+<caffeine-meter caffeinemg="tea.caffeineScale" id="tea._id"></caffeine-meter>
+```
+
+![](https://i.gyazo.com/8c1d4c68b881d8a0431202e3b7469c8e.png)

@@ -20,10 +20,9 @@ Unit 2:
  * [Movie Search App](/Unit-2/05-movie-search.app.md)
  * [Dependency Injection](/Unit-2/06-dependency-injection.md)
  * [Services and Promises](/Unit-2/07-services-and-promises.md)
- * [Shopping Cart App](/Unit-2/08-shopping-cart-app.md)
- * [Custom Directives Part 1](/Unit-2/09-custom-directives-part1.md)
- * [Custom Directives Part 2](/Unit-2/10-custom-directives-part2.md)
- * [Caffeine Meter Project](/Unit-2/11-caffeine-meter-custom-directive.md)
+ * [Custom Directives Part 1](/Unit-2/08-custom-directives-part1.md)
+ * [Custom Directives Part 2](/Unit-2/09-custom-directives-part2.md)
+ * [Shopping Cart App](/Unit-2/10-shopping-cart-app.md)
 
 Unit 3:
 
