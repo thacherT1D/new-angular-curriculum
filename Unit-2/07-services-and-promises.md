@@ -73,8 +73,10 @@ Your service could also have dependencies. We have seen the `$http` service. Let
 
 ```js
 app.controller('OmdbController', ['$scope', 'omdbapi', function($scope, omdbapi) {
-  $scope.search = function(term) {
-    omdbapi.search(term).then(function(data) {
+  $scope.term = '';
+  
+  $scope.queryOmdb = function() {
+    omdbapi.search($scope.term).then(function(data) {
       $scope.results = data;
     })
   }
@@ -84,19 +86,19 @@ app.factory('omdbapi', ["$http", "$q", function($http, $q) {
   var omdbservice = {};
   var baseUrl = "http://www.omdbapi.com/?r=json&plot=long&s=";
 
-  var searchedMovies = {};
+  var cachedMovies = {};
 
   omdbservice.search = function(term) {
     var url = baseUrl + encodeURIComponent(term);
 
     var deferred = $q.defer();
 
-    if (searchedMovies[term]) {
-      deferred.resolve(searchedMovies[term]);
+    if (cachedMovies[term]) {
+      deferred.resolve(cachedMovies[term]);
     } else {
       $http.get(url).success(function(data) {
-        searchedMovies[term] = data.Search;
-        deferred.resolve(searchedMovies[term]);
+        cachedMovies[term] = data.Search;
+        deferred.resolve(cachedMovies[term]);
       }).error(function() {
         deferred.reject("Error!")
       });
