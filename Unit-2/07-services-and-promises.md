@@ -69,29 +69,38 @@ Another popular library for promises is [q](https://github.com/kriskowal/q)
 
 #### Creating a Service With Dependencies
 
-Your service could also have dependencies. We have seen the `$http` service. Imagine the OMDB API would only return full data for a movie if you're querying for the movie directly. Building out the logic to search against the API for movies, and then fetching all the data for each of the movies is pretty onerous. We can use $q to simplify all of that:
+Your service could also have dependencies. We have seen the `$http` service. Let's talk about the `$q` service briefly. It's a good way to allow controllers to fetch data from services that may (or may not) need to fetch that data from an external source. In the follow example, we'll cache the OMDB response for a search term, and avoid making calls to the API for the same data more than once. Our controller can treat the response the same way in both cases, it doesn't care where the data comes from, only that the search function will return a promise.
 
 ```js
+app.controller('OmdbController', ['$scope', 'omdbapi', function($scope, omdbapi) {
+  $scope.search = function(term) {
+    omdbapi.search(term).then(function(data) {
+      $scope.results = data;
+    })
+  }
+}]);
+
 app.factory('omdbapi', ["$http", "$q", function($http, $q) {
   var omdbservice = {};
-  var baseUrl = "http://www.omdbapi.com/?r=json";
+  var baseUrl = "http://www.omdbapi.com/?r=json&plot=long&s=";
+
+  var searchedMovies = {};
 
   omdbservice.search = function(term) {
-    var url = baseUrl + "&plot=short&s=" + encodeURIComponent(term);
+    var url = baseUrl + encodeURIComponent(term);
 
     var deferred = $q.defer();
 
-    $http.get(url).success(function(data) {
-      $q.all(data.Search.map(function(movie) {
-        return $http.get(baseUrl + "&plot=long&i=" + movie.imdbID)
-      })).then(function(data) {
-        deferred.resolve(data.map(function(movie) {
-          return movie.data; 
-        }));
+    if (searchedMovies[term]) {
+      deferred.resolve(searchedMovies[term]);
+    } else {
+      $http.get(url).success(function(data) {
+        searchedMovies[term] = data.Search;
+        deferred.resolve(searchedMovies[term]);
+      }).error(function() {
+        deferred.reject("Error!")
       });
-    }).error(function() {
-      deferred.reject("Error!")
-    });
+    }
 
     return deferred.promise;
   }
