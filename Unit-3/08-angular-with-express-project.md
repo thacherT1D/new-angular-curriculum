@@ -41,7 +41,7 @@ Now you can add AngularJS, Bootstrap, and any other supporting files in to **vie
   
 ```
 
-Notice the `js/angular/app.js`, your angular app will reside in `public/js/angular/app.js`.  All angular related javascript files will be in the `publi/js/angular` folder, and included like this:
+Notice the `js/angular/app.js`, your angular app will reside in `public/js/angular/app.js`.  All angular related javascript files will be in the `public/js/angular` folder, and included like this:
 
 ```html
  <script src="js/angular/[NAME OF YOUR ANGULAR FILE].js"></script>
