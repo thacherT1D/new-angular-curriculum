@@ -26,7 +26,7 @@ Now you can add AngularJS, Bootstrap, and any other supporting files in to **vie
 <html ng-app=[NAME OF YOUR ANGULAR APP]>
   <head>
     <meta charset="utf-8">
-    <title>Mean Tea App</title>
+    <title>Ice Cream Shop</title>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-route.js"></script>
