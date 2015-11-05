@@ -30,7 +30,7 @@ After you get through the prompts we want to add express, and some key middlewar
  * mongoose
  
 ```
-$ npm install --save express mongoose body-parser method-override morgan
+$ npm install --save express mongoose body-parser method-override morgan ejs
 ```
 
 You should already be familiar with what is happening here.  We're both installing the middlewares and tracking it inside of the package.json file for reference.  This means you don't have to include the entire contents of the node_modules folder to github for others to clone and run your app.  People cloning/forking your repository will just need to make sure that they run `npm install`.  
@@ -92,6 +92,7 @@ bodyParser = require("body-parser"),
 methodOverride = require('method-override'),
 morgan = require("morgan")
  
+app.set('view engine', 'ejs');
 app.use(morgan('tiny'));
 app.use(methodOverride('_method'));
 app.use(express.static(__dirname + '/public'));
