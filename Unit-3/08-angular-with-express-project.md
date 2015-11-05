@@ -23,7 +23,7 @@ Now you can add AngularJS, Bootstrap, and any other supporting files in to **vie
 
 ```html
 <!DOCTYPE html>
-<html>
+<html ng-app=[NAME OF YOUR ANGULAR APP]>
   <head>
     <meta charset="utf-8">
     <title>Mean Tea App</title>
