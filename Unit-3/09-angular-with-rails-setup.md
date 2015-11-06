@@ -69,7 +69,7 @@ class ContactsController < ApplicationController
   # DELETE /contacts/1
   def destroy
     @contact.destroy
-    render json: @contact, status: ok
+    render json: @contact, status: :ok
   end
 
   private
