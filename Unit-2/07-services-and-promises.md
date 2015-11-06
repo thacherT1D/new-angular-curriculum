@@ -69,36 +69,40 @@ Another popular library for promises is [q](https://github.com/kriskowal/q)
 
 #### Creating a Service With Dependencies
 
-Your service could also have dependencies.  We have seen the `$http` service.  In the example we will also used the `$q` service to add deferreds to our service:
+Your service could also have dependencies. We have seen the `$http` service. Let's talk about the `$q` service briefly. It's a good way to allow controllers to fetch data from services that may (or may not) need to fetch that data from an external source. In the follow example, we'll cache the OMDB response for a search term, and avoid making calls to the API for the same data more than once. Our controller can treat the response the same way in both cases, it doesn't care where the data comes from, only that the search function will return a promise.
 
 ```js
+app.controller('OmdbController', ['$scope', 'omdbapi', function($scope, omdbapi) {
+  $scope.term = '';
+  
+  $scope.queryOmdb = function() {
+    omdbapi.search($scope.term).then(function(data) {
+      $scope.results = data;
+    })
+  }
+}]);
+
 app.factory('omdbapi', ["$http", "$q", function($http, $q) {
   var omdbservice = {};
-  var baseUrl = "http://www.omdbapi.com/?plot=short&r=json&s=";
-  var searchTerm = '';
+  var baseUrl = "http://www.omdbapi.com/?r=json&plot=long&s=";
 
-  omdbservice.setSearchTerm = function(term) {
-    searchTerm = encodeURIComponent(term);
-  }
-
-  omdbservice.getSearchTerm = function() {
-    return decodeURIComponent(searchTerm);
-  }
+  var cachedMovies = {};
 
   omdbservice.search = function(term) {
-    if (term !== undefined) {
-      omdbservice.setSearchTerm(term);
-    }
-
-    var url = baseUrl + searchTerm;
+    var url = baseUrl + encodeURIComponent(term);
 
     var deferred = $q.defer();
 
-    $http.get(url).success(function(data) {
-      deferred.resolve(data);
-    }).error(function() {
-      deferred.reject("Error!")
-    });
+    if (cachedMovies[term]) {
+      deferred.resolve(cachedMovies[term]);
+    } else {
+      $http.get(url).success(function(data) {
+        cachedMovies[term] = data.Search;
+        deferred.resolve(cachedMovies[term]);
+      }).error(function() {
+        deferred.reject("Error!")
+      });
+    }
 
     return deferred.promise;
   }
@@ -107,4 +111,4 @@ app.factory('omdbapi', ["$http", "$q", function($http, $q) {
 }]);
 ```
 
-**EXERCISE:** Use the [Giphy Api](https://github.com/Giphy/GiphyAPI) to add a feature to your app.  Whenever a new user is submitted, do a search for a gif using the person's name.  If you get a result, save that along with the users name email and phone number.  Show the user's gif on the show page.  HINT: you probably want to use the embedded url froom the giphy search resutls.
+**EXERCISE:** Use the [Giphy Api](https://github.com/Giphy/GiphyAPI) to add a feature to your app.  Whenever a new user is submitted, do a search for a gif using the person's name.  If you get a result, save that along with the users name email and phone number.  Show the user's gif on the show page.  HINT: you will NOT want to use the embedded url from the giphy search resutls.

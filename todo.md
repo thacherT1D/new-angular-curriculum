@@ -5,11 +5,15 @@
 - Intro and Setup
 - Angular MVC
 - Data Binding
-- Expressions and Filters
+- Expressions and Filters 
+- **Update Madlibs exercise**
 - Intro to Controllers
+- **Revisit numbering here -- why is intro to controllers 06, while built-in directives is 05**
 - Built-In Directives
 - Angular Events
 - Unit 1 Assessment Reddit Clone
+- **section with more detail on $scope?**
+
 
 ## Unit 2
 

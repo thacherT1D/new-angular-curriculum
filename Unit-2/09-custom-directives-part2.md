@@ -1,6 +1,6 @@
 # Custom Directives: Part 2
 
-Directives become much more powerful when they start manipulating the DOM.  Angular gives you controll over the DOM with two functions, `link` and `compile`
+Directives become much more powerful when they start manipulating the DOM.  Angular gives you control over the DOM with two functions, `link` and `compile`
 
 **EXERCISE**
 
@@ -20,7 +20,7 @@ app.directive('gsChangeBackground', function() {
     link: function(scope, element, attrs) {
 
       var oldColor = element.css('background-color');
-      
+
       element.on('mouseenter', function(event) {
         element.css('background-color', 'yellow');
       });

@@ -12,7 +12,7 @@ Try writing some simple expressions, like:
 * `My name is {{"BoJack" +  " Horseman"}}`
 * `The array [99,43,22] is {{ [99,43,22].length }} items long.`
 
-You've seen similar-like tags in a templating engine - like EJS, ERB, Swing, Jade. While they are definitely similar, there are a few key differences. The most important difference is that **you cannot write conditionals or loops inside an expression**. We'll see soon that Angular provides its own ways of achieving the same functionality.
+You've seen similar-like tags in a templating engine - like EJS, ERB, Swig, Jade. While they are definitely similar, there are a few key differences. The most important difference is that **you cannot write conditionals or loops inside an expression**. We'll see soon that Angular provides its own ways of achieving the same functionality.
 
 > Keep in mind that you do not want to have complex logic in your views. If you want to run more complex code, we'll see how to move logic to a controller shortly.
 
