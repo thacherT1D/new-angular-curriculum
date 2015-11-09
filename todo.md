@@ -17,8 +17,6 @@
 ## Unit 2
 
 - A New Structure **LOOK INTO https://github.com/mjhea0/hotTowelStarter**
-- **ADD FORM VALIDATION LESSON**
-- **ADD FORM VALIDATION ASSIGNMENT**
 - UPDATE MADLIBS - handle form validation
 - Routing
 - Custom Filters
