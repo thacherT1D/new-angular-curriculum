@@ -99,18 +99,18 @@ If you would like a great example of how these form classes and properties work 
 
 First, answer the following questions
 
-- when does a form/input have a property of $valid? What class accompanies this property?
-- when does a form/input have a property of $invalid? What class accompanies this property?
-- when does a form/input have a property of $pristine? What class accompanies this property?
-- when does a form/input have a property of $dirty? What class accompanies this property?
-- when does a form/input have a property of $touched? What class accompanies this property?
-- what does blurred mean? (research the `blur` event)
+- When does a form/input have a property of $valid? What class accompanies this property?
+- When does a form/input have a property of $invalid? What class accompanies this property?
+- When does a form/input have a property of $pristine? What class accompanies this property?
+- When does a form/input have a property of $dirty? What class accompanies this property?
+- When does a form/input have a property of $touched? What class accompanies this property?
+- What does blurred mean? (research the `blur` event)
 
 #### For the next set of questions, assume that you have a form with a name="quizForm"
 
-- create a text input with a name of "question" and give it a validation of "required". If it is $valid add a class of "valid"
-- for your text input with a name of question, add a paragraph tag with the text "please enter a valid question" if the input is not valid 
-- create a text input with a name of "answer" and give it a validation of "required" and a minimum length of 4 characters. If it is $valid and not $pristine add a class of "correct". 
+- Create a text input with a name of "question" and give it a validation of "required". If it is $valid add a class of "valid"
+- For your text input with a name of question, add a paragraph tag with the text "please enter a valid question" if the input is not valid 
+- Create a text input with a name of "answer" and give it a validation of "required" and a minimum length of 4 characters. If it is $valid and not $pristine add a class of "correct". 
 - How would you access all of the errors (in an object) for an input with a name of `signupForm.username`
 - What validations would you add in an input to make sure that there is a minimum length of 4 and a maximum length of 20
 - What validation would you add in an input to make sure that only numbers between 1 and 5 are a valid input (use regular expressions for this!)
@@ -145,11 +145,8 @@ Complete the Assignment here:
 
 Our HTML is getting a bit messy, it would be nice to have an easier way to deal with error messages, that's where ng-messages comes in. Walk through [this](https://scotch.io/tutorials/angularjs-form-validation-with-ngmessages) tutorial and refactor your form to use ng-messages.
 
-## Additional Resources
+## Additional Resources 
 
 [https://docs.angularjs.org/guide/forms](https://docs.angularjs.org/guide/forms)
 
 [https://docs.angularjs.org/api/ng/directive/input](https://docs.angularjs.org/api/ng/directive/input)
-
-[http://codepen.io/sevilayha/pen/xFcdI](http://codepen.io/sevilayha/pen/xFcdI)
-
