@@ -137,11 +137,13 @@ app.controller('MainController', function($scope) {
 });
 ```
 
-So what we're essentially doing here is checking to see if `$scope.number` is `42` and if it is, display an input where the user can type a secret message that will appear outside the `ng-if`. Pretty simple, but it doesn't do what we expect? Why do you think that is? The answer actually has to do with the way JavaScript works! Let's review prototypal inheritance for a quick minute and see if that helps solve our problem.
+So what we're essentially doing here is checking to see if `$scope.number` is `42` and if it is, display an input where the user can type a secret message that will appear outside the `ng-if`. Pretty simple, but it doesn't do what we expect! Why do you think that is? 
+
+The answer actually has to do with the way JavaScript works! Let's review prototypal inheritance for a quick minute and see if that helps solve our problem.
 
 ## Prototypal inheritance review 
 
-Even before we get to the good stuff, let's make sure we have a thorough understanding of some a key term - a `primitive`. 
+Even before we get to the good stuff, let's make sure we have a thorough understanding what a `primitive` is.
 
 From MDN: 
 
