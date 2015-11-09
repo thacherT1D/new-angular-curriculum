@@ -119,14 +119,14 @@ Now that you have a solid understanding of these properties/classes, let's build
 Now that we have an idea of how to style and display error messages, let's do the following
 
 - include bootstrap for styling
-- display error messages if inputs are invalid
-- add a class of has-error if the validation fails
-- add a class of has-success if the validation passes
+- display error messages if inputs are invalid (write whatever you would like for the error message)
+- add a class of `has-error` if the validation fails
+- add a class of `has-success` if the validation passes
 - only display the error message/styling if the user has typed something 
 - when the form is submitted, collect the inputs and add them to an array called `users` (this will be done in your controller)
   + remember that the default behavior for the form submission is a page refresh - you will need to prevent this.
   + make sure to clear all the form values and validations (you should use a method from [here](https://docs.angularjs.org/api/ng/type/form.FormController) to do that )
-  + Display the array of users (each one should be an object) at the top of your form (see the gif below for guidance).
+  + display the array of users (each one should be an object) at the top of your form (see the gif below for guidance).
 
 Your form should work like this:
 
