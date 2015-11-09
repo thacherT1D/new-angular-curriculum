@@ -123,3 +123,78 @@ Make sure the second route works correctly by visiting `http://localhost:8080/#/
 * Aside from route definitions, what else can go in a `.config()`?
 * What is `$rootScope`?
 * What is the `$routeChangeSuccess` event?
+
+
+
+
+
+##Cheat Sheet:
+
+ Download superstatic from npm : https://www.npmjs.com/package/superstatic
+
+Create an html file and use Bower or CDNs to link to angular and another for angular routes
+```
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.js"></script>
+```
+Add ng-app="myApp" to the html tag of your file
+```
+<html ng-app="myApp">
+```
+Add ng-view to your HTML page that will be used later to inject your partials into.
+EX: 
+```
+    <body>
+     <div ng-view></div>
+    </body>
+```
+Create an angular module and inject the 'ngRoute' dependency 
+EX: 
+```
+angular.module('myApp', ['ngRoute'])
+```
+Create .config section under your module to set up your routes
+EX: 
+```
+.config(function($routeProvider){
+       $routeProvider
+        .when('/', {
+        templateUrl: 'home.html',
+        controller: 'HomeController'
+  })
+})
+```
+
+Remove Hashtags from urls :
+
+Add $locationProvider.html5Mode(true) to your .config
+EX: 
+```
+.config(function($routeProvider, $locationProvider){
+        $routeProvider
+        .when('/', {
+        templateUrl: 'home.html',
+        controller: 'HomeController'
+  })
+   $locationProvider.html5Mode(true);
+})
+```
+
+Then Add a base tag to the bottom of the head of your main HTML file:
+EX: 
+```
+<base href="/">
+```
+Then create a divshot.json file and add this code:
+```
+{
+  "rewrites": [
+   {"source":"**/**","destination":"/index.html"}
+  ]
+}
+```
+Create your partial HTML file and the controller you added to the route and you should be good to go
+
+
+
+
