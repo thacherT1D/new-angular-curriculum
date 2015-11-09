@@ -8,21 +8,23 @@ Unit 1:
  * [Expressions and Filters](/Unit-1/04-expressions-and-filters.md)
  * [Built-In Directives](/Unit-1/05-built-in-directives.md)
  * [Intro to Controllers](/Unit-1/06-intro-to-controllers.md)
- * [Angular Events](/Unit-1/07-intro-to-events.md)
- * [Unit 1 Assessment Reddit Clone](/Unit-1/08-reddit-clone.md)
+ * [Scope](/Unit-1/07-intro-to-scope.md)
+ * [Angular Events](/Unit-1/08-intro-to-events.md)
+ * [Unit 1 Assessment Reddit Clone](/Unit-1/09-reddit-clone.md)
 
 Unit 2:
 
  * [A New Structure](/Unit-2/01-a-new-structure.md)
- * [Routing](/Unit-2/02-routing.md)
- * [Custom Filters](/Unit-2/03-custom-filters.md)
- * [HTTP Service](/Unit-2/04-http-service.md)
- * [Movie Search App](/Unit-2/05-movie-search.app.md)
- * [Dependency Injection](/Unit-2/06-dependency-injection.md)
- * [Services and Promises](/Unit-2/07-services-and-promises.md)
- * [Custom Directives Part 1](/Unit-2/08-custom-directives-part1.md)
- * [Custom Directives Part 2](/Unit-2/09-custom-directives-part2.md)
- * [Shopping Cart App](/Unit-2/10-shopping-cart-app.md)
+ * [Digest Cycle](/Unit-2/02-digest-cycle.md)
+ * [Routing](/Unit-2/03-routing.md)
+ * [Custom Filters](/Unit-2/04-custom-filters.md)
+ * [HTTP Service](/Unit-2/05-http-service.md)
+ * [Movie Search App](/Unit-2/06-movie-search.app.md)
+ * [Dependency Injection](/Unit-2/07-dependency-injection.md)
+ * [Services and Promises](/Unit-2/08-services-and-promises.md)
+ * [Custom Directives Part 1](/Unit-2/09-custom-directives-part1.md)
+ * [Custom Directives Part 2](/Unit-2/10-custom-directives-part2.md)
+ * [Shopping Cart App](/Unit-2/11-shopping-cart-app.md)
 
 Unit 3:
 
