@@ -89,7 +89,7 @@ An example of this would be:
 
 ## Visualization 
 
-If you would like a great example of how these form classes and properties work (99% borrowed from scotch.io) - check out [this](http://sales-person-licks-61176.bitballoon.com) these validation tables
+If you would like a great example of how these form classes and properties work (99% borrowed from scotch.io) - check out [these](http://sales-person-licks-61176.bitballoon.com) validation tables
 
 
 ## Exercise - questions + building your own form and validations 
