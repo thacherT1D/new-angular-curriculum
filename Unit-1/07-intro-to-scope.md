@@ -203,7 +203,7 @@ child.anArray[1] === 22  // true
 
 In short, when we bind to a primitive, we do not consult the prototype chain and we break the way that JavaScript tries to find whatever data we are looking for. This unlinking of the prototype chain makes it very difficult to do our data binding correctly.
 
-Still confused? Take a look at [this](http://stackoverflow.com/questions/14049480/what-are-the-nuances-of-scope-prototypal-prototypical-inheritance-in-angularjs](http://stackoverflow.com/questions/14049480/what-are-the-nuances-of-scope-prototypal-prototypical-inheritance-in-angularjs) post on Stack Overflow.
+Still confused? Take a look at [this](http://stackoverflow.com/questions/14049480/what-are-the-nuances-of-scope-prototypal-prototypical-inheritance-in-angularjs) post on Stack Overflow.
 
 ### Additional Resources
 
