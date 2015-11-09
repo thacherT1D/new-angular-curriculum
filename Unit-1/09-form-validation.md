@@ -110,7 +110,7 @@ First, answer the following questions
 - create a text input with a name of "answer" and give it a validation of "required" and a minimum length of 4 characters. If it is $valid and not $pristine add a class of "correct". 
 - How would you access all of the errors (in an object) for an input with a name of `signupForm.username`
 - What validations would you add in an input to make sure that there is a minimum length of 4 and a maximum length of 20
-- What validation would you add in an input to make sure that only numbers between 1 and 5 are a valid input (use regular expression for this!)
+- What validation would you add in an input to make sure that only numbers between 1 and 5 are a valid input (use regular expressions for this!)
 
 #### Let's style our form and add some error messages! 
 
