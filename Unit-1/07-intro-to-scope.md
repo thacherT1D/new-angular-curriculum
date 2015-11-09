@@ -94,9 +94,9 @@ One way to solve our previous challenge would be to assign each ng-model to a pr
   </div>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
 <script>
-angular.module("myApp",[]).controller("ScopeController", function($rootScope){
-  $rootScope.view = {}
-})
+	angular.module("myApp",[]).controller("ScopeController", function($rootScope){
+  		$rootScope.view = {}
+	})
 </script>
 </body>
 
