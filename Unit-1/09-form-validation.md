@@ -48,7 +48,7 @@ Our first thought might be to start writing a bunch of javascript and figure out
 ## Before you continue, read through the following documentation regarding Angular form validations:
 [http://www.ng-newsletter.com/posts/validations.html](http://www.ng-newsletter.com/posts/validations.html)
 
-## A quick walkthrough of angular form properties, classes and descriptions
+### A quick walkthrough of angular form properties, classes and descriptions
 
 This table and the corresponding descriptions come from [this](https://scotch.io/tutorials/angularjs-form-validation-with-ngmessages) fantastic tutorial.
 
