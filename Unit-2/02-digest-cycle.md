@@ -78,7 +78,7 @@ The digest loop has two sub-loops in it. One is the `$watch list` and the other 
 
 #### Dirty Checking
 
-Dirty Checking is a process to check if the value of an expression/variable has changed. Dirty Checking simply compares and old value with a new one to see if it has changed. Angular uses Dirty Checking to determine whether the value of a variable or expression in its scope has changed or not. If it has, it does the required operation. You can read more about it [here](http://stackoverflow.com/questions/24698620/dirty-checking-on-angular)
+Dirty Checking is a process to check if the value of an expression/variable has changed. Dirty Checking simply compares an old value with a new one to see if it has changed. Angular uses Dirty Checking to determine whether the value of a variable or expression in its scope has changed or not. If it has, it does the required operation. You can read more about it [here](http://stackoverflow.com/questions/24698620/dirty-checking-on-angular)
 
 ### Back to the chart:
 
