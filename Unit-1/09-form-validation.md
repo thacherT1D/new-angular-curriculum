@@ -45,6 +45,9 @@ Now this is great, but it would be nice if we could be a bit more specific on wh
 
 Our first thought might be to start writing a bunch of javascript and figure out if there is any text inside the input and if so, to figure out the length. While this would work, angular has a nicer way to help us out. But before we do this, let's learn about some of the key properties and classes we will be using to validate forms in angular.
 
+## Before you continue, read through the following documentation regarding Angular form validations:
+[http://www.ng-newsletter.com/posts/validations.html](http://www.ng-newsletter.com/posts/validations.html)
+
 ## A quick walkthrough of angular form properties, classes and descriptions
 
 This table and the corresponding descriptions come from [this](https://scotch.io/tutorials/angularjs-form-validation-with-ngmessages) fantastic tutorial.
@@ -149,6 +152,4 @@ Our HTML is getting a bit messy, it would be nice to have an easier way to deal 
 [https://docs.angularjs.org/api/ng/directive/input](https://docs.angularjs.org/api/ng/directive/input)
 
 [http://codepen.io/sevilayha/pen/xFcdI](http://codepen.io/sevilayha/pen/xFcdI)
-
-[http://www.ng-newsletter.com/posts/validations.html](http://www.ng-newsletter.com/posts/validations.html)
 
