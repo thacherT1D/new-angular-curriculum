@@ -12,7 +12,6 @@
 - Built-In Directives
 - Angular Events
 - Unit 1 Assessment Reddit Clone
-- **section with more detail on $scope?**
 
 
 ## Unit 2
@@ -42,7 +41,6 @@
 - Custom Directives Part 1
 - Custom Directives Part 2
 - **ADD UNIT TESTING DIRECTIVES LESSON**
-- **ADD DIGEST CYCLE LESSON**
 - Caffeine Meter Project
 
 
