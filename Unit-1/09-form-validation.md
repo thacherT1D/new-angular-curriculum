@@ -12,7 +12,7 @@ Keep in mind that while client-side validation plays an important role in provid
 
 Remember how to build forms? Let's make sure.
 
-- Create a form with an action to # (you can use javascript:void(0) as well - wondering what that does? Read [this](http://stackoverflow.com/questions/1291942/what-does-javascriptvoid0-mean))
+- Create a form with an action to # (you can use `javascript:void(0)` as well - wondering what that does? Read [this](http://stackoverflow.com/questions/1291942/what-does-javascriptvoid0-mean))
 - Inside your form add two text inputs (each one should have a label with the `for` attribute matching the `id` of each input) and an input with type of `submit` and a value of `Click me!`
 
 Your form should look like this
