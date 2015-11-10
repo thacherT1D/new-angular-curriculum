@@ -25,7 +25,7 @@ angular.module("firstApp").controller("FirstController", function($scope, $rootS
 ##### If you wanted to create a sample rootscope (this is what $rootScope essentially is) you could write something like this:
 `var rootScope = angular.element(document).scope()`
 
-Now you might be thinking, if everything comes from $rootScope then angular must be using some kind of inheritance? That is correct! Well, With one exception. Custom directives that create their own (isolate) scope, but that's quite beyond the scope of this lesson (pun slightly intended).
+Now you might be thinking, if everything comes from $rootScope then angular must be using some kind of inheritance? That is correct! Well, with one exception, custom directives that create their own (isolate) scope, but that's quite beyond the scope of this lesson (pun slightly intended).
 
 All scopes are created with prototypal inheritance, meaning that they have access to their parent scopes. Any time that Angular can not find a method or property on the local scope, it will move up to its parent scope and try to look for the property or method there. If it can’t find what it's looking for, it will go to the parent scope’s parent and so on and so forth until it reaches the `$rootScope`. 
 
