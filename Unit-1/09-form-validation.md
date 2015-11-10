@@ -19,9 +19,9 @@ Your form should look like this
 
 ```html
 <form action="#">
-  <label for="firstname">Firstname: </label>
+  <label for="firstname">First Name: </label>
   <input type="text" id="firstname">
-  <label for="lastname">Lastname: </label>
+  <label for="lastname">Last Name: </label>
   <input type="text" id="lastname" >
   <input type="submit" value="Click me!">
 </form>
@@ -35,13 +35,13 @@ Your form should now look like this
 <form action="#">
   <label for="firstname">First Name: </label>
   <input type="text" id="firstname" required>
-  <label for="lastname">First Last: </label>
+  <label for="lastname">Last Name: </label>
   <input type="text" id="lastname" required>
   <input type="submit" value="Click me!">
 </form>
 ```
 
-Now this is great, but it would be nice if we could be a bit more specific on what we want to validate inside this form. What if we want the First Name to be present, but it has to be at least three characters and the last name does not need to be present, but if it is, it should also be at least 3 characters (we still need to make sure Bono can sign up for our application).
+Now this is great, but it would be nice if we could be a bit more specific on what we want to validate inside this form. What if we want (a) the First Name to be present, but it has to be at least three characters, and (b) the Last Name does not need to be present, but if it is, it should also be at least 3 characters (we still need to make sure Bono can sign up for our application)?
 
 Our first thought might be to start writing a bunch of javascript and figure out if there is any text inside the input and if so, to figure out the length. While this would work, angular has a nicer way to help us out. But before we do this, let's learn about some of the key properties and classes we will be using to validate forms in angular.
 
