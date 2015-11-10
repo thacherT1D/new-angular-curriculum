@@ -14,7 +14,7 @@ Typical issues with complex single page apps are:
 * You can't bookmark parts of a SPA
 * If all of our code is in a single template, things can get incredibly messy
 
-Angular provides solutions for all of the above issues through it's router.  We can break out a view into multiple smaller views that are rendered inside of a layout depending on the URL the user is currently accessing.
+Angular provides solutions for all of the above issues through it's router.  We can break down a view into multiple smaller views that are rendered inside of a layout depending on the URL the user is currently accessing.
 
 We'll see how to use the `$routeProvider`, to make use of the browser’s history navigation and allow users to bookmark and share specific pages based off of the current URL.  Let's get started.
 
