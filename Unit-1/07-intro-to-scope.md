@@ -7,7 +7,7 @@
 Although it sounds complex, `$scope` is just a JavaScript object. Both the controller and the view have access to `$scope` so it can be used for communication between the two. When a controller is attached to the DOM via the `ng-controller` directive, Angular will instantiate a new controller object. A new child scope will be created and made available as an injectable parameter. This is what happens when we write code like this:
 
 ```js
-angular.module("firstApp").controller("FirstController", function($scope){
+angular.module("firstApp",[]).controller("FirstController", function($scope){
   // we can define all sorts of methods and properties on $scope here
 })
 ```
@@ -17,7 +17,7 @@ angular.module("firstApp").controller("FirstController", function($scope){
 Every application has a single root scope. All other scopes decent from `$rootScope` which we can inject into our controllers (by adding `$rootScope as a parameter to the callback function on the .controller method`)
 
 ```js
-angular.module("firstApp").controller("FirstController", function($scope, $rootScope){
+angular.module("firstApp",[]).controller("FirstController", function($scope, $rootScope){
   // now we can add things to $rootScope!
 })
 ```
