@@ -17,7 +17,7 @@ Fortunately, it's not too bad! Angular will trigger animations based on events (
 
 It's also very important to note what ngAnimate **isn't**. It does NOT actually do any animations, all it does is provide us a set of CSS classes to target for animation as well as the ability to create our own custom animations (which is a bit beyond the scope of this lesson). Before we examine how to start using ngAnimate, we need to make sure we have a decent understanding of CSS animations (which we will be using for almost all our examples and exercises in this curriculum). 
 
-If you are feeling a bit shaky on CSS animations (transitions/transforms/keyframes), spend a bit of time reviewing the next section. An understanding of CSS animations is an extremely valuable skill set and it's really not too bad!
+If you are feeling a bit shaky on CSS animations (transitions/transforms/keyframes), spend a bit of time reviewing the next section - an understanding of CSS animations is an extremely valuable skill set.
 
 ### Quick review on CSS transitions, transforms and animations
 
