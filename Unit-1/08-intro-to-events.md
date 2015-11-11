@@ -129,7 +129,7 @@ $scope.replay = function() {
   	// if done replay colors
   	  replaying = false;
   	// else
-  		$timeout(dispalyPrevColor, 1000);
+  		$timeout(displayPrevColor, 1000);
   	// end if/else 
   };
   if (!replaying) {
