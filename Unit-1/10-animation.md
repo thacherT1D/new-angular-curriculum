@@ -218,7 +218,7 @@ Let's use the same HTML as above, but change our CSS to use the following:
 
 ## Exercises
 
-- If you have not worked on [this](https://github.com/gSchool/css-animations), yet. Finish reading through and experimenting with a few of the exercises there.  
+- If you have not worked on [this](https://github.com/gSchool/css-animations) yet, finish reading through and experimenting with a few of the exercises there.  
 - From the very first example, add a different animation without using animate.css
 - In the second example, add a different animation without using animate.css
 - In the second example, add a different animation with animate.css (experiment with this one - animate.css is awesome!)
