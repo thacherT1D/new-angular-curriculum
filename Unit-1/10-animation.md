@@ -4,16 +4,16 @@ To get started with animations we need to include a module which our application
 
 1 - make sure we add `<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-animate.js"></script>` to our `html` file (make sure this script is BELOW the `angular.js` script).
 
-2 - inside of our javascript file, we need to include this dependency when we create our module, so our code should look something like this
+2 - inside of our JavaScript file, we need to include this dependency when we create our module, so our code should look something like this
 `angular.module('animateApp', ['ngAnimate'])`
 
 ### A brief introduction
 
-You may be asking - why do we need a separate module for this? Can't we just use our own css/javascript animations? The answer is yes, but the simplest answer is that we want to do things the "angular" way. A more complex answer is that with ngAnimate, we have access to Angular's event loop so our animations occur at the right point, which means we do not have to potentially fight the framework. At the same time, getting animations to work well across all browsers exactly right is quite a challenge. If you'd like to learn more about that and some of the reasons why ngAnimate is so useful, check out [this](https://www.youtube.com/watch?v=5vA6aomUPNw) video.
+You may be asking - why do we need a separate module for this? Can't we just use our own CSS/JavaScript animations? The answer is yes, but the simplest answer is that we want to do things the "angular" way. A more complex answer is that with ngAnimate, we have access to Angular's event loop so our animations occur at the right point, which means we do not have to potentially fight the framework. At the same time, getting animations to work well across all browsers exactly right is quite a challenge. If you'd like to learn more about that and some of the reasons why ngAnimate is so useful, check out [this](https://www.youtube.com/watch?v=5vA6aomUPNw) video.
 
 ### So how does it work?
 
-Fortunately, it's not too bad! Angular will trigger animations based on events (enter, leave, move, add and remove). When one of these events occur, angular will attach a class to that element which we can use to target with css and set an animation.
+Fortunately, it's not too bad! Angular will trigger animations based on events (enter, leave, move, add and remove). When one of these events occur, angular will attach a class to that element which we can use to target with CSS and set an animation.
 
 It's also very important to note what ngAnimate **isn't**. It does NOT actually do any animations, all it does is provide us a set of CSS classes to target for animation as well as the ability to create our own custom animations (which is a bit beyond the scope of this lesson). Before we examine how to start using ngAnimate, we need to make sure we have a decent understanding of CSS animations (which we will be using for almost all our examples and exercises in this curriculum). 
 
@@ -29,7 +29,7 @@ Once you have gone through the repo, take a look at [this](https://css-tricks.co
 
 ### Getting Started - Angular Directives and Supported Animations
 
-As mentioned previously, ngAnimate gives us a set of css classes to target for animation. The table below gives us a good idea of what those classes are for each of these built in directives.
+As mentioned previously, ngAnimate gives us a set of CSS classes to target for animation. The table below gives us a good idea of what those classes are for each of these built in directives.
 
 
 | Directive  | Supported Animations  |   
