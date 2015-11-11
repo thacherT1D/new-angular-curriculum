@@ -22,7 +22,6 @@
 - Custom Filters
 - HTTP Service
 - Movie Search App
-- **ADD ANIMATION LESSON**
 - **UPDATE MADLIBS - add animation**
 
 

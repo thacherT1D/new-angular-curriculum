@@ -13,7 +13,8 @@ Unit 1:
  * [Scope](/Unit-1/07-intro-to-scope.md)
  * [Angular Events](/Unit-1/08-intro-to-events.md) 
  * [Form Validation](/Unit-1/09-form-validation.md) 
- * [Unit 1 Assessment Reddit Clone](/Unit-1/10-reddit-clone.md)
+ * [Animations](/Unit-1/10-animation.md) 
+ * [Unit 1 Assessment Reddit Clone](/Unit-1/11-reddit-clone.md)
 
 Unit 2:
 
