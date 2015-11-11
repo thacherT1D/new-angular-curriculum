@@ -50,18 +50,100 @@ It should display the 2 players' scores, have buttons to increment each player's
 
 ![](https://i.gyazo.com/40d31881e3774f4f374503920e784931.gif)
 
-
 **EXERCISE - Contact List**
 
 Create a simple contacts app.  Each contact has a name, email, and phone number.  A user can create new contacts using a form.  A user can search contacts as well (you'll need to research this part). HINT: try binding name, email, and phone as properties on one `newContact` object rather than creating 3 different properties on the `$scope`
 
 ![](https://i.gyazo.com/e1dba3d8e24812690d1af363630af5a6.gif)
 
+### ng-mouseenter
+
+```ng-mouseenter``` is another event that you have access to in angular.  Let's make a quick counter that counts every time a div gets a mouse enter event.
+
+In your controller add:
+
+```js
+$scope.enterCount = 0;
+```
+
+In your view, display the number of times the div was entered, along with the div itself.  Notice that the div has the ng-mouseenter attribute which evaluates an expression every time a mouse enter occurs:
+
+```html
+<h3>The div was entered {{enterCount}} times</h3>
+<div class="divbox" ng-mouseenter="enterCount = enterCount + 1">
+</div>
+```
+
+You will also need to add some css to see the div:
+
+```css
+.divbox {
+  width: 400px;
+  height: 400px;
+  border-style: solid;
+  border-width: 6px;
+}
+```
+
+Now you have a mouse enter event working on your div.
+
+**EXERCISE: Create a box that randomly changes colors**
+
+Use ```ng-mouseenter``` and ```ng-style``` to create a box that gets a new random color every time your mouse enters the box.  The gif below, in the next exercise, will give you and idea of how the random color box should work.
+
+**Hint**:
+
+Here is code to generate a random hex color:
+
+```js
+  function randomColor() {
+    var x=Math.round(0xffffff * Math.random()).toString(16);
+    var y=(6-x.length);
+    var z="000000";
+    var z1 = z.substring(0,y);
+    var color = "#" + z1 + x;
+    return color;
+  }
+```
+
+**EXERCISE: Replay colors**
+
+Now that you have a box that will change to a new random color on each mouse enter, use ```ng-click``` and the ```$timeout``` service to create a feature that will show all the random colors that have been clicked in reverse order.
+
+In the gif below, you can see the user refreshes the page, mouses over the box 4 times, then clicks the replay colors button.  The colors are then replayed in reverse order.
+
+![](http://i.imgur.com/iWqXHnv.gif)
+
+**Hint**:
+
+1. You will need to save an array of each color that was randomly generated for the box.
+2. To replay the colors, you will need to use the ```$timeout``` service.  Here is a pattern for calling the ```$timeout``` service to solve this problem:
+
+```js
+
+var replaying = false;
+
+$scope.replay = function() {
+  var displayPrevColor = function() {
+  	// do some logic to change color
+  	// if done replay colors
+  	  replaying = false;
+  	// else
+  		$timeout(dispalyPrevColor, 1000);
+  	// end if/else 
+  };
+  if (!replaying) {
+  	replaying = true;
+  	// This timeout starts the timeout loop
+    $timeout(function() { displayPrevColor(); }, 500);
+  }
+};
+```
+
 ### Other Events
 
 There are a bunch of other built-in event directives like
 
-* ng-submit
 * ng-change
 * ng-mousedown
 * ng-mouseenter
