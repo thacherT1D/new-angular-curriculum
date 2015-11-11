@@ -139,6 +139,47 @@ $scope.replay = function() {
   }
 };
 ```
+### ng-submit
+
+```ng-submit``` can be used whenever you want an action to take place on a form submit.  The ```ng-submit``` directive prevents the default broswer behavior (sending a request to some action and refreshing the page).  It also evaluates the expression in the ```ng-submit```.  For example:
+
+
+**index.html**
+
+```html
+<form ng-submit="submitFav()" name="favPieForm">
+  <input name="name" type="text" ng-model="favoriteForm.name">
+  <input name="favorite_pie" type="text" ng-model="favoriteForm.favoritePie">
+  <input type="submit">
+</form>
+Name: {{favoriteForm.name}}<br>
+Favorite Pi: {{favoriteForm.favoritePie}}
+```
+**app.js**
+
+```js
+  $scope.favoriteForm = {};
+  $scope.submitFav = function() {
+    var favPi = parseFloat($scope.favoriteForm.favoritePie);
+    // Special output if the favorite pie is a certain number
+    if (!isNaN(favPi) && favPi >= 3.14 && favPi <= 3.142) {
+      $scope.favoriteForm.favoritePie = "\u03A0";
+    }
+    console.log("Your favorite pie is: ", $scope.favoriteForm.favoritePie);
+  }});
+```
+
+#### ng-submit Anti Patterns
+
+An anti pattern is a way of writing code that is a bad practice in your framework.  There are a few things you should **not** do with ```ng-submit```.
+
+1. Do not use ```ng-submit``` on the form and ```ng-click``` on the submit button at the same time.  Use either ng-submit on the form and no directive on the submit button, or use ```ng-click``` on the submit button and no directive on the form. ```ng-submit``` is preferred in a form.
+2. Do not create separate properties directly on the `$scope` object for each form field.  Instead, create an object that contains all the form properties inside of it.  In the above example, `$scope.favoriteForm = {};` is the object that will contain each form property.
+3. Never do any DOM manipulation in your controller.  When submitting form data, it is often tempting to revert back to the jQuery way of doing things.  For example, do not attempt to append the new form data to the DOM inside of your controller.  Again, **do not do any DOM manipulation in the controller**.  Instead, add the data that you want to display to an object in the scope that will then be displayed in the view.
+
+**Exercise**
+
+Create a form for entering address data.  The form should accept a street (line 1), street (line 2), city, state, and zip code.  When the data is submitted, it again should be shown to the user (displayed on the page) and the form data should be cleared so that more data can be entered.
 
 ### Other Events
 
