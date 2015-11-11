@@ -59,7 +59,7 @@ Here is an example (remember these enter/leave classes don't work for ALL direct
         opacity: 1;
     }
 
-    .ng-leave.{
+    .ng-leave{
         transition: 0.5s ease all;
         opacity: 1;
     }
