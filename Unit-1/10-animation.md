@@ -134,10 +134,6 @@ In our `style.css`:
   transition:0.5s linear all;
   opacity:0;
 }
-
-
-
-
 ```
 
 ### Side note - What are we doing that is not great with our ng-model? Think back to the scope lesson, what should we be adding?
