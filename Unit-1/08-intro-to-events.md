@@ -8,7 +8,7 @@ Angular provides event-handling directives to help us write interactive applicat
 
 In a controller, let's add a property to the `$scope` called `number`:
 
-```js
+```jsdi
 $scope.number = 5;
 ```
 
@@ -129,7 +129,7 @@ $scope.replay = function() {
   	// if done replay colors
   	  replaying = false;
   	// else
-  		$timeout(dispalyPrevColor, 1000);
+  		$timeout(displayPrevColor, 1000);
   	// end if/else 
   };
   if (!replaying) {
