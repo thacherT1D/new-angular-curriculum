@@ -2,7 +2,7 @@
 
 To get started with animations we need to include a module which our application will depend on (this is also called a dependency). The name of our module is ngAnimate and it is not directly part of the angular script that we are using, so we need to do 2 things:
 
-1 - make sure we add `<script src="http://ajax.googleapis.com/ajax/libs/angularjs/X.Y.Z/angular-animate.js"` to our `html` file (make sure this script is BELOW the `angular.js` script).
+1 - make sure we add `<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-animate.js"></script>` to our `html` file (make sure this script is BELOW the `angular.js` script).
 
 2 - inside of our javascript file, we need to include this dependency when we create our module, so our code should look something like this
 `angular.module('animateApp', ['ngAnimate'])`
@@ -42,7 +42,7 @@ As mentioned previously, ngAnimate gives us a set of css classes to target for a
 | ng-class  | add,remove  |   
 | ng-show & ng-hide  | add,remove(for ng-hide) |   
 
-All of these supported animations have a class of `ng-` which includes `ng-enter`,`ng-leave`,`ng-add`,`ng-remove`. We are also given an `ng-SOME_EVENT-active` class which we can use to target. This is really nice because all of our animation code can now be isolated. Our CSS even becomes easier to debug because we know exactly where animations are being done!
+All of these supported animations have a class of `ng-` which includes `ng-enter`,`ng-leave`,`ng-add`,`ng-remove`. This is really nice because all of our animation code can now be isolated. Our CSS even becomes easier to debug because we know exactly where animations are being done!
 
 In CSS, we now have access to classes that look like `.ng-EVENT` for the starting styles and `.ng-EVENT.ng-EVENT-active` for when the animation is complete.
 
