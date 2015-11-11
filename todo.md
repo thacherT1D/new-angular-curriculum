@@ -11,6 +11,8 @@
 - **Revisit numbering here -- why is intro to controllers 06, while built-in directives is 05**
 - Built-In Directives
 - Angular Events
+- Form Validation
+- Animations
 - Unit 1 Assessment Reddit Clone
 
 
@@ -28,6 +30,7 @@
 ## Unit 3
 
 - Dependency Injection
+- Digest Cycle
 - Services and Promises
   - BREAK APART INTO TWO LESSONS
 - Shopping Cart App
