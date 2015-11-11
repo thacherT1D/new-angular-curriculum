@@ -8,7 +8,7 @@ So now that we have an stronger understanding of what angular is, how to structu
 
 `$scope.$apply` - Sometimes we see that scope data is not getting updated on our HTML content. This can happen when we are using APIs that are external to angular (`setTimeout`, `XHR`). When we are not able to get updated data, we have to forcefully fire a digest cycle, this is where $scope.$apply helps us out. While this sounds quite helpful, you should be using this **VERY INFREQUENTLY**. 
 
-You can check to see if the digest cycle is running by examining `$scope.$$phase`. If you see that this returns `"$apply"`, the cycle is running and an exception will be thrown if you try to call `$scope.$apply()`, otherwise you can call `$scope.$apply` and your data will be updated.
+You can check to see if the digest cycle is running by examining `$scope.$$phase`. If you see that this returns `"$apply"` or `"$digest"`, the cycle is running and an exception will be thrown if you try to call `$scope.$apply()`, otherwise you can call `$scope.$apply` and your data will be updated.
 
 ### What is the difference between $scope.digest and $scope.apply
 
