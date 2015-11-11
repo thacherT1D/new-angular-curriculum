@@ -141,7 +141,7 @@ In our `style.css`:
 ## Animating with ng-repeat 
 
 ```html
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" ng-app="animateApp" ng-cloak>
 <head>
   <meta charset="UTF-8">
