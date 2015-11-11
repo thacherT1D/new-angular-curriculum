@@ -72,10 +72,11 @@ $http.get('https://api.github.com/zen').then(function(data){
 });
 ```
 
-NOTE: If you have trouble sending GET requests to 'https://api.github.com/zen' ,
+#NOTE: If you have trouble sending GET requests to 'https://api.github.com/zen' ,
 create a new json file in your application and send get requests to retrieve data from 
 that newly created file.
-PS: sometimes the api reaches it's daily limit of calls and shuts down for the day
+
+#PS: sometimes the api reaches it's daily limit of calls and shuts down for the day
 
 **EXERCISE:** Read about [the same origin policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) ([wikipedia has some good info too](https://en.wikipedia.org/wiki/Same-origin_policy)) and [Cross-Origin Resource Sharing or CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS).  Describe what both the same origin policy and CORS are.
 
