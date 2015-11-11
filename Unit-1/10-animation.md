@@ -51,22 +51,22 @@ For ng-show and ng-hide, the four classes are `ng-hide-remove`, `ng-hide-remove-
 Here is an example (remember these enter/leave classes don't work for ALL directives)
 
 ```css
-    .ng-enter{
-        transition: 0.5s ease all;
-        opacity: 0;
-    }
-    .ng-enter.ng-enter-active{
-        opacity: 1;
-    }
+.ng-enter{
+    transition: 0.5s ease all;
+    opacity: 0;
+}
+.ng-enter.ng-enter-active{
+    opacity: 1;
+}
 
-    .ng-leave{
-        transition: 0.5s ease all;
-        opacity: 1;
-    }
+.ng-leave{
+    transition: 0.5s ease all;
+    opacity: 1;
+}
 
-    .ng-leave.ng-leave-active{
-        opacity: 0;
-    }
+.ng-leave.ng-leave-active{
+    opacity: 0;
+}
 ```
 
 Aside from the `.ng-enter-active` and `.ng-leave-active` classes, we are given `.ng-enter-stagger` and `.ng-leave-stagger` classes as well so that we can use staggered animations (an animation that contains a delay between each successive animation, you can read more about it [here](http://www.yearofmoo.com/2013/12/staggering-animations-in-angularjs.html#staggering-animations)). 
