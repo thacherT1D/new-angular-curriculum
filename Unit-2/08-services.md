@@ -123,7 +123,7 @@ angular.module("learningServices").service("firstService", function(){
       // another AJAX call to our database to add a user
     }
   }
-  })
+})
 ```
 
 Now in our controller, we can inject this service:
@@ -132,7 +132,7 @@ Now in our controller, we can inject this service:
 angular.module("learningServices").controller("FirstController", ["$scope", "firstService", function($scope, firstService){
   $scope.greeting = firstService.sayHi(); 
   $scope.users = firstService.getAllUsers();
-  }])
+}])
 ```
 
 ### Answer the following questions:
