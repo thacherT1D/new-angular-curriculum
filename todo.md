@@ -31,8 +31,8 @@
 
 - Dependency Injection
 - Digest Cycle
-- Services and Promises
-  - BREAK APART INTO TWO LESSONS
+- Services 
+- Promises
 - Shopping Cart App
 - **ADD BUILT PROCESS LESSON**
 - **ADD TESTING OVERVIEW LESSON**
