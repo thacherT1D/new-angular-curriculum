@@ -43,7 +43,7 @@ angular.module("learnServices", [])
 }])
 ```
 
-You can use services just like factories or when you need just a simple object. Services are quite easy to use, but they do not have the flexibility of a factory because they can not be instantiated. Services also make use of the keyword `this` when used. Here is a quick example of a simple service.
+You can use services just like factories or when you need just a simple object and services can make use of the keyword `this` when used. Here is a quick example of a simple service.
 
 ```js
 angular.module("learnServices", [])
