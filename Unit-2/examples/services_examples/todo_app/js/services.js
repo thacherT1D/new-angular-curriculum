@@ -1,4 +1,4 @@
-angular.module('todoApp').factory('todoService', function(){
+angular.module('todoApp').service('todoService', function(){
   var todos = []
   return {
     getTodos: function(){

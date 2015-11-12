@@ -1,4 +1,4 @@
-angular.module("mathApp").factory("mathService", function(){
+angular.module("mathApp").service("mathService", function(){
   return {
     add: function(a,b){
       return a + b;
