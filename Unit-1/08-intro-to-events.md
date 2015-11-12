@@ -166,7 +166,7 @@ Favorite Pi: {{favoriteForm.favoritePie}}
       $scope.favoriteForm.favoritePie = "\u03A0";
     }
     console.log("Your favorite pie is: ", $scope.favoriteForm.favoritePie);
-  }});
+  };
 ```
 
 #### ng-submit Anti Patterns
