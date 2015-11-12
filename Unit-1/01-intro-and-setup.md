@@ -27,9 +27,9 @@ Unit 2:
  * [Dependency Injection](/Unit-2/07-dependency-injection.md)
  * [Services](/Unit-2/08-services.md)
  * [Promises](/Unit-2/09-promises.md)
- * [Custom Directives Part 1](/Unit-2/09-custom-directives-part1.md)
- * [Custom Directives Part 2](/Unit-2/10-custom-directives-part2.md)
- * [Shopping Cart App](/Unit-2/11-shopping-cart-app.md)
+ * [Custom Directives Part 1](/Unit-2/10-custom-directives-part1.md)
+ * [Custom Directives Part 2](/Unit-2/11-custom-directives-part2.md)
+ * [Shopping Cart App](/Unit-2/12-shopping-cart-app.md)
 
 Unit 3 - Refactoring, Angular Style, and Backend Integration
 
