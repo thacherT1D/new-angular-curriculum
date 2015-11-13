@@ -82,7 +82,7 @@ A provider is the most complex method and is used less frequently. It is a facto
 
 ### So which one??
 
-Many articles (esspecially ones that are a bit older) will lean towards factories, but with the new ES2015 syntax, services are becoming more preferable. We will be using services, but be aware of both of these and the differences between them. 
+Many articles (especially ones that are a bit older) will lean towards factories, but with the new ES2015 syntax, services are becoming more preferable. We will be using services, but be aware of both of these and the differences between them. 
 
 To read more about the differences and why some choose factories over services and vise versa - check out these articles:
 
