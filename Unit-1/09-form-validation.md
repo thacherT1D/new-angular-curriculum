@@ -115,7 +115,7 @@ First, answer the following questions
 - What validations would you add in an input to make sure that there is a minimum length of 4 and a maximum length of 20
 - What validation would you add in an input to make sure that only numbers between 1 and 5 are a valid input (use regular expressions for this!)
 
-#### Let's style our form and add some error messages! 
+## Exercise - styling our form and adding some error messages! 
 
 Now that you have a solid understanding of these properties/classes, let's build another form with an action of "#" and four text inputs for a username, password, email and zip code. Your form should validate that the username and password are both between 3 and 12 characters long. It should also make sure that the email is a valid email and that the zip code is a five digit number (use ng-pattern and regular expressions for this!). 
 
@@ -134,12 +134,6 @@ Now that we have an idea of how to style and display error messages, let's do th
 Your form should work like this:
 
 [![https://gyazo.com/a6a93b98ada81f54140052956cea2cb0](https://i.gyazo.com/a6a93b98ada81f54140052956cea2cb0.gif)](https://gyazo.com/a6a93b98ada81f54140052956cea2cb0)
-
-## Exercise 
-
-Complete the Assignment here:
-
-[https://github.com/gSchool/angular-form-validation](https://github.com/gSchool/angular-form-validation)
 
 ## Bonus - refactor using ngMessages
 
