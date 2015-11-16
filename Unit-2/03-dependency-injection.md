@@ -10,9 +10,9 @@ Hmm...that might not be terribly helpful (but if it is - feel free to skip ahead
 
 ### A bit more about DI
 
-In order to understand more about dependency injection, we have to first understand where the need for this pattern came from. The need for this pattern came when applications started to become more "modular" 
+In order to understand more about dependency injection, we have to first understand where the need for this pattern came from. The need for this pattern came when applications started to become more "modular".
 
-As a quick refresher - when writing modular code, we break apart our application into smaller pieces (that are not always related to each other) so that we can write more testable and maintainable code. You can read more about modular programming [here](https://en.wikipedia.org/wiki/Modular_programming)
+As a quick refresher - when writing modular code, we break apart our application into smaller pieces (that are not always related to each other) so that we can write more testable and maintainable code. You can read more about modular programming [here](https://en.wikipedia.org/wiki/Modular_programming).
 
 Now this all sounds wonderful, but in order to write more modular code, we need a set of rules to govern how best to do this. One of those rules is the **Separation of Concerns**. You might have heard about this before, if not let's see what Wikipedia has to say about it:
 
