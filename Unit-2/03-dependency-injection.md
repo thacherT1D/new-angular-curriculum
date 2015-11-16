@@ -143,6 +143,8 @@ app.controller('SampleController', function($scope, $rootScope){
 
 [A great video on DI as a concept](https://www.youtube.com/watch?v=IKD2-MAkXyQ)
 
+[A great video on DI in Angular](https://www.youtube.com/watch?v=7VFUQCKYRbg)
+
 [http://stackoverflow.com/questions/130794/what-is-dependency-injection](http://stackoverflow.com/questions/130794/what-is-dependency-injection)
 
 [Angular Docs on DI](https://docs.angularjs.org/guide/di)
