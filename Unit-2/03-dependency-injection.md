@@ -138,7 +138,7 @@ app.controller('SampleController', function($scope, $rootScope){
 ```
 
 
-- In the above example (SampleController) does the order of the dependencies matter?  Does $scope have to come before $rootScope?  Do the names matter?  Could we name them something else?
+- In the above example (`SampleController`) does the order of the dependencies matter?  Does `$scope` have to come before `$rootScope`?  Do the names matter?  Could we have named them something else?
 
 - Look at an angular app you have made previous (reddit clone or your portfolio site).  What dependencies are there?  Where do you see dependencies other than the controller?
 
