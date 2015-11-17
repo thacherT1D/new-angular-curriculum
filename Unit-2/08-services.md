@@ -142,7 +142,7 @@ angular.module("learningServices").controller("FirstController", ["$scope", "fir
 - What is the difference between a factory, service and provider?
 - Name at least 3 angular built in services that we have used so far.
 
-### Exercise 1 - mathService
+**EXERCISE 1: mathService**
 
 For this exercise you will be building a simple application which contains a form where a user can selects an operation (add, subtract, multiply, divide and power) and two numbers and when the form is submitted, the value expression is returned.
 
@@ -154,7 +154,7 @@ It should function like (and look far better than) this:
 
 [![https://gyazo.com/9f2e41f9a7d5124763fac27f44ce3c86](https://i.gyazo.com/9f2e41f9a7d5124763fac27f44ce3c86.gif)](https://gyazo.com/9f2e41f9a7d5124763fac27f44ce3c86)
 
-### Exercise 2 - todoService
+**EXERCISE 2: todoService**
 
 For this exercise you will be building a todo app will full CRUD (no backend required). It should have the following requirements
 
@@ -170,7 +170,7 @@ It should function like (and look far better than) this:
 
 [![https://gyazo.com/ac2169731726c391acfd87cf50137e58](https://i.gyazo.com/ac2169731726c391acfd87cf50137e58.gif)](https://gyazo.com/ac2169731726c391acfd87cf50137e58)
 
-### Exercise 3 - refactoring our contacts app
+**EXERCISE 3: refactoring our contacts app**
 
 Revisit your contacts app from previous lessons. In contact app, add the following code to a new service inside `service.js`:
 
@@ -209,4 +209,7 @@ app.controller('ContactController', ["$scope", "ContactList", function($scope, C
 - Refactor your contacts app to use a ContactList service.  Remember to stick with best practices and use the inline array annotation.
 
 - Add a show page to your contacts app. This will require a separate controller but you can use the same ContactList service and share it between controllers. The "id" for the show page should by the index of contact in the contactList.
+
+**EXERCISE 4:** Use the [Giphy Api](https://github.com/Giphy/GiphyAPI) to add a feature to to the contacts application.  Whenever a new user is submitted, do a search for a gif using the person's name.  If you get a result, save that along with the users name email and phone number.  Show the user's gif on the show page.  HINT: you will NOT want to use the embedded url from the giphy search resutls.
+
 
