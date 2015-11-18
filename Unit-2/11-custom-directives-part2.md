@@ -271,4 +271,4 @@ Tranclusion is a huge topic, and it's easy to get lost down confusing rabbit hol
 
 **EXERCISE** 
 
-Using everything you've learned about custom directives, refactor your Reddit clone to use them and clean up your HTML!
+Using everything you've learned about custom directives, refactor your Reddit clone to use them and clean up your HTML! Your refactor should use at least two custom directives: one for the add post form, and one for an individual post. If you want to push yourself, you should also add a custom directive for the comment area of a post, which should be nested inside of your custom post directive. 
