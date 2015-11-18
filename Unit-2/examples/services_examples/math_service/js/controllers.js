@@ -1,6 +1,6 @@
 angular.module("mathApp").controller("MathController", ["$scope", "mathService", function($scope, mathService){
-
-  $scope.operations = ["add", "subtract", "multiply", "divide", "power"]
+  debugger
+  $scope.operations = Object.keys(mathService)
   $scope.calculation = "add"
 
   // these are all binary operations, so we only need two parameters
