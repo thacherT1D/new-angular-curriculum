@@ -132,7 +132,7 @@ For example, suppose you have a custom directive called `gs-parent`, and another
 ```js
 app.directive('gsParent', function() {
   return {
-    templateUrl: 'partials/parent.html'
+  templateUrl: 'partials/parent.html',
     controller: ['$scope', function($scope) {
       $scope.parentMessage = function() {
         alert("I live on the parent!");
@@ -143,7 +143,7 @@ app.directive('gsParent', function() {
 
 app.directive('gsChild', function() {
   return {
-  	templateUrl: 'partials/child.html'
+  	templateUrl: 'partials/child.html',
     link: function(scope, element, attrs) {
       element.on('click', function() {
         scope.parentMessage();
