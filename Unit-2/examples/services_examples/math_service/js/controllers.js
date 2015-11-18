@@ -1,5 +1,5 @@
 angular.module("mathApp").controller("MathController", ["$scope", "mathService", function($scope, mathService){
-  debugger
+
   $scope.operations = Object.keys(mathService)
   $scope.calculation = "add"
 
