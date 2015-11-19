@@ -202,7 +202,6 @@ Suppose you're building a photo sharing app, and that each displayed photo can h
   <div class="col-xs-4 col-xs-offset-4">
     <div class="well">
       <img ng-src="{{src}}">
-      <ng-transclude></ng-transclude>
     </div>
   </div>
 </div>
