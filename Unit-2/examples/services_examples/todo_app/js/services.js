@@ -9,8 +9,8 @@ angular.module('todoApp').service('todoService', function(){
       todos.push(todo);
     },
     editTodo: function(index,todo){
-      todos.splice(index, 1, todo);
-      todo.editFormShowing = false
+      todos[index].task = todo.task
+      todos[index].editFormShowing = false
     },
     removeTodo: function(index){
       todos.splice(index, 1);
