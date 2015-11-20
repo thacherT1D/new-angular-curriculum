@@ -117,7 +117,7 @@ Create a simple dice rolling app in angular:
 
 When the user hovers over the square, the cursor should change to a pointer, and when the user clicks, a random number between 1 and 6 should display. 
 
-Use a custom directive for the die, and include a controller for your directive which encapsulates the logic of generating the random number. Include a `link` method to handle all DOM manipulation. Note: you should not have a `controllers.js` file for this exercise! (Or if you do, it shouldn't have any code in it!)
+Use a custom directive for the die, and include a controller for your directive which encapsulates the logic of generating the random number. Include a `link` method to handle all DOM manipulation. Note: you should not have a `controllers.js` file for this exercise!
 
 **Bonus** Use images rather than numbers, so that it looks like an actual die!
 **Bonus** Keep track of how many times each value occurs in a table that's displayed to the user.
