@@ -1,4 +1,4 @@
-### MEAN CRUD
+# MEAN CRUD
 
 ### Structuring a MEAN stack application
 

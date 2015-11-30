@@ -1,4 +1,4 @@
-## Authentication with Angular and JSON Web Tokens
+# Authentication with Angular and JSON Web Tokens
 
 ### Introduction to Token Authentication
 

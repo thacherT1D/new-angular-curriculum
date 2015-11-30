@@ -1,4 +1,4 @@
-### CRUD with ngResource
+# CRUD with ngResource
 
 ### Refactoring to use $resource
 

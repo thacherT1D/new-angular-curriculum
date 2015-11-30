@@ -1,4 +1,4 @@
-### Unit 3 Assessment - Reddit Clone, The Final Chapter
+# Unit 3 Assessment - Reddit Clone, The Final Chapter
 
 Congratulations - you've come to the end of Unit 3! By now you should have an strong understanding of how to build and structure MEAN stack applications and how to add authentication and authorization to a single page application. To put these skills to the test, let's refactor our reddit clone from Unit 1 to have the following.
 
