@@ -7,10 +7,9 @@ var jwt = require('jsonwebtoken');
 var secret = "awesomesauce";
 var token;
 
-// only allow AJAX calls!
+// only allow AJAX calls to prevent tampering in the browser bar 
 function checkHeaders(req,res,next){
   if(!req.headers["x-requested-with"]) {
-    console.log("NO HEADERS!");
     res.sendFile(path.join(__dirname, '../../client', 'index.html'));
   }
   else {
@@ -18,7 +17,7 @@ function checkHeaders(req,res,next){
   }
 }
 
-// only headers for a token and verify user!
+// middleware to check the token against params to authorize a user
 function checkToken(req,res,next){
   try {
     var decoded = jwt.verify(req.headers.authorization.split(" ")[1], secret);
