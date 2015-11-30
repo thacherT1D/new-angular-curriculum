@@ -86,13 +86,13 @@ app.service("AuthInterceptor", function($window,$location,$q){
     responseError: function(err){
       // if you mess around with the token, log them out and destroy it
       if(err.data === "invalid token" || err.data === "invalid signature" || err.data === "jwt malformed"){
-        $q.reject(err);
         $location.path("/logout");
+        return $q.reject(err);
       }
       // if you try to access a user who is not yourself
       if(err.status === 401){
-        $q.reject(err);
         $location.path('/home');
+        return $q.reject(err);
       }
       return $q.reject(err);
     }
