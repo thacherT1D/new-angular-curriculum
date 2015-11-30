@@ -49,6 +49,6 @@ $http.get('/api/icecreams').then(function(res) {
 
 **Exercise** If you don't have it already, add the ability to delete an ice cream directly from the index of all ice creams. You'll need to use the `$http` service to delete an ice cream from the databse.
 
-**Exercise** Refactor your earlier app so that all functionality lives in the `index.ejs` file. You should be able to add and edit ice creams from this single page (similar to how you added posts in the Reddit clone). Don't worry about routing yet -- we'll break these CRUD operations out into separate files and use the angular router soon enough!
+**Exercise** Refactor your earlier app so that all functionality lives in the `index.ejs` file. You should be able to add and edit ice creams from this single page (similar to how you added posts in the Reddit clone). Don't worry about routing yet -- we'll break these CRUD operations out into separate files and use the angular router soon enough! Note: in order for data to be passed from your form to your server correctly, you may need to add the following line to your `server.js` file: `app.use(bodyParser.json());`
 
 **Bonus** Try to create some custom directives for your ice cream app. What sorts of issues do you run into?
