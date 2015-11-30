@@ -27,9 +27,20 @@ Unit 2:
  * [Promises](/Unit-2/09-promises.md)
  * [Custom Directives Part 1](/Unit-2/10-custom-directives-part1.md)
  * [Custom Directives Part 2](/Unit-2/11-custom-directives-part2.md)
- * [Shopping Cart App](/Unit-2/12-shopping-cart-app.md)
+ * [Unit 2 Assessment Shopping Cart App](/Unit-2/12-shopping-cart-app.md)
 
 Unit 3:
+
+ * [Express/Mongo Review](/Unit-3/01-express-mongo-review.md)
+ * [Routing and Postman](/Unit-3/02-routing-and-postman.md)
+ * [Angular Express Project](/Unit-3/03-angular-with-express-project.md)
+ * [MEAN CRUD](/Unit-3/04-mean-crud.md)
+ * [CRUD with ngResource](/Unit-3/05-crud-with-ngResource.md)
+ * [MEAN Auth](/Unit-3/06-mean-auth.md)
+ * [ui-router](/Unit-3/07-ui-router.md)
+ * [Unit 3 Assessment Reddit Clone Redux](/Unit-3/08-unit-3-assessment.md)
+
+Unit 4:
 
  * [Firebase Intro](/Unit-3/01-firebase-intro.md)
  * [AngularFire Intro](/Unit-3/02-angularfire-intro.md)
@@ -37,7 +48,5 @@ Unit 3:
  * [AngularFire Project](/Unit-3/04-angularfire-project.md)
  * [AngularFire Auth](/Unit-3/05-angularfire-auth.md)
  * [Angular Structure and Style](/Unit-3/06-structuring-angular-apps.md)
- * [Angular + Express Setup](/Unit-3/07-angular-with-express-setup.md)
- * [Angular + Express Project](/Unit-3/08-angular-with-express-project.md)
- * [Angular + Rails Setup](/Unit-3/09-angular-with-rails-setup.md)
- * [Angular + Rails Resources and HTML5 Pushstate](/Unit-3/10-angular-with-rails-resources-and-paths.md)
+ * [Angular + Rails Setup](/Unit-3/07-angular-with-rails-setup.md)
+ * [Angular + Rails Resources and HTML5 Pushstate](/Unit-3/08-angular-with-rails-resources-and-paths.md)
