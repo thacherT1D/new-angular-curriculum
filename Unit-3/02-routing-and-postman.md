@@ -26,15 +26,15 @@ NEW *index* and *post* in **server.js:**
 
 ```javascript
 apiRouter.route('/icecreams')
+.get(function(req,res){
+  db.Icecream.find({},function(error,response){
+    res.json(response);
+  });
+})
 .post(function(req,res){
   db.Icecream.create(req.body,function(error){
     if (error) return res.json({error:error.message});
     res.json({ message: 'Ice-cream created!' });
-  })
-})
-.get(function(req,res){
-  db.Icecream.find({},function(error,response){
-    res.json(response);
   });
 });
 
