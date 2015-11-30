@@ -51,4 +51,4 @@ $http.get('/api/icecreams').then(function(res) {
 
 **Exercise** Refactor your earlier app so that all functionality lives in the `index.ejs` file. You should be able to add and edit ice creams from this single page (similar to how you added posts in the Reddit clone). Don't worry about routing yet -- we'll break these CRUD operations out into separate files and use the angular router soon enough!
 
-**Bonus** Create some custom directives for your ice cream app!
+**Bonus** Try to some custom directives for your ice cream app. What sorts of issues do you run into?
