@@ -63,9 +63,9 @@ Answer the following questions:
 
 ### Exercise
 
-1. Refactor your Icecream app from the previous lesson and move all of your view logic to the client side. The only routes you should have on your server are the catch all the API routes.
-
 1. Build a simple todo application using the `$http` service and the MEAN stack. A user should be able to see all todos, create new todos, edit a todo and delete a todo. The todos should be persistent and stored in a mongoDB collection. All routes should be handled by the angular router with the exception of your catch all and API. Use the express router for your API routes and use a service on the client side to manage your business logic.
+
+1. Refactor your Icecream app from the previous lesson and move all of your view logic to the client side. The only routes you should have on your server are the catch all the API routes.
 
 
 
