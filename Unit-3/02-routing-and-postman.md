@@ -85,7 +85,7 @@ apiRouter.route('/icecreams/:icecreamId')
   });
 })
 .put(function(req,res){
-  db.Icecream.findByIdAndUpdate(req.params.icecreamId, req.body.icecream, function(error,icecream){
+  db.Icecream.findByIdAndUpdate(req.params.icecreamId, req.body, function(error,icecream){
     if (error) return res.json({message: "Sorry, there was an error!", error: error});
     if (icecream && !icecream.imageUrl) {
       icecream.imageUrl = "http://www.purpledooricecream.com/content/images/mystery-icecream_website(1).jpg";
