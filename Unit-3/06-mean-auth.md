@@ -142,9 +142,9 @@ Here is an example of a resolve. In this route we are injecting two dependencies
 
 Here are three good resources to learn more about resolve:
 
-[https://www.youtube.com/watch?v=rbqRJQZBF3Q](https://www.youtube.com/watch?v=rbqRJQZBF3Q)
-
 [https://www.youtube.com/watch?v=vIDvluer97A](https://www.youtube.com/watch?v=vIDvluer97A)
+
+[https://www.youtube.com/watch?v=rbqRJQZBF3Q](https://www.youtube.com/watch?v=rbqRJQZBF3Q)
 
 [https://www.youtube.com/watch?v=cRjh7Pwobug](https://www.youtube.com/watch?v=cRjh7Pwobug)
 
