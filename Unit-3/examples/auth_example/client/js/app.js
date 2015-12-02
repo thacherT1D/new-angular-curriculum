@@ -2,11 +2,7 @@ var app = angular.module("authApp",['ngRoute']);
 
 app.config(function($routeProvider, $locationProvider, $httpProvider){
 
-  $routeProvider.when('/',{
-    templateUrl: "templates/login.html",
-    controller: "LoginController",
-    preventWhenLoggedIn: true
-  })
+  $routeProvider
   .when('/signup',{
     templateUrl: "templates/signup.html",
     controller: "SignupController",
@@ -18,9 +14,9 @@ app.config(function($routeProvider, $locationProvider, $httpProvider){
     controller: "LoginController",
     preventWhenLoggedIn: true
   })
-  .when('/home',{
-    templateUrl: "templates/home.html",
-    controller: "HomeController",
+  .when('/users',{
+    templateUrl: "templates/index.html",
+    controller: "UsersController",
     restricted: true,
     resolve: {
       currentUser : function(UserService) {
@@ -41,13 +37,10 @@ app.config(function($routeProvider, $locationProvider, $httpProvider){
     }
   })
   .when('/users/:id',{
-    templateUrl: "templates/user.html",
+    templateUrl: "templates/show.html",
     controller: "UserController",
     restricted: true,
     resolve: {
-      currentUser: function(UserService) {
-        return UserService.getCurrentUser();
-      },
       user: function(UserService,$route){
         return UserService.getSingleUser($route.current.params.id);
       }
@@ -58,15 +51,12 @@ app.config(function($routeProvider, $locationProvider, $httpProvider){
     controller: "EditController",
     restricted: true,
     resolve: {
-      currentUser: function(UserService) {
-        return UserService.getCurrentUser();
-      },
       user: function(UserService,$route){
         return UserService.getSingleUser($route.current.params.id);
       }
     }
   })
-  .otherwise({redirectTo: '/'});
+  .otherwise({redirectTo: '/login'});
 
   $locationProvider.html5Mode(true);
 
@@ -81,7 +71,7 @@ app.service("AuthInterceptor", function($window,$location,$q){
       var token = $window.localStorage.getItem("token");
       if(token)
         config.headers.Authorization = "Bearer " + token;
-      return config;
+      return $q.resolve(config);
     },
     responseError: function(err){
       // if you mess around with the token, log them out and destroy it
@@ -91,7 +81,7 @@ app.service("AuthInterceptor", function($window,$location,$q){
       }
       // if you try to access a user who is not yourself
       if(err.status === 401){
-        $location.path('/home');
+        $location.path('/users');
         return $q.reject(err);
       }
       return $q.reject(err);
@@ -99,18 +89,18 @@ app.service("AuthInterceptor", function($window,$location,$q){
   };
 });
 
-app.run(function ($rootScope, $location) {
+app.run(function ($rootScope, $location, $window) {
   $rootScope.$on('$routeChangeStart', function (event, next, current) {
     // if you try access a restricted page without logging in
-    if (next.restricted && !localStorage.getItem("token")) {
+    if (next.restricted && !$window.localStorage.getItem("token")) {
       if(current && current.signup)
         $location.path('/signup');
       else
         $location.path('/login');
     }
     // if you try to log in or sign up once logged in
-    if (next.preventWhenLoggedIn && localStorage.getItem("token")) {
-      $location.path('/home');
+    if (next.preventWhenLoggedIn && $window.localStorage.getItem("token")) {
+      $location.path('/users');
     }
   });
 });

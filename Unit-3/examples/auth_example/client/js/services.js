@@ -1,4 +1,4 @@
-app.service("UserService", function($http, $location, $q, $window){
+app.service("UserService", function($http, $window){
   return {
     signup: function(user){
       return $http.post('/api/signup', user);
@@ -14,7 +14,7 @@ app.service("UserService", function($http, $location, $q, $window){
       return JSON.parse($window.localStorage.getItem("user"));
     },
     logout: function(){
-      localStorage.clear();
+      $window.localStorage.clear();
     },
     getAllUsers: function(){
       return $http.get("/api/users/");
@@ -23,7 +23,7 @@ app.service("UserService", function($http, $location, $q, $window){
       return $http.get("/api/users/" + id);
     },
     editUser: function(user){
-      return $http.put("/api/users/" + user.data.id, user.data);
+      return $http.put("/api/users/" + user.id, user);
     },
     removeUser: function(user){
       return $http.delete("/api/users/" + user.id);

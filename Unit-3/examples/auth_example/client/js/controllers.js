@@ -3,48 +3,42 @@ app.controller("SignupController", function($scope, UserService, $location){
   $scope.signup = function(user){
     UserService.signup(user).then(function(data){
       UserService.setCurrentUser(data);
-      $location.path('/home');
+      $location.path('/users');
     }).catch(function(data){
       $scope.errors = data.data;
-      $scope.user = {};
     });
   };
 });
 
-app.controller("LoginController", function($scope, UserService, $location, $window){
+app.controller("LoginController", function($scope, UserService, $location){
   $scope.login = function(user){
     UserService.login(user).then(function(data){
       UserService.setCurrentUser(data);
-      $location.path('/home');
+      $location.path('/users');
     }).catch(function(data){
       $scope.errors = data.data;
-      $scope.user = {};
     });
   };
 });
 
-app.controller("UserController", function($scope, $location, UserService, user,currentUser, $window){
-  $scope.currentUser = currentUser;
-  $scope.user = user;
+app.controller("UserController", function($scope, user){
+  $scope.user = user.data;
 });
 
-app.controller("EditController", function($scope, $location, UserService, user,currentUser, $window){
-  $scope.currentUser = currentUser;
-  $scope.user = user;
+app.controller("EditController", function($scope, $location, UserService, user, $window){
+  $scope.user = user.data;
   $scope.editUser = function(user){
     UserService.editUser(user).then(function(data){
-      $window.localStorage.removeItem("user");
       $window.localStorage.setItem("user",JSON.stringify(data.data));
-      $location.path('/home');
+      $location.path('/users');
     }).catch(function(err){
       $scope.errors = "Looks like someone already has that username!";
-      $scope.user = {};
     });
   };
 
   $scope.removeUser = function(user){
     UserService.removeUser(user).then(function(data){
-      $window.localStorage.clear();
+      UserService.logout();
       $location.path('/login');
     }).catch(function(err){
       $scope.errors = err;
@@ -52,7 +46,7 @@ app.controller("EditController", function($scope, $location, UserService, user,c
   };
 });
 
-app.controller("HomeController", function($scope,currentUser,users){
+app.controller("UsersController", function($scope,currentUser,users){
   $scope.users = users;
   $scope.currentUser = currentUser;
 });

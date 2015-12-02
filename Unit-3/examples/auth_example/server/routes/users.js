@@ -7,7 +7,7 @@ var jwt = require('jsonwebtoken');
 var secret = "awesomesauce";
 var token;
 
-// only allow AJAX calls to prevent tampering in the browser bar 
+// only allow AJAX calls to prevent tampering in the browser bar
 function checkHeaders(req,res,next){
   if(!req.headers["x-requested-with"]) {
     res.sendFile(path.join(__dirname, '../../client', 'index.html'));
@@ -21,7 +21,7 @@ function checkHeaders(req,res,next){
 function checkToken(req,res,next){
   try {
     var decoded = jwt.verify(req.headers.authorization.split(" ")[1], secret);
-    if(decoded.id === req.params.id){
+    if(req.params.id && decoded.id === req.params.id){
       req.decoded_id = decoded.id;
       next();
     }
@@ -47,16 +47,18 @@ router.post('/signup',function(req,res){
 
 router.post('/login',function(req,res){
   db.User.authenticate(req.body, function(err,user){
-    if(err) return res.status(500).send(err)
-    if (!user) return res.status(400).send(err)
+    if(err) return res.status(400).send(err);
+    if (!user) return res.status(400).send(err);
     var listedItems = {id: user._id, username: user.username};
     token = jwt.sign({ id: user._id}, secret);
     res.json({token:token, user:listedItems});
   });
 });
 
+// this is for demonstration purposes....this is not a route you would have unless you SERIOUSLY secured it
 router.get('/users', function(req,res){
-  db.User.find({}, function(err,users){
+  // only send back usernames and id's
+  db.User.find({}, 'username _id', function(err,users){
     if (err) res.status(500).send(err);
     res.status(200).send(users);
   });
