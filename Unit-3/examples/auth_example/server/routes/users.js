@@ -33,6 +33,17 @@ function checkToken(req,res,next){
   }
 }
 
+// middleware to check the token in general
+function checkTokenForAll(req,res,next){
+  try {
+    var decoded = jwt.verify(req.headers.authorization.split(" ")[1], secret);
+      next();
+    }
+   catch(err) {
+    res.status(500).send(err.message);
+  }
+}
+
 router.use(checkHeaders);
 
 router.post('/signup',function(req,res){
@@ -56,7 +67,7 @@ router.post('/login',function(req,res){
 });
 
 // this is for demonstration purposes....this is not a route you would have unless you SERIOUSLY secured it
-router.get('/users', function(req,res){
+router.get('/users', checkTokenForAll, function(req,res){
   // only send back usernames and id's
   db.User.find({}, 'username _id', function(err,users){
     if (err) res.status(500).send(err);
