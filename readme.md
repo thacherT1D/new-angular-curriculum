@@ -37,8 +37,8 @@ Unit 3:
  * [MEAN CRUD](/Unit-3/04-mean-crud.md)
  * [CRUD with ngResource](/Unit-3/05-crud-with-ngResource.md)
  * [MEAN Auth](/Unit-3/06-mean-auth.md)
- * [ui-router](/Unit-3/07-ui-router.md)
- * [Unit 3 Assessment Reddit Clone Redux](/Unit-3/08-unit-3-assessment.md)
+ * [ui-router](/Unit-3/08-ui-router.md)
+ * [Unit 3 Assessment Reddit Clone Redux](/Unit-3/09-unit-3-assessment.md)
 
 Unit 4:
 
