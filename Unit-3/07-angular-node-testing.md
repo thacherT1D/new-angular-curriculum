@@ -4,7 +4,7 @@ Testing is an important part of any application, but it becomes increasingly imp
 
 ## Testing Setup
 
-The testing lesson focuses on testing a todo app with auth.  You can look at the [Example Auth Application](./examples/auth_example) for starter code.
+The testing lesson focuses on testing a todo app with auth.  You can look at the [Example Auth Application](./examples/auth_example) for starter code.  An implementation of a todo app with auth and testing is [here](./examples/auth_todos_and_testing).
 
 #### Tools For the Job
 
@@ -36,13 +36,13 @@ NPM scripts in `package.json` are a useful tool for making our lives as develope
 
 **Question**: What will happen when you run `npm test` in your terminal?  If you're not sure, try it and see what happens.
 
-Let's create a new script for running protractor.  In the `package.json`, add a similar to the following:
+Let's create a new script for running protractor.  In the `package.json`, add the following:
 
 ```json
     "protractor": "./node_modules/protractor/bin/protractor ./test/protractor-conf.js"
 ```
 
-To run this in your terminal, first make sure your node server is running.  Type `nodemon` in the terminal, then in a separte terminal tab, type `npm run protractor`.  The script is using the version of protractor that we have npm installed into our node_modules.  This is a good practice because  the user is guarenteed to have protractor installed in this directory as long as they have run `npm install`
+To run protractor, make sure your node server is running first.  Type `nodemon` in the terminal, then in a separte terminal tab, type `npm run protractor`.  The script is using the version of protractor that we have npm installed into our node_modules.  This is a good practice because  the user is guarenteed to have protractor installed in this directory as long as they have run `npm install`
 
 At this point, the `npm run protractor` command will give you an error about protractor-conf.js not exiting.  Create the file:
 
@@ -83,7 +83,7 @@ Protractor is based on [selenium](http://www.seleniumhq.org/).  We want to make 
 "preprotractor": "./node_modules/webdriver-manager/bin/webdriver-manager update",
 ```
 
-Now do `npm run protractor` again from the terminal.  Notice that the selenium webdriver gets updated first now.
+Now do `npm run protractor` again from the terminal.  Notice that the selenium webdriver gets updated first because of the `preprotractor` script.
 
 #### Simple Protractor Test
 
@@ -111,6 +111,10 @@ describe('Users', function() {
 Make sure your server is running, `nodemon`.  Then in a separate tab, run `npm run protractor`.  If everything went well, you should have a passing test!
 
 **EXERCISE**: Write a test that verifies the login page also has a link for signup on the page.  HINT, you may have to add an id to the link.
+
+**EXERCISE**: Write a test that validates an existing user in the db can login by going to `/login` an then filling in the form.
+
+**EXERCISE**: Write a test that validates an existing user in the db who supplies the wrong password at `/login` will not be logged in and will see an error message.
 
 #### Server Side Testing Setup
 
