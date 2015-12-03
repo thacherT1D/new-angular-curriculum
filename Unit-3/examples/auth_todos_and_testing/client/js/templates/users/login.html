@@ -3,7 +3,7 @@
 <div ng-show="errors">
   {{errors}}
 </div>
-<form method="POST" ng-submit="login(user)">
+<form method="POST" id="loginform" ng-submit="login(user)">
   <label for="username">Username: </label>
   <input type="text" ng-model="user.username" name="username" id="username">
   <label for="password">Password: </label>
