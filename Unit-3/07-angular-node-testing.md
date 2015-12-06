@@ -6,6 +6,32 @@ Testing is an important part of any application, but it becomes increasingly imp
 
 The testing lesson focuses on testing a todo app with auth.  You can look at the [Example Auth Application](./examples/auth_example) for starter code.  An implementation of a todo app with auth and testing is [here](./examples/auth_todos_and_testing).
 
+#### Sytem Dependencies
+
+Protactor requries a newer version of NodeJS to function as well as a recent install of java.  In your terminal, type the following:
+
+```
+java -version
+```
+
+The result should be something like the following:
+
+```
+java version "1.8.0_11"
+Java(TM) SE Runtime Environment (build 1.8.0_11-b12)
+Java HotSpot(TM) 64-Bit Server VM (build 25.11-b03, mixed mode)
+```
+
+If you see a number less than 1.8, you need to install the java jdk.  Go to the [oracle website](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) to download and install the latest version of the jdk.
+
+Also, type the following in your terminal:
+
+```
+node --version
+```
+
+You should see at least `4.2`.  If you do not, go to the [NodeJS](https://nodejs.org/en/) website to get the latest version and install it.  You should see an option to download either 4.2.x or 5.1.x.  You can stick with 4.2.x for now since some programs don't support node 5 yet.
+
 #### Tools For the Job
 
 We are going to be making two types of tests, server side request specs with [jasmine](http://jasmine.github.io/2.0/introduction.html) and [supertest](https://github.com/visionmedia/supertest) and end to end integration tests with [protractor](https://angular.github.io/protractor/#/). 
