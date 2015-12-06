@@ -6,7 +6,7 @@ Testing is an important part of any application, but it becomes increasingly imp
 
 The testing lesson focuses on testing a todo app with auth.  You can look at the [Example Auth Application](./examples/auth_example) for starter code.  An implementation of a todo app with auth and testing is [here](./examples/auth_todos_and_testing).
 
-#### Sytem Dependencies
+#### System Dependencies
 
 Protactor requries a newer version of NodeJS to function as well as a recent install of java.  In your terminal, type the following:
 
