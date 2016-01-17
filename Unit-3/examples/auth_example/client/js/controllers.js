@@ -1,3 +1,9 @@
+app.controller("NavController", function($scope, UserService){
+  $scope.$watch( UserService.currentUser, function ( user ) {
+    $scope.currentUser = UserService.currentUser();
+  });
+});
+
 app.controller("SignupController", function($scope, UserService, $location){
 
   $scope.signup = function(user){
