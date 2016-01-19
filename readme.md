@@ -1,6 +1,6 @@
 #Angular Curriculum
 
-Unit 1:
+## Unit 1
 
  0. [Intro and Setup](/Unit-1/01-intro-and-setup.md)
  0. [Data Binding](/Unit-1/02-data-binding.md)
@@ -14,7 +14,7 @@ Unit 1:
  0. [Animations](/Unit-1/10-animation.md) 
  0. [Unit 1 Assessment Reddit Clone](/Unit-1/11-reddit-clone.md)
 
-Unit 2:
+## Unit 2
 
  0. [A New Structure](/Unit-2/01-a-new-structure.md)
  0. [Digest Cycle](/Unit-2/02-digest-cycle.md)
@@ -29,7 +29,7 @@ Unit 2:
  0. [Custom Directives Part 2](/Unit-2/11-custom-directives-part2.md)
  0. [Unit 2 Assessment Shopping Cart App](/Unit-2/12-shopping-cart-app.md)
 
-Unit 3:
+## Unit 3
 
  0. [Express/Mongo Review](/Unit-3/01-express-mongo-review.md)
  0. [Routing and Postman](/Unit-3/02-routing-and-postman.md)
@@ -41,7 +41,7 @@ Unit 3:
  0. [ui-router](/Unit-3/08-ui-router.md)
  0. [Unit 3 Assessment Reddit Clone Redux](/Unit-3/09-unit-3-assessment.md)
 
-Unit 4:
+## Unit 4
 
  0. [Firebase Intro](/Unit-4-(optional)/01-firebase-intro.md)
  0. [AngularFire Intro](/Unit-4-(optional)/02-angularfire-intro.md)
