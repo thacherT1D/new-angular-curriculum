@@ -2,8 +2,7 @@
 
 It's time to put everything you've learned so far about Angular to use.  You're going to make a reddit clone with posts, comments, searching, sorting, animations, and more! Watch the following video for an in-depth walk-through of the features.
 
-Vimeo video password: reddit-clone
-[![](https://i.gyazo.com/f9d435b4e198cf5ea3c29607d40a8958.png)](https://vimeo.com/135778837)
+[![](https://i.gyazo.com/f9d435b4e198cf5ea3c29607d40a8958.png)](https://coursework.galvanize.com/curriculums/6/learning_experiences/9)
 
 
 Requirements:
