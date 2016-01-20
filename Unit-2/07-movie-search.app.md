@@ -3,6 +3,7 @@
 It's time to use everything you've learned so far in the 2nd unit to build a small movie search app. This project incorporates the new file structure, routes, and the $http service.  Watch the following video to get a sense of how it works:
 
 [![](https://i.gyazo.com/aaebae489446960de0fd485720964b10.png)](https://vimeo.com/135991632)
+**Video password: schoolhouserocks**  
 
 #### Specs:
 
