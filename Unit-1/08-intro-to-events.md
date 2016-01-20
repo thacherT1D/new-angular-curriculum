@@ -50,12 +50,6 @@ It should display the 2 players' scores, have buttons to increment each player's
 
 ![](https://i.gyazo.com/40d31881e3774f4f374503920e784931.gif)
 
-**EXERCISE - Contact List**
-
-Create a simple contacts app.  Each contact has a name, email, and phone number.  A user can create new contacts using a form.  A user can search contacts as well (you'll need to research this part). HINT: try binding name, email, and phone as properties on one `newContact` object rather than creating 3 different properties on the `$scope`
-
-![](https://i.gyazo.com/e1dba3d8e24812690d1af363630af5a6.gif)
-
 ### ng-mouseenter
 
 ```ng-mouseenter``` is another event that you have access to in angular.  Let's make a quick counter that counts every time a div gets a mouse enter event.
@@ -180,6 +174,12 @@ An anti pattern is a way of writing code that is a bad practice in your framewor
 **Exercise**
 
 Create a form for entering address data.  The form should accept a street (line 1), street (line 2), city, state, and zip code.  When the data is submitted, it again should be shown to the user (displayed on the page) and the form data should be cleared so that more data can be entered.
+
+**EXERCISE - Contact List**
+
+Create a simple contacts app.  Each contact has a name, email, and phone number.  A user can create new contacts using a form.  A user can search contacts as well (you'll need to research this part). HINT: try binding name, email, and phone as properties on one `newContact` object rather than creating 3 different properties on the `$scope`
+
+![](https://i.gyazo.com/e1dba3d8e24812690d1af363630af5a6.gif)
 
 ### Other Events
 
