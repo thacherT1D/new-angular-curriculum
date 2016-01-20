@@ -4,7 +4,7 @@ Directives are Angular's way of extending HTML. Angular uses directives to add f
 
 > At a high level, directives are markers on a DOM element (such as an attribute, element name, comment or CSS class) that tell AngularJS's HTML compiler to attach a specified behavior to that DOM element or even transform the DOM element and its children.
 
-There are 4 ways of writing directives, but it's best practice to only write them using **tag names** like `<pop-up-dialog></pop-up-dialog>` or `<side-bar>`, and **attributes** like `<span fav-spell="expecto patronum"></span>` or `<div weather-widget="94114"></div>`.
+There are 4 ways of writing directives, but it's best practice to only write them using **tag names** like `<pop-up-dialog></pop-up-dialog>` or `<side-bar>`, and **attributes** like `<span fav-spell='expecto patronum'></span>` or `<div weather-widget='94114'></div>`.
 
 Angular comes with a bunch of built-in directives, some of which we've already used. We will focus on built-in directives for now, but soon we will write our own custom directives.
 
@@ -49,17 +49,18 @@ For a complete list see https://docs.angularjs.org/api/ng/directive
 
 `ng-repeat` will iterate over a collection and create a template for every item in the collection. Think of it as the Angular equivalent of a `forEach`. It's extremely useful. Let's look at an example.
 
-Let's start by defining a collection. In a controller, add the following:
+Let's start by defining a collection. In the body tag, add the following:
 
-```javascript
-$scope.names = ["Harry", "Ron", "Hermione", "Sirius", "Hedwig", "Tonks"];
+```html
+<body ng-init="names=['Harry', 'Ron', 'Hermione', 'Sirius', 'Hedwig', 'Tonks']">
+</body>;
 ```
 
-Now let's iterate through the `names` array in the template. In `index.html`(make sure you have declared `ng-controller` correctly) add the following:
+Now let's iterate through the `names` array in the body. In the body of `index.html` add the following:
 
 ```html
 <ul>
-  <li ng-repeat="name in names">
+  <li ng-repeat='name in names'>
     {{name}}
    </li>
 </ul>
@@ -68,14 +69,14 @@ Now let's iterate through the `names` array in the template. In `index.html`(mak
 Question: what would happen if you put the `ng-repeat` directive on the `ul` element, like so?
 
 ```html
-<ul ng-repeat="name in names">
+<ul ng-repeat='name in names'>
   <li>{{name}}</li>
 </ul>
 ```
 
 **EXERCISE**
 
-Add a property called `symbols` with the value `["&spades;", "&clubs;", "&hearts;", "&diams;"]`. Use an `ng-repeat` to display each one in the template.
+Add an ng-init with a  property called `symbols` with the value `['&spades;', '&clubs;', '&hearts;', '&diams;']`. Use an `ng-repeat` to display each one in the body.
 
 BONUS: Figure out how to make these entity codes actually display as symbols, like the following image:
 
@@ -83,11 +84,11 @@ BONUS: Figure out how to make these entity codes actually display as symbols, li
 
 **EXERICSE**
 
-Try using `ng-repeat` to iterate through an array with some duplicates, like `[1,1,2,5,6,9,9,9]`. What happens?  Research how `ng-repeat` handles duplicate data and how to "fix" this issue.
+Try using `ng-repeat` to iterate through an array with some duplicates, like `[1,1,2,5,6,9,9,9]`. What happens?  Research how `ng-repeat` handles duplicate data and how to 'fix' this issue.
 
 **EXERCISE**
 
-Use `ng-repeat` to iterate through the attributes (keys) of an object and list them on in the template
+Use `ng-repeat` to iterate through the attributes (keys) of an object and list them on in the body
 
 > View some more examples [here](./examples/ng-repeat).
 
@@ -96,19 +97,19 @@ Use `ng-repeat` to iterate through the attributes (keys) of an object and list t
 `ng-show` and `ng-hide` will show or hide a specific HTML element based off of a provided expression. Let's take a look at some examples.
 
 ```html
-<div ng-show="3 + 4 == 5">
+<div ng-show='3 + 4 == 5'>
   3 + 4 isn't 5, don't show
 </div>
 
-<div ng-show="3 + 4 == 7">
+<div ng-show='3 + 4 == 7'>
   3 + 4 is 7, do show
 </div>
 
-<div ng-hide="3 + 4 == 5">
+<div ng-hide='3 + 4 == 5'>
     3 + 4 isn't 5, don't hide
 </div>
 
-<div ng-hide="3 + 4 == 7">
+<div ng-hide='3 + 4 == 7'>
   3 + 4 is 7, do hide
 </div>
 ```
@@ -139,11 +140,11 @@ Define the following CSS class:
 }
 ```
 
-We can use `ng-class` to selectively apply our "highlight" class to elements.
+We can use `ng-class` to selectively apply our 'highlight' class to elements.
 
 ```js
-<div ng-class="{highlight: 4 + 4 == 8}"> 4 + 4 = 8</div>
-<div ng-class="{highlight: 4 + 4 == 10}">4 + 4 = 10</div>
+<div ng-class='{highlight: 4 + 4 == 8}'> 4 + 4 = 8</div>
+<div ng-class='{highlight: 4 + 4 == 10}'>4 + 4 = 10</div>
 ```
 
 > Want more [examples](https://github.com/mjhea0/thinkful-mentor/tree/master/angular/fundamentals/built-in-directives/ngClass/ngClass-more-examples)?
@@ -157,7 +158,7 @@ Build on top of the previous password validator exercise. Use `ng-class` to make
 
 **FINAL EXERCISE**
 
-Build a simple camera shop interface using the data provided below. Display each camera's title, image (look into `ng-src`), price, and rating. If an item's `onSale` property is true, display the words "ON SALE!!" and give the price a yellow color. A user should be able to sort by price or rating. You'll need to research how to accomplish this.
+Build a simple camera shop interface using the data provided below. Display each camera's title, image (look into `ng-src`), price, and rating. If an item's `onSale` property is true, display the words 'ON SALE!!' and give the price a yellow color. A user should be able to sort by price or rating. You'll need to research how to accomplish this.
 
 ![](http://zippy.gfycat.com/UnsteadyDampCanine.gif)
 
@@ -166,22 +167,22 @@ Use the following data:
 ```js
 [
   {
-    title: "Nikon D3100 DSLR",
-    image: "http://ecx.images-amazon.com/images/I/713u2gDQqML._SX522_.jpg",
+    title: 'Nikon D3100 DSLR',
+    image: 'http://ecx.images-amazon.com/images/I/713u2gDQqML._SX522_.jpg',
     rating: 3.4,
     price: 369.99,
     onSale: true
   },
   {
-    title: "Canon EOS 70D",
-    image: "http://ecx.images-amazon.com/images/I/81U00AkAUWL._SX522_.jpg",
+    title: 'Canon EOS 70D',
+    image: 'http://ecx.images-amazon.com/images/I/81U00AkAUWL._SX522_.jpg',
     rating: 2.0,
     price: 1099.0,
     onSale: false
   },
   {
-    title: "Nikon D810A",
-    image:"http://ecx.images-amazon.com/images/I/91wtXIfLl2L._SX522_.jpg",
+    title: 'Nikon D810A',
+    image:'http://ecx.images-amazon.com/images/I/91wtXIfLl2L._SX522_.jpg',
     rating: 4.2,
     price: 3796.95,
     onSale: true
