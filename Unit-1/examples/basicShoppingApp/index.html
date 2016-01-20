@@ -1,7 +1,7 @@
 <html >
   <head>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
     <script type="text/javascript" src="app.js"></script>
   </head>
 
@@ -13,7 +13,7 @@
     <div>
     	<h3> Stuff you can buy! </h3>
     	<ul>
-    		<li ng-repeat="item in availableItems track by $index"> {{item.name}}, {{item.price}}
+    		<li ng-repeat="item in availableItems"> {{item.name}}, {{item.price / 100 | currency}}
     			<button ng-click="addItem(item)">Add To Cart</button>
     		</li>
     	</ul>
@@ -26,7 +26,7 @@
     		<li ng-repeat="item in currentItems track by $index"> {{item.name}}, {{item.price}}</li>
     	</ul>
     	<h5> But it's gonna cost you! </h5>
-    	<span>{{totalCost | currency}}</span>
+    	<span>{{totalCost / 100 | currency}}</span>
     </div>
   </body>
 </html>

@@ -3,10 +3,10 @@ angular.module("app", [])
     
     // "public" data, can be accessed from the view
     $scope.availableItems = [
-    	{name: 'lamp', price: 5.95},
-    	{name: 'desk', price: 7.50},
-    	{name: 'chair', price: 23.95},
-    	{name: 'Honda Civic', price: 19999.95}
+    	{id: 1, name: 'lamp', price: 595},
+    	{id: 2, name: 'desk', price: 750},
+    	{id: 3, name: 'chair', price: 2395},
+    	{id: 3, name: 'Honda Civic', price: 1999995}
     ]
 
     $scope.totalCost = 0;
@@ -29,5 +29,7 @@ angular.module("app", [])
     	}
 
     	$scope.totalCost = sum + (sum * taxRate);
+        $scope.totalCost = Math.floor($scope.totalCost);
+        console.log($scope.totalCost);
     }
 });	
