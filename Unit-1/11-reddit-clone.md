@@ -6,11 +6,9 @@ It's time to put everything you've learned so far about Angular to use.  You're 
 
 Note:
 
-All post data should only be stored in a controller or service.
-
-A page refresh will clear all added posts.
-
-You do _not_ have to make any ajax requests or actually contact the reddit API.
+* All post data should only be stored in a controller or service.
+* A page refresh will clear all added posts.
+* You do _not_ have to make any ajax requests or actually contact the reddit API.
 
 Requirements:
 
