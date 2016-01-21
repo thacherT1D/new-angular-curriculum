@@ -4,6 +4,13 @@ It's time to put everything you've learned so far about Angular to use.  You're 
 
 [![](https://i.gyazo.com/f9d435b4e198cf5ea3c29607d40a8958.png)](https://coursework.galvanize.com/redirects/learning_experiences/9)
 
+Note:
+
+All post data should only be stored in a controller or service.
+
+A page refresh will clear all added posts.
+
+You do _not_ have to make any ajax requests or actually contact the reddit API.
 
 Requirements:
 
