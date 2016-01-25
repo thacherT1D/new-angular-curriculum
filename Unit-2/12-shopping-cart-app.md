@@ -1,7 +1,7 @@
 # Angular Shopping Cart App
 
 **Click to watch the video:**
-[![](https://i.gyazo.com/b83c4f06526777f552cb5d817c24e567.png)](https://vimeo.com/135907781)
+[![](https://i.gyazo.com/b83c4f06526777f552cb5d817c24e567.png)](https://coursework.galvanize.com/redirects/learning_experiences/10)
 
 
 **Shopping Cart Should Have the Following Specs:**
