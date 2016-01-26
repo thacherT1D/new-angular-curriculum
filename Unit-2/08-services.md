@@ -53,14 +53,14 @@ You can use services just like factories or when you need just a simple object a
 ```js
 angular.module("learnServices", [])
 
-.service('person', function(){
+.service('person', [function(){
 	this.name = "Elie"
 	this.favoriteColor = "Purple"
-})
+}])
 
-.controller('personController', function(person){
+.controller('personController', ['person', function(person){
 	// I now have access to the person object!
-})
+}]);
 ```
 
 Note, that our previous example will work the same if we use service:
@@ -68,7 +68,7 @@ Note, that our previous example will work the same if we use service:
 ```js
 angular.module("learnServices", [])
 
-.service('personService', function(){
+.service('personService', [function(){
   return {
     name: "Matt",
     job: "Instructor",
@@ -76,11 +76,11 @@ angular.module("learnServices", [])
       return "Hello!"
     }
   }
-})
+}])
 
 .controller('personController', ["personService", function(personService){
   // I now have access to all the methods/properties returned from the factory!
-}])
+}]);
 ```
 
 A provider is the most complex method and is used less frequently. It is a factory that can be configured, which allows for more flexibility, but for our applications we are going to build, you will not need this level of complexity.
@@ -110,7 +110,7 @@ These values should **NEVER** be changed!
 To create a service, let's make sure we are using our new layout and have a `services.js` file. The syntax to create a service looks like this:
 
 ```js
-angular.module("learningServices").service("firstService", function(){
+angular.module("learningServices").service("firstService", [function(){
   // outside of the return block, we can declare private variables and functions
 
   // we must return an object, everything we return can be accessed externally
@@ -128,7 +128,7 @@ angular.module("learningServices").service("firstService", function(){
       // another AJAX call to our database to add a user
     }
   }
-})
+}]);
 ```
 
 Now in our controller, we can inject this service:
@@ -137,7 +137,7 @@ Now in our controller, we can inject this service:
 angular.module("learningServices").controller("FirstController", ["$scope", "firstService", function($scope, firstService){
   $scope.greeting = firstService.sayHi(); 
   $scope.users = firstService.getAllUsers();
-}])
+}]);
 ```
 
 ### Answer the following questions:
@@ -180,7 +180,7 @@ It should function like (and look far better than) this:
 Revisit your contacts app from previous lessons. In contact app, add the following code to a new service inside `service.js`:
 
 ```js
-app.service('ContactList', function() {
+app.service('ContactList', [function() {
   var ContactList = {};
 
   ContactList.contactList = [];
@@ -198,7 +198,7 @@ app.service('ContactList', function() {
   };
 
   return ContactList;
-});
+}]);
 ```
 
 Now in your controller you can inject the contact service you created as a dependency.  For example, your controller might look like this:
