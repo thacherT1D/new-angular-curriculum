@@ -33,7 +33,7 @@ A factory is a lot like a service in the sense that it is a singleton and depend
 ```js
 angular.module("learnServices", [])
 
-.factory('personFactory', function(){
+.factory('personFactory', [function(){
   return {
     name: "Matt",
     job: "Instructor",
@@ -41,7 +41,7 @@ angular.module("learnServices", [])
       return "Hello!"
     }
   }
-})
+}])
 
 .controller('personController', ["personFactory", function(personFactory){
   // I now have access to all the methods/properties returned from the factory!
