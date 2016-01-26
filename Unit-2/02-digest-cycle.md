@@ -1,6 +1,6 @@
 ## Angular JS internals 
 
-So now that we have an stronger understanding of what angular is, how to structure larger applications and most importantly, what `$scope` is (and how to avoid some pitfalls with it), let's learn a little bit about how angular works under the hood. But before we can really get started, we need to be aware of a few essential methods that can be called on `$scope`.
+So now that we have a stronger understanding of what angular is, how to structure larger applications and most importantly, what `$scope` is (and how to avoid some pitfalls with it), let's learn a little bit about how angular works under the hood. But before we can really get started, we need to be aware of a few essential methods that can be called on `$scope`.
 
 `$scope.$watch` - Whenever we need to watch a particular variable we place a watch on it. This is very similar to an event listener where we are watching for a change. This is also used quite heavily internally by angular for two way data binding. Whenever a variable gets changed, the watch is initiated.
 
