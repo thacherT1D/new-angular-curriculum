@@ -132,7 +132,7 @@ Make sure the second route works correctly by visiting `http://localhost:8080/#/
  Download superstatic from npm : https://www.npmjs.com/package/superstatic
 
 Create an html file and use Bower or CDNs to link to angular and another for angular routes
-```
+```html
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.js"></script>
 ```
@@ -142,7 +142,7 @@ Add ng-app="myApp" to the html tag of your file
 ```
 Add ng-view to your HTML page that will be used later to inject your partials into.
 EX: 
-```
+```html
     <body>
      <div ng-view></div>
     </body>
@@ -154,7 +154,7 @@ angular.module('myApp', ['ngRoute'])
 ```
 Create .config section under your module to set up your routes
 EX: 
-```
+```js
 .config(function($routeProvider){
        $routeProvider
         .when('/', {
@@ -168,7 +168,7 @@ Remove Hashtags from urls :
 
 Add $locationProvider.html5Mode(true) to your .config
 EX: 
-```
+```js
 .config(function($routeProvider, $locationProvider){
         $routeProvider
         .when('/', {
@@ -185,7 +185,7 @@ EX:
 <base href="/">
 ```
 Then create a divshot.json file and add this code:
-```
+```js
 {
   "rewrites": [
    {"source":"**/**","destination":"/index.html"}
