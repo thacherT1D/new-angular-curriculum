@@ -28,7 +28,7 @@ In order for this structure to work, make sure you correctly include all the scr
 
 Check out the boilerplate [here](examples/boilerplate/app). Cheers!
 
-**EXERICSE**
+**EXERCISE**
 
 Convert the reddit clone app to this new file structure. Then serve up your reddit clone app using [http-server](https://www.npmjs.com/package/http-server) inside of the "app" directory:
 
