@@ -2,7 +2,7 @@
 
 ### Structuring a MEAN stack application
 
-Now that we have a stronger understand of how to wire up an express API, let's start moving our routing from the server to the client and leave our express backend as a simple API. In order to do this we need to do a couple of things, starting with configuring our express app, but before we do this, let's examine a new folder structure that we will be using going forward. This folder structure will let us separate the client side code (html/css/js) and our server side code. Folder structure is something that is done differently in all types of MEAN stack applications so it is very possible that you might not see this structure in future tutorials / applications. The structure is as follows
+Now that we have a stronger understanding of how to wire up an express API, let's start moving our routing from the server to the client and leave our express backend as a simple API. In order to do this we need to do a couple of things, starting with configuring our express app, but before we do this, let's examine a new folder structure that we will be using going forward. This folder structure will let us separate the client side code (html/css/js) and our server side code. Folder structure is something that is done differently in all types of MEAN stack applications so it is very possible that you might not see this structure in future tutorials / applications. The structure is as follows
 
 - firstapp
     - client
