@@ -14,7 +14,6 @@ angular.module('spotifyApp',[])
           url: searchUrl
       })
       .then(function(searchResponse){
-        console.log(searchResponse);
         var artists = searchResponse.data.artists;
 
         // I want to extract a couple data points from each
