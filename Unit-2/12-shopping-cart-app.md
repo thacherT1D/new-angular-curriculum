@@ -1,8 +1,9 @@
 # Angular Shopping Cart App
 
-**Click to watch the video:**
-[![](https://i.gyazo.com/b83c4f06526777f552cb5d817c24e567.png)](https://coursework.galvanize.com/redirects/learning_experiences/10)
 
+** Watch the videos in the linked LE for a description of the project.**
+
+- [Video Instructions](https://coursework.galvanize.com/redirects/learning_experiences/10)** 
 
 **Shopping Cart Should Have the Following Specs:**
 - Search by name
@@ -152,6 +153,10 @@
 	}
 ]
 ```
+
+**The app should look something along the lines of this*:*
+[![](https://i.gyazo.com/b83c4f06526777f552cb5d817c24e567.png)](https://coursework.galvanize.com/redirects/learning_experiences/10)
+
 
 **BONUS**:
 ## Angular Custom Directive: Caffeine Meter
