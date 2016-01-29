@@ -71,7 +71,7 @@ This deeply nested code is very hard to maintain and it doesn't really provide m
 
 A deferred object is a way of creating your own promise from scratch.  You will not be creating deferreds too much in the code you write, but it's good to get an idea of what it does in case you run into the code somewhere.
 
-In the example below, a deferred object is created.  The deferred gets resovled by providing the result of getting the movie data from our movie cache or from an ajax request. The code demonstrates a good way to allow controllers to fetch data from services that may (or may not) need to fetch that data from an external source. In the following example, we'll cache the OMDB response for a search term, and avoid making calls to the API for the same data more than once. Our controller can treat the response the same way in both cases, it doesn't care where the data comes from, only that the search function will return a promise.
+In the example below, a deferred object is created.  The deferred gets resolved by providing the result of getting the movie data from our movie cache or from an ajax request. The code demonstrates a good way to allow controllers to fetch data from services that may (or may not) need to fetch that data from an external source. In the following example, we'll cache the OMDB response for a search term, and avoid making calls to the API for the same data more than once. Our controller can treat the response the same way in both cases, it doesn't care where the data comes from, only that the search function will return a promise.
 
 ```js
 app.controller('OmdbController', ['$scope', 'omdbapi', function($scope, omdbapi) {
