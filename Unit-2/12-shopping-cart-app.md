@@ -154,7 +154,7 @@
 ]
 ```
 
-**The app should look something along the lines of this*:*
+**The app should look something along the lines of this:**
 [![](https://i.gyazo.com/b83c4f06526777f552cb5d817c24e567.png)](https://coursework.galvanize.com/redirects/learning_experiences/10)
 
 
