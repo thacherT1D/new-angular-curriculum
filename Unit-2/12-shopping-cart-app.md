@@ -1,7 +1,7 @@
 # Angular Shopping Cart App
 
 
-** Watch the videos in the linked LE for a description of the project.**
+**Watch the videos in the linked LE for a description of the project.**
 
 - [Video Instructions](https://coursework.galvanize.com/redirects/learning_experiences/10)** 
 
