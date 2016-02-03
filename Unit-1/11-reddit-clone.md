@@ -27,7 +27,7 @@ Requirements:
 * Animate posts as they are added and removed from the search results.  
 * Research Angular animations.See the video for an example implementation.
 * Hint for animations: 
-* http://plnkr.co/edit/lEQhMwd6RWmsdmJbosu0?p=preview
+* http://plnkr.co/edit/qrQwv1?p=preview
 * https://divshot.com/blog/tips-and-tricks/angular-1-2-and-animate-css/
 * http://odetocode.com/blogs/scott/archive/2014/02/25/easy-animations-for-angularjs-with-animate-css.aspx
 * Style the app.  It should look better than my implementation.
