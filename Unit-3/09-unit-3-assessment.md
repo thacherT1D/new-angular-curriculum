@@ -3,8 +3,7 @@
 Congratulations - you've come to the end of Unit 3! By now you should have an strong understanding of how to build and structure MEAN stack applications and how to add authentication and authorization to a single page application. To put these skills to the test, let's refactor our reddit clone from Unit 1 to have the following.
 
 #### Backend
-- You will need to store users, posts and comments in a mongo database
-- The design of the database is up to you (embed vs reference)
+- You will need to store users, posts and comments in a SQL database
 - Users should have at least a username and password (which should be hashed using bcrypt).
 - All of your API routes should be handled by express 
 
