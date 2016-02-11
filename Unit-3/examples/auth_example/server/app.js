@@ -20,7 +20,4 @@ app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, '../client', 'index.html'));
 });
 
-var port = process.env.PORT || 3000;
-app.listen(port, function(){
-  console.log("Server is listening on port " + port);
-});
+module.exports = app;

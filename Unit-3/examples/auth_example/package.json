@@ -2,9 +2,13 @@
   "name": "auth_example",
   "version": "1.0.0",
   "description": "",
-  "main": "server/app.js",
+  "main": "server/bin/www",
   "scripts": {
-    "start": "node server/app.js"
+    "start": "node server/app.js",
+    "test": "JASMINE_CONFIG_PATH=test/jasmine.json AUTH_DB_NAME=angular_auth_test ./node_modules/jasmine/bin/jasmine.js",
+    "server-test": "AUTH_DB_NAME=angular_auth_test nodemon",
+    "preprotractor": "./node_modules/protractor/bin/webdriver-manager update",
+    "protractor": "./node_modules/protractor/bin/protractor ./test/protractor-conf.js"
   },
   "author": "",
   "license": "ISC",
@@ -17,5 +21,11 @@
     "method-override": "^2.3.5",
     "mongoose": "^4.2.8",
     "morgan": "^1.6.1"
+  },
+  "devDependencies": {
+    "jasmine": "^2.4.1",
+    "protractor": "^3.0.0",
+    "supertest": "^1.1.0",
+    "webdriver-manager": "^8.0.0"
   }
 }
