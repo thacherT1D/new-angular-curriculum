@@ -76,7 +76,7 @@ Question: what would happen if you put the `ng-repeat` directive on the `ul` ele
 
 **EXERCISE**
 
-Add an ng-init with a  property called `symbols` with the value `['&spades;', '&clubs;', '&hearts;', '&diams;']`. Use an `ng-repeat` to display each one in the body.
+Add an ng-init with a  property called `symbols` with the value `['Spades', 'Clubs', 'Hearts', 'Diamonds']`. Use an `ng-repeat` to display each one in the body.
 
 BONUS: Figure out how to make these entity codes actually display as symbols, like the following image:
 
