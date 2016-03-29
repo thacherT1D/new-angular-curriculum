@@ -11,9 +11,9 @@ Unit 1:
  * [Built-In Directives](/Unit-1/05-built-in-directives.md)
  * [Intro to Controllers](/Unit-1/06-intro-to-controllers.md)
  * [Scope](/Unit-1/07-intro-to-scope.md)
- * [Angular Events](/Unit-1/08-intro-to-events.md) 
- * [Form Validation](/Unit-1/09-form-validation.md) 
- * [Animations](/Unit-1/10-animation.md) 
+ * [Angular Events](/Unit-1/08-intro-to-events.md)
+ * [Form Validation](/Unit-1/09-form-validation.md)
+ * [Animations](/Unit-1/10-animation.md)
  * [Unit 1 Assessment Reddit Clone](/Unit-1/11-reddit-clone.md)
 
 Unit 2:
@@ -42,7 +42,7 @@ Unit 3 - Building Apps with the MEAN Stack
  * [ui-router](/Unit-3/07-ui-router.md)
  * [Unit 3 Assessment Reddit Clone Redux](/Unit-3/08-unit-3-assessment.md)
 
-Unit 4 (Optional) - Firebase, Restructuring Angular Apps, Backend Integration with Rails 
+Unit 4 (Optional) - Firebase, Restructuring Angular Apps, Backend Integration with Rails
 
  * [Firebase Intro](/Unit-4-(optional)/01-firebase-intro.md)
  * [AngularFire Intro](/Unit-4-(optional)/02-angularfire-intro.md)
@@ -68,6 +68,8 @@ Let's get started!
 According to the official Angular introduction, Angular is a-
 
 > client-side technology, written entirely in JavaScript. It works with the long-established technologies of the web (HTML, CSS, and JavaScript) to make the development of web apps easier and faster than ever before.
+
+Angular, along with other client-side libraries (Backbone, Ember, React), help us deal with larger, more complex code bases on the client-side. They also redefined the roles of the client and sever, resulting in a new application structure called a Single-Page Application (or SPA). In this new structure, the client interacts with the server by making RESTful AJAX requests that are triggered by user interactions.
 
 It boils down to this: **Angular helps us build complex, single-page applications very quickly.**
 
