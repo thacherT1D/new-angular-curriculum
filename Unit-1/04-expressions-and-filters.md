@@ -80,7 +80,13 @@ Create a simple tip calculator using the Angular concepts that we've covered so 
 
 **EXERCISE**
 
-With one single expression, prove that the context angular expressions run is not the window object.  What is it instead?
+Add the following code to your HTML file, within the scope of `ng-app`:
+
+```html
+<div>{{this}}</div>
+```
+
+What does this tell you about the context of Angular [expressions](https://docs.angularjs.org/guide/expression)?
 
 **EXERCISE**
 
