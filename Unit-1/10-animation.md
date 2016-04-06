@@ -242,5 +242,7 @@ Let's use the same HTML as above, but change our CSS to use the following:
 ](https://css-tricks.com/animations-the-angular-way/
 )
 
+[Angular Animation Basics with CSS Transitions](https://github.com/mjhea0/thinkful-mentor/tree/master/angular/projects/animation-basics#angular-animation-basics-with-css-transitions)
+
 
 
