@@ -13,7 +13,8 @@
     <div>
     	<h3> Stuff you can buy! </h3>
     	<ul>
-    		<li ng-repeat="item in availableItems"> {{item.name}}, {{item.price / 100 | currency}}
+    		<li ng-repeat="item in availableItems">
+    		  {{item.name}}, {{item.price / 100 | currency}}
     			<button ng-click="addItem(item)">Add To Cart</button>
     		</li>
     	</ul>
@@ -23,7 +24,9 @@
     <div>
     	<h3> Stuff you're about to buy! </h3>
     	<ul>
-    		<li ng-repeat="item in currentItems track by $index"> {{item.name}}, {{item.price}}</li>
+    		<li ng-repeat="item in currentItems track by $index">
+    		  {{item.name}}, {{item.price / 100 | currency}}
+    		</li>
     	</ul>
     	<h5> But it's gonna cost you! </h5>
     	<span>{{totalCost / 100 | currency}}</span>
