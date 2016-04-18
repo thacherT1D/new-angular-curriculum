@@ -14,7 +14,7 @@ angular.module("firstApp",[]).controller("FirstController", function($scope){
 
 ## Where does it come from? $rootScope
 
-Every application has a single root scope. All other scopes decent from `$rootScope` which we can inject into our controllers (by adding `$rootScope as a parameter to the callback function on the .controller method`)
+Every application has a single root scope. All other scopes descend from `$rootScope` which we can inject into our controllers (by adding `$rootScope as a parameter to the callback function on the .controller method`)
 
 ```js
 angular.module("firstApp",[]).controller("FirstController", function($scope, $rootScope){
@@ -25,13 +25,11 @@ angular.module("firstApp",[]).controller("FirstController", function($scope, $ro
 ##### If you wanted to create a sample rootscope (this is what $rootScope essentially is) you could write something like this:
 `var rootScope = angular.element(document).scope()`
 
-Now you might be thinking, if everything comes from $rootScope then angular must be using some kind of inheritance? That is correct! Well, with one exception, custom directives that create their own (isolate) scope, but that's quite beyond the scope of this lesson (pun slightly intended).
+Now you might be thinking, if everything comes from $rootScope then angular must be using some kind of inheritance? That is correct! Well, with one exception, custom directives that create their own (isolate) scope, but that's quite beyond the scope of this lesson (pun embarassingly intended).
 
 All scopes are created with prototypal inheritance, meaning that they have access to their parent scopes. Any time that Angular can not find a method or property on the local scope, it will move up to its parent scope and try to look for the property or method there. If it can’t find what it's looking for, it will go to the parent scope’s parent and so on and so forth until it reaches the `$rootScope`. 
 
 ## A very useful tool - AngularJS Batarang
-
-Before we venture forth with some of the more challenging aspects of `$scope`, let's install a very useful tool:
 
 For a more in depth analysis of scopes, install the  
 [AngularJS batarang](https://chrome.google.com/webstore/detail/angularjs-batarang-stable/niopocochgahfkiccpjmmpchncjoapek/related?hl=en-US) chrome extention. Make sure you are running a server when using this tool and have the `enable` checkbox checked. You can view all of the scopes and their methods and properties using this tool. It is exceptionally useful when dealing with parent/child scope relationships.
@@ -60,7 +58,7 @@ Let's take a look at this example:
   </div>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
 <script>
-	angular.module("myApp",[]).controller("ScopeController", function($scope){})
+  angular.module("myApp", []).controller("ScopeController", function($scope) { });
 </script>
 </body>
 </html>
@@ -68,11 +66,11 @@ Let's take a look at this example:
 
 If you run this code, you will see something potentially unexpected when we type in the first input. The controller inherits from its parent scope (ng-app), and since it does not exist yet, once we start typing in the first input, a value for data will be assigned! The controller doesn't have a value for data defined so it inherits the value from its parent scope. Once we type in the second text box, it creates its own local data within its own scope and we are all fine, but this is not great. What are some ways you could fix this? 
 
-A pretty simple solution would be to just not name each ng-model data, but what if we want it to be so that when we type in the second input box, it updates the first one and vise versa? Instead of passing scope from a parent to a child, we need some way to pass it back up from the child to the parent. How could you do that?
+A pretty simple solution would be to just not name each ng-model `data`, but what if we want it to be so that when we type in the second input box, it updates the first one and vice versa? Instead of passing scope from a parent to a child, we need some way to pass it back up from the child to the parent. How could you do that?
 
 ## Some tricky parts about scope
 
-One way to solve our previous challenge would be to assign each ng-model to a property of the same object, but we have to make sure that our parent has access to that object so we put it in the `$rootScope`. Remember that we want to bind a child to a parent, so our parent needs to be aware as much as the child - this one was pretty tricky!
+One way to solve our previous challenge would be to assign each ng-model to a property of the same object, but we have to make sure that our parent has access to that object so we put it in the `$rootScope`. Remember that we want to bind a child to a parent, so our parent needs to be aware of as much as the child - this one was pretty tricky!
 
 ```html
 <!DOCTYPE html>
@@ -94,9 +92,9 @@ One way to solve our previous challenge would be to assign each ng-model to a pr
   </div>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
 <script>
-	angular.module("myApp",[]).controller("ScopeController", function($rootScope){
-  		$rootScope.view = {}
-	})
+  angular.module("myApp", []).controller("ScopeController", function($rootScope) {
+    $rootScope.view = {};
+  });
 </script>
 </body>
 
@@ -116,9 +114,9 @@ Let's take a look at the following code:
 </head>
 <body>
   <div ng-controller="MainController">
-    {{message}}
+    {{ message }}
     <div ng-if="number === 42">
-        Secret Message: <input type="text" ng-model="message">
+      Secret Message: <input type="text" ng-model="message">
     </div>
   </div>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
@@ -130,10 +128,10 @@ Let's take a look at the following code:
 And in our `script.js` file
 
 ```js
-var app = angular.module("broken",[])
+var app = angular.module("broken", []);
 
 app.controller('MainController', function($scope) {
-  $scope.number = 42
+  $scope.number = 42;
 });
 ```
 
