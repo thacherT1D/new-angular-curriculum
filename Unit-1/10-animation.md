@@ -15,7 +15,7 @@ You may be asking - why do we need a separate module for this? Can't we just use
 
 Fortunately, it's not too bad! Angular will trigger animations based on events (enter, leave, move, add and remove). When one of these events occur, angular will attach a class to that element which we can use to target with CSS and set an animation.
 
-It's also very important to note what ngAnimate **isn't**. It does NOT actually do any animations, all it does is provide us a set of CSS classes to target for animation as well as the ability to create our own custom animations (which is a bit beyond the scope of this lesson). Before we examine how to start using ngAnimate, we need to make sure we have a decent understanding of CSS animations (which we will be using for almost all our examples and exercises in this curriculum). 
+It's also very important to note what ngAnimate **isn't**. It does NOT actually do any animations, all it does is provide us a set of CSS classes to target for animation as well as the ability to create our own custom animations (which is a bit beyond the scope of this lesson). Before we examine how to start using ngAnimate, we need to make sure we have a decent understanding of CSS animations (which we will be using for almost all our examples and exercises in this curriculum).
 
 If you are feeling a bit shaky on CSS animations (transitions/transforms/keyframes), spend a bit of time reviewing the next section - an understanding of CSS animations is an extremely valuable skill set.
 
@@ -33,7 +33,7 @@ As mentioned previously, ngAnimate gives us a set of CSS classes to target for a
 
 
 | Directive  | Supported Animations  |   
-|---|---| 
+|---|---|
 | ng-repeat  | enter,leave,move  |   
 | ng-view  | enter,leave  |   
 | ng-include  | enter,leave  |   
@@ -69,15 +69,15 @@ Here is an example (remember these enter/leave classes don't work for ALL direct
 }
 ```
 
-Aside from the `.ng-enter-active` and `.ng-leave-active` classes, we are given `.ng-enter-stagger` and `.ng-leave-stagger` classes as well so that we can use staggered animations (an animation that contains a delay between each successive animation, you can read more about it [here](http://www.yearofmoo.com/2013/12/staggering-animations-in-angularjs.html#staggering-animations)). 
- 
+Aside from the `.ng-enter-active` and `.ng-leave-active` classes, we are given `.ng-enter-stagger` and `.ng-leave-stagger` classes as well so that we can use staggered animations (an animation that contains a delay between each successive animation, you can read more about it [here](http://www.yearofmoo.com/2013/12/staggering-animations-in-angularjs.html#staggering-animations)).
+
 ## Examples
 
 ### Fading in + out with ng-show / ng-hide
 
 In an `index.html` file (notice that we are including the script for angular-animate and including `ngAnimate` as a dependency in our JavaScript:
 
-Also note, for these examples I am including JavaScript in our HTML - this is NOT a best practice and is strictly for demonstration/ease. 
+Also note, for these examples I am including JavaScript in our HTML - this is NOT a best practice and is strictly for demonstration/ease.
 
 ```html
 <!DOCTYPE html>
@@ -138,7 +138,7 @@ In our `style.css`:
 
 ### Side note - What are we doing that is not great with our ng-model? Think back to the scope lesson, what should we be adding?
 
-## Animating with ng-repeat 
+## Animating with ng-repeat
 
 ```html
 <!DOCTYPE html>
@@ -209,7 +209,7 @@ Let's use the same HTML as above, but change our CSS to use the following:
 }
 ```
 
-## Answer the following questions:
+## Questions
 
 - What is ng-animate? What does it do for us? What does it not to for us?
 - What is the difference between the `.ng-enter ` and `.ng-enter-active ` classes?
@@ -243,6 +243,3 @@ Let's use the same HTML as above, but change our CSS to use the following:
 )
 
 [Angular Animation Basics with CSS Transitions](https://github.com/mjhea0/thinkful-mentor/tree/master/angular/projects/animation-basics#angular-animation-basics-with-css-transitions)
-
-
-

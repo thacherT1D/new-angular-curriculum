@@ -27,9 +27,9 @@ Your form should look like this
 </form>
 ```
 
-Now this form is pretty decent, but it looks like we are not validating anything! A user can leave the inputs blank and still submit the form successfully! Let's add some validations with HTML5 using `required`. 
+Now this form is pretty decent, but it looks like we are not validating anything! A user can leave the inputs blank and still submit the form successfully! Let's add some validations with HTML5 using `required`.
 
-Your form should now look like this 
+Your form should now look like this
 
 ```html
 <form action="#">
@@ -52,7 +52,7 @@ Our first thought might be to start writing a bunch of javascript and figure out
 
 This table and the corresponding descriptions come from [this](https://scotch.io/tutorials/angularjs-form-validation-with-ngmessages) fantastic tutorial.
 
-| Property  |  Class | Description  | 
+| Property  |  Class | Description  |
 |---|---|---|
 | $valid  |  ng-valid | Boolean that indicates whether an item is currently valid based on the rules you placed.  |   
 | $invalid  |  ng-invalid |  Boolean that indicates whether an item is currently invalid based on the rules you placed. |   
@@ -70,7 +70,7 @@ In order to use angular form validation we have to abide by the following rules
 
 A couple extra things:
 - If we do not want to use the standard HTML5 validations we add `novalidate` as an attribute to our form
-- To access angular properties on our inputs we use the syntax `form name.input name.angular property`. 
+- To access angular properties on our inputs we use the syntax `form name.input name.angular property`.
   + We can then do things like `firstForm.username.$valid` or `firstForm.username.$error` (to see an object with any errors)
 
 ## Styling our forms and displaying error messages:
@@ -90,12 +90,13 @@ I
 An example of this would be:
 `<span ng-show="sampleForm.username.$invalid">Username is invalid</span>`
 
-## Visualization 
+## Visualization
 
 If you would like a great example of how these form classes and properties work (99% borrowed from scotch.io) - check out [these](http://sales-person-licks-61176.bitballoon.com) validation tables
 
 
-## Exercise - questions + building your own form and validations 
+## Questions
+#### Exercise - questions + building your own form and validations
 
 First, answer the following questions
 
@@ -109,15 +110,15 @@ First, answer the following questions
 #### For the next set of questions, assume that you have a form with a name="quizForm"
 
 - Create a text input with a name of "question" and give it a validation of "required". If it is $valid add a class of "valid"
-- For your text input with a name of question, add a paragraph tag with the text "please enter a valid question" if the input is not valid 
-- Create a text input with a name of "answer" and give it a validation of "required" and a minimum length of 4 characters. If it is $valid and not $pristine add a class of "correct". 
+- For your text input with a name of question, add a paragraph tag with the text "please enter a valid question" if the input is not valid
+- Create a text input with a name of "answer" and give it a validation of "required" and a minimum length of 4 characters. If it is $valid and not $pristine add a class of "correct".
 - How would you access all of the errors (in an object) for an input with a name of `signupForm.username`
 - What validations would you add in an input to make sure that there is a minimum length of 4 and a maximum length of 20
 - What validation would you add in an input to make sure that only numbers between 1 and 5 are a valid input (use regular expressions for this!)
 
-## Exercise - styling our form and adding some error messages! 
+## Exercise - styling our form and adding some error messages!
 
-Now that you have a solid understanding of these properties/classes, let's build another form with an action of "#" and four text inputs for a username, password, email and zip code. Your form should validate that the username and password are both between 3 and 12 characters long. It should also make sure that the email is a valid email and that the zip code is a five digit number (use ng-pattern and regular expressions for this!). 
+Now that you have a solid understanding of these properties/classes, let's build another form with an action of "#" and four text inputs for a username, password, email and zip code. Your form should validate that the username and password are both between 3 and 12 characters long. It should also make sure that the email is a valid email and that the zip code is a five digit number (use ng-pattern and regular expressions for this!).
 
 Now that we have an idea of how to style and display error messages, let's do the following
 
@@ -125,7 +126,7 @@ Now that we have an idea of how to style and display error messages, let's do th
 - display error messages if inputs are invalid (write whatever you would like for the error message)
 - add a class of `has-error` if the validation fails
 - add a class of `has-success` if the validation passes
-- only display the error message/styling if the user has typed something 
+- only display the error message/styling if the user has typed something
 - when the form is submitted, collect the inputs and add them to an array called `users` (this will be done in your controller)
   + remember that the default behavior for the form submission is a page refresh - you will need to prevent this.
   + make sure to clear all the form values and validations (you should use a method from [here](https://docs.angularjs.org/api/ng/type/form.FormController) to do that )
@@ -139,7 +140,7 @@ Your form should work like this:
 
 Our HTML is getting a bit messy, it would be nice to have an easier way to deal with error messages, that's where ng-messages comes in. Walk through [this](https://scotch.io/tutorials/angularjs-form-validation-with-ngmessages) tutorial and refactor your form to use ng-messages.
 
-## Additional Resources 
+## Additional Resources
 
 [https://docs.angularjs.org/guide/forms](https://docs.angularjs.org/guide/forms)
 
