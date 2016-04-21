@@ -122,3 +122,4 @@ Staying true to an iterative approach to coding, we'll start slow, defining ever
 * [Angular Docs](https://docs.angularjs.org/api)
 * [Thinking in Angular](http://stackoverflow.com/questions/14994391/thinking-in-angularjs-if-i-have-a-jquery-background/15012542#15012542)
 * [AngularJS by Example - Building a Bitcoin Investment Calculator](https://github.com/mjhea0/thinkful-angular)
+* [Angular vs Ember vs Backbone] (https://www.airpair.com/js/javascript-framework-comparison)
