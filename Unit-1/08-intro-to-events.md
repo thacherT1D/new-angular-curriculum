@@ -6,16 +6,17 @@ Angular provides event-handling directives to help us write interactive applicat
 
 `ng-click` is used to run a specific method on the current `$scope` when an element is clicked. Think of it as the Angular equivalent of the `onclick` property.  Let's use it to build a random number picker!
 
-In a controller, let's add a property to the `$scope` called `number`:
+In a controller, let's add a property to the `$scope` called `view.number`:
 
 ```jsdi
-$scope.number = 5;
+$scope.view = {};
+$scope.view.number = 5;
 ```
 
 Let's display `number` in the template:
 
 ```html
-<h3>The number is: {{number}}</h3>
+<h3>The number is: {{view.number}}</h3>
 ```
 
 Next, let's add a button which will call `pickRandomNumber()` (we haven't defined it yet) when clicked.
@@ -27,8 +28,8 @@ Next, let's add a button which will call `pickRandomNumber()` (we haven't define
 Now let's implement `pickRandomNumber()`. Remember that `ng-click` calls a method on the current `$scope`, so we need to make sure `pickRandomNumber()` is defined on the `$scope`. Back in your controller, add:
 
 ```js
-$scope.pickRandomNumber = function(){
-	$scope.number = Math.floor(Math.random() * 10) + 1
+$scope.pickRandomNumber = function() {
+  $scope.view.number = Math.floor(Math.random() * 10) + 1;
 }
 ```
 
@@ -57,14 +58,15 @@ It should display the 2 players' scores, have buttons to increment each player's
 In your controller add:
 
 ```js
-$scope.enterCount = 0;
+$scope.view = {};
+$scope.view.enterCount = 0;
 ```
 
 In your view, display the number of times the div was entered, along with the div itself.  Notice that the div has the ng-mouseenter attribute which evaluates an expression every time a mouse enter occurs:
 
 ```html
 <h3>The div was entered {{enterCount}} times</h3>
-<div class="divbox" ng-mouseenter="enterCount = enterCount + 1">
+<div class="divbox" ng-mouseenter="view.enterCount = view.enterCount + 1">
 </div>
 ```
 
@@ -91,9 +93,9 @@ Here is code to generate a random hex color:
 
 ```js
   function randomColor() {
-    var x=Math.round(0xffffff * Math.random()).toString(16);
-    var y=(6-x.length);
-    var z="000000";
+    var x = Math.round(0xffffff * Math.random()).toString(16);
+    var y = (6-x.length);
+    var z = "000000";
     var z1 = z.substring(0,y);
     var color = "#" + z1 + x;
     return color;
@@ -114,21 +116,20 @@ In the gif below, you can see the user refreshes the page, mouses over the box 4
 2. To replay the colors, you will need to use the ```$timeout``` service.  Here is a pattern for calling the ```$timeout``` service to solve this problem:
 
 ```js
-
 var replaying = false;
 
 $scope.replay = function() {
   var displayPrevColor = function() {
-  	// do some logic to change color
-  	// if done replay colors
-  	  replaying = false;
-  	// else
-  	  $timeout(dispalyPrevColor, 1000);
-  	// end if/else 
+    // do some logic to change color
+    // if done replay colors
+    replaying = false;
+    // else
+    $timeout(dispalyPrevColor, 1000);
+    // end if/else 
   };
   if (!replaying) {
-  	replaying = true;
-  	// This timeout starts the timeout loop
+    replaying = true;
+    // This timeout starts the timeout loop
     $timeout(function() { displayPrevColor(); }, 500);
   }
 };
@@ -167,9 +168,9 @@ Favorite Pi: {{favoriteForm.favoritePie}}
 
 An anti pattern is a way of writing code that is a bad practice in your framework.  There are a few things you should **not** do with ```ng-submit```.
 
-1. Do not use ```ng-submit``` on the form and ```ng-click``` on the submit button at the same time.  Use either ng-submit on the form and no directive on the submit button, or use ```ng-click``` on the submit button and no directive on the form. ```ng-submit``` is preferred in a form.
-2. Do not create separate properties directly on the `$scope` object for each form field.  Instead, create an object that contains all the form properties inside of it.  In the above example, `$scope.favoriteForm = {};` is the object that will contain each form property.
-3. Never do any DOM manipulation in your controller.  When submitting form data, it is often tempting to revert back to the jQuery way of doing things.  For example, do not attempt to append the new form data to the DOM inside of your controller.  Again, **do not do any DOM manipulation in the controller**.  Instead, add the data that you want to display to an object in the scope that will then be displayed in the view.
+1. Do not use ```ng-submit``` on the form and ```ng-click``` on the submit button at the same time. Use either ng-submit on the form and no directive on the submit button, or use ```ng-click``` on the submit button and no directive on the form. ```ng-submit``` is preferred in a form.
+2. Do not create separate properties directly on the `$scope` object for each form field. Instead, create an object that contains all the form properties inside of it. In the above example, `$scope.favoriteForm = {};` is the object that will contain each form property.
+3. Never do any DOM manipulation in your controller. When submitting form data, it is often tempting to revert back to the jQuery way of doing things. For example, do not attempt to append the new form data to the DOM inside of your controller. Again, **do not do any DOM manipulation in the controller**. Instead, add the data that you want to display to an object in the scope that will then be displayed in the view.
 
 **Exercise**
 
