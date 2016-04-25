@@ -15,7 +15,7 @@ Remember how to build forms? Let's make sure.
 - Create a form with an action to # (you can use `javascript:void(0)` as well - wondering what that does? Read [this](http://stackoverflow.com/questions/1291942/what-does-javascriptvoid0-mean))
 - Inside your form add two text inputs (each one should have a label with the `for` attribute matching the `id` of each input) and an input with type of `submit` and a value of `Click me!`
 
-Your form should look like this
+Your form should look like this:
 
 ```html
 <form action="#">
@@ -29,7 +29,7 @@ Your form should look like this
 
 Now this form is pretty decent, but it looks like we are not validating anything! A user can leave the inputs blank and still submit the form successfully! Let's add some validations with HTML5 using `required`.
 
-Your form should now look like this
+Your form should now look like this:
 
 ```html
 <form action="#">
