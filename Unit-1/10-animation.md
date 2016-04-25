@@ -89,14 +89,14 @@ Also note, for these examples I am including JavaScript in our HTML - this is NO
 </head>
 <body>
   <div ng-if="toggleBoolean">
-     Fade me!
+    Fade me!
   </div>
   <input type="text" ng-model="name">
   <div ng-hide="name == 'Elie'">
-     You're not Elie!
+    You're not Elie!
   </div>
   <div ng-show="name == 'Elie'">
-     Hi Elie!
+    Hi Elie!
   </div>
   <button ng-click="toggleBoolean = !toggleBoolean">Toggle fade</button>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
@@ -149,15 +149,16 @@ In our `style.css`:
   <link rel="stylesheet" href="style.css">
 </head>
 <body ng-controller="MainController">
-  <input type="text" ng-model="search">
-  <div ng-repeat ="instructor in instructors | filter:search">
+  <input type="text" ng-model="view.search">
+  <div ng-repeat ="instructor in view.instructors | filter:view.search">
     {{instructor}}
   </div>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-animate.min.js"></script>
   <script>
     angular.module('animateApp',['ngAnimate']).controller("MainController", function($scope){
-      $scope.instructors = ["Tim","Ian","Matt", "Elie"]
+      $scope.view = {};
+      $scope.view.instructors = ["Tim", "Ian", "Matt", "Elie"];
     });
   </script>
 </body>
@@ -231,15 +232,9 @@ Let's use the same HTML as above, but change our CSS to use the following:
 
 [https://docs.angularjs.org/api/ng/service/$animate](https://docs.angularjs.org/api/ng/service/$animate)
 
-[https://scotch.io/tutorials/animating-angularjs-apps-ngview
-](https://scotch.io/tutorials/animating-angularjs-apps-ngview
-)
-[https://egghead.io/lessons/angularjs-animation-basics
-](https://egghead.io/lessons/angularjs-animation-basics
-)
+[https://scotch.io/tutorials/animating-angularjs-apps-ngview](https://scotch.io/tutorials/animating-angularjs-apps-ngview)
+[https://egghead.io/lessons/angularjs-animation-basics](https://egghead.io/lessons/angularjs-animation-basics)
 
-[https://css-tricks.com/animations-the-angular-way/
-](https://css-tricks.com/animations-the-angular-way/
-)
+[https://css-tricks.com/animations-the-angular-way/](https://css-tricks.com/animations-the-angular-way/)
 
 [Angular Animation Basics with CSS Transitions](https://github.com/mjhea0/thinkful-mentor/tree/master/angular/projects/animation-basics#angular-animation-basics-with-css-transitions)
