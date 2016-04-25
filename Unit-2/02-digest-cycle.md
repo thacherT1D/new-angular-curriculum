@@ -23,10 +23,10 @@ Use this code example, and see if you can figure this out:
 </head>
 <body >
   <div>
-    From $rootScope: {{name}}
+    From $rootScope: {{rootView.name}}
   </div>
   <div ng-controller="MainController">
-    From $scope: {{age}}
+    From $scope: {{view.age}}
   </div>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
   <script src="script.js"></script>
@@ -35,21 +35,21 @@ Use this code example, and see if you can figure this out:
 ```
 
 ```js
-angular.module("applydigest",[]).controller("MainController", function($rootScope, $scope){
-  $rootScope.name = "Fido"
-  $scope.age = 3
+angular.module("applydigest", []).controller("MainController", function($rootScope, $scope) {
+  $rootScope.rootView = {};
+  $rootScope.rootView.name = "Fido";
+  $scope.view = {};
+  $scope.view.age = 3;
 
   // this is for example purposes
   // NOTE - there is a $timeout which handles $apply for you
-  setTimeout(function(){
-    $rootScope.name = "Lassie"
-    $scope.age = 10
-    // $scope.$digest()
-    $scope.$apply()
-  },1000)
-})
-
-
+  setTimeout(function() {
+    $rootScope.rootView.name = "Lassie";
+    $scope.view.age = 10;
+    // $scope.$digest();
+    $scope.$apply();
+  }, 1000);
+});
 ```
 
 When you call $scope.digest it only runs the digest loop from that particular scope, but when you call $apply, that uses the $rootScope and goes through all scopes in the application.
