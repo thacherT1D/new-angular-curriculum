@@ -134,8 +134,8 @@ Now in our controller, we can inject this service:
 
 ```js
 angular.module("learningServices").controller("FirstController", ["$scope", "firstService", function($scope, firstService){
-  $scope.greeting = firstService.sayHi(); 
-  $scope.users = firstService.getAllUsers();
+  $scope.view.greeting = firstService.sayHi(); 
+  $scope.view.users = firstService.getAllUsers();
 }]);
 ```
 
@@ -204,7 +204,7 @@ Now in your controller you can inject the contact service you created as a depen
 
 ```js
 app.controller('ContactController', ["$scope", "ContactList", function($scope, ContactList){
-   $scope.contactData = ContactList.contactList;
+   $scope.view.contactData = ContactList.contactList;
 
    // TODO: Your ContactList controller code here.
 }]);
