@@ -75,6 +75,7 @@ In the example below, a deferred object is created.  The deferred gets resolved 
 
 ```js
 app.controller('OmdbController', ['$scope', 'omdbapi', function($scope, omdbapi) {
+  $scope.view = {};
   $scope.view.term = '';
   
   $scope.view.queryOmdb = function() {
