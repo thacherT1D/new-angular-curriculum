@@ -91,7 +91,8 @@ Let's add some data to a controller and see how it interacts with the directive.
 var app = angular.module('yoyoDirectiveApp', [])
 
 app.controller('YoyoController', ['$scope', function($scope) {
-  $scope.view.yoyo = {name: 'Duncan Metal Drifter',
+  $scope.view.yoyo = {
+    name: 'Duncan Metal Drifter',
     img: "http://www.toysrus.com/graphics/tru_prod_images/Duncan-Metal-Drifter-Pro-Yo-Yo--pTRU1-8444206dt.jpg"
   };
 }]);
@@ -106,8 +107,8 @@ app.directive('gsYoyoDetails', function() {
 `yoyo-details.html`
 
 ```html
-<h3>{{yoyo.name}}</h3>
-<img ng-src="{{yoyo.img}}">
+<h3>{{view.yoyo.name}}</h3>
+<img ng-src="{{view.yoyo.img}}">
 ```
 
 `index.html`:
@@ -138,7 +139,8 @@ The work around is to create an `isolated scope` for the directive.
 var app = angular.module('yoyoDirectiveApp', [])
 
 app.controller('YoyoController', ['$scope', function($scope) {
-  $scope.view.yoyo = {name: 'Duncan Metal Drifter',
+  $scope.view.yoyo = {
+    name: 'Duncan Metal Drifter',
     img: "http://www.toysrus.com/graphics/tru_prod_images/Duncan-Metal-Drifter-Pro-Yo-Yo--pTRU1-8444206dt.jpg"
   };
 }]);
@@ -164,7 +166,7 @@ app.directive('gsYoyoDetails', function() {
   <script src="app.js" type="text/javascript"></script>
 </head>
 <body ng-controller="YoyoController">
-  <gs-yoyo-details yoyo-data="yoyo"></gs-yoyo-details>
+  <gs-yoyo-details yoyo-data="view.yoyo"></gs-yoyo-details>
 </body>
 </html>
 ```
