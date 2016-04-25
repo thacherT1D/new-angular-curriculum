@@ -75,11 +75,11 @@ In the example below, a deferred object is created.  The deferred gets resolved 
 
 ```js
 app.controller('OmdbController', ['$scope', 'omdbapi', function($scope, omdbapi) {
-  $scope.term = '';
+  $scope.view.term = '';
   
-  $scope.queryOmdb = function() {
+  $scope.view.queryOmdb = function() {
     omdbapi.search($scope.term).then(function(data) {
-      $scope.results = data;
+      $scope.view.results = data;
     })
   }
 }]);
