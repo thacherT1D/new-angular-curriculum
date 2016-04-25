@@ -66,7 +66,7 @@ We might have taken this for granted a bit, but think about a simple example whe
 
 ```js
 angular.module('myApp', []).controller('FirstController', function($scope){
-	// now we can do all sorts of cool things with scope
+  // now we can do all sorts of cool things with scope
 })
 ```
 
@@ -74,7 +74,7 @@ We see in this example, we are injecting the `$scope` service to our controller,
 
 ```js
 angular.module('myApp', []).controller('FirstController', function($rootScope, $http, $q, $scope){
-	// I have now added a whole bunch of dependencies (don't worry if you don't know what $http and $q are, we'll get there) - and the order in which I put the in does not matter!
+  // I have now added a whole bunch of dependencies (don't worry if you don't know what $http and $q are, we'll get there) - and the order in which I put them in does not matter!
 })
 ```
 
@@ -87,8 +87,8 @@ We just put $scope in our controller and it didn't even matter if it was the fir
 Let's assume we have a function called sayHi that takes in a few parameters:
 
 ```js
-var sayHi = function(firstName, lastName, favoriteColor){
-	return "Hi " + firstName + " " + lastName + ". It looks like your favorite color is " + favoriteColor
+var sayHi = function(firstName, lastName, favoriteColor) {
+  return `Hi ${firstName} ${lastName}. It looks like your favorite color is ${favoriteColor}`;
 }
 ```
 
@@ -132,11 +132,10 @@ For now, use inline array annotation (it is the most commonly seen and is stated
 
 ```js
 app.controller('SampleController', function($scope, $rootScope){
-  $scope.val = "some value from $scope";
-  $rootScope.val = "some value from $rootScope"
+  $scope.view.val = "some value from $scope";
+  $rootScope.rootView.val = "some value from $rootScope";
 });
 ```
-
 
 - In the above example (`SampleController`) does the order of the dependencies matter?  Does `$scope` have to come before `$rootScope`?  Do the names matter?  Could we have named them something else?
 
