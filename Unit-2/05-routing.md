@@ -70,10 +70,11 @@ app.controller('HomeController', function($scope){
 });
 ```
 
-Let's add a property to the scope called `message`.  Set it to whatever you want:
+Let's add a property to the scope called `view.message`.  Set it to whatever you want:
 
 ```js
-$scope.message = "Welcome!"
+$scope.view = {};
+$scope.view.message = "Welcome!"
 ```
 
 Now let's create the template.  Inside of `app/partials` create a `home.html` file.
@@ -81,7 +82,7 @@ Now let's create the template.  Inside of `app/partials` create a `home.html` fi
 ```html
 <p>This is the home template</p>
 
-<p>Message: {{message}}</p>
+<p>Message: {{view.message}}</p>
 ```
 
 Make sure when you visit `localhost:8080`, you see the above template rendered between the header and footer we created earlier.  Let's repeat the same process for the '/dogs' route.  
@@ -90,7 +91,8 @@ Controller:
 
 ```js
 app.controller('DogsController', function($scope){
-	$scope.message = "Woof Woof!"
+  $scope.view = {};
+  $scope.view.message = "Woof Woof!"
 });
 ```
 
@@ -99,7 +101,7 @@ Template:
 ```html
 <p>This is the dogs template</p>
 
-<p>Message: {{message}}</p>
+<p>Message: {{view.message}}</p>
 ```
 
 Make sure the second route works correctly by visiting `http://localhost:8080/#/dogs`. Play around with the browser navigation buttons.  Try bookmarking a page.  It should all work!
@@ -143,9 +145,9 @@ Add ng-app="myApp" to the html tag of your file
 Add ng-view to your HTML page that will be used later to inject your partials into.
 EX: 
 ```html
-    <body>
-     <div ng-view></div>
-    </body>
+<body>
+  <div ng-view></div>
+</body>
 ```
 Create an angular module and inject the 'ngRoute' dependency 
 EX: 
@@ -155,12 +157,12 @@ angular.module('myApp', ['ngRoute'])
 Create .config section under your module to set up your routes
 EX: 
 ```js
-.config(function($routeProvider){
-       $routeProvider
-        .when('/', {
-        templateUrl: 'home.html',
-        controller: 'HomeController'
-  })
+.config(function($routeProvider) {
+  $routeProvider
+    .when('/', {
+      templateUrl: 'home.html',
+      controller: 'HomeController'
+    })
 })
 ```
 
@@ -169,13 +171,13 @@ Remove Hashtags from urls :
 Add $locationProvider.html5Mode(true) to your .config
 EX: 
 ```js
-.config(function($routeProvider, $locationProvider){
-        $routeProvider
-        .when('/', {
-        templateUrl: 'home.html',
-        controller: 'HomeController'
-  })
-   $locationProvider.html5Mode(true);
+.config(function($routeProvider, $locationProvider) {
+  $routeProvider
+    .when('/', {
+      templateUrl: 'home.html',
+      controller: 'HomeController'
+    })
+  $locationProvider.html5Mode(true);
 })
 ```
 
@@ -188,7 +190,7 @@ Then create a divshot.json file and add this code:
 ```js
 {
   "rewrites": [
-   {"source":"**/**","destination":"/index.html"}
+    {"source":"**/**","destination":"/index.html"}
   ]
 }
 ```
