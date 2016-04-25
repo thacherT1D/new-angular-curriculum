@@ -20,7 +20,7 @@ It's **Angular's wrapper for AJAX calls.**  It's the easiest way of communicatin
 **In order to use the `$http` service in a controller, we need to first add it as a dependency**.  Like this:
 
 ```js
-app.controller('someControllerName', function($scope, $http){
+app.controller('someControllerName', function($scope, $http) {
 });
 ```
 
@@ -41,7 +41,7 @@ Don't forget that `$http.get()` returns a promise!
 
 ```js
 $http.get('https://api.github.com/zen').then(function(data){
-	$scope.zenData = data;
+  $scope.view.zenData = data;
 });
 ```
 
@@ -49,18 +49,18 @@ In your template, display the value of `zenData`.  You'll see that it's JSON wit
 
 ```json
 {
-	"data":"Keep it logically awesome.",
-	"status":200,
-	"config": {
-		"method":"GET",
-		"transformRequest":[null],
-		"transformResponse":[null],
-		"url":"https://api.github.com/zen",
-		"headers":{
-			"Accept":"application/json, text/plain, */*"
-		}
-	},
-	"statusText":"OK"
+  "data":"Keep it logically awesome.",
+  "status":200,
+  "config": {
+    "method":"GET",
+    "transformRequest":[null],
+    "transformResponse":[null],
+    "url":"https://api.github.com/zen",
+    "headers":{
+      "Accept":"application/json, text/plain, */*"
+    }
+  },
+  "statusText":"OK"
 }
 ```
 
@@ -68,7 +68,7 @@ Most of time, we just want the actual response data, so let's change our code sl
 
 ```js
 $http.get('https://api.github.com/zen').then(function(data){
-	$scope.zenData = data.data;
+  $scope.view.zenData = data.data;
 });
 ```
 
