@@ -91,7 +91,7 @@ var app = angular.module('circleApp', []);
 app.directive('gsBigRedCircle', function() {
   return {
     controller: ['$scope', function($scope) {
-      $scope.sayHi = function() {
+      $scope.view.sayHi = function() {
         alert("Hi! Thanks for clicking on me!");
       };
     }],
@@ -99,7 +99,7 @@ app.directive('gsBigRedCircle', function() {
     link: function(scope, element, attrs) {
 
       element.on('click', function() {
-        scope.sayHi();
+        scope.view.sayHi();
       });
       
     }
@@ -134,7 +134,7 @@ app.directive('gsParent', function() {
   return {
     templateUrl: 'partials/parent.html',
     controller: ['$scope', function($scope) {
-      $scope.parentMessage = function() {
+      $scope.view.parentMessage = function() {
         alert("I live on the parent!");
       };
     }],
@@ -146,7 +146,7 @@ app.directive('gsChild', function() {
   	templateUrl: 'partials/child.html',
     link: function(scope, element, attrs) {
       element.on('click', function() {
-        scope.parentMessage();
+        scope.view.parentMessage();
       });
     }
   };
