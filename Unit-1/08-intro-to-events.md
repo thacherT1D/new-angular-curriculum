@@ -65,7 +65,7 @@ $scope.view.enterCount = 0;
 In your view, display the number of times the div was entered, along with the div itself.  Notice that the div has the ng-mouseenter attribute which evaluates an expression every time a mouse enter occurs:
 
 ```html
-<h3>The div was entered {{enterCount}} times</h3>
+<h3>The div was entered {{view.enterCount}} times</h3>
 <div class="divbox" ng-mouseenter="view.enterCount = view.enterCount + 1">
 </div>
 ```
