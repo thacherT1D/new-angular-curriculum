@@ -137,7 +137,7 @@ app.controller('MainController', function($scope) {
 
 So what we're essentially doing here is checking to see if `$scope.number` is `42` and if it is, display an input where the user can type a secret message that will appear outside the `ng-if`. Pretty simple, but it doesn't do what we expect! Why do you think that is? 
 
-The answer actually has to do with the way JavaScript works! Let's review prototypal inheritance for a quick minute and see if that helps solve our problem.
+There's 2 reasons, one is that `ng-if` actually creates it's own new scope. The second part of the answer has to do with the way JavaScript works! Let's review prototypal inheritance for a quick minute and see if that helps solve our problem.
 
 ## Prototypal inheritance review 
 
@@ -236,7 +236,7 @@ Here is a solution to our previous issue with the secret message and the number 
   <div ng-controller="MainController">
     {{view.message}}
     <div ng-if="view.number === 42">
-        Secret Message: <input type="text" ng-model="view.message">
+      Secret Message: <input type="text" ng-model="view.message">
     </div>
   </div>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
