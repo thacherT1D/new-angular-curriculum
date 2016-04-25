@@ -133,7 +133,8 @@ angular.module("learningServices").service("firstService", [function(){
 Now in our controller, we can inject this service:
 
 ```js
-angular.module("learningServices").controller("FirstController", ["$scope", "firstService", function($scope, firstService){
+angular.module("learningServices").controller("FirstController", ["$scope", "firstService", function($scope, firstService) {
+  $scope.view = {};
   $scope.view.greeting = firstService.sayHi(); 
   $scope.view.users = firstService.getAllUsers();
 }]);
@@ -203,10 +204,11 @@ app.service('ContactList', [function() {
 Now in your controller you can inject the contact service you created as a dependency.  For example, your controller might look like this:
 
 ```js
-app.controller('ContactController', ["$scope", "ContactList", function($scope, ContactList){
-   $scope.view.contactData = ContactList.contactList;
+app.controller('ContactController', ["$scope", "ContactList", function($scope, ContactList) {
+  $scope.view = {};
+  $scope.view.contactData = ContactList.contactList;
 
-   // TODO: Your ContactList controller code here.
+  // TODO: Your ContactList controller code here.
 }]);
 ```
 
