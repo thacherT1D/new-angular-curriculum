@@ -32,7 +32,7 @@ Here's a possible solution that will replace all `_`'s with `-`'s:
 ```js
 app.filter('kebab', function () {
   return function (input) {
-      return input.replace(/_/g , "-");
+    return input.replace(/_/g , "-");
   };
 });
 ```
