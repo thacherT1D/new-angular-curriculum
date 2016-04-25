@@ -70,7 +70,7 @@ In order to use angular form validation we have to abide by the following rules
 
 A couple extra things:
 - If we do not want to use the standard HTML5 validations we add `novalidate` as an attribute to our form
-- To access angular properties on our inputs we use the syntax `form name.input name.angular property`.
+- To access angular properties on our inputs we use the syntax `formName.inputName.angularProperty`.
   + We can then do things like `firstForm.username.$valid` or `firstForm.username.$error` (to see an object with any errors)
 
 ## Styling our forms and displaying error messages:
@@ -84,7 +84,7 @@ In order to add a class based off of a condition we are going to be using the bu
 An example of this would be: `"{ 'has-error' : sampleForm.username.$invalid }"`
 
 But how about showing an error message? To do this we are going to be using the `ng-show` directive which works like this:
-I
+
 `ng-show="condition"`
 
 An example of this would be:
@@ -112,7 +112,7 @@ First, answer the following questions
 - Create a text input with a name of "question" and give it a validation of "required". If it is $valid add a class of "valid"
 - For your text input with a name of question, add a paragraph tag with the text "please enter a valid question" if the input is not valid
 - Create a text input with a name of "answer" and give it a validation of "required" and a minimum length of 4 characters. If it is $valid and not $pristine add a class of "correct".
-- How would you access all of the errors (in an object) for an input with a name of `signupForm.username`
+- How would you access all of the errors (in an object) for an input with a name of `quizForm.username`
 - What validations would you add in an input to make sure that there is a minimum length of 4 and a maximum length of 20
 - What validation would you add in an input to make sure that only numbers between 1 and 5 are a valid input (use regular expressions for this!)
 
