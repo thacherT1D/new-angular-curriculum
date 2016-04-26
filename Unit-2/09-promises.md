@@ -148,7 +148,7 @@ app.controller('OmdbController', function($scope, omdbapi) {
   $scope.view.term = '';
 
   $scope.view.queryOmdb = function() {
-    omdbapi.search($scope.term).then(function(data) {
+    omdbapi.search($scope.view.term).then(function(data) {
       $scope.view.results = data;
     })
   }
