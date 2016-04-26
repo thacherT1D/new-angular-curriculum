@@ -91,6 +91,7 @@ var app = angular.module('circleApp', []);
 app.directive('gsBigRedCircle', function() {
   return {
     controller: ['$scope', function($scope) {
+      $scope.view = {};
       $scope.view.sayHi = function() {
         alert("Hi! Thanks for clicking on me!");
       };
@@ -134,6 +135,7 @@ app.directive('gsParent', function() {
   return {
     templateUrl: 'partials/parent.html',
     controller: ['$scope', function($scope) {
+      $scope.view = {};
       $scope.view.parentMessage = function() {
         alert("I live on the parent!");
       };
