@@ -90,12 +90,12 @@ var app = angular.module('circleApp', []);
 
 app.directive('gsBigRedCircle', function() {
   return {
-    controller: ['$scope', function($scope) {
+    controller: function($scope) {
       $scope.view = {};
       $scope.view.sayHi = function() {
         alert("Hi! Thanks for clicking on me!");
       };
-    }],
+    },
     template: '<div class="circle">Click me!</div>',
     link: function(scope, element, attrs) {
 
@@ -134,12 +134,12 @@ For example, suppose you have a custom directive called `gs-parent`, and another
 app.directive('gsParent', function() {
   return {
     templateUrl: 'partials/parent.html',
-    controller: ['$scope', function($scope) {
+    controller: function($scope) {
       $scope.view = {};
       $scope.view.parentMessage = function() {
         alert("I live on the parent!");
       };
-    }],
+    },
   };
 });
 
