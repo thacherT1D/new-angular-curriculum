@@ -62,27 +62,7 @@ angular.module("learnServices", [])
 }]);
 ```
 
-Note, that our previous example will work the same if we use service:
-
-```js
-angular.module("learnServices", [])
-
-.service('personService', [function(){
-  return {
-    name: "Matt",
-    job: "Instructor",
-    sayHi: function(){
-      return "Hello!"
-    }
-  }
-}])
-
-.controller('personController', ["personService", function(personService){
-  // I now have access to all the methods/properties returned from the factory!
-}]);
-```
-
-A provider is the most complex method and is used less frequently. It is a factory that can be configured, which allows for more flexibility, but for our applications we are going to build, you will not need this level of complexity.
+A provider is the most complex method and is used less frequently. It is a factory that can be configured before the application starts, which allows for more flexibility, but for the applications we are going to build, you will not need this level of complexity.
 
 ### So which one??
 
