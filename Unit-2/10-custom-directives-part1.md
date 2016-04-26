@@ -90,13 +90,13 @@ Let's add some data to a controller and see how it interacts with the directive.
 ```js
 var app = angular.module('yoyoDirectiveApp', [])
 
-app.controller('YoyoController', ['$scope', function($scope) {
+app.controller('YoyoController', function($scope) {
   $scope.view = {};
   $scope.view.yoyo = {
     name: 'Duncan Metal Drifter',
     img: "http://www.toysrus.com/graphics/tru_prod_images/Duncan-Metal-Drifter-Pro-Yo-Yo--pTRU1-8444206dt.jpg"
   };
-}]);
+});
 
 app.directive('gsYoyoDetails', function() {
   return {
@@ -139,13 +139,13 @@ The work around is to create an `isolated scope` for the directive.
 ```js
 var app = angular.module('yoyoDirectiveApp', [])
 
-app.controller('YoyoController', ['$scope', function($scope) {
+app.controller('YoyoController', function($scope) {
   $scope.view = {};
   $scope.view.yoyo = {
     name: 'Duncan Metal Drifter',
     img: "http://www.toysrus.com/graphics/tru_prod_images/Duncan-Metal-Drifter-Pro-Yo-Yo--pTRU1-8444206dt.jpg"
   };
-}]);
+});
 
 app.directive('gsYoyoDetails', function() {
   return {
