@@ -85,11 +85,7 @@ Promises are native to the browser.  All popular browsers except for [IE11 and b
 
 For more practice with promises, checkout the [promise-challenges repo](https://github.com/gSchool/promise-challenges).
 
-# $q
-
-When learning about the [digest cycle](02-digest-cycle.md), you learned that changes to `$scope` using asynchronous APIs such as setTimeout, setInterval or XMLHttpRequest do _not_ automatically update the UI. This is because they are external to the angular digest cycle. i.e. Angular does not know when these asynchronous APIs are done executing, so you *must* manually call `$scope.apply()` or `$scope.digest()` to let angular know that some things have changed and the UI should be updated.
-
-As you may recall, promises represent an asynchronous value. $q is angular's implementation of promises/deferred objects inspired by the [q](https://github.com/kriskowal/q) library. $q allows us to use promises within the digest cycle of angular without the need to call `$scope.apply()` or `$scope.digest()`
+# Promises in Angular
 
 Next, we'll look at an example in angular that uses promises.  Let's create a service to catch a specific pokemon using the [pokemon api](http://pokeapi.co/docs/).
 
@@ -135,6 +131,12 @@ This deeply nested code is very hard to maintain and it doesn't really provide m
 **EXERCISE**: Take a look at [this link about flattening promise chains](http://solutionoptimist.com/2013/12/27/javascript-promise-chains-2/).  Apply your newly found promise knowledge to improving the pokemon service.  Make the promise chain in the service not deeply nested. Remember that $http returns a promise.  Also, return a promise to the client so that the client can use `.then` to figure out when all of the data is done loading.  Also keep in mind that the get request for moves and the get request for abilities are not dependent on each other.
 
 **EXERCISE** Now that we have a better idea of how to use promises, improve the code so that all move data, all ability data, and all sprite data gets returned by the service.  Create a page to display the results.
+
+# $q
+
+When learning about the [digest cycle](02-digest-cycle.md), you learned that changes to `$scope` using asynchronous APIs such as setTimeout, setInterval or XMLHttpRequest do _not_ automatically update the UI. This is because they are external to the angular digest cycle. i.e. Angular does not know when these asynchronous APIs are done executing, so you *must* manually call `$scope.apply()` or `$scope.digest()` to let angular know that some things have changed and the UI should be updated.
+
+As you may recall, promises represent an asynchronous value. $q is angular's implementation of promises/deferred objects inspired by the [q](https://github.com/kriskowal/q) library. $q allows us to use promises within the digest cycle of angular without the need to call `$scope.apply()` or `$scope.digest()`
 
 ### Using $q
 
