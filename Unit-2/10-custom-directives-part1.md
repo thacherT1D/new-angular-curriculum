@@ -27,7 +27,7 @@ Our `index.html` would look like this:
 <html ng-app="simpleDirectiveApp">
 <head>
   <script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js" type="text/javascript"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js" type="text/javascript"></script>
   <script src="app.js" type="text/javascript"></script>
 </head>
 <body>
@@ -119,7 +119,7 @@ app.directive('gsYoyoDetails', function() {
 <html ng-app="yoyoDirectiveApp">
 <head>
 <script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js" type="text/javascript"></script>
 <script src="app.js" type="text/javascript"></script>
 </head>
 <body ng-controller="YoyoController">
@@ -164,7 +164,7 @@ app.directive('gsYoyoDetails', function() {
 <html ng-app="yoyoDirectiveApp">
 <head>
   <script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js" type="text/javascript"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js" type="text/javascript"></script>
   <script src="app.js" type="text/javascript"></script>
 </head>
 <body ng-controller="YoyoController">
