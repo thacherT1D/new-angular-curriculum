@@ -87,7 +87,9 @@ For more practice with promises, checkout the [promise-challenges repo](https://
 
 # Promises in Angular
 
-Next, we'll look at an example in angular that uses promises.  Let's create a service to catch a specific pokemon using the [pokemon api](http://pokeapi.co/docs/).
+Recall from [Unit 2: Section 6](06-http-service.md) that the `$http` service method `get` returns a promise.
+
+Let's create a service that uses `$http` to catch a specific pokemon using the [pokemon api](http://pokeapi.co/docs/).
 
 The example below is a possible way to implement a service that
 gets the first move for a pokemon and the first ability.  **THERE IS A MUCH BETTER WAY TO IMPLEMENT THE FOLLOWING CODE**.
@@ -140,6 +142,46 @@ As you may recall, promises represent an asynchronous value. $q is angular's imp
 
 ### Using $q
 
+`$q` has a similar API to native promises.
+
+Recall our example from earlier that returns a native promise:
+
+```js
+function getUserData() {
+  return new Promise(function(resolve, reject){
+    someAsyncThing(function(error, userData){
+      if(error) {
+        reject(error);
+      } else {
+        resolve(userData);
+      }
+    });
+  });
+}
+```
+
+The same function on an angular service would return the invocation of $q instead of a new instance of a promise:
+
+```js
+app.factory('UserService', function($q){
+  return {
+    getUserData: function() {
+      return $q(function(resolve, reject){
+        someAsyncThing(function(error, userData){
+          if(error) {
+            reject(error);
+          } else {
+            resolve(userData);
+          }
+        });
+      });
+    }
+  }
+});
+```
+
+**EXERCISE** What would happen if the `UserService` in the above example used a new `Promise` instead of $q?
+
 In the example below, a $q promise is resolved by providing the result of getting the movie data from our movie cache or from an ajax request. The code demonstrates a good way to allow controllers to fetch data from services that may (or may not) need to fetch that data from an external source. In the following example, we'll cache the OMDB response for a search term, and avoid making calls to the API for the same data more than once. Our controller can treat the response the same way in both cases, it doesn't care where the data comes from, only that the search function will return a promise.
 
 ```js
@@ -180,3 +222,5 @@ app.factory('omdbapi', function($http, $q) {
   return omdbservice;
 });
 ```
+
+**EXERCISE** What are some advantages of caching the data? What role does `$q` play in caching the data?
