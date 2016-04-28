@@ -46,7 +46,7 @@ These observations lead to a few topics:
 
 **Normalization of Html**
 
-When angular looks over your html document, it goes through a process called normalization.  The process essentially goes over each tag, looks for angular directives, and then normalizes the name from dash-delimited name to a camel case name.  For example, angular translates `gs-angular-logo` into `gsAngularLogo`.  This process is necessary becuase dash delimited names are not the only possiblity for directives.  For example, `gs_angular_logo` would also be valid.
+When angular looks over your html document, it goes through a process called normalization.  The process essentially goes over each tag, looks for angular directives, and then normalizes the name from dash-delimited name to a camel case name.  For example, angular translates `gs-angular-logo` into `gsAngularLogo`.  This process is necessary because dash delimited names are not the only possiblity for directives.  For example, `gs_angular_logo` would also be valid.
 
 **EXERCISE**
 
