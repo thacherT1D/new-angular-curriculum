@@ -108,4 +108,4 @@ angular.module("myapp", [])
 
 ## Resources
 
-- [MVC and MVVM with AngularJS](http://codechutney.in/blog/javascript/mvc-and-mvvm-with-angularjs/)
+- [MVC and MVVM with AngularJS](https://web.archive.org/web/20160229124959/http://codechutney.in/blog/javascript/mvc-and-mvvm-with-angularjs/)
