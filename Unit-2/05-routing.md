@@ -181,7 +181,7 @@ EX:
 })
 ```
 
-Then Add a base tag to the bottom of the head of your main HTML file:
+Then add a base tag to the bottom of the head of your main HTML file:
 EX:
 ```
 <base href="/">
@@ -197,7 +197,7 @@ Then create a superstatic.json file and add this code:
 
 Create your partial HTML file and the controller you added to the route and you should be good to go
 
-Run your a local static server with superstatic
+Run a local static server with superstatic
 ```
 $ superstatic
 ```
