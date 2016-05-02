@@ -129,7 +129,7 @@ angular.module("learningServices").controller("FirstController", function($scope
 
 **EXERCISE 2: mathService**
 
-For this exercise you will be building a simple application which contains a form where a user can selects an operation (add, subtract, multiply, divide and power) and two numbers and when the form is submitted, the value expression is returned.
+For this exercise you will be building a simple application which contains a form where a user can select an operation (add, subtract, multiply, divide and power) and two numbers and when the form is submitted, the value expression is returned.
 
 All of your calculation logic for the operations should be contained in a service - your controller should have a **very** minimal amount of code.
 
