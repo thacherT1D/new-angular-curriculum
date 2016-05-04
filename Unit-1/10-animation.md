@@ -100,7 +100,7 @@ Also note, for these examples I am including JavaScript in our HTML - this is NO
   </div>
   <button ng-click="toggleBoolean = !toggleBoolean">Toggle fade</button>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate..js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script>
   <script>
     angular.module('animateApp',['ngAnimate']);
   </script>
@@ -154,7 +154,7 @@ In our `style.css`:
     {{instructor}}
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate..js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script>
   <script>
     angular.module('animateApp',['ngAnimate']).controller("MainController", function($scope){
       $scope.view = {};
