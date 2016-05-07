@@ -136,9 +136,9 @@ This deeply nested code is very hard to maintain and it doesn't really provide m
 
 # $q
 
-When learning about the [digest cycle](02-digest-cycle.md), you learned that changes to `$scope` using asynchronous APIs such as setTimeout, setInterval or XMLHttpRequest do _not_ automatically update the UI. This is because they are external to the angular digest cycle. i.e. Angular does not know when these asynchronous APIs are done executing, so you *must* manually call `$scope.apply()` or `$scope.digest()` to let angular know that some things have changed and the UI should be updated.
+When learning about the [digest cycle](02-digest-cycle.md), you learned that changes to `$scope` using asynchronous APIs such as setTimeout, setInterval or XMLHttpRequest do _not_ automatically update the UI. This is because they are external to the angular digest cycle. i.e. Angular does not know when these asynchronous APIs are done executing, so you *must* manually call `$scope.$apply()` or `$scope.$digest()` to let angular know that some things have changed and the UI should be updated.
 
-As you may recall, promises represent an asynchronous value. $q is angular's implementation of promises/deferred objects inspired by the [q](https://github.com/kriskowal/q) library. $q allows us to use promises within the digest cycle of angular without the need to call `$scope.apply()` or `$scope.digest()`
+As you may recall, promises represent an asynchronous value. $q is angular's implementation of promises/deferred objects inspired by the [q](https://github.com/kriskowal/q) library. $q allows us to use promises within the digest cycle of angular without the need to call `$scope.$apply()` or `$scope.$digest()`
 
 ### Using $q
 
