@@ -1,5 +1,15 @@
 # Authentication with Angular and JSON Web Tokens
 
+**Standard**: Implement and diagram JWT-based authentication between single-page apps and servers
+
+The **objectives** for this article are:
+
+- Use interceptors to respond to HTTP requests/responses globally
+- Use `resolve` in routes to resolve dependencies that use promises
+- Use route life cycle + listeners to run code whenever routes change globally
+- Use `angular.run` to run code when the angular app boots
+
+
 ### Introduction to Token Authentication
 
 Now that we are getting more comfortable building applications with the MEAN stack, it's time to add authentication to our application. This is one of the more difficult topics when learning about how to build Single Page Applications. Before continuing - answer the following questions
