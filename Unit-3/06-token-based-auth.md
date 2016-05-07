@@ -160,6 +160,8 @@ Here are three good resources to learn more about resolve:
 
 [https://www.youtube.com/watch?v=cRjh7Pwobug](https://www.youtube.com/watch?v=cRjh7Pwobug)
 
+If you are using `ui-router`, it also implements similar functionality: https://github.com/angular-ui/ui-router/wiki#resolve
+
 ### Route Life Cycle + Listeners
 
 Previously, we saw that if there was some data for the user in the session - we knew that they were logged in! In our case, it means that there is a token in local storage! So we need to check local storage to see if there is a token. We also will want to send this token from localStorage to our server to verify the authenticity of the user. At the same time, we want to protect certain routes that we are on. In order to do this we will use a mix of interceptors and listen for changes in our routes. We will see this more in our example, but if you want to learn more about the Route Life Cycle with `ngRoute` you can learn more [here](https://www.youtube.com/watch?v=P6KITGRQujQ) and [here](https://egghead.io/lessons/angularjs-route-life-cycle)
