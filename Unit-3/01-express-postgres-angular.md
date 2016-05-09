@@ -32,7 +32,7 @@ __What will our new file structure look like?__
 * Be able to use Angular in a full stack application
 * Use `$http` to CRUD from Angular to Postgres
 * Know the difference between client side routes and server side routes
-* Be able to send and recieve data by making api calls from your client side to your server side
+* Be able to send and receive data by making api calls from your client side to your server side
 
 
 ### Set Up
