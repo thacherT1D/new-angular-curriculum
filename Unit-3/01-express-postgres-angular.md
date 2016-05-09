@@ -144,8 +144,8 @@ file and directory for you. Then, add 3 objects with the following properties to
 seed file.
 
 * name
-* posion
-* acessory
+* poison
+* accessory
 
 __EXAMPLE PIRATE OBJECT__
 
