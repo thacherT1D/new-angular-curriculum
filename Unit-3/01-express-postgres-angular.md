@@ -220,7 +220,7 @@ a service that will make our database calls for us.
 __There's also a concept in MVC of keeping your controllers "skinny". Do some Googling
 later and read more about MVC architecture.__
 
-__Adding a `PiratesService service to our app:__
+__Adding a `PiratesService` service to our app:__
 
 ```js
 // services/pirates_service.js
