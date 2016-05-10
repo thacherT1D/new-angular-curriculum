@@ -70,11 +70,13 @@ Many articles (especially ones that are a bit older) will lean towards factories
 
 To read more about the differences and why some choose factories over services and vise versa - check out these articles:
 
-[http://blog.thoughtram.io/angular/2015/07/07/service-vs-factory-once-and-for-all.html](http://blog.thoughtram.io/angular/2015/07/07/service-vs-factory-once-and-for-all.html)
+[ng-newsletter: The short guide to service definitions](http://www.ng-newsletter.com/25-days-of-angular/day-1)
 
-[http://tylermcginnis.com/angularjs-factory-vs-service-vs-provider/](http://tylermcginnis.com/angularjs-factory-vs-service-vs-provider/)
+[Service VS Factory - ONCE AND FOR ALL](http://blog.thoughtram.io/angular/2015/07/07/service-vs-factory-once-and-for-all.html)
 
-[https://gist.github.com/demisx/9605099](https://gist.github.com/demisx/9605099)
+[AngularJS: Factory vs Service vs Provider](http://tylermcginnis.com/angularjs-factory-vs-service-vs-provider/)
+
+[AngularJS Providers Explained](https://gist.github.com/demisx/9605099)
 
 ### An extra Angular goodie - Constants
 
