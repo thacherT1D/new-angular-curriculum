@@ -25,14 +25,16 @@ Use the singleton pattern in plain javascript to create an object that stores a 
 
 ### Comparing + Contrasting Factories, Services and Providers
 
-Although all of these are Singletons, they have a few differences: 
+The end result of a factory and service is the same, a singleton instance that can be used throughout your application.
 
-A factory is a lot like a service in the sense that it is a singleton and dependencies can be specified in the function. The difference between a factory and a service is that a factory injects a plain function and in order to use our factories in other parts of our code, we inject them as dependencies.
+The main difference between a factory and a service comes down to how they are defined.
+
+Using the factory API, you create a function that returns an object. When the factory instance is created, the service (factory instances are _actually_ services) returned will have the properties defined on the returned object.
 
 ```js
 angular.module("learnServices", [])
 
-.factory('personFactory', function(){
+.factory('personService', function(){
   return {
     name: "Matt",
     job: "Instructor",
@@ -42,23 +44,28 @@ angular.module("learnServices", [])
   }
 })
 
-.controller('personController', function(personFactory){
-  // I now have access to all the methods/properties returned from the factory!
+.controller('personController', function(personService){
+  // I now have access to all the methods/properties returned from the personService!
 })
 ```
 
-You can use services just like factories or when you need just a simple object and services can make use of the keyword `this` when used. Here is a quick example of a simple service.
+Using the service API, you create a constructor function using the `this` syntax to attach properties/methods to the constructor.
+
+Here is the same service defined using the service API:
 
 ```js
 angular.module("learnServices", [])
 
-.service('person', function(){
-	this.name = "Elie"
-	this.favoriteColor = "Purple"
+.service('personService', function(){
+    this.name = "Matt";
+    this.job = "Instructor";
+    this.sayHi = function(){
+      return "Hello!"
+    }
 })
 
-.controller('personController', function(person){
-	// I now have access to the person object!
+.controller('personController', function(personService){
+	// I now have access to the personService!
 });
 ```
 
