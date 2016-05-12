@@ -25,11 +25,13 @@ Use the singleton pattern in plain javascript to create an object that stores a 
 
 ### Comparing + Contrasting Factories, Services and Providers
 
-The end result of a factory and service is the same, a singleton instance that can be used throughout your application.
+The end result of a factory and service is the same: a singleton instance that can be used throughout your application.
 
 The main difference between a factory and a service comes down to how they are defined.
 
-Using the factory API, you create a function that returns an object. When the factory instance is created, the service (factory instances are _actually_ services) returned will have the properties defined on the returned object.
+Using the factory API, you pass in a function that returns an object.
+
+When the factory instance is created, the service (factory instances are _actually_ services) returned will have the properties defined on the returned object.
 
 ```js
 angular.module("learnServices", [])
