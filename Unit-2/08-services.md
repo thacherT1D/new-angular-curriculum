@@ -23,7 +23,7 @@ That first bullet point may be a bit easier to digest (no pun intended), but wha
 Use the singleton pattern in plain javascript to create an object that stores a list of instructors.  Add Tim, Elie, Matt, and Ian to the list.  Get a second instance of the singleton and verify that the four instructors are still in the list.
 
 
-### Comparing + Contrasting Factories, Services and Providers
+### The "service" service and the "factory" service
 
 The end result of a factory and service is the same: a singleton instance that can be used throughout your application.
 
@@ -31,44 +31,42 @@ The main difference between a factory and a service comes down to how they are d
 
 Using the factory API, you pass in a function that returns an object.
 
-When the factory instance is created, the service (a factory instance is a type of service) returned will have the properties defined on the returned object.
+Behind the scenes, Angular calls the function and sets the returned object as the singleton instance that will be injected into your controllers.
 
 ```js
-angular.module("learnServices", [])
-
-.factory('personService', function(){
-  return {
-    name: "Matt",
-    job: "Instructor",
-    sayHi: function(){
-      return "Hello!"
+angular
+  .module("learnServices", [])
+  .factory('personFactory', function(){
+    return {
+      name: "Matt",
+      job: "Instructor",
+      sayHi: function(){
+        return "Hello!"
+      }
     }
-  }
-})
-
-.controller('personController', function(personService){
-  // I now have access to all the methods/properties returned from the personService!
-})
+  }).controller('personController', function(personFactory){
+    // I now have access to all the methods/properties returned from the personFactory!
+  })
 ```
 
 Using the service API, you create a constructor function using the `this` syntax to attach properties/methods to the constructor.
 
+Behind the scenes, Angular calls `new` on your function to create an instance. This instance is set as the singleton instance that will be injected into your controllers.
+
 Here is the same service defined using the service API:
 
 ```js
-angular.module("learnServices", [])
-
-.service('personService', function(){
+angular
+  .module("learnServices", [])
+  .service('personService', function(){
     this.name = "Matt";
     this.job = "Instructor";
     this.sayHi = function(){
       return "Hello!"
     }
-})
-
-.controller('personController', function(personService){
-	// I now have access to the personService!
-});
+  }).controller('personController', function(personService){
+    // I now have access to the personService!
+  });
 ```
 
 A provider is the most complex method and is used less frequently. It is a factory that can be configured before the application starts, which allows for more flexibility, but for the applications we are going to build, you will not need this level of complexity.
@@ -97,40 +95,44 @@ These values should **NEVER** be changed!
 
 ### Creating our first Service
 
-**Note: a factory is a type of service. You will commonly see factories refered to as services**
+#### **Note: a factory is a type of service. You will commonly see factories refered to as services**
 
 To create a service, let's make sure we are using our new layout and have a `services.js` file. The syntax to create a service looks like this:
 
 ```js
-angular.module("learningServices").factory("firstService", function(){
-  // outside of the return block, we can declare private variables and functions
+angular
+  .module("learningServices")
+  .factory("firstService", function() {
+    // outside of the return block, we can declare private variables and functions
 
-  // we must return an object, everything we return can be accessed externally
-  return {
-    sayHi: function(){
-      return "Hello!"
-    },
-    sayGoodbye: function(){
-      return "Goodbye!"
-    },
-    getAllUsers: function(){
-      // some AJAX call to our database to get all the users
-    },
-    addUser: function(user){
-      // another AJAX call to our database to add a user
+    // we must return an object, everything we return can be accessed externally
+    return {
+      sayHi: function() {
+        return "Hello!"
+      },
+      sayGoodbye: function() {
+        return "Goodbye!"
+      },
+      getAllUsers: function() {
+        // some AJAX call to our database to get all the users
+      },
+      addUser: function(user) {
+        // another AJAX call to our database to add a user
+      }
     }
-  }
-});
+  });
 ```
 
 Now in our controller, we can inject this service:
 
 ```js
-angular.module("learningServices").controller("FirstController", function($scope, firstService) {
-  $scope.view = {};
-  $scope.view.greeting = firstService.sayHi(); 
-  $scope.view.users = firstService.getAllUsers();
-});
+angular
+  .module("learningServices")
+  .controller("FirstController", function($scope, firstService) {
+    $scope.view = {};
+    $scope.view.greeting = firstService.sayHi(); 
+    $scope.view.users = firstService.getAllUsers();
+  });
 ```
 
 ### Answer the following questions:
@@ -173,36 +175,39 @@ It should function like (and look far better than) this:
 Revisit your contacts app from previous lessons. In contact app, add the following code to a new service inside `service.js`:
 
 ```js
-app.factory('ContactList', function() {
-  var ContactList = {};
+angular
+  .module("learningServices")
+  .factory('ContactList', function() {
+    var ContactList = {};
 
-  ContactList.contactList = [];
+    ContactList.contactList = [];
 
-  ContactList.addContact = function(obj) {
-    ContactList.contactList.push(obj);
-  };
+    ContactList.addContact = function(obj) {
+      ContactList.contactList.push(obj);
+    };
 
-  ContactList.findContact = function(name) {
-    // TODO
-  };
+    ContactList.findContact = function(name) {
+      // TODO
+    };
 
-  ContactList.removeContact = function(index) {
-    // TODO
-  };
+    ContactList.removeContact = function(index) {
+      // TODO
+    };
 
-  return ContactList;
-});
+    return ContactList;
+  });
 ```
 
 Now in your controller you can inject the contact service you created as a dependency.  For example, your controller might look like this:
 
 ```js
-app.controller('ContactController', function($scope, ContactList) {
-  $scope.view = {};
-  $scope.view.contactData = ContactList.contactList;
-
-  // TODO: Your ContactList controller code here.
-});
+angular
+  .module("learningServices")
+  .controller('ContactController', function($scope, ContactList) {
+    $scope.view = {};
+    $scope.view.contactData = ContactList.contactList;
+    // TODO: Your ContactList controller code here.
+  });
 ```
 
 - Refactor your contacts app to use a ContactList service.  Remember to stick with best practices and use the inline array annotation.
