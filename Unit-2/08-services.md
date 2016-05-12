@@ -31,7 +31,7 @@ The main difference between a factory and a service comes down to how they are d
 
 Using the factory API, you pass in a function that returns an object.
 
-When the factory instance is created, the service (factory instances are _actually_ services) returned will have the properties defined on the returned object.
+When the factory instance is created, the service (a factory instance is a type of service) returned will have the properties defined on the returned object.
 
 ```js
 angular.module("learnServices", [])
@@ -96,6 +96,8 @@ An additional feature of angular that is worth knowing about is constants. Somet
 These values should **NEVER** be changed!
 
 ### Creating our first Service
+
+**Note: a factory is a type of service. You will commonly see factories refered to as services**
 
 To create a service, let's make sure we are using our new layout and have a `services.js` file. The syntax to create a service looks like this:
 
