@@ -75,7 +75,7 @@ A provider is the most complex method and is used less frequently. It is a facto
 
 ### So which one??
 
-Many articles (especially ones that are a bit older) will lean towards factories, but with the new ES2015 syntax, services are becoming more preferable. We will be using services, but be aware of both of these and the differences between them. 
+Many articles will lean towards factories, but with the new ES2015 syntax, services are becoming more preferable. Be aware of both of these and the differences between them. 
 
 To read more about the differences and why some choose factories over services and vise versa - check out these articles:
 
@@ -100,7 +100,7 @@ These values should **NEVER** be changed!
 To create a service, let's make sure we are using our new layout and have a `services.js` file. The syntax to create a service looks like this:
 
 ```js
-angular.module("learningServices").service("firstService", function(){
+angular.module("learningServices").factory("firstService", function(){
   // outside of the return block, we can declare private variables and functions
 
   // we must return an object, everything we return can be accessed externally
@@ -171,7 +171,7 @@ It should function like (and look far better than) this:
 Revisit your contacts app from previous lessons. In contact app, add the following code to a new service inside `service.js`:
 
 ```js
-app.service('ContactList', function() {
+app.factory('ContactList', function() {
   var ContactList = {};
 
   ContactList.contactList = [];
