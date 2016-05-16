@@ -1,6 +1,7 @@
 # Auth Example
 
 Installation:
+
 Be sure you have `mongod` running...
 
 ```
