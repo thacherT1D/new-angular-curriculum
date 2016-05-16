@@ -60,7 +60,7 @@ Read [http://jwt.io/introduction/](http://jwt.io/introduction/) introduction and
 
 ## Some essential angular concepts/tools for Auth
 
-Now that we have a better understanding of what JWTs are, let's look at a few tools in angular and `ngRoute` to help prepare use for building an app with authentication.
+Now that we have a better understanding of what JWTs are, let's look at a few tools in angular and `ngRoute` to help prepare us for building an app with authentication.
 
 ## Interceptors
 
