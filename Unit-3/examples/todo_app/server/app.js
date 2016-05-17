@@ -1,6 +1,7 @@
 var express = require("express");
 var app = express();
 var todoRoutes = require('./routes/todos');
+var authRoutes = require('./routes/auth');
 
 var bodyParser = require("body-parser");
 var path = require("path");
@@ -13,6 +14,7 @@ app.use(bodyParser.json());
 app.use(morgan('tiny'));
 
 app.use('/api/todos', todoRoutes);
+app.use('/api/auth', authRoutes);
 
 app.get('*', function(req,res){
   res.sendFile(path.join(__dirname, "../client", "index.html"));
@@ -22,4 +24,3 @@ app.get('*', function(req,res){
 app.listen(3000, function(){
   console.log("Server starting on port 3000");
 });
-
