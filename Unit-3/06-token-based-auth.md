@@ -37,13 +37,11 @@ So now that we know that tokens are a better option, what kind of token should w
 
 From [jwt.io](jwt.io):
 
-JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. This information can be verified and trusted because it is digitally signed. JWTs can be signed using a secret (with HMAC algorithm) or a public/private key pair using RSA.
+> JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. This information can be verified and trusted because it is digitally signed. JWTs can be signed using a secret (with HMAC algorithm) or a public/private key pair using RSA.
 
-That's quite a lot....let's try to understand this a bit more by reading the documentation!
+That's quite a lot. Let's try to understand this a bit more by reading the documentation...
 
-https://scotch.io/tutorials/the-anatomy-of-a-json-web-token
-
-### Exercise
+#### Exercise
 
 Read [http://jwt.io/introduction/](http://jwt.io/introduction/) introduction and answer the following questions
 
@@ -57,6 +55,11 @@ Read [http://jwt.io/introduction/](http://jwt.io/introduction/) introduction and
 2. In the reading it states "it should send the JWT, typically in the Authorization header using the Bearer schema." What is the Bearer schema? What is another type of schema you can use with the Authorization header?
 3. What is Cross-Origin Resource Sharing? Why is this not a problem when using JWTs?
 4. What other types of tokens exist? Why is JWT easier to work with than some other options?
+
+#### Additional Resources
+
+1. [The Anatomy of a JSON Web Token](https://scotch.io/tutorials/the-anatomy-of-a-json-web-token)
+1. [Understanding JSON Web Tokens (JWT)](https://medium.com/vandium-software/5-easy-steps-to-understanding-json-web-tokens-jwt-1164c0adfcec#.h0649q1oi)
 
 ## Some essential angular concepts/tools for Auth
 
