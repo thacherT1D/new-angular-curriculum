@@ -14,9 +14,9 @@ Typical issues with complex single page apps are:
 * You can't bookmark parts of a SPA
 * If all of our code is in a single template, things can get incredibly messy
 
-Angular provides solutions for all of the above issues through it's router.  We can break down a view into multiple smaller views that are rendered inside of a layout depending on the URL the user is currently accessing.
+Angular provides solutions for all of the above issues through its router.  We can break down a view into multiple smaller views that are rendered inside of a layout depending on the URL the user is currently accessing.
 
-We'll see how to use the `$routeProvider`, to make use of the browser’s history navigation and allow users to bookmark and share specific pages based off of the current URL.  Let's get started.
+We'll see how to use the `$routeProvider` to make use of the browser’s history navigation and allow users to bookmark and share specific pages based off of the current URL.  Let's get started.
 
 **First we need to include the `ngRoute` module.** It's a separate module that we need to include on our own. You can download the module or link to this CDN: "http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.js"
 
@@ -26,7 +26,7 @@ Next, we need to load the `ngRoute` module by adding it as a dependent module.
 var app = angular.module("yourAppName", ['ngRoute']);
 ```
 
-Our `index.html` will act as our layout file.  Just like in Express or Rails, we'll add all the common markup (navbar, footer, etc.) to our layout file, and then we'll render specific views in a particular place in our layout.  Instead of the `yield` ERB tag in Rails, we'll use the `ng-view` directive.  Add the following to `index.html`:
+Our `index.html` will act as our layout file.  Just like in Express, we'll add all the common markup (navbar, footer, etc.) to our layout file, and then we'll render specific views in a particular place in our layout.  To tell Angular where it should render those views, we'll use the `ng-view` directive.  Add the following to `index.html`:
 
 
 ```html
