@@ -63,13 +63,44 @@ In our example, the directive we used creates an img tag that displays the angul
 
 This doesn't really make a lot of sense though.  Angular will add the img tag as a child of the h5 tag.  But our custom directive doesn't really have anything to do with the h5 tag we are claiming to modify.
 
+In this case, it's possible to _restrict_ the custom directive so that it can only be used as an element, rather than an attribute. To do this, we can use the `restrict` option as follows:
+
+`app.js`:
+
+```js
+var app = angular.module('simpleDirectiveApp', [])
+app.directive('gsAngularLogo', function() {
+  return {
+    restrict: 'E', // 'E' for element
+    template: '<img src="https://lh6.googleusercontent.com/-TlY7amsfzPs/T9ZgLXXK1cI/AAAAAAABK-c/Ki-inmeYNKk/w749-h794/AngularJS-Shield-large.png">'
+  };
+});
+```
+
+With this restriction in place, you should see that `<h5 gs-angular-logo></h5>` no longer renders the image, but `<gs-angular-logo></gs-angular-logo>` does.
+
 **Best Practice**
 
-Use an angular directive as an attribute only when it decorates a tag or somehow relates to it.  Otherwise, create a separate element for the directive.
+Use an angular directive as an attribute only when it decorates a tag or somehow relates to it.  Otherwise, create a separate element for the directive. To put it another way, as stated in the Angular docs:
+
+> Use an element when you are creating a component that is in control of the template. The common case for this is when you are creating a Domain-Specific Language for parts of your template. Use an attribute when you are decorating an existing element with new functionality.
 
 **EXERCISE**
 
-Since our tag doesn't make sense as anything but a single element, add a restriction to the directive so that other directive formats do not work.  What are all the possible ways to use a directive in html?  How could you change the restriction to allow all?
+Update the html inside of your body as follows:
+
+```html
+  <p>Element directive:</p>
+  <gs-angular-logo></gs-angular-logo>
+  <p>Attribute directive:</p>
+  <h4 gs-angular-logo></h4>
+  <p>Class directive:</p>
+  <p class="gs-angular-logo"></p>
+```
+
+Note that we're using a custom directive in three ways: as an element, as an attribute, and as a class. When you load the page, what do you see? How could you modify `restrict` to show just the class? Just the attribute? All three?
+
+(As an aside, if you check out the [docs](https://docs.angularjs.org/guide/directive) you'll see it's also possible to trigger a directive by comment. However, this feature is included mainly for compatibility with older versions of angular, and shouldn't be used. Stick to elements and attributes.)
 
 **Template Url**
 
