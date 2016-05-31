@@ -37,7 +37,7 @@ Our `index.html` would look like this:
 
 A few things to notice with our new custom directive:
 
-1. Our directive is called `gsAngularLogo` but in the html we use it by calling it `gs-agnular-logo`.
+1. Our directive is called `gsAngularLogo` but in the html we use it by calling it `gs-angular-logo`.
 2. We prefixed our directive name with gs (galvanize school).  Acording to angular docs, adding a prefix is a good practice so that the chance of a name collision is minimized.
 3. The built in directives we've seen so far are called in the view by adding them as attributes of an html tag.  For example: `<html ng-app="simpleDirectiveApp">`.  The `ng-app` directive is an attribute of the html tag.
 
