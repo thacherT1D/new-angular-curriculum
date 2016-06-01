@@ -120,13 +120,11 @@ Let's add some data to a controller and see how it interacts with the directive.
 ```js
 var app = angular.module('yoyoDirectiveApp', [])
 
-app.controller('YoyoController', function($scope) {
-  $scope.view = {};
-  $scope.view.yoyo = {
-    name: 'Duncan Metal Drifter',
+app.controller('YoyoController', ['$scope', function($scope) {
+  $scope.yoyo = {name: 'Duncan Metal Drifter',
     img: "http://www.toysrus.com/graphics/tru_prod_images/Duncan-Metal-Drifter-Pro-Yo-Yo--pTRU1-8444206dt.jpg"
   };
-});
+}]);
 
 app.directive('gsYoyoDetails', function() {
   return {
@@ -138,8 +136,8 @@ app.directive('gsYoyoDetails', function() {
 `yoyo-details.html`
 
 ```html
-<h3>{{view.yoyo.name}}</h3>
-<img ng-src="{{view.yoyo.img}}">
+<h3>{{yoyo.name}}</h3>
+<img ng-src="{{yoyo.img}}">
 ```
 
 `index.html`:
@@ -148,7 +146,8 @@ app.directive('gsYoyoDetails', function() {
 <!DOCTYPE html>
 <html ng-app="yoyoDirectiveApp">
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js" type="text/javascript"></script>
 <script src="app.js" type="text/javascript"></script>
 </head>
 <body ng-controller="YoyoController">
@@ -157,32 +156,38 @@ app.directive('gsYoyoDetails', function() {
 </html>
 ```
 
-We can see here that the directive has access to the yoyo from the controller's scope.  This is nice, but it's often not a good idea to have your directives so tightly coupled to your controller.  If you change the variable name in the  controller or try to use the directive again somewhere else, you may run into errors.
+We can see here that the directive has access to the yoyo from the controller's scope.  By default, when a directive is placed inside of a controller, it will have access to everything on its parent controller's scope.
 
-**Isolated Scope**
+**Exercise** add a `message` property to the `YoyoController`, then show the message both inside and outside of the directive.
 
-The work around is to create an `isolated scope` for the directive.
+There are a couple of problems with this default behavior of the directive having access to everything in the parent's scope. For one, it's often not a good idea to have your directives so tightly coupled to your controller.  If you change the variable name in the  controller or try to use the directive again somewhere else, you may run into errors. Also, from a practical standpoint you may not want your directive to have access to all of the information in your controller. For example, if you have a list of yoyos and a custom directive governing the display of a yoyo's information, that directive only needs to know about one yoyo, not all of them.
+
+The solution to these problems involves creating an `isolate scope` for the directive. Before doing this, let's see what happens if we don't create an isolate scope.
+
+**Exercise** Change `scope.view.yoyo` to `scope.view.yoyos`, an array of yoyo objects. In your view, render each yoyo's information using your custom directive. 
+
+Possible solution:
 
 `app.js`
 
 ```js
-var app = angular.module('yoyoDirectiveApp', [])
+var app = angular.module('yoyoApp', []);
 
 app.controller('YoyoController', function($scope) {
   $scope.view = {};
-  $scope.view.yoyo = {
-    name: 'Duncan Metal Drifter',
+  $scope.view.yoyos = [{
+    name: "Duncan Metal Drifter",
     img: "http://www.toysrus.com/graphics/tru_prod_images/Duncan-Metal-Drifter-Pro-Yo-Yo--pTRU1-8444206dt.jpg"
-  };
+  }, {
+    name: "Duncan Hello Kitty Pro Yo yoyo",
+    img: "http://cdn6.bigcommerce.com/s-8ndhalpa/products/277/images/613/duncan-hello-kitty-pro-yo-yoyo-15__90815.1404161701.1280.1280.jpg"
+  }];
 });
 
 app.directive('gsYoyoDetails', function() {
   return {
-    templateUrl: 'yoyo-details.html',
-    scope: {
-      yoyo: '=yoyoData'
-    }
-  };
+    templateUrl: '../yoyo-details.html'
+  }
 });
 ```
 
@@ -190,24 +195,77 @@ app.directive('gsYoyoDetails', function() {
 
 ```html
 <!DOCTYPE html>
-<html ng-app="yoyoDirectiveApp">
+<html lang="en" ng-app="yoyoApp">
 <head>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js" type="text/javascript"></script>
-  <script src="app.js" type="text/javascript"></script>
+  <meta charset="UTF-8">
+  <title>Document</title>
 </head>
 <body ng-controller="YoyoController">
-  <gs-yoyo-details yoyo-data="view.yoyo"></gs-yoyo-details>
+  <gs-yoyo-details ng-repeat="yoyo in view.yoyos"></gs-yoyo-details>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.js"></script>
+  <script src="./js/app.js"></script>
 </body>
 </html>
 ```
 
-**EXERCISE**
+`yoyo-details.html`
 
-What is accessible in the directive's scope?  How is data being passed to the directive?  What is different about the `gs-yoyo-details` element from the first example?
+```html
+<h3>{{ yoyo.name }}</h3>
+<img ng-src="{{ yoyo.img }}">
+```
 
-**EXERCISE**
+#### Isolate Scope
 
-Modify the controller to have a list of yoyos.  Use an `ng-repeat` in the view to display all the yoyo's.  Make sure to use the custom directive!
+Once you have more than one yoyo, and you have a copy of your custom directive on the page for each yoyo, we can create an isolate scope by using the `scope` option when we create our directive. Here's the basic syntax:
+
+```javascript
+app.directive('gsYoyoDetails', function() {
+  return {
+    templateUrl: '../yoyo-details.html',
+    scope: {
+      yoyoInDirective: '=yoyoAttribue'
+    }
+  }
+})
+```
+
+If you refresh the page, you'll see that the yoyos have disappeared -- our app is broken! Let's take a moment to understand how isolate scope is working in this case, so that we can debug the issue.
+
+The value of `scope` must be an object. The keys in this object (e.g. `yoyoInDirective` correspond to how Angular expects you to name your data in the directive. In this case, since we used a key of `yoyoInDirective`, we should refactor our `yoyo-details.html` as follows:
+
+```html
+<h3>{{ yoyoInDirective.name }}</h3>
+<img ng-src="{{ yoyoInDirective.img }}">
+```
+
+As you can see, the value corresponding to `yoyoDirective` is `'=yoyoAttribute'`. Let's ignore the equals sign for a moment (we'll get to it later). The 'yoyoAttribue' corresponds to an _attribute name_ that we must use when passing data from our controller to our directive. Passing data via attributes is how we get the parts of the scope that we care about into our directive.
+
+In the current example, this means we need to include an attribute so that our custom directive looks like this: 
+
+```html
+<gs-yoyo-details yoyo-attribute="yoyo" ng-repeat="yoyo in view.yoyos"></gs-yoyo-details>
+```
+
+At the risk of making things overly verbose, let's change the placeholder name we're repeating over from `yoyo` to `yoyoFromRepeat`. Then our HTML would look like this:
+
+```html
+<gs-yoyo-details yoyo-attribute="yoyoFromRepeat" ng-repeat="yoyoFromRepeat in view.yoyos"></gs-yoyo-details>
+```
+
+So, how does data about an individual yoyo get passed from our controller to our directive?
+
+1. We iterate over each `yoyo` in the controller's `yoyos` array, storing the data in `yoyoFromRepeat`.
+2. Each `yoyoFromRepeat` gets passed into our custom directive via the `yoyo-attribute` attribute.
+3. In the html for our custom directive, we have access to `yoyoFromRepeat`'s data in `yoyoInDirective`. This conndtion is possible because we told our directive that `yoyoInDirective` should correspond to whatever we pass into the directive via the `yoyo-attribute` attribute.
+
+Of course, we've now got two different names for our data depending on where we are (`yoyoFromRepeat` and `yoyoInDirective`), plus a third name for the attribute on our directive. It's common to name all of these the same; the downside with this approach is that if we name everything `yoyo`, it's much less clear how the directive's isolate scope is connected to the controller's scope.
+
+**Exercise** Refactor your code to eliminate `yoyoInDirective`, `yoyoAttribute`, and `yoyoFromRepeat` in favor of just `yoyo`. 
+
+**Exercise** Fun fact: if in your scope you have a key and value with the same name (e.g. `foo: '=foo'`), you can omit the name in the value (e.g. `foo: '=') and Angular will still know what to do! Use this to refactor your directive even more.
+
+**Exercise** After completing the previous two exercises, try replacing one of the strings `yoyo` somewhere in your app with the string `foo`. Where else do you need to replace `yoyo` by `foo` to get your app working again?
 
 **EXERCISE**
 
