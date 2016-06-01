@@ -26,7 +26,8 @@ Our `index.html` would look like this:
 <!DOCTYPE html>
 <html ng-app="simpleDirectiveApp">
 <head>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js" type="text/javascript"></script>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js" type="text/javascript"></script>
   <script src="app.js" type="text/javascript"></script>
 </head>
 <body>
@@ -37,7 +38,7 @@ Our `index.html` would look like this:
 
 A few things to notice with our new custom directive:
 
-1. Our directive is called `gsAngularLogo` but in the html we use it by calling it `gs-angular-logo`.
+1. Our directive is called `gsAngularLogo` but in the html we use it by calling it `gs-agnular-logo`.
 2. We prefixed our directive name with gs (galvanize school).  Acording to angular docs, adding a prefix is a good practice so that the chance of a name collision is minimized.
 3. The built in directives we've seen so far are called in the view by adding them as attributes of an html tag.  For example: `<html ng-app="simpleDirectiveApp">`.  The `ng-app` directive is an attribute of the html tag.
 
@@ -45,7 +46,7 @@ These observations lead to a few topics:
 
 **Normalization of Html**
 
-When angular looks over your html document, it goes through a process called normalization.  The process essentially goes over each tag, looks for angular directives, and then normalizes the name from dash-delimited name to a camel case name.  For example, angular translates `gs-angular-logo` into `gsAngularLogo`.  This process is necessary because dash delimited names are not the only possiblity for directives.  For example, `gs_angular_logo` would also be valid.
+When angular looks over your html document, it goes through a process called normalization.  The process essentially goes over each tag, looks for angular directives, and then normalizes the name from dash-delimited name to a camel case name.  For example, angular translates `gs-angular-logo` into `gsAngularLogo`.  This process is necessary becuase dash delimited names are not the only possiblity for directives.  For example, `gs_angular_logo` would also be valid.
 
 **EXERCISE**
 
@@ -63,44 +64,13 @@ In our example, the directive we used creates an img tag that displays the angul
 
 This doesn't really make a lot of sense though.  Angular will add the img tag as a child of the h5 tag.  But our custom directive doesn't really have anything to do with the h5 tag we are claiming to modify.
 
-In this case, it's possible to _restrict_ the custom directive so that it can only be used as an element, rather than an attribute. To do this, we can use the `restrict` option as follows:
-
-`app.js`:
-
-```js
-var app = angular.module('simpleDirectiveApp', [])
-app.directive('gsAngularLogo', function() {
-  return {
-    restrict: 'E', // 'E' for element
-    template: '<img src="https://lh6.googleusercontent.com/-TlY7amsfzPs/T9ZgLXXK1cI/AAAAAAABK-c/Ki-inmeYNKk/w749-h794/AngularJS-Shield-large.png">'
-  };
-});
-```
-
-With this restriction in place, you should see that `<h5 gs-angular-logo></h5>` no longer renders the image, but `<gs-angular-logo></gs-angular-logo>` does.
-
 **Best Practice**
 
-Use an angular directive as an attribute only when it decorates a tag or somehow relates to it.  Otherwise, create a separate element for the directive. To put it another way, as stated in the Angular docs:
-
-> Use an element when you are creating a component that is in control of the template. The common case for this is when you are creating a Domain-Specific Language for parts of your template. Use an attribute when you are decorating an existing element with new functionality.
+Use an angular directive as an attribute only when it decorates a tag or somehow relates to it.  Otherwise, create a separate element for the directive.
 
 **EXERCISE**
 
-Update the html inside of your body as follows:
-
-```html
-  <p>Element directive:</p>
-  <gs-angular-logo></gs-angular-logo>
-  <p>Attribute directive:</p>
-  <h4 gs-angular-logo></h4>
-  <p>Class directive:</p>
-  <p class="gs-angular-logo"></p>
-```
-
-Note that we're using a custom directive in three ways: as an element, as an attribute, and as a class. When you load the page, what do you see? How could you modify `restrict` to show just the class? Just the attribute? All three?
-
-(As an aside, if you check out the [docs](https://docs.angularjs.org/guide/directive) you'll see it's also possible to trigger a directive by comment. However, this feature is included mainly for compatibility with older versions of angular, and shouldn't be used. Stick to elements and attributes.)
+Since our tag doesn't make sense as anything but a single element, add a restriction to the directive so that other directive formats do not work.  What are all the possible ways to use a directive in html?  How could you change the restriction to allow all?
 
 **Template Url**
 
