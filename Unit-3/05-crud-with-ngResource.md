@@ -41,16 +41,14 @@ Finally we need to create a service that defines what our RESTful endpoint is so
 
 ```js
 angular.module('firstApp').service('User', ["$resource", function ($resource) {
-    return $resource('/api/user/:id',{id: "@_id"});
+    return $resource('/api/user/:id',{id: "@id"});
 }]);
 ```
 
 #### What is this @_id? 
 
-this is for the mongo '_id'
-
 The second argument to $resource() is an object with the parameter as the key and the value is whatever property we set (starting with a @). This means that 
-if we set the key to `id` and the value to `@_id`, the value will correspond ot the `_id` property of the instance. This is very useful for PUT and DELETE requests. 
+if we set the key to `id` and the value to `@id`, the value will correspond ot the `id` property of the instance that we have passed to the method we used. This is very useful for PUT and DELETE requests. 
 
 #### Seeing these methods in action
 
@@ -62,7 +60,7 @@ $scope.users = User.query();
 
 // get a single user
 
-User.get({id: $routeParams.id}, function(todo){
+User.get({id: $routeParams.id}, function(user){
     $scope.user = user;
   }, function(err){
     $scope.error = err;
@@ -71,20 +69,27 @@ User.get({id: $routeParams.id}, function(todo){
 
 // save a user
 
-// user is some data that comes from a form
-TodoService.save(user, function(){
-  $location.path('/');
-});
+$scope.createUser = function(user) {
+    TodoService.save(user, function(){
+      $location.path('/');
+    });
+};
 
-// remove a single user
-
-// user is some data that comes from a the controller
+// remove a single resource
 
 $scope.deleteUser = function(user){
     user.$delete(function(user){
       $location.path('/'); 
     });
 };
+
+// this is equivalent to deleting a resource this way:
+$scope.deleteTodo = function(todo){
+		TodoService.delete(todo, function(){
+			findTodos();
+		})
+}
+
 ```
 
 ### Adding additional methods to a resource 
@@ -92,13 +97,20 @@ $scope.deleteUser = function(user){
 Unfortunately, `ngResource` does not come with a built in method for updating a resource. However, it is quite simple to add additional methods to a service that we create using `$resource`. Instead of just returning `return $resource('/api/user/:id', { id: '@_id' });` - we can pass in an optional third parameter which we pass in objects with keys (name of our method) and value (what request we are making). To add the update functionality to our todo resource - here is what we need to write in our `services.js`.
 
 ```js
-angular.module('firstApp').service('User', ['$resource', function($resource) {
-  return $resource('/api/user/:id', { id: '@_id' }, {
-    update: {
-      method: 'PUT' // this method issues a PUT request
-    }
+angular.module('firstApp').service('UserService', ['$resource', function($resource) {
+  return $resource('/api/user/:id', { id: '@id' }, {
+    update: { method: 'PUT' } // this method issues a PUT request
   });
 }]);
+```
+We would then use code like this in our Angular controller:
+
+```js
+$scope.updateUser = function(user){
+		UserService.update(user, function(user){
+		    // This is an optional callback to be run after the resource is updated.
+		})
+	}
 ```
 
 ### An important note
