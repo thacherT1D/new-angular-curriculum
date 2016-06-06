@@ -1,13 +1,3 @@
-app.controller("NavController", NavController)
-
-NavController.$inject = ["$scope", "UserService"]
-
-function NavController($scope,UserService){
-  $scope.$watch(UserService.currentUser, function(user) {
-    $scope.currentUser = UserService.currentUser();
-  });
-};
-
 app.controller("SignupController", SignupController)
 
 SignupController.$inject = ["UserService", "$location"]

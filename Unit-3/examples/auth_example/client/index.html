@@ -11,17 +11,6 @@
   </style>
 </head>
 <body>
-  <nav ng-controller="NavController">
-    <h2>Auth Example</h2>
-    <a href="/">Home</a>
-    <span ng-if="currentUser">
-      Welcome <a ng-href="currentUser">{{currentUser.name}}</a>
-      |
-      <a href="/users">Users</a>
-      |
-      <a href="/logout">Logout</a>
-    </span>
-  </nav>
   <div ng-view>
 
   </div>
@@ -30,5 +19,6 @@
   <script src="js/app.js"></script>
   <script src="js/services.js"></script>
   <script src="js/controllers.js"></script>
+  <script src="js/directives.js"></script>
 </body>
 </html>
