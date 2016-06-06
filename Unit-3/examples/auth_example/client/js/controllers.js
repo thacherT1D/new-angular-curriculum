@@ -1,5 +1,5 @@
 app.controller("NavController", function($scope, UserService){
-  $scope.$watch( UserService.currentUser, function ( user ) {
+  $scope.$watch(UserService.currentUser, function(user) {
     $scope.currentUser = UserService.currentUser();
   });
 });

@@ -63,7 +63,7 @@ app.config(function($routeProvider, $locationProvider, $httpProvider){
   $httpProvider.interceptors.push("AuthInterceptor");
 });
 
-app.service("AuthInterceptor", function($window,$location,$q){
+app.service("AuthInterceptor", function($window,$location){
   return {
     request: function(config){
       // prevent browser bar tampering for /api routes
@@ -71,20 +71,20 @@ app.service("AuthInterceptor", function($window,$location,$q){
       var token = $window.localStorage.getItem("token");
       if(token)
         config.headers.Authorization = "Bearer " + token;
-      return $q.resolve(config);
+      return Promise.resolve(config);
     },
     responseError: function(err){
       // if you mess around with the token, log them out and destroy it
       if(err.data === "invalid token" || err.data === "invalid signature" || err.data === "jwt malformed"){
         $location.path("/logout");
-        return $q.reject(err);
+        return Promise.reject(err);
       }
       // if you try to access a user who is not yourself
       if(err.status === 401){
         $location.path('/users');
-        return $q.reject(err);
+        return Promise.reject(err);
       }
-      return $q.reject(err);
+      return Promise.reject(err);
     }
   };
 });

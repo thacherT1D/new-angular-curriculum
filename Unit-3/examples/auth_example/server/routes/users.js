@@ -1,10 +1,12 @@
 var express = require("express");
 var app = express();
 var router = express.Router();
-var db = require("../models");
+var knex = require("../db/knex");
+var bcrypt = require("bcrypt");
 var path = require("path");
 var jwt = require('jsonwebtoken');
 var secret = "awesomesauce";
+var SALT_WORK_FACTOR = 10;
 var token;
 
 // only allow AJAX calls to prevent tampering in the browser bar
@@ -21,7 +23,7 @@ function checkHeaders(req,res,next){
 function checkToken(req,res,next){
   try {
     var decoded = jwt.verify(req.headers.authorization.split(" ")[1], secret);
-    if(req.params.id && decoded.id === req.params.id){
+    if(+req.params.id && decoded.id === +req.params.id){
       req.decoded_id = decoded.id;
       next();
     }
@@ -47,59 +49,82 @@ function checkTokenForAll(req,res,next){
 router.use(checkHeaders);
 
 router.post('/signup',function(req,res){
-  db.User.create(req.body, function(err,user){
-    if(err)
-      return res.status(400).send("Username/Password can't be blank and Username must be unique");
-    var listedItems = {id: user._id, username: user.username};
-    token = jwt.sign({ id: user._id}, secret);
-    res.json({token:token, user:listedItems});
-  });
+  if(req.body.username.length < 4 || req.body.username.length < 4 ){
+    res.status(400).send("Username and Password must be longer than 4 characters")
+  }
+  else {
+    bcrypt.hash(req.body.password, 10, function(err,hashedPassword){
+      knex('users').insert({
+        username: req.body.username,
+        password: hashedPassword
+      }).returning("*").then(function(user){
+        var listedItems = {id: user[0].id, username: user[0].username};
+        token = jwt.sign({ id: user[0].id}, secret);
+        res.json({token:token, user:listedItems});
+      }).catch(function(err){
+        res.status(400).send("Username/Password can't be blank and Username must be unique");
+      })
+    })
+  }
 });
 
 router.post('/login',function(req,res){
-  db.User.authenticate(req.body, function(err,user){
-    if(err) return res.status(400).send(err);
-    if (!user) return res.status(400).send(err);
-    var listedItems = {id: user._id, username: user.username};
-    token = jwt.sign({ id: user._id}, secret);
-    res.json({token:token, user:listedItems});
-  });
+  knex('users').where('username',req.body.username).first().then(function(user){
+    if(!user){
+      res.status(400).send("Invalid username or password");
+    }
+    else {
+      bcrypt.compare(req.body.password, user.password, function (err, isMatch) {
+        if(err){
+          res.status(400).send("Invalid username or password");
+        }
+        else {
+          var listedItems = {id: user.id, username: user.username};
+          token = jwt.sign({ id: user.id}, secret);
+          res.json({token:token, user:listedItems});
+        }
+      })
+    }
+  }).catch(function(err){
+    res.status(400).send(err);
+  })
 });
 
 // this is for demonstration purposes....this is not a route you would have unless you SERIOUSLY secured it
 router.get('/users', checkTokenForAll, function(req,res){
-  // only send back usernames and id's
-  db.User.find({}, 'username _id', function(err,users){
-    if (err) res.status(500).send(err);
+  knex('users').returning('username').then(function(users){
     res.status(200).send(users);
-  });
+  }).catch(function(err){
+    res.status(500).send(err);
+  })
 });
 
 router.get('/users/:id', checkToken, function(req,res){
-  db.User.findById(req.decoded_id, function(err,user){
-    if (err) res.status(500).send(err);
-    if (!user) res.status(401).send(err);
-    var listedItems = {id: user._id, username: user.username};
+  knex('users').where('id', req.decoded_id).first().then(function(user){
+    if (!user) res.status(401).send("Unauthorized");
+    var listedItems = {id: user.id, username: user.username};
     res.status(200).send(listedItems);
-  });
+  }).catch(function(err){
+    if (err) res.status(500).send(err);
+  })
 });
 
 router.put('/users/:id', checkToken, function(req,res){
- db.User.findByIdAndUpdate(req.decoded_id, req.body, {new: true}, function(err,user){
-   if (err) res.status(400).send(err);
-   else {
-    var listedItems = {id: user._id, username: user.username};
+  knex('users').where('id', +req.decoded_id).update(req.body, "*").then(function(user){
+    var listedItems = {id: user[0].id, username: user[0].username};
     res.status(200).send(listedItems);
-   }
- });
+  }).catch(function(err){
+    res.status(400).send(err);
+  })
 });
 
 router.delete('/users/:id', checkToken, function(req,res){
-  db.User.findByIdAndRemove(req.decoded_id, function(err,user){
-    if (err) res.status(500).send(err);
+  knex('users').where('id', +req.decoded_id).del().then(function(user){
     if (!user) res.status(401).send(err);
     res.status(200).send("Removed");
-  });
+  }).catch(function(err){
+    res.status(500).send(err);
+  })
 });
 
 module.exports = router;

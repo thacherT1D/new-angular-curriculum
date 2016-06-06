@@ -1,7 +1,7 @@
 app.service("UserService", function($http, $window){
   var user = {}
   return {
-    currentUser: function () {
+    currentUser: function() {
       return user;
     },
     login: function(user){
@@ -10,7 +10,6 @@ app.service("UserService", function($http, $window){
     },
     logout: function(){
       user = null;
-      console.log('just logged out', user);
       $window.localStorage.clear();
     },
     signup: function(user){
@@ -18,7 +17,6 @@ app.service("UserService", function($http, $window){
     },
     setCurrentUser: function(data){
       user = data.data.user
-      console.log('just setCurrentUser', user);
       $window.localStorage.setItem("token",data.data.token);
       $window.localStorage.setItem("user",JSON.stringify(data.data.user));
     },
