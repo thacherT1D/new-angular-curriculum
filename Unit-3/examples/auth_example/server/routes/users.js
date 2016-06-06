@@ -75,10 +75,10 @@ router.post('/login',function(req,res){
     }
     else {
       bcrypt.compare(req.body.password, user.password, function (err, isMatch) {
-        if(err){
+        if(err || !isMatch){
           res.status(400).send("Invalid username or password");
         }
-        else {
+        else{
           var listedItems = {id: user.id, username: user.username};
           token = jwt.sign({ id: user.id}, secret);
           res.json({token:token, user:listedItems});
@@ -110,10 +110,16 @@ router.get('/users/:id', checkToken, function(req,res){
 });
 
 router.put('/users/:id', checkToken, function(req,res){
+  let err = ""
+  if(req.body.username.length < 4){
+    err = "Username and Password must be longer than 4 characters"
+    return res.status(400).send(err)
+  }
   knex('users').where('id', +req.decoded_id).update(req.body, "*").then(function(user){
     var listedItems = {id: user[0].id, username: user[0].username};
     res.status(200).send(listedItems);
-  }).catch(function(err){
+  }).catch(function(){
+    err = "Username already exists"
     res.status(400).send(err);
   })
 });
@@ -123,7 +129,7 @@ router.delete('/users/:id', checkToken, function(req,res){
     if (!user) res.status(401).send(err);
     res.status(200).send("Removed");
   }).catch(function(err){
-    res.status(500).send(err);
+    res.status(500).send(err.data);
   })
 });
 

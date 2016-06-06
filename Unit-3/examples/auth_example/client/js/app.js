@@ -6,17 +6,20 @@ app.config(function($routeProvider, $locationProvider, $httpProvider){
   .when('/signup',{
     templateUrl: "templates/signup.html",
     controller: "SignupController",
+    controllerAs: "signupCtrl",
     preventWhenLoggedIn: true,
     signup: true
   })
   .when('/login',{
     templateUrl: "templates/login.html",
     controller: "LoginController",
+    controllerAs: "loginCtrl",
     preventWhenLoggedIn: true
   })
   .when('/users',{
     templateUrl: "templates/index.html",
     controller: "UsersController",
+    controllerAs: "usersCtrl",
     restricted: true,
     resolve: {
       currentUser : function(UserService) {
@@ -39,6 +42,7 @@ app.config(function($routeProvider, $locationProvider, $httpProvider){
   .when('/users/:id',{
     templateUrl: "templates/show.html",
     controller: "UserController",
+    controllerAs: "userCtrl",
     restricted: true,
     resolve: {
       user: function(UserService,$route){
@@ -49,6 +53,7 @@ app.config(function($routeProvider, $locationProvider, $httpProvider){
   .when('/users/:id/edit',{
     templateUrl: "templates/edit.html",
     controller: "EditController",
+    controllerAs: "editCtrl",
     restricted: true,
     resolve: {
       user: function(UserService,$route){

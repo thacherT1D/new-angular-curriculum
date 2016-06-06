@@ -1,39 +1,42 @@
-app.service("UserService", function($http, $window){
-  var user = {}
+app.service("UserService", UserService)
+
+UserService.$inject = ["$http", "$window"]
+
+function UserService($http, $window){
+  let user = {}
+
+  const currentUser= () => user;
+
+
+  const logout = () => {
+    user = null;
+    $window.localStorage.clear();
+  }
+  const setCurrentUser = (data) =>{
+    let {token,user} = data.data
+    $window.localStorage.setItem("token",token);
+    $window.localStorage.setItem("user",JSON.stringify(user));
+  }
+
+  const signup = (user) => $http.post('/api/signup', user);
+  const login= (user) => $http.post('/api/login', user)
+  const getCurrentUser =() => JSON.parse($window.localStorage.getItem("user"));
+  const getAllUsers = () => $http.get("/api/users/");
+  const getSingleUser = (id) => $http.get("/api/users/" + id);
+  const editUser = (user) => $http.put("/api/users/" + user.id, user);
+  const removeUser = (user) => $http.delete("/api/users/" + user.id);
+
   return {
-    currentUser: function() {
-      return user;
-    },
-    login: function(user){
-      var service = this;
-      return $http.post('/api/login', user)
-    },
-    logout: function(){
-      user = null;
-      $window.localStorage.clear();
-    },
-    signup: function(user){
-      return $http.post('/api/signup', user);
-    },
-    setCurrentUser: function(data){
-      user = data.data.user
-      $window.localStorage.setItem("token",data.data.token);
-      $window.localStorage.setItem("user",JSON.stringify(data.data.user));
-    },
-    getCurrentUser: function(){
-      return JSON.parse($window.localStorage.getItem("user"));
-    },
-    getAllUsers: function(){
-      return $http.get("/api/users/");
-    },
-    getSingleUser: function(id){
-      return $http.get("/api/users/" + id);
-    },
-    editUser: function(user){
-      return $http.put("/api/users/" + user.id, user);
-    },
-    removeUser: function(user){
-      return $http.delete("/api/users/" + user.id);
-    }
+    currentUser,
+    login,
+    logout,
+    signup,
+    setCurrentUser,
+    getCurrentUser,
+    getAllUsers,
+    getSingleUser,
+    editUser,
+    removeUser
   };
-});
+}
+

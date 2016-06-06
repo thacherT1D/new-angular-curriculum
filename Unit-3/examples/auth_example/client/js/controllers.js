@@ -1,58 +1,87 @@
-app.controller("NavController", function($scope, UserService){
+app.controller("NavController", NavController)
+
+NavController.$inject = ["$scope", "UserService"]
+
+function NavController($scope,UserService){
   $scope.$watch(UserService.currentUser, function(user) {
     $scope.currentUser = UserService.currentUser();
   });
-});
+};
 
-app.controller("SignupController", function($scope, UserService, $location){
+app.controller("SignupController", SignupController)
 
-  $scope.signup = function(user){
+SignupController.$inject = ["UserService", "$location"]
+
+function SignupController(UserService, $location){
+  const vm = this;
+  vm.signup = function(user){
     UserService.signup(user).then(function(data){
       UserService.setCurrentUser(data);
       $location.path('/users');
     }).catch(function(data){
-      $scope.errors = data.data;
+      vm.errors = data.data;
     });
   };
-});
+};
 
-app.controller("LoginController", function($scope, UserService, $location){
-  $scope.login = function(user){
+app.controller("LoginController", LoginController)
+
+LoginController.$inject = ["UserService", "$location"]
+
+function LoginController(UserService, $location){
+  const vm = this;
+  vm.login = function(user){
     UserService.login(user).then(function(data){
       UserService.setCurrentUser(data);
       $location.path('/users');
     }).catch(function(data){
-      $scope.errors = data.data;
+      vm.errors = data.data;
     });
   };
-});
+};
 
-app.controller("UserController", function($scope, user){
-  $scope.user = user.data;
-});
+app.controller("UserController", UserController)
 
-app.controller("EditController", function($scope, $location, UserService, user, $window){
-  $scope.user = user.data;
-  $scope.editUser = function(user){
+UserController.$inject = ["user"];
+
+function UserController(user){
+  const vm = this;
+  vm.user = user.data;
+};
+
+app.controller("EditController", EditController)
+
+EditController.$inject = ["$location","UserService","user","$window"];
+
+function EditController($location, UserService, user, $window){
+  const vm = this;
+
+  vm.user = user.data;
+  vm.editUser = function(user){
     UserService.editUser(user).then(function(data){
       $window.localStorage.setItem("user",JSON.stringify(data.data));
       $location.path('/users');
     }).catch(function(err){
-      $scope.errors = "Looks like someone already has that username!";
+      vm.errors = err.data;
     });
   };
 
-  $scope.removeUser = function(user){
+  vm.removeUser = function(user){
     UserService.removeUser(user).then(function(data){
       UserService.logout();
       $location.path('/login');
     }).catch(function(err){
-      $scope.errors = err;
+      vm.errors = err;
     });
   };
-});
+};
 
-app.controller("UsersController", function($scope,currentUser,users){
-  $scope.users = users;
-  $scope.currentUser = currentUser;
-});
+app.controller("UsersController", UsersController)
+
+UsersController.$inject = ["currentUser","users"];
+
+function UsersController(currentUser,users){
+  const vm = this;
+  vm.users = users;
+  vm.currentUser = currentUser;
+};
