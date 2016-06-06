@@ -2,7 +2,7 @@ var app = angular.module("authApp",['ngRoute']);
 
 app.config(function($routeProvider, $locationProvider, $httpProvider){
 
-  $routeProvider
+$routeProvider
   .when('/signup',{
     templateUrl: "templates/signup.html",
     controller: "SignupController",

@@ -7,7 +7,6 @@ function UserService($http, $window){
 
   const currentUser= () => user;
 
-
   const logout = () => {
     user = null;
     $window.localStorage.clear();
@@ -19,11 +18,17 @@ function UserService($http, $window){
   }
 
   const signup = (user) => $http.post('/api/signup', user);
-  const login= (user) => $http.post('/api/login', user)
+
+  const login = (user) => $http.post('/api/login', user);
+
   const getCurrentUser =() => JSON.parse($window.localStorage.getItem("user"));
+
   const getAllUsers = () => $http.get("/api/users/");
+
   const getSingleUser = (id) => $http.get("/api/users/" + id);
+
   const editUser = (user) => $http.put("/api/users/" + user.id, user);
+
   const removeUser = (user) => $http.delete("/api/users/" + user.id);
 
   return {
