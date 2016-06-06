@@ -2,11 +2,11 @@
 
 Installation:
 
-Be sure you have `mongod` running...
+Be sure you have postgres running...
 
 ```
 npm install
 npm start
 ```
 
-Then open http://localhost:3000
+Then open [http://localhost:3000](http://localhost:3000)
