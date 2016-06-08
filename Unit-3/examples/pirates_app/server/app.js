@@ -1,10 +1,3 @@
-// TODO:
-
-// 3. Handle creation of pirate
-// 4. Handle deletion
-// 5. Handle update
-// 6. Refactor!
-
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
@@ -23,10 +16,6 @@ app.use('/views', express.static(__dirname + "/../client/views"));
 app.use('/api/pirates', pirates);
 
 app.get('*', function(req, res) {
-  // This code won't work, it is FORBIDDEN!!!!
-  // res.sendFile(__dirname + '/../client/views/layout.html');
-
-  // This code should work
   res.sendFile('layout.html', {root: './client/views'});
 });
 

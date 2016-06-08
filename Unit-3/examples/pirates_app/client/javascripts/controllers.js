@@ -4,12 +4,12 @@
     .module('piratesApp')
     .controller('PiratesController', PiratesController)
     .controller('NewPirateController', NewPirateController)
+    .controller('ShowPirateController', ShowPirateController)
+    .controller('EditPirateController', EditPirateController)
     
-    function PiratesController(PirateService) {
+    function PiratesController(pirates) {
       var vm = this;
-      PirateService.getPirates().then(function(res) {
-        vm.pirates = res.data;
-      });
+      vm.pirates = pirates.data;
     }
 
     function NewPirateController(PirateService, $location) {
@@ -24,7 +24,42 @@
       }
     }
 
-    PiratesController.$inject = ['PirateService'];
+    function ShowPirateController(PirateService, $route) {
+      var vm = this;
+
+      vm.removePirate = function(id) {
+        PirateService.deletePirate(id).then(function() {
+          $route.reload();
+        })
+      }
+    }
+
+    function EditPirateController(PirateService, pirate, $location) {
+      var vm = this;
+      vm.pirate = pirate.data;
+      if (!vm.pirate) $location.path('/pirates');
+
+      vm.editPirate = function(pirate) {
+        var req = {pirate: pirate};
+        PirateService.updatePirate(req).then(function(res) {
+          $location.path('/pirates');
+        });
+      }
+    }
+
+    PiratesController.$inject = ['pirates'];
     NewPirateController.$inject = ['PirateService', '$location'];
+    ShowPirateController.$inject = ['PirateService', '$route'];
+    EditPirateController.$inject = ['PirateService', 'pirate', '$location'];
 
 })()
+
+
+
+
+
+
+
+
+
+

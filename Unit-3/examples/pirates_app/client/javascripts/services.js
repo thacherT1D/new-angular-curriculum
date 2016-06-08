@@ -12,19 +12,19 @@
       }
 
       this.createPirate = function(newPirate) {
-        return $http.post(BASE_URL, newPirate);
+        return $http.post(BASE_URL, newPirate /* on server, req.body.pirate */);
       }
 
       this.getPirate = function(id) {
-        // implement!
+        return $http.get(BASE_URL + "/" + id);
       }
 
       this.deletePirate = function(id) {
-        // implement!
+        return $http.delete(BASE_URL + "/" + id);
       }
 
-      this.updatePirate = function(pirate) {
-        // implement!
+      this.updatePirate = function(data) {
+        return $http.put(BASE_URL + "/" + data.pirate.id, data /* on server, data is req.body.pirate */);
       }
     }
 
