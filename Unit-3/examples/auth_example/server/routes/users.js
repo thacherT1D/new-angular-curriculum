@@ -49,7 +49,7 @@ function checkTokenForAll(req,res,next){
 router.use(checkHeaders);
 
 router.post('/signup',function(req,res){
-  if(req.body.username.length < 4 || req.body.username.length < 4 ){
+  if(req.body.username.length < 4 || req.body.password.length < 4 ){
     res.status(400).send("Username and Password must be longer than 4 characters")
   }
   else {
