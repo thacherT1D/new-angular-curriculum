@@ -1,0 +1,10 @@
+- test a service
+- test a factory
+- test a constant
+- test a value
+- test an interceptor
+- test a controller + template??
+- test clicking on things with https://github.com/vojtajina/ng-directive-testing/blob/start/test/tabsSpec.js
+- test $http
+- test forms / validation
+- test a complicated setup that involves multiple things...
