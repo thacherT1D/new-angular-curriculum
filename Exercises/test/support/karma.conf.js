@@ -16,6 +16,8 @@ module.exports = function(config) {
 
     files: [
 
+      { pattern: 'node_modules/jquery/dist/jquery.min.js', watched: false },
+
       { pattern: 'node_modules/chai/chai.js', watched: false },
 
       { pattern: 'node_modules/angular/angular.js', watched: false },

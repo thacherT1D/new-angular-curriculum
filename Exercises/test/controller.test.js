@@ -4,7 +4,6 @@ describe('PasswordController', function() {
   describe('SimpleController', function() {
     beforeEach(inject(function($templateCache,_$compile_,_$rootScope_, _$controller_) {
       template = $templateCache.get('templates/simple.html');
-      console.log(template);
       $compile = _$compile_;
       $rootScope = _$rootScope_;
       $controller = _$controller_;
@@ -16,7 +15,15 @@ describe('PasswordController', function() {
     it( 'renders the template', function(){
       ctrl = $controller('SimpleController as $ctrl', { $scope: scope, $element: element });
       scope.$digest();
-      console.log(element);
+      expect(element.html()).to.contain("hello")
+    });
+
+    it( 'wires up events', function(){
+      ctrl = $controller('SimpleController as $ctrl', { $scope: scope, $element: element });
+      scope.$digest();
+      element.find('button').click();
+      scope.$digest();
+      expect(element.html()).to.contain("changed")
     });
   })
 

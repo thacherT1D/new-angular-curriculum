@@ -3,10 +3,9 @@
 - √ figure out how to test $http error responses (the xit test in controller.test.js)
 - √ test a service
 - √ test an interceptor
-- test a controller + template??
+- √ test a controller + template
 - test clicking on things with https://github.com/vojtajina/ng-directive-testing/blob/start/test/tabsSpec.js
 - test forms / validation
-- test a complicated setup that involves multiple things...
 
 ## Things to test
 

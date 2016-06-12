@@ -8,7 +8,12 @@
     .controller('MyController', MyController);
 
   function SimpleController() {
-    this.message = "hello"
+    const vm = this
+    vm.message = "hello"
+
+    vm.update = function() {
+      vm.message = "changed"
+    }
   }
 
   function PasswordController($scope) {
@@ -41,9 +46,7 @@
 
       $http.post('/add-msg.py', message, { headers: headers } ).then(function(response) {
         $scope.status = '';
-        console.log("in then....");
       }).catch(function() {
-        console.log("in catch....");
         $scope.status = 'Failed...';
       });
     };
