@@ -3,18 +3,50 @@
   'use strict';
 
   angular.module('app')
-    .controller('PasswordController', function PasswordController($scope) {
-      $scope.password = '';
-      $scope.grade = function() {
-        var size = $scope.password.length;
-        if (size > 8) {
-          $scope.strength = 'strong';
-        } else if (size > 3) {
-          $scope.strength = 'medium';
-        } else {
-          $scope.strength = 'weak';
-        }
-      };
+    .controller('SimpleController', SimpleController)
+    .controller('PasswordController', PasswordController)
+    .controller('MyController', MyController);
+
+  function SimpleController() {
+    this.message = "hello"
+  }
+
+  function PasswordController($scope) {
+    $scope.password = '';
+    $scope.grade = function() {
+      var size = $scope.password.length;
+      if (size > 8) {
+        $scope.strength = 'strong';
+      } else if (size > 3) {
+        $scope.strength = 'medium';
+      } else {
+        $scope.strength = 'weak';
+      }
+    };
+  }
+
+  function MyController($scope, $http) {
+    var authToken;
+
+    $http.get('/auth.py').then(function(response) {
+      authToken = response.headers('A-Token');
+      $scope.user = response.data;
+    }).catch(function () {
+      $scope.error = "Didn't work"
     });
+
+    $scope.saveMessage = function(message) {
+      var headers = { 'Authorization': authToken };
+      $scope.status = 'Saving...';
+
+      $http.post('/add-msg.py', message, { headers: headers } ).then(function(response) {
+        $scope.status = '';
+        console.log("in then....");
+      }).catch(function() {
+        console.log("in catch....");
+        $scope.status = 'Failed...';
+      });
+    };
+  }
 
 }());

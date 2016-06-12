@@ -8,6 +8,7 @@ describe('Unit testing great quotes', function() {
     $rootScope = _$rootScope_;
   }));
 
+  // http://angular-tips.com/blog/2014/06/introduction-to-unit-test-directives/
   it('Replaces the element with the appropriate content', function() {
     var element = $compile("<a-great-eye></a-great-eye>")($rootScope);
     $rootScope.$digest();
