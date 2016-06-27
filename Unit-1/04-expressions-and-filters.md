@@ -66,7 +66,7 @@ Let's try using another built-in filter to format our data. Angular has a `numbe
 {{3.14159265359 | number:1}}
 ```
 
-**EXERICSE**
+**EXERCISE**
 
 Create a drop down menu where the user can select how many digits to round pi to. BONUS: Find out how to pluralize "digit" correctly. Angular comes with a built-in way of pluralizing things! It should work like the following gif:
 

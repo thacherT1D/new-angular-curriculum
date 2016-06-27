@@ -82,7 +82,7 @@ BONUS: Figure out how to make these entity codes actually display as symbols, li
 
 ![](http://content.screencast.com/users/ColtSteele1/folders/Jing/media/d75c95af-4729-4b8f-bf84-3b98a87f3213/00000003.png)
 
-**EXERICSE**
+**EXERCISE**
 
 Try using `ng-repeat` to iterate through an array with some duplicates, like `[1,1,2,5,6,9,9,9]`. What happens?  Research how `ng-repeat` handles duplicate data and how to 'fix' this issue.
 
