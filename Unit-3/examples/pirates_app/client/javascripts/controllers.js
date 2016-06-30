@@ -17,8 +17,7 @@
       vm.pirate = {};
 
       vm.addPirate = function(newPirate) {
-        var req = { pirate: newPirate };
-        PirateService.createPirate(req).then(function(res) {
+        PirateService.createPirate(newPirate).then(function(res) {
           $location.path('/pirates');
         });
       }
@@ -39,9 +38,8 @@
       vm.pirate = pirate.data;
       if (!vm.pirate) $location.path('/pirates');
 
-      vm.editPirate = function(pirate) {
-        var req = {pirate: pirate};
-        PirateService.updatePirate(req).then(function(res) {
+      vm.editPirate = function(updatedPirate) {
+        PirateService.updatePirate(updatedPirate).then(function(res) {
           $location.path('/pirates');
         });
       }

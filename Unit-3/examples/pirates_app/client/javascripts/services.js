@@ -12,7 +12,7 @@
       }
 
       this.createPirate = function(newPirate) {
-        return $http.post(BASE_URL, newPirate /* on server, req.body.pirate */);
+        return $http.post(BASE_URL, newPirate);
       }
 
       this.getPirate = function(id) {
@@ -23,8 +23,8 @@
         return $http.delete(BASE_URL + "/" + id);
       }
 
-      this.updatePirate = function(data) {
-        return $http.put(BASE_URL + "/" + data.pirate.id, data /* on server, data is req.body.pirate */);
+      this.updatePirate = function(updatedPirate) {
+        return $http.put(BASE_URL + "/" + updatedPirate.id, updatedPirate);
       }
     }
 

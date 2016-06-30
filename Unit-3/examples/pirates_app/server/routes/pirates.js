@@ -22,7 +22,7 @@ router.get('/:id', function(req, res) {
 })
 
 router.post('/', function(req, res) {
-  knex('pirates').insert(req.body.pirate, '*').then(function(pirate) {
+  knex('pirates').insert(req.body, '*').then(function(pirate) {
     res.send(pirate);
   }).catch(function(err) {
     res.send(err);
@@ -40,7 +40,7 @@ router.delete('/:id', function(req, res) {
 router.put('/:id', function(req, res) {
   knex('pirates')
     .where('id', req.params.id)
-    .update(req.body.pirate)
+    .update(req.body)
     .then(function() {
       res.send("Pirate Updated!")
     }).catch(function(err) {
