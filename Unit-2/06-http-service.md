@@ -87,7 +87,7 @@ PS: sometimes the api reaches it's daily limit of calls and shuts down for the d
 **EXERCISE:** Try making a request to an invalid URL.  Write code to properly handle a request that fails.  **Does Angular have any built-in functionality that could help you?**
 
 
-**EXERCISE:** Use `$http.get()` and `$http.post()` to interact with this [Rails API that we've made for you](https://still-tundra-8387.herokuapp.com/).  It's a simple collaborative chat app.  The API has two endpoints:
+**EXERCISE:** Use `$http.get()` and `$http.post()` to interact with this [API that we've made for you](https://messagehttpservice.herokuapp.com/).  It's a simple collaborative chat app.  The API has two endpoints:
 
 The app is one Rails model, Message, which has two attributes: name and content.
 
