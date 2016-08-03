@@ -2,7 +2,7 @@
 
 To get started with animations we need to include a module which our application will depend on (this is also called a dependency). The name of our module is ngAnimate and it is not directly part of the angular script that we are using, so we need to do 2 things:
 
-1 - make sure we add `<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script>` to our `html` file (make sure this script is BELOW the `angular.js` script).
+1 - make sure we add `<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script>` to our `html` file (make sure this script is BELOW the `angular.js` script AND is the same version as your `angular.js` ).
 
 2 - inside of our JavaScript file, we need to include this dependency when we create our module, so our code should look something like this
 `angular.module('animateApp', ['ngAnimate'])`
