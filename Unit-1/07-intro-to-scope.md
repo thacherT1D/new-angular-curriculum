@@ -145,9 +145,9 @@ Even before we get to the good stuff, let's make sure we have a thorough underst
 
 From MDN: 
 
-"All types except objects define immutable values (values, which are incapable of being changed). For example and unlike to C, Strings are immutable. We refer to values of these types as "primitive values"."
+"All types _except objects_ define immutable values (values which are incapable of being changed). For example, Strings are immutable. We refer to values of these types as "primitive values"."
 
-A primitive in JavaScript includes `undefined`, `null`, `boolean`, `number` or `string` and `Symbol` (new in ES2015).
+Other primitives in JavaScript include `undefined`, `null`, `boolean`, `number` or `string` and `Symbol` (new in ES2015).
 
 MDN continued....
 
