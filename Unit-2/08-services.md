@@ -5,7 +5,7 @@
 * Describe and Compare Services and Factories in Angular.js
 * Describe a Singleton and ennumerate use cases for Singletons
 * Create a custom Service or Factory to use in an Angular app
-* Use an Angular Service to manage data accross controllers* 
+* Use an Angular Service to manage data accross controllers
 
 ## A brief introduction
 
