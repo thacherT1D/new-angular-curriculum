@@ -1,5 +1,12 @@
 # Services
 
+## Objectives
+
+* Describe and Compare Services and Factories in Angular.js
+* Describe a Singleton and ennumerate use cases for Singletons
+* Create a custom Service or Factory to use in an Angular app
+* Use an Angular Service to manage data accross controllers* 
+
 ## A brief introduction
 
 As we start building larger applications with multiple controllers, not only is our code per controller becoming larger, but we are starting to face with a new problem. How do we share data, properties and methods between controllers? Our first thought might be to use `$rootScope` and pass it to each of our controllers, but this gets messy quickly. It would be really nice to have to tool to do this - and for that we use services!
