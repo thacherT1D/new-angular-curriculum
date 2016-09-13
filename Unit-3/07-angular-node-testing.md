@@ -47,6 +47,8 @@ mkdir -p test/integration
 
 #### NPM Dependencies
 
+First, ```npm init``` to create a new package.json file for our application.
+
 Next, let's install the npm packages for the frameworks we'll be using.  The `--save-dev` flag tells npm to store the dependencies in a different group in our `package.json` file.
 
 
