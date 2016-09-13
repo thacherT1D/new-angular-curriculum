@@ -72,7 +72,7 @@ Let's create a new script for running protractor.  In the `package.json`, modify
   }
 ```
 
-To run protractor, make sure your node server is running first.  Type `nodemon` in the terminal, then in a separte terminal tab, type `npm run protractor`.  The script is using the version of protractor that we have npm installed into our node_modules.  This is a good practice because  the user is guarenteed to have protractor installed in this directory as long as they have run `npm install`
+To run protractor, make sure your node server is running first.  Type `nodemon` in the terminal, then in a separate terminal tab, type `npm run protractor`.  The script is using the version of protractor that we have npm installed into our node_modules.  This is a good practice because  the user is guarenteed to have protractor installed in this directory as long as they have run `npm install`
 
 At this point, the `npm run protractor` command will give you an error about protractor-conf.js not exiting.  Create the file:
 
