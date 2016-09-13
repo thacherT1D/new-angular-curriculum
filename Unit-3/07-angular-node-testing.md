@@ -63,10 +63,13 @@ NPM scripts in `package.json` are a useful tool for making our lives as develope
 
 **Question**: What will happen when you run `npm test` in your terminal?  If you're not sure, try it and see what happens.
 
-Let's create a new script for running protractor.  In the `package.json`, add the following:
+Let's create a new script for running protractor.  In the `package.json`, modify scripts value to be the following:
 
 ```json
+  "scripts": {
+    "start": "node server/app.js",
     "protractor": "./node_modules/protractor/bin/protractor ./test/protractor-conf.js"
+  }
 ```
 
 To run protractor, make sure your node server is running first.  Type `nodemon` in the terminal, then in a separte terminal tab, type `npm run protractor`.  The script is using the version of protractor that we have npm installed into our node_modules.  This is a good practice because  the user is guarenteed to have protractor installed in this directory as long as they have run `npm install`
