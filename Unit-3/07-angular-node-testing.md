@@ -178,26 +178,35 @@ However, there are a few problems with that.  Jasmine by default looks in the `s
 "test": "JASMINE_CONFIG_PATH=test/jasmine.json ./node_modules/jasmine/bin/jasmine.js",
 ```
 
-That gets us most of the way towards getting jasmine up and running. We have one other problem.  It would be nice to have a test database that the tests can use which is separate from our development database.  Let's achieve this by adding a line of code to `models/index.js`:
+That gets us most of the way towards getting jasmine up and running. We have one other problem.  It would be nice to have a test database that the tests can use which is separate from our development database.  Let's achieve this by adding a test environment to our `knexfile.js`, and then include it in our jasmine script.
+
 
 ```
-var databaseName = process.env.AUTH_DB_NAME || "angular_auth";
-mongoose.connect("mongodb://localhost/" + databaseName);
+module.exports = {
+  development: {
+    client: "pg",
+    connection: 'postgres://localhost/knex_angular_auth',
+    debug: true
+  },
+  test: {
+    client: 'pg',
+    connection: 'postgres://localhost/knex_angular_auth_test',
+    debug: true
+  },
+}
 ```
 
-Now our node app uses the environment variable `AUTH_DB_NAME` for the database name if the environment variable is defined.  If it is not defined, we fall back to the original database name of `angular_auth`.
-
-Now we have to specify the `AUTH_DB_NAME` environment variable in our test script as well:
+Now we have to specify that the environment has changed, from `development` to `test`.
 
 ```
-"test": "JASMINE_CONFIG_PATH=test/jasmine.json AUTH_DB_NAME=angular_auth_test ./node_modules/jasmine/bin/jasmine.js",
+"test": "NODE_ENV=test JASMINE_CONFIG_PATH=test/jasmine.json ./node_modules/jasmine/bin/jasmine.js",
 ```
 
 Now, add a file in the `test/server` folder called `users-spec.js`.  Add the following code to get our inital test setup:
 
 ```js
 var app = require('../../server/app')
-var db = require('../../server/models');
+var db = require('../../server/db/knex.js');
 var request = require('supertest')(app)
 
 
