@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>Component App</title>
+  <base href="/" />
+</head>
+<body>
+
+  <ui-view></ui-view>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+  <script src="http://unpkg.com/angular-ui-router@1.0.0-alpha.5/release/angular-ui-router.js"></script>
+  <script type="text/javascript">
+
+    angular.module("app", ["ui.router"])
+      .config(function($stateProvider, $locationProvider){
+        $locationProvider.html5Mode(true)
+
+        $stateProvider.state('home', {
+          url: '/',
+          component: 'app',
+          resolve: {
+            user: function($timeout){
+              return new Promise(function (resolve, reject) {
+                $timeout(function () {
+                  resolve("foo")
+                }, 1000)
+              })
+            }
+          }
+        });
+      })
+      .component('app', {
+        template: "<h1>{{$ctrl.user}}</h1>",
+        bindings: { user: '<' },
+      })
+
+  </script>
+</body>
+</html>
