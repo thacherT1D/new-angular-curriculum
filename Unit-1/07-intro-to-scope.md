@@ -32,7 +32,7 @@ All scopes are created with prototypal inheritance, meaning that they have acces
 ## A very useful tool - AngularJS Batarang
 
 For a more in depth analysis of scopes, install the  
-[AngularJS batarang](https://chrome.google.com/webstore/detail/angularjs-batarang-stable/niopocochgahfkiccpjmmpchncjoapek/related?hl=en-US) chrome extention. Make sure you are running a server when using this tool and have the `enable` checkbox checked. You can view all of the scopes and their methods and properties using this tool. It is exceptionally useful when dealing with parent/child scope relationships.
+[AngularJS batarang](https://chrome.google.com/webstore/detail/angularjs-batarang/ighdmehidhipcmcojjgiloacoafjmpfk?hl=en-US) chrome extention. Make sure you are running a server when using this tool and have the `enable` checkbox checked. You can view all of the scopes and their methods and properties using this tool. It is exceptionally useful when dealing with parent/child scope relationships.
 
 ## Passing along scope to child controllers
 
