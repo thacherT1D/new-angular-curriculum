@@ -3,7 +3,7 @@
 
 **Watch the videos in the linked LE for a description of the project.**
 
-- [Video Instructions](https://coursework.galvanize.com/redirects/learning_experiences/10)
+- [Video Instructions](https://learn.galvanize.com/redirects/articles/4611)
 
 **Shopping Cart Should Have the Following Specs:**
 - Search by name
