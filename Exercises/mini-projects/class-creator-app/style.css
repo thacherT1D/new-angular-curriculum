@@ -1,0 +1,14 @@
+select {
+  display: block;
+}
+
+a.grade-change-btn {
+  color: #1b5e20;
+  font-size: 1.2rem;
+  line-height: 0rem;
+  padding: 0.5rem;
+}
+
+a.grade-change-btn:hover {
+  font-weight: bold;
+}

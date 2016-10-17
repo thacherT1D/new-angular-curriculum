@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html ng-app="ClassCreatorApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Class Creator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body class="container">
+    <h1>Class Creator</h1>
+    <hr>
+
+    <div class="row">
+      <!-- Class Listings -->
+      <div class="col s4">
+        <div ng-repeat="course in courses" class="card-panel green lighten-5 z-depth-0">
+          <p>
+            <strong>Class Name:</strong>
+            {{ course.name }}
+          </p>
+          <p>
+            <strong>Teacher Name:</strong>
+            {{ course.teacher }}
+          </p>
+          <div ng-show="!course.students.length">
+            <p>No students in this class yet!</p>
+          </div>
+          <div ng-controller="GradeController as GradeCtrl"
+            ng-repeat="student in course.students">
+            <div class="row">
+              <div class="col s6">
+                <p>{{ student.name }}</p>
+              </div>
+              <div class="col s2">
+                <p>
+                  {{ student.grade }}
+                </p>
+              </div>
+              <div class="col s2">
+                <p>
+                  <a href=""
+                    class="grade-change-btn"
+                    ng-click="GradeCtrl.change(1, student)">+</a>
+                </p>
+              </div>
+              <div class="col s2">
+                <p>
+                  <a href=""
+                    class="grade-change-btn"
+                    ng-click="GradeCtrl.change(0, student)">-</a>
+                </p>
+              </div>
+            </div>
+            <p>
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Forms -->
+      <div class="col s4">
+        <div class="card-panel z-depth-0 teal lighten-5">
+          <div ng-controller="CreateClassController as CreateClassCtrl">
+            <h5 class="teal-text">Create Class</h5>
+            <form ng-submit="CreateClassCtrl.create()">
+              <div class="row">
+                <div class="col s6">
+                  <label class="teal-text">
+                    Class Name
+                    <input type="text" class="teal-text"
+                      ng-model="CreateClassCtrl.course.name">
+                  </label>
+
+                </div>
+                <div class="col s6">
+                  <label class="teal-text">
+                    Teacher Name
+                    <input type="text" class="teal-text"
+                      ng-model="CreateClassCtrl.course.teacher">
+                  </label>
+                </div>
+              </div>
+              <input type="submit" class="btn teal">
+            </form>
+          </div>
+        </div>
+
+        <div class="card-panel z-depth-0 teal lighten-5">
+          <div ng-controller="CreateStudentController as CreateStudentCtrl">
+            <h5 class="teal-text">Create Student</h5>
+            <form ng-submit="CreateStudentCtrl.create()">
+              <div class="row">
+                <div class="col s6">
+                  <label class="teal-text">
+                    Class
+                    <select
+                      ng-options="course.id as course.name for course in courses"
+                      ng-model="CreateStudentCtrl.student.course_id">
+                      <option value="">-- Select an Option --</option>
+                    </select>
+                  </label>
+
+                </div>
+                <div class="col s6">
+                  <label class="teal-text">
+                    Student Name
+                    <input type="text" class="teal-text"
+                      ng-model="CreateStudentCtrl.student.name">
+                  </label>
+                </div>
+              </div>
+              <input type="submit" class="btn teal">
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Stats -->
+      <div class="col s4">
+        <div ng-controller="StatsController as StatsCtrl">
+          <p>
+            <strong>Total Number of Classes:</strong>
+            {{ StatsCtrl.totals.courses }}
+          </p>
+          <p>
+            <strong>Total Number of Students:</strong>
+            {{ StatsCtrl.totals.students }}
+          </p>
+          <hr>
+          <select
+            ng-options="c.id as c.name for c in courses"
+            ng-change="StatsCtrl.showAverage()"
+            ng-model="StatsCtrl.course_id">
+            <option selected value="">-- Select an Option --</option>
+          </select>
+
+          <p>
+            <strong>Grade Average:</strong>
+            {{ StatsCtrl.averageGrade }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+    <script src="./controllers/grade.js"></script>
+    <script src="./controllers/create.class.js"></script>
+    <script src="./controllers/create.student.js"></script>
+    <script src="./controllers/stats.js"></script>
+  </body>
+</html>
