@@ -13,7 +13,7 @@ Note:
 Requirements:
 
 * Each post has a title, author, image, and description.
-* Each post's date/time is displayed nicely: "Yesterday at 3:09pm", "Last Thursday at 4:42am", etc. You will need an external library. Watch the video for more details.  
+* Each post's date/time is displayed nicely: "Yesterday at 3:09pm", "Last Thursday at 4:42am", etc. You will need an external library. Watch the video for more details.
 * A user can upvote/downvote posts
 * Posts dynamically reorder according to number of votes
 * A user can create new posts
@@ -24,16 +24,20 @@ Requirements:
 * The new post form and comment forms can be toggled on and off
 * A user can search through posts
 * A user can sort posts by votes, date, and title.
-* Animate posts as they are added and removed from the search results.  
+* Animate posts as they are added and removed from the search results.
 * Research Angular animations.See the video for an example implementation.
-* Hint for animations: 
+* Hint for animations:
 * http://plnkr.co/edit/qrQwv1?p=preview
 * https://divshot.com/blog/tips-and-tricks/angular-1-2-and-animate-css/
 * http://odetocode.com/blogs/scott/archive/2014/02/25/easy-animations-for-angularjs-with-animate-css.aspx
 * Style the app.  It should look better than my implementation.
+
+Video Example
+<iframe src="https://player.vimeo.com/video/135778837?byline=0&portrait=0" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 Bonus Features
 
 * A user can choose to sort ascending or descending
 * A user can favorite posts and view all favorites in a separate tab
 * A user can upload an image (no backend involved)
+
