@@ -136,7 +136,7 @@ $scope.replay = function() {
 ```
 ### ng-submit
 
-```ng-submit``` can be used whenever you want an action to take place on a form submit.  The ```ng-submit``` directive prevents the default broswer behavior (sending a request to some action and refreshing the page).  It also evaluates the expression in the ```ng-submit```.  For example:
+```ng-submit``` can be used whenever you want an action to take place on a form submit.  The ```ng-submit``` directive prevents the default browser behavior (sending a request to some action and refreshing the page).  It also evaluates the expression in the ```ng-submit```.  For example:
 
 
 **index.html**
