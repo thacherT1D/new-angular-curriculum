@@ -4,7 +4,6 @@ It's time to use everything you've learned so far in the 2nd unit to build a sma
 
 <iframe src="https://player.vimeo.com/video/135991632" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
-
 # WARNING
 
 Due to an issue with the OMDB API, images will not load if you are serving your app from `http://127.0.0.1:8080`
@@ -34,3 +33,7 @@ Bonus:
  - 	A user can specify what type of data they are searching for: movie, series, or episode.
  - A user can check a box "Get Rotten Tomatoes Data" which will also fetch data from Rotten Tomatoes(using the OMDB API)
  - Create your own custom filter that filters out all films starring your least-favorite actor or in a genre you dislike, etc.
+ 
+ 
+ 
+ [![](https://i.gyazo.com/aaebae489446960de0fd485720964b10.png)](https://vimeo.com/135991632)
