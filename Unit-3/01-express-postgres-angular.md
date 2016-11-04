@@ -37,6 +37,9 @@ __What will our new file structure look like?__
 
 ### Set Up
 __#1 New up an Express App named pirates__
+
+Get the [Express Generator](https://github.com/expressjs/generator)
+
 ```sh
 express pirates --git
 cd pirates
