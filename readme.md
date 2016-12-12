@@ -21,9 +21,7 @@ There are 4 project-based assessments that you'll be asked to deliver:
 - Deploying your database-backed Reddit Clone and submitting the URL
 - Refactoring your Reddit Clone to use components and services
 
-If at any point you need further practice, you should focus on:
-
-- [Shopping Cart App](Unit-2/12-shopping-cart-app.md)
+![](./images/angular-assessmet-intervention-stretch-map.png)
 
 ## Unit 1
 
