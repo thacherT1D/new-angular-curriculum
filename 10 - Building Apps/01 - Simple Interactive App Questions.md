@@ -47,14 +47,14 @@ Which step does the code above violate?
 ##### !end-question
 
 ##### !options
-* Module definition
-* Component definition / insertion
-* Controller / Event handlers
-* Template
+1. Module definition
+2. Component definition / insertion
+3. Controller / Event handlers
+4. Template
 ##### !end-options
 
 ##### !answer
-Module definition
+1
 ##### !end-answer
 
 ##### !explanation
