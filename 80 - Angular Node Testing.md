@@ -8,7 +8,7 @@ The testing lesson focuses on testing a todo app with auth.  You can look at the
 
 #### System Dependencies
 
-Protactor requries a newer version of NodeJS to function as well as a recent install of java.  In your terminal, type the following:
+Protractor requires a newer version of NodeJS to function as well as a recent install of java.  In your terminal, type the following:
 
 ```
 java -version

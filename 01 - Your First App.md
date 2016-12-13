@@ -4,9 +4,9 @@ Standard: **Build an Angular application with routes (<a href="#">W0044</a>)**
 
 ## What is Angular?
 
-According to the official Angular introduction, Angular is a-
+According to the official Angular introduction, Angular is
 
-> client-side technology, written entirely in JavaScript. It works with the long-established technologies of the web (HTML, CSS, and JavaScript) to make the development of web apps easier and faster than ever before.
+> a client-side technology, written entirely in JavaScript. It works with the long-established technologies of the web (HTML, CSS, and JavaScript) to make the development of web apps easier and faster than ever before.
 
 Angular, along with other client-side libraries (Backbone, Ember, React), help us deal with larger, more complex code bases on the client-side. They also redefined the roles of the client and server, resulting in a new application structure called a Single-Page Application (or SPA). In this new structure, the client interacts with the server by making RESTful AJAX requests that are triggered by user interactions.
 
@@ -15,8 +15,6 @@ It boils down to this: **Angular helps us build complex, single-page application
 ## Hello, Angular!
 
 We're going to start by setting up a very simple Angular app to say Hello World - Angular-style!
-
-Staying true to an iterative approach to coding, we'll start slow, defining everything (markup and Angular syntax) within a single `index.html` file - a true single page app! - and scale from there, learning about patterns for structuring complicated Angular apps.
 
 1. Create an `index.html` file.
 1. Add the Angular dependency. For now, we're going to utilize a CDN - `https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.js`.
@@ -54,7 +52,7 @@ Staying true to an iterative approach to coding, we'll start slow, defining ever
 * Why learn Angular JS over other frameworks like Ember, Backbone, Knockout, etc?
 * People have some very strong opinions about Angular. What are 3 common complaints people have about Angular?
 * Is Angular an MVC framework?
-* Turn to the Angular docs. Find `ng-app`. What is it and what does it do? What does `ng` stand for?
+* Turn to the Angular docs. Find `ng-app`. What is it and what does it do?
 
 ## Resources
 

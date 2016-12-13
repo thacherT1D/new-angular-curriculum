@@ -70,11 +70,11 @@ Take a look a the following code:
     </div>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.js"></script>
     <script>
-    angular.module("myapp", [])
-      .controller("HelloController", function($scope) {
-        $scope.hello = {};
-        $scope.hello.title = "World";
-      });
+      angular.module("myapp", [])
+        .controller("HelloController", function($scope) {
+          $scope.hello = {};
+          $scope.hello.title = "World";
+        });
     </script>
   </body>
 </html>
