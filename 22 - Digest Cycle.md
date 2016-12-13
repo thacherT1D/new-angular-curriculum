@@ -28,7 +28,7 @@ Use this code example, and see if you can figure this out:
   <div ng-controller="MainController">
     From $scope: {{view.age}}
   </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

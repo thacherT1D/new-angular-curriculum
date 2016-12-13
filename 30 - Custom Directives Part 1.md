@@ -26,7 +26,7 @@ Our `index.html` would look like this:
 <!DOCTYPE html>
 <html ng-app="simpleDirectiveApp">
 <head>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js" type="text/javascript"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.js" type="text/javascript"></script>
   <script src="app.js" type="text/javascript"></script>
 </head>
 <body>

@@ -66,7 +66,7 @@ Take a look a the following code:
     <div ng-controller="HelloController">
       <h2>Hello, {{hello.title}}!</h2>
     </div>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.js"></script>
     <script>
     angular.module("myapp", [])
       .controller("HelloController", function($scope) {

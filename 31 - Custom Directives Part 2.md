@@ -35,7 +35,7 @@ app.directive('gsChangeBackground', function() {
 <!DOCTYPE html>
 <html ng-app="mouseOverDirectiveApp">
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.js" type="text/javascript"></script>
 <script src="app.js" type="text/javascript"></script>
 </head>
 <body>
@@ -64,7 +64,7 @@ Here's the syntax for defining a controller from within your directive:
 <!DOCTYPE html>
 <html ng-app="circleApp">
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.js" type="text/javascript"></script>
 <script src="app.js" type="text/javascript"></script>
 <style>
   .circle {
@@ -190,7 +190,7 @@ Suppose you're building a photo sharing app, and that each displayed photo can h
   <gs-photo src="'http://lorempixel.com/output/abstract-q-c-640-480-1.jpg'">
     <p><em>This</em> picture is <strong>terrible.</strong></p>
   </gs-photo>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.js"></script>
   <script src="js/app.js"></script>
   <script src="js/directives.js"></script>
 </body>

@@ -18,7 +18,7 @@ Angular provides solutions for all of the above issues through its router.  We c
 
 We'll see how to use the `$routeProvider` to make use of the browser’s history navigation and allow users to bookmark and share specific pages based off of the current URL.  Let's get started.
 
-**First we need to include the `ngRoute` module.** It's a separate module that we need to include on our own. You can download the module or link to this CDN: "http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.js"
+**First we need to include the `ngRoute` module.** It's a separate module that we need to include on our own. You can download the module or link to this CDN: "http://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular-route.js"
 
 Next, we need to load the `ngRoute` module by adding it as a dependent module.
 
@@ -135,8 +135,8 @@ Make sure the second route works correctly by visiting `http://localhost:8080/#/
 
 Create an html file and use Bower or CDNs to link to angular and another for angular routes
 ```html
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular-route.js"></script>
 ```
 Add ng-app="myApp" to the html tag of your file
 ```
