@@ -9,4 +9,5 @@ A few things to consider:
 
 **Stretch Exercise** Implement a realtime student understanding tracker.  This is definitely a bonus challenge because it requires you to use some new AngularFire methods and incorporate a charting library. Watch the following video for details.
 
-[![](https://i.gyazo.com/3922ef63280e43b4f25e7b3097d95fa3.png)](https://vimeo.com/136844717)
+<iframe src="https://player.vimeo.com/video/136844717" width="640" height="400" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p>AngularFire Stretch Assignment from <a href="https://vimeo.com/galvanizehq">Galvanize</a> on <a href="https://vimeo.com">Vimeo</a>.</p>

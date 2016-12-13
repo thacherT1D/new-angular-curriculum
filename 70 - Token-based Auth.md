@@ -34,7 +34,7 @@ Some other advantages include performance, CSRF protection, ease of testing and 
 
 So now that we know that tokens are a better option, what kind of token should we use? The most popular tool right now are JSON Web Tokens (JWT for short - pronounced "Jot"). So what is a JWT?
 
-From [jwt.io](jwt.io):
+From [jwt.io](http://jwt.io):
 
 > JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. This information can be verified and trusted because it is digitally signed. JWTs can be signed using a secret (with HMAC algorithm) or a public/private key pair using RSA.
 
@@ -180,7 +180,7 @@ So writing our own interceptors is quite rough! It would be really nice if we ha
 
 ## Social Auth
 
-There is also another tool called [satelizer](https://github.com/sahat/satellizer) which can handle multiple social auth providers for you. You can see a demo [here](https://satellizer.herokuapp.com/#/) as well as an example for what a backend with node might look like [here](https://github.com/sahat/satellizer/blob/master/examples/server/node/server.js)
+There is also another tool called [satelizer](https://github.com/sahat/satellizer) which can handle multiple social auth providers for you. You can see an example for what a backend with node might look like [here](https://github.com/sahat/satellizer/blob/master/examples/server/node/server.js)
 
  If you find satelizer to be too difficult, Auth0 is another option tool. You can get started with this tutorial (here)[https://www.youtube.com/watch?v=ug_KmAZFe9Q](https://www.youtube.com/watch?v=ug_KmAZFe9Q) (but be warned - this is still quite challenging)
 

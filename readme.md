@@ -16,7 +16,7 @@ If you master the above standards and still have time, you may also elect to:
 
 There are 4 project-based assessments that you'll be asked to deliver:
 
-- [Reddit Clone (without a database)](Unit-1/11-reddit-clone.md)
+- [Reddit Clone (without a database)](19 - Assessment: Reddit Clone.md)
 - Connecting your Reddit Clone to a database
 - Deploying your database-backed Reddit Clone and submitting the URL
 - Refactoring your Reddit Clone to use components and services

@@ -69,7 +69,7 @@ Here is an example (remember these enter/leave classes don't work for ALL direct
 }
 ```
 
-Aside from the `.ng-enter-active` and `.ng-leave-active` classes, we are given `.ng-enter-stagger` and `.ng-leave-stagger` classes as well so that we can use staggered animations (an animation that contains a delay between each successive animation, you can read more about it [here](http://www.yearofmoo.com/2013/12/staggering-animations-in-angularjs.html#staggering-animations)).
+Aside from the `.ng-enter-active` and `.ng-leave-active` classes, we are given `.ng-enter-stagger` and `.ng-leave-stagger` classes as well so that we can use staggered animations (an animation that contains a delay between each successive animation, you can read more about it [here](https://www.yearofmoo.com/2013/12/staggering-animations-in-angularjs-matias.html)).
 
 ## Examples
 

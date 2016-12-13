@@ -118,8 +118,7 @@ git commit -m "instantiate pirates module"
 ### Let's Check In
 
 By now, you should have a basic Angular app that uses one controller and renders
-one partial using angular-route ($routeProvider). If you're stuck, you can check
-some of your files [here](rescue/example_code.md#angular-routes) . BUT first _really_ try and debug
+one partial using angular-route ($routeProvider). BUT first _really_ try and debug
 this yourself. Are there any helpful errors in the console? Read carefully.
 
 ## Setting Up Our Database
@@ -279,8 +278,6 @@ __How do you know if you've done it right?__
 
 Go to `http://localhost:3000/api/pirates`. You should see a `json` object of  all
 your pirates.
-
-[RESCUE CODE](rescue/example_code.md#express-routes)
 
 #### Step 2: Assign the response to a `$scope` variable
 

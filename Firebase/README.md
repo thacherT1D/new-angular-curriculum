@@ -10,7 +10,8 @@ This unit focuses on writing Angular apps with a backend.  Rather than starting 
 
 Watch the following video for a more thorough introduction:
 
-[![](https://i.gyazo.com/354782bf33b1c5ab04d340877f6c2d1d.png)](https://vimeo.com/136780045)
+<iframe src="https://player.vimeo.com/video/136780045" width="640" height="400" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p>Firebase Intro from <a href="https://vimeo.com/galvanizehq">Galvanize</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
 **EXERCISE** Sign up for a Firebase account and go through the 5 minute tutorial.
 

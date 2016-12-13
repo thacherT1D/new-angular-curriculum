@@ -2,7 +2,7 @@
 
 Standard: **Refactor Angular applications to use services and components (<a href="#">W0046</a>)**
 
-Way back in [Unit 1, Lesson 5](https://github.com/gSchool/angular-curriculum/blob/master/Unit-1/5-built-in-directives.md), we went over built in directives.  These are directives that angular comes with.  In this lesson, we're going to build our own custom directives. But first...
+Way back in [Unit 1, Lesson 5](05 - Builtin Directives.md), we went over built in directives.  These are directives that angular comes with.  In this lesson, we're going to build our own custom directives. But first...
 
 - Name at least 5 built in directives you've used so far.
 - Watch [AngularJS Directives Tutorial - Part 1 - Demystifying Angular Directives](https://www.youtube.com/watch?v=0r5QvzjjKDc)
@@ -271,7 +271,7 @@ Of course, we've now got two different names for our data depending on where we 
 
 **EXERCISE**
 
-Create an app that uses the [pokemon api](http://pokeapi.co/docs/).  The app should first make a request to the pokedex to get all possible pokemon.  Then randomly select 5 pokemon to display.  The app should display the pokemon's name, types, name of moves (limit it to 6), and a sprite for the pokemon. Use a custom directive to display the pokemon.
+Create an app that uses the [pokemon api](http://pokeapi.co/docsv2/).  The app should first make a request to the pokedex to get all possible pokemon.  Then randomly select 5 pokemon to display.  The app should display the pokemon's name, types, name of moves (limit it to 6), and a sprite for the pokemon. Use a custom directive to display the pokemon.
 
 The app should use a custom directive for each pokemon (eg `pokemon-item`).
 

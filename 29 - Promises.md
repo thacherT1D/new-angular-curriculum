@@ -89,9 +89,9 @@ For more practice with promises, checkout the [promise-challenges repo](https://
 
 # Promises in Angular
 
-Recall from [Unit 2: Section 6](06-http-service.md) that the `$http` service method `get` returns a promise.
+Recall from [Unit 2: Section 6](26 - HTTP Service.md) that the `$http` service method `get` returns a promise.
 
-Let's create a service that uses `$http` to catch a specific pokemon using the [pokemon api](http://pokeapi.co/docs/).
+Let's create a service that uses `$http` to catch a specific pokemon using the [pokemon api](http://pokeapi.co/docsv2/).
 
 The example below is a possible way to implement a service that
 gets the first move for a pokemon and the first ability.  **THERE IS A MUCH BETTER WAY TO IMPLEMENT THE FOLLOWING CODE**.
@@ -99,7 +99,7 @@ gets the first move for a pokemon and the first ability.  **THERE IS A MUCH BETT
 ```js
 app.service("Pokemon", function($http) {
 
-  var baseUrl = 'http://pokeapi.co/';
+  var baseUrl = 'http://pokeapi.co/docsv2/';
 
   // A number for the pokemon id needs to be added to the
   // this path.
@@ -138,7 +138,7 @@ This deeply nested code is very hard to maintain and it doesn't really provide m
 
 # $q
 
-When learning about the [digest cycle](02-digest-cycle.md), you learned that changes to `$scope` using asynchronous APIs such as setTimeout, setInterval or XMLHttpRequest do _not_ automatically update the UI. This is because they are external to the angular digest cycle. i.e. Angular does not know when these asynchronous APIs are done executing, so you *must* manually call `$scope.$apply()` or `$scope.$digest()` to let angular know that some things have changed and the UI should be updated.
+When learning about the [digest cycle](22 - Digest Cycle.md), you learned that changes to `$scope` using asynchronous APIs such as setTimeout, setInterval or XMLHttpRequest do _not_ automatically update the UI. This is because they are external to the angular digest cycle. i.e. Angular does not know when these asynchronous APIs are done executing, so you *must* manually call `$scope.$apply()` or `$scope.$digest()` to let angular know that some things have changed and the UI should be updated.
 
 As you may recall, promises represent an asynchronous value. $q is angular's implementation of promises/deferred objects inspired by the [q](https://github.com/kriskowal/q) library. $q allows us to use promises within the digest cycle of angular without the need to call `$scope.$apply()` or `$scope.$digest()`
 

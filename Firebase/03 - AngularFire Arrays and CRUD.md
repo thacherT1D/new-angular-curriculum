@@ -2,7 +2,8 @@
 
 We've seen how to "read" data from Firebase, now let's explore implementing full CRUD with a sample Todo List App.  Watch the following video:
 
-[![](https://i.gyazo.com/aaf7ab14cf309326bbcc820cca35dfe4.png)](https://vimeo.com/136793940)
+<iframe src="https://player.vimeo.com/video/136793940" width="640" height="400" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p>Firebase CRUD with Todos from <a href="https://vimeo.com/galvanizehq">Galvanize</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
 **Exercise** Read the third section of the [Angular Fire Development Guide](https://www.firebase.com/docs/web/libraries/angular/guide/).
 
@@ -10,7 +11,8 @@ We've seen how to "read" data from Firebase, now let's explore implementing full
 
 **Exercise** Implement a AngularFire chat app with full CRUD, including "double-click to edit" updating.  Watch the following video for more information:
 
-[![](https://i.gyazo.com/f89d4433e569a3ca4b580e1a40481704.png)](https://vimeo.com/136794932)
+<iframe src="https://player.vimeo.com/video/136794932" width="640" height="400" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p>AngularFire Chat Assignment from <a href="https://vimeo.com/galvanizehq">Galvanize</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
 ####Questions
 

@@ -2,7 +2,8 @@
 
 Let's see how we integrate Firebase with an Angular app. Watch the following video:
 
-[![](https://i.gyazo.com/2a109465fe8086b825567906de58b70a.png)](https://vimeo.com/136776244)
+<iframe src="https://player.vimeo.com/video/136776244" width="640" height="400" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p>Angular + Firebase Intro from <a href="https://vimeo.com/galvanizehq">Galvanize</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
 **Exercise** Follow along with the video and build the cryptocurrency convertor app. Make sure to implement the additional features detailed at the end of the videos
 

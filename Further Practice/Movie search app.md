@@ -33,7 +33,7 @@ Bonus:
  - 	A user can specify what type of data they are searching for: movie, series, or episode.
  - A user can check a box "Get Rotten Tomatoes Data" which will also fetch data from Rotten Tomatoes(using the OMDB API)
  - Create your own custom filter that filters out all films starring your least-favorite actor or in a genre you dislike, etc.
- 
- 
- 
- [![](https://i.gyazo.com/aaebae489446960de0fd485720964b10.png)](https://vimeo.com/135991632)
+
+
+<iframe src="https://player.vimeo.com/video/135991632" width="640" height="497" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p>Angular Movie Search App from <a href="https://vimeo.com/galvanizehq">Galvanize</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
