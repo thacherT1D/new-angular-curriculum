@@ -1,0 +1,73 @@
+# Questions about basic interactive apps
+
+What's wrong with this app?
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Simple Interactive App</title>
+  </head>
+  <body>
+    <h1>Amazing Time Machine</h1>
+    <greeting></greeting>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.js"></script>
+    <script type="text/javascript">
+      angular.module("app", [])
+        .component('greeting', {
+          controller: function () {
+            const vm = this
+            vm.$onInit = function () {
+              vm.time = new Date()
+            }
+            vm.updateTime = function () {
+              vm.time = new Date()
+            }
+          },
+          template: `
+            <p>What time is it?</p>
+            <p>{{$ctrl.time}}</p>
+            <input type="submit" value="Update Time" ng-click="$ctrl.updateTime()" />
+          `
+        })
+    </script>
+  </body>
+</html>
+```
+
+What's wrong with this app?
+
+```html
+<!DOCTYPE html>
+<html ng-app="apples">
+  <head>
+    <meta charset="utf-8">
+    <title>Simple Interactive App</title>
+  </head>
+  <body>
+    <h1>Amazing Time Machine</h1>
+    <greeting></greeting>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.js"></script>
+    <script type="text/javascript">
+      angular.module("appleTV", [])
+        .component('greeting', {
+          controller: function () {
+            const vm = this
+            vm.$onInit = function () {
+              vm.time = new Date()
+            }
+            vm.updateTime = function () {
+              vm.time = new Date()
+            }
+          },
+          template: `
+            <p>What time is it?</p>
+            <p>{{$ctrl.time}}</p>
+            <input type="submit" value="Update Time" ng-click="$ctrl.updateTime()" />
+          `
+        })
+    </script>
+  </body>
+</html>
+```

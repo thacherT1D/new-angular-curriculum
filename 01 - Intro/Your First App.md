@@ -19,8 +19,8 @@ We're going to start by setting up a very simple Angular app to say Hello World 
 The simplest possible algorithm for creating an Angular app is:
 
 1. Add a `script` tag to load Angular
-1. Add `ng-app` to a tag
-1. Write an Angular expression
+1. Add `ng-app` to a tag (such as `<html>`)
+1. Write Angular 1 code
 
 ```html
 <!DOCTYPE html>
