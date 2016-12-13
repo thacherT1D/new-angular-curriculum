@@ -9,7 +9,7 @@ By the end of this lesson you should be able to:
 
 ## A framework in flux
 
-![](../images/angular-versions.svg)
+![](../images/angular-versions.png)
 
 Ther are two major versions of Angular:
 
@@ -23,7 +23,7 @@ Ther are two major versions of Angular:
 
   <li>
     <a href="https://angular.io/">
-      <img src="../images/logos/angular-2.svg" height="30px" />
+      <img src="../images/logos/angular-2.png" height="30px" />
       Angular 2
     </a>
   </li>
@@ -76,7 +76,7 @@ Here are some others:
 ---
 
 <a href="https://angular.io/">
-  <img src="../images/logos/angular-2.svg" height="30px" />
+  <img src="../images/logos/angular-2.png" height="30px" />
   Angular 2
 </a>
 
@@ -90,7 +90,7 @@ Here are some others:
 ---
 
 <a href="">
-  <img src="../images/logos/react.svg" height="30px" />
+  <img src="../images/logos/react.jpg" height="30px" />
   React
 </a>
 (often used with <a href="">Redux</a> and <a href="">React Router</a>)
