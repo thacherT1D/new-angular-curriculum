@@ -53,7 +53,7 @@ Start up Postman, and do a **GET** request to `localhost:3001/icecreams`. You sh
 
 Let's use Postman to add data to our database. Select **POST** in the drop down list next to the URL.  Select the "Body" tab, and select the "x-www-form-urlencoded" radio button. Finally fill out the key/values and send the post request.
 
-![Post](./images/postman_post.png)
+![Post](../images/postman_post.png)
 
 Send another get request and you should see the ice-cream that was just created. You can also go to `localhost:3001/icecreams` to see the results of the index route.
 

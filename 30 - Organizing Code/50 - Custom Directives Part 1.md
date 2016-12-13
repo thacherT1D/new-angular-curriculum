@@ -2,7 +2,7 @@
 
 Standard: **Refactor Angular applications to use services and components (<a href="#">W0046</a>)**
 
-Way back in [Unit 1, Lesson 5](05 - Builtin Directives.md), we went over built in directives.  These are directives that angular comes with.  In this lesson, we're going to build our own custom directives. But first...
+Way back in [Unit 1, Lesson 5](../10 - Building Apps/05 - Builtin Directives.md), we went over built in directives.  These are directives that angular comes with.  In this lesson, we're going to build our own custom directives. But first...
 
 - Name at least 5 built in directives you've used so far.
 - Watch [AngularJS Directives Tutorial - Part 1 - Demystifying Angular Directives](https://www.youtube.com/watch?v=0r5QvzjjKDc)

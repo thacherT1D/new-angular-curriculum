@@ -9,21 +9,21 @@ By the end of this lesson you should be able to:
 
 ## A framework in flux
 
-![](images/angular-versions.svg)
+![](../images/angular-versions.svg)
 
 Ther are two major versions of Angular:
 
 <ul>
   <li>
     <a href="https://angularjs.org/">
-      <img src="images/logos/angular-1.png" height="30px" />
+      <img src="../images/logos/angular-1.png" height="30px" />
       Angular 1
     </a>
   </li>
 
   <li>
     <a href="https://angular.io/">
-      <img src="images/logos/angular-2.svg" height="30px" />
+      <img src="../images/logos/angular-2.svg" height="30px" />
       Angular 2
     </a>
   </li>
@@ -69,28 +69,28 @@ Angular is one of many (dozens) of frontend frameworks that all aim to make it e
 Here are some others:
 
 <a href="https://angularjs.org/">
-  <img src="images/logos/angular-1.png" height="30px" />
+  <img src="../images/logos/angular-1.png" height="30px" />
   Angular 1
 </a>
 
 ---
 
 <a href="https://angular.io/">
-  <img src="images/logos/angular-2.svg" height="30px" />
+  <img src="../images/logos/angular-2.svg" height="30px" />
   Angular 2
 </a>
 
 ---
 
 <a href="">
-  <img src="images/logos/ember.png" height="30px" />
+  <img src="../images/logos/ember.png" height="30px" />
   Ember
 </a>
 
 ---
 
 <a href="">
-  <img src="images/logos/react.svg" height="30px" />
+  <img src="../images/logos/react.svg" height="30px" />
   React
 </a>
 (often used with <a href="">Redux</a> and <a href="">React Router</a>)
@@ -98,6 +98,6 @@ Here are some others:
 ---
 
 <a href="">
-  <img src="images/logos/vue.png" height="30px" />
+  <img src="../images/logos/vue.png" height="30px" />
   Vue
 </a>
