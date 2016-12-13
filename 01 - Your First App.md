@@ -1,69 +1,8 @@
 # Introduction and Setup
 
-### How This Curriculum Works
+Standard: **Build an Angular application with routes (<a href="#">W0044</a>)**
 
-Unit 1:
-
- 1. [Intro and Setup](/Unit-1/01-intro-and-setup.md)
- 1. [Data Binding](/Unit-1/02-data-binding.md)
- 1. [Angular MVC](/Unit-1/03-angular-mvc.md)
- 1. [Expressions and Filters](/Unit-1/04-expressions-and-filters.md)
- 1. [Built-In Directives](/Unit-1/05-built-in-directives.md)
- 1. [Intro to Controllers](/Unit-1/06-intro-to-controllers.md)
- 1. [Scope](/Unit-1/07-intro-to-scope.md)
- 1. [Angular Events](/Unit-1/08-intro-to-events.md)
- 1. [Form Validation](/Unit-1/09-form-validation.md)
- 1. [Animations](/Unit-1/10-animation.md)
- 1. [Unit 1 Assessment Reddit Clone](/Unit-1/11-reddit-clone.md)
-
-Unit 2:
-
- 1. [A New Structure](/Unit-2/01-a-new-structure.md)
- 1. [Digest Cycle](/Unit-2/02-digest-cycle.md)
- 1. [Dependency Injection](/Unit-2/03-dependency-injection.md)
- 1. [Custom Filters](/Unit-2/04-custom-filters.md)
- 1. [Routing](/Unit-2/05-routing.md)
- 1. [HTTP Service](/Unit-2/06-http-service.md)
- 1. [Movie Search App](/Unit-2/07-movie-search.app.md)
- 1. [Services](/Unit-2/08-services.md)
- 1. [Promises](/Unit-2/09-promises.md)
- 1. [Custom Directives Part 1](/Unit-2/10-custom-directives-part1.md)
- 1. [Custom Directives Part 2](/Unit-2/11-custom-directives-part2.md)
- 1. [Shopping Cart App](/Unit-2/12-shopping-cart-app.md)
-
-Unit 3 - Building Apps with the MEAN Stack
-
- 1. [Express/Mongo Review](/Unit-3/01-express-mongo-review.md)
- 1. [Routing and Postman](/Unit-3/02-routing-and-postman.md)
- 1. [Angular Express Project](/Unit-3/03-angular-with-express-project.md)
- 1. [MEAN CRUD](/Unit-3/04-mean-crud.md)
- 1. [CRUD with ngResource](/Unit-3/05-crud-with-ngResource.md)
- 1. [MEAN Auth](/Unit-3/06-mean-auth.md)
- 1. [ui-router](/Unit-3/07-ui-router.md)
- 1. [Unit 3 Assessment Reddit Clone Redux](/Unit-3/08-unit-3-assessment.md)
-
-Unit 4 (Optional) - Firebase, Restructuring Angular Apps, Backend Integration with Rails
-
- 1. [Firebase Intro](/Unit-4-(optional)/01-firebase-intro.md)
- 1. [AngularFire Intro](/Unit-4-(optional)/02-angularfire-intro.md)
- 1. [AngularFire Arrays and CRUD](/Unit-4-(optional)/03-angularfire-arrays-and-crud.md)
- 1. [AngularFire Project](/Unit-4-(optional)/04-angularfire-project.md)
- 1. [AngularFire Auth](/Unit-4-(optional)/05-angularfire-auth.md)
- 1. [Angular Structure and Style](/Unit-4-(optional)/06-structuring-angular-apps.md)
- 1. [Angular + Rails Setup](/Unit-4-(optional)/07-angular-with-rails-setup.md)
- 1. [Angular + Rails Resources and HTML5 Pushstate](/Unit-4-(optional)/08-angular-with-rails-resources-and-paths.md)
-
-
-Before you move on to the next lesson, you should:
-
-* Complete all exercises and SAVE EVERY EXERCISE FOR FUTURE USE
-* Answer all questions in ONE MARKDOWN FILE
-
-Be prepared to review your exercises with instructors and peers as well as engage in discussions about the questions.
-
-Let's get started!
-
-### What is Angular?
+## What is Angular?
 
 According to the official Angular introduction, Angular is a-
 
@@ -73,7 +12,7 @@ Angular, along with other client-side libraries (Backbone, Ember, React), help u
 
 It boils down to this: **Angular helps us build complex, single-page applications very quickly.**
 
-### Hello, Angular!
+## Hello, Angular!
 
 We're going to start by setting up a very simple Angular app to say Hello World - Angular-style!
 
@@ -91,7 +30,7 @@ Staying true to an iterative approach to coding, we'll start slow, defining ever
 
 1. Test this out. Enter something in the input box and watch the DOM update! Note the new `ng-`attributes - you will learn more about them soon.
 
-#### Final Code
+## Final Code
 
 ```html
 <!DOCTYPE html>
