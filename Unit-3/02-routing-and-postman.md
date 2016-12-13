@@ -1,6 +1,6 @@
 # Routing and Postman
 
-Let's now work towards adding angular to the express app you built in the last section. In particular, we'll want to convert our apps into Single Page Apps. As a first step, we'll build a simple API to communicate with our database and respond with JSON. 
+Let's now work towards adding angular to the express app you built in the last section. In particular, we'll want to convert our apps into Single Page Apps. As a first step, we'll build a simple API to communicate with our database and respond with JSON.
 
 So that we can easily test our API routes, we'll first install Postman. Click the image link below to learn more about this tool.
 
@@ -51,7 +51,7 @@ Start up Postman, and do a **GET** request to `localhost:3001/icecreams`. You sh
 
 Let's use Postman to add data to our database. Select **POST** in the drop down list next to the URL.  Select the "Body" tab, and select the "x-www-form-urlencoded" radio button. Finally fill out the key/values and send the post request.
 
-![Post](./examples/images/postman_post.png)
+![Post](../images/postman_post.png)
 
 Send another get request and you should see the ice-cream that was just created. You can also go to `localhost:3001/icecreams` to see the results of the index route.
 
@@ -100,7 +100,7 @@ apiRouter.route('/icecreams/:icecreamId')
     icecream.remove();
     res.json({ message: 'Ice-cream successfully deleted' });
   });
-}); 
+});
 ```
 
 **EXERCISE**

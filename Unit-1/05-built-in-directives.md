@@ -90,7 +90,7 @@ Try using `ng-repeat` to iterate through an array with some duplicates, like `[1
 
 Use `ng-repeat` to iterate through the attributes (keys) of an object and list them on in the body
 
-> View some more examples [here](./examples/ng-repeat).
+> View some more examples [here](https://github.com/gSchool/angular-examples/tree/master/ng-repeat).
 
 ### ng-show/hide
 
@@ -126,7 +126,7 @@ Create a simple password validator like the one shown below. If the password is 
 
 ![](http://zippy.gfycat.com/FelineEqualElectriceel.gif)
 
-> View another example [here](./examples/ng-show-hide).
+> View another example [here](https://github.com/gSchool/angular-examples/tree/master/ng-show-hide).
 
 ### ng-class
 
@@ -203,6 +203,6 @@ Use the following data:
 
 What's happening in each of these examples? What's the purpose of the directive?
 
-- [ng-cloak](./examples/ng-cloak)
-- [ng-include](./examples/ng-include)
-- [ng-pluralize](./examples/ng-pluralize)
+- [ng-cloak](https://github.com/gSchool/angular-examples/tree/master/ng-cloak)
+- [ng-include](https://github.com/gSchool/angular-examples/tree/master/ng-include)
+- [ng-pluralize](https://github.com/gSchool/angular-examples/tree/master/ng-pluralize)

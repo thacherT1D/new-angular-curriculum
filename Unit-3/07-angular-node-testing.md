@@ -4,7 +4,7 @@ Testing is an important part of any application, but it becomes increasingly imp
 
 ## Testing Setup
 
-The testing lesson focuses on testing a todo app with auth.  You can look at the [Example Auth Application](./examples/auth_example) for starter code.  An implementation of a todo app with auth and testing is [here](./examples/auth_todos_and_testing).
+The testing lesson focuses on testing a todo app with auth.  You can look at the [Example Auth Application](https://github.com/gSchool/angular-examples/tree/master/auth_example) for starter code.  An implementation of a todo app with auth and testing is [here](https://github.com/gSchool/angular-examples/tree/master/auth_todos_and_testing).
 
 #### System Dependencies
 
@@ -34,7 +34,7 @@ You should see at least `4.2`.  If you do not, go to the [NodeJS](https://nodejs
 
 #### Tools For the Job
 
-We are going to be making two types of tests, server side request specs with [jasmine](http://jasmine.github.io/2.0/introduction.html) and [supertest](https://github.com/visionmedia/supertest) and end to end integration tests with [protractor](https://angular.github.io/protractor/#/). 
+We are going to be making two types of tests, server side request specs with [jasmine](http://jasmine.github.io/2.0/introduction.html) and [supertest](https://github.com/visionmedia/supertest) and end to end integration tests with [protractor](https://angular.github.io/protractor/#/).
 
 #### Folder Structure
 
@@ -59,7 +59,7 @@ npm install --save-dev jasmine supertest protractor webdriver-manager
 
 #### NPM Scripts - Protractor
 
-NPM scripts in `package.json` are a useful tool for making our lives as developers easier.  We can make shortcuts for tasks that we do often, like run tests.  In the [Example Auth Application](./examples/auth_example) code, look in the `package.json` file.  Under scripts, there is already a property for test.  
+NPM scripts in `package.json` are a useful tool for making our lives as developers easier.  We can make shortcuts for tasks that we do often, like run tests.  In the [Example Auth Application](https://github.com/gSchool/angular-examples/tree/master/auth_example) code, look in the `package.json` file.  Under scripts, there is already a property for test.  
 
 **Question**: What will happen when you run `npm test` in your terminal?  If you're not sure, try it and see what happens.
 
@@ -257,4 +257,3 @@ Finally, we have to update package.json to tell it how to start the server.
 Now the app and the listening logic are separate!  Run `npm test` again.  You should see a passing test!
 
 **EXERCISES**:  Add more protractor integration tests and supertest request specs.  The goal is to get total coverage on the api, and a reasonable amount of certainty that your front end behaves properly.
-

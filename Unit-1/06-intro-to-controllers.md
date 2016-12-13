@@ -83,9 +83,9 @@ Let's refactor your Mad Libs app to use a controller. The end product should loo
 
 Start by adding an external JavaScript file, *main.js*, to create a module with a controller. Utilize `ng-app` and `ng-controller` to link both back to the HTML document. Then abstract out the all the logic from the HTML to the newly created controller.
 
-![](./examples/ngmadlibs-p1.png)
+![](../images/ngmadlibs-p1.png)
 
-![](./examples/ngmadlibs-p2.png)
+![](../images/ngmadlibs-p2.png)
 
 ## Questions
 

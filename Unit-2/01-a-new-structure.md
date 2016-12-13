@@ -26,7 +26,7 @@ We also have files like `controllers.js` and `directives.js`, which contain all 
 
 In order for this structure to work, make sure you correctly include all the scripts in your `index.html` file.
 
-Check out the boilerplate [here](examples/boilerplate/app). Cheers!
+Check out the boilerplate [here](https://github.com/gSchool/angular-examples/tree/master/boilerplate/app). Cheers!
 
 **EXERCISE**
 

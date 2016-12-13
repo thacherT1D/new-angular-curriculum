@@ -173,7 +173,7 @@ Previously, we saw that if there was some data for the user in the session - we 
 
 We are going to be using this example to see how this can be implemented:
 
-[Example Auth Application](./examples/auth_example)
+[Example Auth Application](https://github.com/gSchool/angular-examples/tree/master/auth_example)
 
 ### Refactoring to use angular-jwt + angular-storage
 

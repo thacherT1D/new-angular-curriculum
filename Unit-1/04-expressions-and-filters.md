@@ -99,7 +99,7 @@ Be sure to define all of the Angular code within a single `index.html` file. The
 ![](https://students-gschool-production.s3.amazonaws.com/uploads/asset/file/109/ngmadlibs-p1.png)
 ![](https://students-gschool-production.s3.amazonaws.com/uploads/asset/file/108/ngmadlibs-p2.png)
 
-> Grab the text [here](./examples/madlibs-text.md)
+> Grab the text [here](https://github.com/gSchool/angular-examples/blob/master/madlibs-text.md)
 
 <hr>
 

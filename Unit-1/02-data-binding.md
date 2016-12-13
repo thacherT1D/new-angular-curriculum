@@ -33,7 +33,7 @@ Open up `index.html` in your browser. What does the `h1` display when the page l
 
 **Raw JS**
 
-Replicate the exact same functionality without using Angular. In a new file, write vanilla JS code that will automatically update the h1 when the value in the text input changes. Once done, compare your solution to [examples/update-without-angular.html](examples/update-without-angular.html).
+Replicate the exact same functionality without using Angular. In a new file, write vanilla JS code that will automatically update the h1 when the value in the text input changes. Once done, compare your solution to [examples/update-without-angular.html](https://github.com/gSchool/angular-examples/blob/master/update-without-angular.html).
 
 **Dropdowns**
 
