@@ -1,5 +1,7 @@
 # Using Angular with Express and Postgres to Persist Data
 
+Standard: **Build an Angular CRUD application against an HTTP API (<a href="#">W0045</a>)**
+
 ## Overview
 
 So far, you've been using Angular all on its own, spinning up `html` files and

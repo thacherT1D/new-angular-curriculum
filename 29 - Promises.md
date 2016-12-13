@@ -1,5 +1,7 @@
 # Promises Refresher
 
+Standard: **Build an Angular CRUD application against an HTTP API (<a href="#">W0045</a>)**
+
 >A promise represents a value that may not be available yet. i.e. an action that is being executed asynchronously.
 
 For example, you might have seen some `knex` code like this:

@@ -1,5 +1,7 @@
 # Adding Angular to Express
 
+Standard: **Build an Angular CRUD application against an HTTP API (<a href="#">W0045</a>)**
+
 Let's keep working off of the app you built in the first section of this unit. With our ExpressJS app we just need to make a few more changes and we're ready to add angular!
 
 To begin, let's fix our app so that the root path once again renders our `index.ejs` file, rather than returning JSON. To do this, we'll need to update the routes in our `apiRouter` so that they follow paths like `localhost:3001/api/icecreams . . .`

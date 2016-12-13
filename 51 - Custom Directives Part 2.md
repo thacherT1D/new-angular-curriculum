@@ -1,5 +1,7 @@
 # Custom Directives: Part 2
 
+Standard: **Refactor Angular applications to use services and components (<a href="#">W0046</a>)**
+
 ## DOM Manipulation
 
 Directives become much more powerful when they start manipulating the DOM.  Typically, you will be controlling the DOM with Angular's `link` method. (There's a related method, called `compile`, which we won't cover. Research it on your own if you're curious!)

@@ -1,5 +1,7 @@
 # Intro to Controllers
 
+Standard: **Build an Angular application with routes (<a href="#">W0044</a>)**
+
 In MVC, controllers provide properties and functionality for use in the view. Angular controllers are no different. They are just functions that provide data for use in the views.
 
 Angular takes care of the hard part - connecting our controllers and views together. All we have to do is add various properties to the `$scope` and use them inside of our views.

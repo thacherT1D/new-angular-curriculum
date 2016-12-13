@@ -1,5 +1,7 @@
 # Events
 
+Standard: **Build an Angular application with routes (<a href="#">W0044</a>)**
+
 Angular provides event-handling directives to help us write interactive applications.
 
 ### ng-click

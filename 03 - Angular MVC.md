@@ -1,5 +1,7 @@
 # Angular MVC
 
+Standard: **Build an Angular application with routes (<a href="#">W0044</a>)**
+
 Angular utilizes a MVC(-like) design pattern, which seperates the app into Models, Views, and Controllers. Let's take a look ...
 [Slides for MVC in Angular](https://slides.com/tylerbettilyon/angularmvc)
 

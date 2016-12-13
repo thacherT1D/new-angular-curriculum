@@ -1,16 +1,15 @@
 # Authentication with Angular and JSON Web Tokens
 
-**Standard**: Implement and diagram JWT-based authentication between single-page apps and servers
+Standard: **Implement token-based authentication (Elective) - <a href="#">W0049</a>**
 
-The **objectives** for this article are:
+## Objectives
 
 - Use interceptors to respond to HTTP requests/responses globally
 - Use `resolve` in routes to resolve dependencies that use promises
 - Use route life cycle + listeners to run code whenever routes change globally
 - Use `angular.run` to run code when the angular app boots
 
-
-### Introduction to Token Authentication
+## Introduction to Token Authentication
 
 Now that we are getting more comfortable building applications with the MEAN stack, it's time to add authentication to our application. This is one of the more difficult topics when learning about how to build Single Page Applications. Before continuing - answer the following questions
 
@@ -31,7 +30,7 @@ We now have many different technologies and tools and our Single Page Applicatio
 
 Some other advantages include performance, CSRF protection, ease of testing and mobile development. You can read more about these advantages [here](https://auth0.com/blog/2014/01/07/angularjs-authentication-with-cookies-vs-token/)
 
-### Introducing JSON Web Tokens
+## Introducing JSON Web Tokens
 
 So now that we know that tokens are a better option, what kind of token should we use? The most popular tool right now are JSON Web Tokens (JWT for short - pronounced "Jot"). So what is a JWT?
 
@@ -41,7 +40,7 @@ From [jwt.io](jwt.io):
 
 That's quite a lot. Let's try to understand this a bit more by reading the documentation...
 
-#### Exercise
+## Exercise
 
 Read [http://jwt.io/introduction/](http://jwt.io/introduction/) introduction and answer the following questions
 
@@ -56,7 +55,7 @@ Read [http://jwt.io/introduction/](http://jwt.io/introduction/) introduction and
 3. What is Cross-Origin Resource Sharing? Why is this not a problem when using JWTs?
 4. What other types of tokens exist? Why is JWT easier to work with than some other options?
 
-#### Additional Resources
+## Additional Resources
 
 1. [The Anatomy of a JSON Web Token](https://scotch.io/tutorials/the-anatomy-of-a-json-web-token)
 1. [Understanding JSON Web Tokens (JWT)](https://medium.com/vandium-software/5-easy-steps-to-understanding-json-web-tokens-jwt-1164c0adfcec#.h0649q1oi)
@@ -118,7 +117,7 @@ app.config(function($routeProvider, $httpProvider){
 
 ```
 
-### So what can we do with these interceptors?
+## So what can we do with these interceptors?
 
 We can intercept our HTTP requests to attach the token to the header! This will allow us to send the token to the server (which we will need when checking to see if a user is authorized) To do this we find our token inside of local storage and attach it to `config.headers`, which is an object that contains any headers.
 
@@ -165,31 +164,31 @@ Here are three good resources to learn more about resolve:
 
 If you are using `ui-router`, it also implements similar functionality: https://github.com/angular-ui/ui-router/wiki#resolve
 
-### Route Life Cycle + Listeners
+## Route Life Cycle + Listeners
 
 Previously, we saw that if there was some data for the user in the session - we knew that they were logged in! In our case, it means that there is a token in local storage! So we need to check local storage to see if there is a token. We also will want to send this token from localStorage to our server to verify the authenticity of the user. At the same time, we want to protect certain routes that we are on. In order to do this we will use a mix of interceptors and listen for changes in our routes. We will see this more in our example, but if you want to learn more about the Route Life Cycle with `ngRoute` you can learn more [here](https://www.youtube.com/watch?v=P6KITGRQujQ) and [here](https://egghead.io/lessons/angularjs-route-life-cycle)
 
-### A Sample Application with Authentication
+## A Sample Application with Authentication
 
 We are going to be using this example to see how this can be implemented:
 
 [Example Auth Application](https://github.com/gSchool/angular-examples/tree/master/auth_example)
 
-### Refactoring to use angular-jwt + angular-storage
+## Refactoring to use angular-jwt + angular-storage
 
 So writing our own interceptors is quite rough! It would be really nice if we had a tool that could handle the creation and management of our interceptor. For that we have angular-jwt. You can learn more about it as well as a useful tool for handling localStorage (and fallback management) with angular-storage [here](https://www.youtube.com/watch?v=lDb_GANDR8U) and [here](https://github.com/auth0/angular-jwt)
 
-### Social Auth
+## Social Auth
 
 There is also another tool called [satelizer](https://github.com/sahat/satellizer) which can handle multiple social auth providers for you. You can see a demo [here](https://satellizer.herokuapp.com/#/) as well as an example for what a backend with node might look like [here](https://github.com/sahat/satellizer/blob/master/examples/server/node/server.js)
 
  If you find satelizer to be too difficult, Auth0 is another option tool. You can get started with this tutorial (here)[https://www.youtube.com/watch?v=ug_KmAZFe9Q](https://www.youtube.com/watch?v=ug_KmAZFe9Q) (but be warned - this is still quite challenging)
 
-### Exercise
+## Exercise
 
 Add authentication to your todo app! This is going to be quite challenging so take your time to review the example and concepts discussed in this readme. Users should be able to see other users todos, but not be able to update and delete them.
 
-### Additional Things to consider + read
+## Additional Things to consider + read
 
 Expiring Tokens - right now our tokens never expire, for security they should! Research how to add this to your JWT and see an example [here](https://github.com/sahat/satellizer/blob/master/examples/server/node/server.js)
 

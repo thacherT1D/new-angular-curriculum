@@ -1,8 +1,8 @@
-# Angular Reddit Clone
+# Assessment: Angular Reddit Clone
 
-This assessment is for the standard **Build an Angular application with routes**.
+Standard: **Build an Angular application with routes (<a href="#">W0044</a>)**
 
-Your assessment will be considered successful if it:
+Your assessment will be considered successful when:
 
 - App has multiple routes, configured with clean urls (html5Mode)
 - Uses builtin directives and filters (ng-repeat, ng-class, ng-if etc...)
