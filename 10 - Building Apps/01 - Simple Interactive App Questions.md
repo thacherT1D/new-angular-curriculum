@@ -99,3 +99,30 @@ What's wrong with this app?
   </body>
 </html>
 ```
+
+### !challenge
+
+* type: multiple-choice
+* id: wdi-angular-0002
+* title: Find the Bug #1
+
+##### !question
+Which step does the code above violate?
+##### !end-question
+
+##### !options
+1. Module definition
+2. Component definition / insertion
+3. Controller / Event handlers
+4. Template
+##### !end-options
+
+##### !answer
+1
+##### !end-answer
+
+##### !explanation
+The module name in `ng-app` does not match the module name defined with `angular.module`
+##### !end-explanation
+
+### !end-challenge
