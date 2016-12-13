@@ -36,6 +36,34 @@ What's wrong with this app?
 </html>
 ```
 
+### !challenge
+
+* type: multiple-choice
+* id: wdi-angular-0001
+* title: Find the Bug #1
+
+##### !question
+Which step does the code above violate?
+##### !end-question
+
+##### !options
+* Module definition
+* Component definition / insertion
+* Controller / Event handlers
+* Template
+##### !end-options
+
+##### !answer
+Module definition
+##### !end-answer
+
+##### !explanation
+The document is missing the `ng-app` declaration
+##### !end-explanation
+
+### !end-challenge
+
+
 What's wrong with this app?
 
 ```html
