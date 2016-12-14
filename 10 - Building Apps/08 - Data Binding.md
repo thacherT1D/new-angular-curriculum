@@ -2,53 +2,166 @@
 
 Standard: **Build an Angular application with routes (<a href="#">W0044</a>)**
 
-Let's start by building something simple that showcases the power of Angular.
+## Objectives
 
-In traditional frameworks, controllers package up data from the models with a template and then render a view to the user. That view is a snapshot in time; it only reflects the state of data at the time it was rendered. Newer JavaScript frameworks like Angular and Ember allow us to write dynamic, live templates. This means that we can write Angular templates that will **automatically update when our data changes.**
+By the end of this lesson you will be able to:
+
+- _Set_ state on a controller via form fields
+- _Access_ state on a controller via expressions
+
+## Data Binding
+
+JavaScript frameworks like Angular, React and Ember allow you to write dynamic, live templates. This means that you can write Angular templates that will **automatically update when your data changes.**
 
 This is called two-way or bi-directional binding.
 
-* when a model changes, the view knows about it.
-* when a view changes, the model also knows about it.
+* When a model changes, the view knows about it
+* When a view changes, the model also knows about it
 
-Put another way, if the data changes in the controller, that change is *immediately* updated on the view. If the data changes in the view, then it is *immediately* updated in the controller.
+Put another way, if the data changes in the controller, that change is _immediately_ updated in the DOM.  If a user initiates an action (say by filling in a field or selecting from a dropdown), then the data is _immediately_ updated in the controller.
 
-Let's try it out!
+### Setting State
 
-In `index.html` create a text input:
+The first way you'll learn to set state is via the `ng-model` attribute.
 
-```html
-<input type="text" placeholder="What is your name?">
-```
-
-Add a new attribute `ng-model="name"` to the text input. This ties/binds the value of the text input to a property called "name". Technically, `ng-model` tries to bind "name" by evaluating the expression on the current `$scope`, and since the property "name" doesn't already exist on this `$scope`, it will be created implicitly and added to the `$scope`. *We'll talk a lot more about this when we learn about controllers in a few lessons, so don't worry about it for now.*
-
-Now that we've bound the input to the "name" property, let's display the value of "name" on the page.  We can write expressions in our HTML using `{{ }}`.
+A normal field looks like this:
 
 ```html
-<h1>My name is: {{name}}</h1>
+<input type="text">
 ```
 
-Open up `index.html` in your browser. What does the `h1` display when the page loads? Try typing something into the input and notice that the `h1` reflects whatever value we type into the input. This is our first example of two-way data binding.
+When you type into a field like that, nothing happens.  Angular doesn't care.  But once you add the `ng-model` attribute, Angular binds that value of that input to the corresponding property.
 
-### Exercises
+```html
+<input type="text" ng-model="$ctrl.firstName">
+```
 
-**Raw JS**
+By adding `ng-model` you are declaring that:
 
-Replicate the exact same functionality without using Angular. In a new file, write vanilla JS code that will automatically update the h1 when the value in the text input changes. Once done, compare your solution to [examples/update-without-angular.html](https://github.com/gSchool/angular-examples/blob/master/update-without-angular.html).
+- When a user changes the value of the input, Angular will set the controller's `firstName` property
+- When something changes the controller's `firstName` property, Angular will auto-update the value of the input
+
+### Displaying / Retrieving State
+
+Now that you've bound the input to the controller's `firstName` property, you can display the value of `firstName` on the page.  You can write expressions in HTML using interpolation.  Interpolation is a fancy way of saying `{{ }}`.
+
+```html
+<input type="text" ng-model="$ctrl.firstName">
+
+<h1>My first name is: {{$ctrl.firstName}}</h1>
+```
+
+Open up `index.html` in your browser. What does the `h1` display when the page loads? Try typing something into the input and notice that the `h1` reflects the value you typed into the input.
+
+> GUIDELINE: For now, always use `$ctrl` when binding properties.  There are valid reasons to omit it, but until you know them, just follow the guideline of always writing `$ctrl.propertyName` when using `ng-model`.
+
+## Sequence Of Events
+
+Take the following Angular 1 application:
+
+```js
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>Data Binding</title>
+  </head>
+  <body>
+    <app></app>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.js"></script>
+    <script>
+      angular.module('app', [])
+        .component('app', {
+          template: `
+            <h1>My first name is: {{$ctrl.firstName}}</h1>
+            <input type="text" ng-model="$ctrl.firstName">
+          `
+        })
+    </script>
+  </body>
+</html>
+```
+
+Here's what happens:
+
+1. The browser loads the page, then downloads `angular.js` and runs it
+1. The browser runs your `script` tag, which declares an Angular 1 module (`angular.module('app', [])`)
+1. Angular scans the DOM for an element with the attribute `ng-app`, and checks to see if the names match
+1. Next the browser runs your component definition `.component('app')`, looks for a matching `<app></app>` element and renders your template to the DOM
+1. When a user types into the input, Angular detects that the user changed the value, and Angular updates the controller's `firstName` property
+
+### Exercise
 
 **Dropdowns**
 
 Use `ng-model` with a dropdown menu (select tag). Give the user the following four items to pick from - "Dogs", "Cats", "Dogs and Cats", "Neither". Display the user's choice in an `h3`. For example, if the user selects "Dogs", the `h3` should say "I love dogs <3".
 
+### Stretch
+
+**Raw JS**
+
+Replicate the exact same functionality without using Angular. In a new file, write vanilla JS code that will automatically update the h1 when the value in the text input changes. Once done, compare your solution to [examples/update-without-angular.html](https://github.com/gSchool/angular-examples/blob/master/update-without-angular.html).
+
 ## Questions
 
-* What does `ng-model` do?
-* [What is "dirty checking"?](http://stackoverflow.com/questions/24698620/dirty-checking-on-angular)
-* Find a way to set the initial value of "name" as "BoJack" (without writing a controller).
-* What are those `{{ }}` expressions? Are they Handlebars?
-* Explain what two-way data binding is.
-* BONUS: Research the `$digest` loop
+
+### !challenge
+* type: multiple-choice
+* id: wdi-angular-data-binding-01
+* title: Terminology #1
+
+##### !question
+When you write `Hello there, {{$ctrl.name}}`, which term best describes what the curly braces (`{{}}`) do?
+##### !end-question
+
+##### !options
+- Concatenation
+- Interpolation
+- Expression
+- Binding
+##### !end-options
+
+##### !answer
+Interpolation
+##### !end-answer
+
+##### !explanation
+Interpolation refers to the process of:
+
+- Writing strings with placeholders
+- Replacing the placeholder values with real values
+
+See the docs on [interpolation](https://docs.angularjs.org/guide/interpolation)
+##### !end-explanation
+### !end-challenge
+
+
+### !challenge
+* type: multiple-choice
+* id: wdi-angular-data-binding-02
+* title: Terminology #2
+
+##### !question
+When you write `Hello there, {{...}}`, what do you call the code that goes _inside_ the curly braces?
+##### !end-question
+
+##### !options
+- Concatenation
+- Interpolation
+- Expression
+- Binding
+- Value
+##### !end-options
+
+##### !answer
+Expression
+##### !end-answer
+
+##### !explanation
+The code that goes in between curlies is called an [Expression](https://docs.angularjs.org/guide/expression)
+##### !end-explanation
+### !end-challenge
+
 
 ## Resources
 
