@@ -2,6 +2,12 @@
 
 Standard: **Build an Angular application with routes (<a href="#">W0044</a>)**
 
+## Objectives
+
+By the end of this lesson you will:
+
+- Be able to prevent default actions
+
 Angular provides event-handling directives to help us write interactive applications.
 
 ### ng-click
