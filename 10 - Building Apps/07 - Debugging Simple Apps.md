@@ -1,6 +1,13 @@
 # Questions about basic interactive apps
 
-What's wrong with this app?
+Recall the 4-step process for setting up a simple app:
+
+1. Module
+1. Component
+1. Controller
+1. Template
+
+Now take a look at the code snippets below and use what you know about these 4 steps to identify the bugs.  See if you can find them without actually running the code, but if it's not obvious, go ahead and run the code to see the error messages and start developing your error pattern recognition in Angular 1.
 
 ```html
 <!DOCTYPE html>
@@ -43,19 +50,19 @@ What's wrong with this app?
 * title: Find the Bug #1
 
 ##### !question
-Which step does the code above violate?
+In the code snippet above, where is the bug?
 ##### !end-question
 
 ##### !options
-1. Nothing - looks perfect!
-2. Module definition
-3. Component definition / insertion
-4. Controller / Event handlers
-5. Template
+- There's no bug
+- Module definition
+- Component definition / insertion
+- Controller / Event handlers
+- Template
 ##### !end-options
 
 ##### !answer
-2
+Module definition
 ##### !end-answer
 
 ##### !explanation
@@ -65,8 +72,6 @@ The document is missing the `ng-app` declaration
 ### !end-challenge
 
 ---
-
-What's wrong with this app?
 
 ```html
 <!DOCTYPE html>
@@ -109,19 +114,19 @@ What's wrong with this app?
 * title: Find the Bug #3
 
 ##### !question
-Which step does the code above violate?
+In the code snippet above, where is the bug?
 ##### !end-question
 
 ##### !options
-1. Nothing - looks perfect!
-2. Module definition
-3. Component definition / insertion
-4. Controller / Event handlers
-5. Template
+- There's no bug
+- Module definition
+- Component definition / insertion
+- Controller / Event handlers
+- Template
 ##### !end-options
 
 ##### !answer
-2
+Module definition
 ##### !end-answer
 
 ##### !explanation
@@ -131,8 +136,6 @@ Which step does the code above violate?
 ### !end-challenge
 
 ---
-
-What's wrong with this app?
 
 ```html
 <!DOCTYPE html>
@@ -175,19 +178,19 @@ What's wrong with this app?
 * title: Find the Bug #4
 
 ##### !question
-Which step does the code above violate?
+In the code snippet above, where is the bug?
 ##### !end-question
 
 ##### !options
-1. Nothing - looks perfect!
-2. Module definition
-3. Component definition / insertion
-4. Controller / Event handlers
-5. Template
+- There's no bug
+- Module definition
+- Component definition / insertion
+- Controller / Event handlers
+- Template
 ##### !end-options
 
 ##### !answer
-5
+Template
 ##### !end-answer
 
 ##### !explanation
@@ -197,8 +200,6 @@ The template doesn't reference `$ctrl` - it attempts to call `{{time}}` and `{{u
 ### !end-challenge
 
 ---
-
-What's wrong with this app?
 
 ```html
 <!DOCTYPE html>
@@ -240,19 +241,19 @@ What's wrong with this app?
 * title: Find the Bug #4
 
 ##### !question
-Which step does the code above violate?
+In the code snippet above, where is the bug?
 ##### !end-question
 
 ##### !options
-1. Nothing - looks perfect!
-2. Module definition
-3. Component definition / insertion
-4. Controller / Event handlers
-5. Template
+- There's no bug
+- Module definition
+- Component definition / insertion
+- Controller / Event handlers
+- Template
 ##### !end-options
 
 ##### !answer
-4
+Controller / Event handlers
 ##### !end-answer
 
 ##### !explanation
@@ -264,8 +265,6 @@ NOTE: it _would_ be OK to have `this.updateTime = () => {this.time = new Date()}
 ### !end-challenge
 
 ---
-
-What's wrong with this app?
 
 ```html
 <!DOCTYPE html>
@@ -307,19 +306,19 @@ What's wrong with this app?
 * title: Find the Bug #4
 
 ##### !question
-Which step does the code above violate?
+In the code snippet above, where is the bug?
 ##### !end-question
 
 ##### !options
-1. Nothing - looks perfect!
-2. Module definition
-3. Component definition / insertion
-4. Controller / Event handlers
-5. Template
+- There's no bug
+- Module definition
+- Component definition / insertion
+- Controller / Event handlers
+- Template
 ##### !end-options
 
 ##### !answer
-3
+Component definition / insertion
 ##### !end-answer
 
 ##### !explanation
@@ -329,8 +328,6 @@ Which step does the code above violate?
 ### !end-challenge
 
 ---
-
-What's wrong with this app?
 
 ```html
 <!DOCTYPE html>
@@ -373,19 +370,19 @@ What's wrong with this app?
 * title: Find the Bug #2
 
 ##### !question
-Which step does the code above violate?
+In the code snippet above, where is the bug?
 ##### !end-question
 
 ##### !options
-1. Nothing - looks perfect!
-2. Module definition
-3. Component definition / insertion
-4. Controller / Event handlers
-5. Template
+- There's no bug
+- Module definition
+- Component definition / insertion
+- Controller / Event handlers
+- Template
 ##### !end-options
 
 ##### !answer
-2
+Module definition
 ##### !end-answer
 
 ##### !explanation
