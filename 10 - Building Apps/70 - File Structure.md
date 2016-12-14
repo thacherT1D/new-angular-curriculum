@@ -1,5 +1,7 @@
 #A New Structure
 
+Standard: **Build an Angular application with routes (<a href="#">W0044</a>)**
+
 As our Angular apps grow we'll need a new file structure. It won't work to put everything in a single `app.js` file when we have multiple controllers, modules, directives, filters, services, and much  more.
 
 We're going to start by using the following structure:

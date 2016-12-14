@@ -1,5 +1,7 @@
 # Routing with ui-router
 
+Standard: **Build an Angular application with routes (<a href="#">W0044</a>)**
+
 #### What is it?
 
 It's an alternative to `ngRoute`. It provides far more functionality for us in terms of our routing and is used quite frequently in production apps. You will see many examples with UI router as it has become the preferred choice for most (especially larger scale) angular applications as well as tools like [Ionic](http://ionicframework.com/). Note that everything you can do with `ngRoute` you can also do with `ui-router` - so all we are doing here is expanding our knowledge of routing in angular.
