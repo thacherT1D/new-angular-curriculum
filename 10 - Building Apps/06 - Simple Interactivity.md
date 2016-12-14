@@ -249,3 +249,126 @@ Create a simple, interactive Angular 1 application that meets the following crit
 
 - On load, it sets a counter
 - When a user clicks a button it incremements the counter
+
+## Questions
+
+Consider the following application:
+
+```html
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>Simple Interactive App</title>
+  </head>
+  <body>
+    <h1>Amazing Time Machine</h1>
+    <app></app>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.js"></script>
+    <script type="text/javascript">
+      angular.module("app", [])
+        .component('app', {
+          controller: function () {
+            const vm = this
+            vm.$onInit = function () {
+              vm.app = "app"
+            }
+          },
+          template: `
+            <p>What's the app?</p>
+            <p>{{$ctrl.app}}</p>
+          `
+        })
+    </script>
+  </body>
+</html>
+```
+
+The following 3 questions relate to the application above.
+
+### !challenge
+* type: multiple-choice
+* id: wdi-angular-match-components-01
+* title: Match Component #1
+
+##### !question
+If you changed `.component('app', {` to `.component('windsor', {`, which other line would have to change?
+##### !end-question
+
+##### !options
+- Nothing - it would work perfectly
+- `<app></app>`
+- `angular.module("app", [])`
+- `.component('app', {`
+- `vm.app = "app"`
+- `<p>{{$ctrl.app}}</p>`
+##### !end-options
+
+##### !answer
+`<app></app>`
+##### !end-answer
+
+##### !explanation
+`.component('app', {` defines a component, and `<app></app>` references that component.
+
+So if you change the component name to windsor, you need to change `<app></app>` to `<windsor></windsor>`
+##### !end-explanation
+### !end-challenge
+
+### !challenge
+* type: multiple-choice
+* id: wdi-angular-match-components-02
+* title: Match Component #1
+
+##### !question
+If you changed `ng-app="app"` to `ng-app="fraggle"`, which other line would have to change?
+##### !end-question
+
+##### !options
+- Nothing - it would work perfectly
+- `<app></app>`
+- `angular.module("app", [])`
+- `.component('app', {`
+- `vm.app = "app"`
+- `<p>{{$ctrl.app}}</p>`
+##### !end-options
+
+##### !answer
+`angular.module("app", [])`
+##### !end-answer
+
+##### !explanation
+You declare a module with `angular.module("app", [])` and reference it with `ng-app="app"`.
+
+So if you change to `ng-app="fraggle"` you must also change to `angular.module("fraggle", [])`
+##### !end-explanation
+### !end-challenge
+
+### !challenge
+* type: multiple-choice
+* id: wdi-angular-match-components-03
+* title: Match Component #1
+
+##### !question
+If you changed `vm.app = "app"` to `vm.glee = "app"`, which other line would have to change?
+##### !end-question
+
+##### !options
+- Nothing - it would work perfectly
+- `<app></app>`
+- `angular.module("app", [])`
+- `.component('app', {`
+- `vm.app = "app"`
+- `<p>{{$ctrl.app}}</p>`
+##### !end-options
+
+##### !answer
+`<p>{{$ctrl.app}}</p>`
+##### !end-answer
+
+##### !explanation
+Properties set on the controller (in this case `this` or `vm`) need to match the expressions in the template.
+
+So if you change to `vm.app = "app"` to `vm.glee = "app"` you also need to change `<p>{{$ctrl.app}}</p>` to `<p>{{$ctrl.glee}}</p>`
+##### !end-explanation
+### !end-challenge
