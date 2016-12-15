@@ -89,7 +89,7 @@ For more practice with promises, checkout the [promise-challenges repo](https://
 
 # Promises in Angular
 
-Recall from [Unit 2: Section 6](26 - HTTP Service.md) that the `$http` service method `get` returns a promise.
+Recall that the `$http` service method `get` returns a promise.
 
 Let's create a service that uses `$http` to catch a specific pokemon using the [pokemon api](http://pokeapi.co/docsv2/).
 

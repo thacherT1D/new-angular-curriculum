@@ -253,8 +253,14 @@ Also recall that you always want to run you app with a real server such as `lite
 ##### !question
 ## Try it out yourself!
 
-- Fork and clone https://github.com/gSchool/angular-drills
-- Create a new branch with `git checkout -b solutions`
+- Follow [the instructions](./02 - Unit Overview.md) to update angular-drills, for example:
+  ```
+  git checkout master
+  git fetch upstream
+  git rebase upstream/master
+  git checkout -b simple-interaction
+  git push -u origin simple-interaction
+  ```
 - Complete the [simple-interaction](https://github.com/gSchool/angular-drills/tree/master/simple-interaction) challenge
 
 It comes with tests so you can see if you finished it correctly.  Make sure tests pass before submitting!
