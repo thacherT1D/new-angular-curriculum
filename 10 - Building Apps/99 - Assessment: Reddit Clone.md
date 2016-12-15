@@ -7,7 +7,7 @@ Your assessment will be considered successful when:
 - App has multiple routes, configured with clean urls (html5Mode)
 - Uses builtin directives and filters (ng-repeat, ng-class, ng-if etc...)
 - Uses data-binding (that is, doesn't use direct DOM manipulation)
-- Uses at least controllers and templates
+- Routes directly to components
 - Router doesn't matter (can use ui-router or ng-route)
 - Uses the following patterns from the Angular 1 Styleguide:
   - [iifes](https://github.com/johnpapa/angular-styleguide/tree/master/a1#iife)
@@ -34,21 +34,21 @@ Note:
 
 ## Requirements
 
-- Each post has a title, author, image, and description.
+- Each post has a title, author, image, and truncated description
+  - See filters
 - Each post's date/time is displayed nicely: "Yesterday at 3:09pm", "Last Thursday at 4:42am", etc.
-  - You will need an external library. Watch the video for more details.
+  - You will need an [external library](https://github.com/urish/angular-moment)
 - A user can upvote/downvote posts
 - Posts dynamically reorder according to number of votes
 - A user can create new posts
-- A user cannot create a new post if any of the 4 inputs are blank.  
-  - Research angular validations.  See the video for an example implementation.
+- A user cannot create a new post if any of the 4 inputs are blank (validations)
 - A user can click to view existing comments on a specific post
 - The number of comments is correctly pluralized
 - A user can add a new comment to a specific post
 - The new post form and comment forms can be toggled on and off
 - A user can search through posts
 - A user can sort posts by votes, date, and title
-- When a user clicks on a post title, they should be redirected to that post's page (`/posts/2`, `/posts/5`)
+- When a user clicks on a post title, they should be redirected to that post's page (`/posts/2`, `/posts/5`) and see the full post text
 
 Feel free to Style / theme / rename the app to make it something you might put on your portfolio.
 
@@ -60,4 +60,3 @@ Feel free to Style / theme / rename the app to make it something you might put o
   - http://odetocode.com/blogs/scott/archive/2014/02/25/easy-animations-for-angularjs-with-animate-css.aspx
 - A user can choose to sort ascending or descending
 - A user can favorite posts and view all favorites in a separate tab
-- A user can upload an image (no backend involved)

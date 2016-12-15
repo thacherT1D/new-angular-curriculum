@@ -1,4 +1,4 @@
-# Starting a real project
+# Starting a semi-real project
 
 Standard: **Build an Angular application with routes (<a href="#">W0044</a>)**
 
@@ -7,6 +7,14 @@ Standard: **Build an Angular application with routes (<a href="#">W0044</a>)**
 By the end of this lesson you will:
 
 - Start a simple Angular app project
+
+## Rationale
+
+In the real world you will almost certainly be using a build system such as Gulp / Grunt / Webpack / Broccoli etc... that will do all kinds of great things like transpiling your JS files.  But as you learn Angular 1 it's very easy to get setup without those tools.
+
+The following lesson describes a few things like how to install dependencies like Angular 1 locally, so your app works even if you are in a place with no internet (like on public transportation), which can help you code ALL DAY 🚌
+
+This uses [yarn](https://yarnpkg.com/) instead of npm because it's faster and handles version-locking better.
 
 ## Getting started
 
