@@ -245,11 +245,12 @@ Recall that the basic steps to creating a dynamic app are:
 
 Also recall that you always want to run you app with a real server such as `lite-server`.
 
-Create a simple, interactive Angular 1 application that meets the following criteria:
+### !challenge
+* type: project
+* id: angular-curriculum-simple-interaction-github-url
+* title: Submit your app
 
-- On load, it sets a counter
-- When a user clicks a button it incremements the counter
-
+##### !question
 ## Try it out yourself!
 
 - Fork and clone https://github.com/gSchool/angular-drills
@@ -258,16 +259,7 @@ Create a simple, interactive Angular 1 application that meets the following crit
 
 This drill comes with tests so you can see if you finished it correctly.
 
-### !challenge
-* type: project
-* id: angular-curriculum-simple-interaction-github-url
-* title: Submit your app
-
-##### !question
-### Question
-Submit the URL to your solution.
-
-Make sure tests pass before submitting!
+Submit the URL to your solution below, and make sure tests pass before submitting!
 ##### !end-question
 
 ##### !placeholder
