@@ -250,6 +250,36 @@ Create a simple, interactive Angular 1 application that meets the following crit
 - On load, it sets a counter
 - When a user clicks a button it incremements the counter
 
+## Try it out yourself!
+
+- Fork and clone https://github.com/gSchool/angular-drills
+- Create a new branch with `git checkout -b solutions`
+- Follow the instructions here: https://github.com/gSchool/angular-drills/tree/master/simple-interaction
+
+This drill comes with tests so you can see if you finished it correctly.
+
+### !challenge
+* type: project
+* id: angular-curriculum-simple-interaction-github-url
+* title: Submit your app
+
+##### !question
+### Question
+Submit the URL to your solution.
+
+Make sure tests pass before submitting!
+##### !end-question
+
+##### !placeholder
+https://github.com/<your name>/angular-drills/tree/solutions/simple-interaction
+##### !end-placeholder
+
+##### !explanation
+See the solutions folder (if you haven't already)
+##### !end-explanation
+### !end-challenge
+
+
 ## Questions
 
 Consider the following application:

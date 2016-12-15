@@ -53,7 +53,7 @@ Now that you've bound the input to the controller's `firstName` property, you ca
 
 Open up `index.html` in your browser. What does the `h1` display when the page loads? Try typing something into the input and notice that the `h1` reflects the value you typed into the input.
 
-> GUIDELINE: For now, always use `$ctrl` when binding properties.  There are valid reasons to omit it, but until you know them, just follow the guideline of always writing `$ctrl.propertyName` when using `ng-model`.
+> REMEMBER: Use `$ctrl` when binding properties.  There are valid reasons to omit it, but until you know them, just follow the guideline of always writing `$ctrl.propertyName` when using `ng-model`.
 
 ## Sequence Of Events
 

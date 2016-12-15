@@ -53,7 +53,6 @@ Note:
 Feel free to Style / theme / rename the app to make it something you might put on your portfolio.
 
 ### !challenge
-
 * type: project
 * id: angular-curriculum-assessment-1-reddit-clone-github-url
 * title: Submit your project
