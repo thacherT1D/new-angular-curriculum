@@ -255,11 +255,11 @@ Also recall that you always want to run you app with a real server such as `lite
 
 - Fork and clone https://github.com/gSchool/angular-drills
 - Create a new branch with `git checkout -b solutions`
-- Follow the instructions here: https://github.com/gSchool/angular-drills/tree/master/simple-interaction
+- Complete the [simple-interaction](https://github.com/gSchool/angular-drills/tree/master/simple-interaction) challenge
 
-This drill comes with tests so you can see if you finished it correctly.
+It comes with tests so you can see if you finished it correctly.  Make sure tests pass before submitting!
 
-Submit the URL to your solution below, and make sure tests pass before submitting!
+Submit the URL to your solution below.
 ##### !end-question
 
 ##### !placeholder
