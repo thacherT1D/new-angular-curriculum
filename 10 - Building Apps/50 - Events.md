@@ -172,13 +172,6 @@ Favorite Pi: {{favoriteForm.favoritePie}}
   };
 ```
 
-#### ng-submit Anti Patterns
-
-An anti pattern is a way of writing code that is a bad practice in your framework.  There are a few things you should **not** do with ```ng-submit```.
-
-1. Do not use ```ng-submit``` on the form and ```ng-click``` on the submit button at the same time. Use either ng-submit on the form and no directive on the submit button, or use ```ng-click``` on the submit button and no directive on the form. ```ng-submit``` is preferred in a form.
-2. Do not create separate properties directly on the `$scope` object for each form field. Instead, create an object that contains all the form properties inside of it. In the above example, `$scope.favoriteForm = {};` is the object that will contain each form property.
-3. Never do any DOM manipulation in your controller. When submitting form data, it is often tempting to revert back to the jQuery way of doing things. For example, do not attempt to append the new form data to the DOM inside of your controller. Again, **do not do any DOM manipulation in the controller**. Instead, add the data that you want to display to an object in the scope that will then be displayed in the view.
 
 **Exercise**
 

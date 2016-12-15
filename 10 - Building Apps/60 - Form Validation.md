@@ -1,56 +1,78 @@
-## Form Validation with Angular
+# Form Validation with Angular
 
 Standard: **Build an Angular application with routes (<a href="#">W0044</a>)**
 
-### Why we validate on the client side
+## Objectives
 
-Form and controls provide validation services, so that the user can be notified of invalid input before submitting a form. This provides a better user experience than server-side validation alone because the user gets instant feedback on how to correct the error and better yet, we don't need to even bother going to the server if the user fails the client side validation.
+By the end of this lesson you will:
 
-### Why we can't ONLY validate on the client side
+- Validate user input on a form
+- Style form elements based on their validation state
+- Display messages to the user
 
-Keep in mind that while client-side validation plays an important role in providing good user experience, it can easily be circumvented and thus can not be trusted. Server-side validation is still necessary for a secure application. We can easily disable javascript and delete things from the DOM using the developer tools - so we need to ensure that we are validating in a place where users do NOT have access.
+## Rationale
 
-## Building our first form
+"Garbage in, garbage out" as they say.  Maintaining the integrity of the data is crucial to most applications, and keeping highly responsive UIs is often crucial to the user-friendliness of the application.
 
-Remember how to build forms? Let's make sure.
+In [Defensive Design for the Web](https://www.amazon.com/Defensive-Design-Web-improve-messages/dp/073571410X) Jason Fried describes how every page should have 3 states:
 
-- Create a form with an action to # (you can use `javascript:void(0)` as well - wondering what that does? Read [this](http://stackoverflow.com/questions/1291942/what-does-javascriptvoid0-mean))
-- Inside your form add two text inputs (each one should have a label with the `for` attribute matching the `id` of each input) and an input with type of `submit` and a value of `Click me!`
+- An empty state (what users see when there's no data to display)
+- The default state
+- The error state
 
-Your form should look like this:
+When you create clear and friendly error messages, your application can help guide users towards success as opposed to frustrating them and making them want to smash their monitors over your developers heads.  This lesson provides you with the tools to create delightful error messages.
+
+## The case for client-side validation
+
+Form and controls provide validation services, so that the user can be notified of invalid input before submitting a form. This provides a better user experience than server-side validation alone because the user gets instant feedback on how to correct the error and better yet, you don't need to even bother going to the server if the user fails the client side validation.
+
+## The case for redundant server-side validation
+
+Keep in mind that while client-side validation plays an important role in providing good user experience, it can easily be circumvented and thus can not be trusted.  You'll still need to perform server-side validation to ensure that hackers don't bypass your client-side security.
+
+## The case against builtin browser validations
+
+Modern browsers ship with the ability to validate form fields.  Each browser differs slightly, and none provide full control over the user experience.  In addition, the validations are fairly rudimentary, and rarely cover all the cases you need.  
+
+For that reason when performing validations in Angular, you will turn off the default HTML5 browser validations.
+
+## Building the first form
+
+Imagine you have a simple form like so:
 
 ```html
-<form action="#">
-  <label for="firstname">First Name: </label>
-  <input type="text" id="firstname">
-  <label for="lastname">Last Name: </label>
-  <input type="text" id="lastname" >
-  <input type="submit" value="Click me!">
+<form ng-submit="$ctrl.createPerson()">
+  <input type="text" ng-model="$ctrl.person.firstName">
+  <input type="text" ng-model="$ctrl.person.lastName">
+  <input type="submit" value="Create Person">
 </form>
 ```
 
-Now this form is pretty decent, but it looks like we are not validating anything! A user can leave the inputs blank and still submit the form successfully! Let's add some validations with HTML5 using `required`.
-
-Your form should now look like this:
+By default Angular does not perform any validations.  A user can leave the inputs blank and still submit the form successfully.  HTML5 defines the `required` attribute, which you can use to declare that you'd like the browser to validate the presence of the field before submitting:
 
 ```html
-<form action="#">
-  <label for="firstname">First Name: </label>
-  <input type="text" id="firstname" required>
-  <label for="lastname">Last Name: </label>
-  <input type="text" id="lastname" required>
-  <input type="submit" value="Click me!">
+<form ng-submit="$ctrl.createPerson()">
+  <input type="text" ng-model="$ctrl.person.firstName" required>
+  <input type="text" ng-model="$ctrl.person.lastName"  required>
+  <input type="submit" value="Create Person">
 </form>
 ```
 
-Now this is great, but it would be nice if we could be a bit more specific on what we want to validate inside this form. What if we want (a) the First Name to be present, but it has to be at least three characters, and (b) the Last Name does not need to be present, but if it is, it should also be at least 3 characters (we still need to make sure Bono can sign up for our application)?
+Imagine, however, that you want:
 
-Our first thought might be to start writing a bunch of javascript and figure out if there is any text inside the input and if so, to figure out the length. While this would work, angular has a nicer way to help us out. But before we do this, let's learn about some of the key properties and classes we will be using to validate forms in angular.
+- The First Name to be present, but it has to be at least three characters
+- The Last Name does not need to be present, but if it is, it should also be at least 3 characters
 
-## Before you continue, read through the following documentation regarding Angular form validations:
+You _could_ write some custom code inside the `createPerson` method to check these things, but ideally you wouldn't even trigger `createPerson` if there's invalid data.  Angular has some nifty helpers for this:
+
+---
+
+Before you continue, read through the following documentation regarding Angular form validations:
 [http://www.ng-newsletter.com/posts/validations.html](http://www.ng-newsletter.com/posts/form-validation-with-angularjs.html)
 
-### A quick walkthrough of angular form properties, classes and descriptions
+---
+
+## A quick walkthrough of Angular form properties, classes and descriptions
 
 This table and the corresponding descriptions come from [this](https://scotch.io/tutorials/angularjs-form-validation-with-ngmessages) fantastic tutorial.
 
@@ -62,30 +84,30 @@ This table and the corresponding descriptions come from [this](https://scotch.io
 |  $dirty |  ng-dirty |   Boolean that's true if the form/input has been used. |   
 |  $touched |  ng-touched |  Boolean that's true if the input has been blurred |   
 
-## Accessing and targeting our form and inputs
+## Accessing and targeting form and inputs
 
-In order to use angular form validation we have to abide by the following rules
+In order to use angular form validation you have to abide by the following rules
 
-- We must give our form a name attribute (let's imagine a name attribute = "firstForm")
-	- We can then do things like `firstForm.$valid` (which returns true or false)
-- We have to put an ng-model on each of our inputs (remember to use the dot!)
+- You must give the form a name attribute (let's imagine a name attribute = "firstForm")
+	- You can then do things like `firstForm.$valid` (which returns true or false)
+- You have to put an ng-model on each of the inputs (remember to use the dot!)
 
 A couple extra things:
-- If we do not want to use the standard HTML5 validations we add `novalidate` as an attribute to our form
-- To access angular properties on our inputs we use the syntax `formName.inputName.angularProperty`.
-  + We can then do things like `firstForm.username.$valid` or `firstForm.username.$error` (to see an object with any errors)
+- If you do not want to use the standard HTML5 validations you add `novalidate` as an attribute to the form
+- To access angular properties on the inputs you use the syntax `formName.inputName.angularProperty`.
+  + You can then do things like `firstForm.username.$valid` or `firstForm.username.$error` (to see an object with any errors)
 
-## Styling our forms and displaying error messages:
+## Styling the forms and displaying error messages:
 
-It would be much nicer if we could display a message to our user and style it accordingly. We are going to be using bootstrap as it gives us some nice classes for validation (you can read more about them [here](http://getbootstrap.com/css/#forms-control-validation))
+It would be much nicer if you could display a message to the user and style it accordingly. You are going to be using bootstrap as it gives us some nice classes for validation (you can read more about them [here](http://getbootstrap.com/css/#forms-control-validation))
 
-In order to add a class based off of a condition we are going to be using the built in `ng-class` directive (docs are [here](https://docs.angularjs.org/api/ng/directive/ngClass). There are a few ways to use `ng-class`, the way we will be using it is as follows (pay close attention to the quotes!)
+In order to add a class based off of a condition you are going to be using the built in `ng-class` directive (docs are [here](https://docs.angularjs.org/api/ng/directive/ngClass). There are a few ways to use `ng-class`, the way you will be using it is as follows (pay close attention to the quotes!)
 
 `ng-class="{ 'class-name' : expression, 'another-class': another expression }".`
 
 An example of this would be: `"{ 'has-error' : sampleForm.username.$invalid }"`
 
-But how about showing an error message? To do this we are going to be using the `ng-show` directive which works like this:
+But how about showing an error message? To do this you are going to be using the `ng-show` directive which works like this:
 
 `ng-show="condition"`
 
@@ -98,6 +120,7 @@ If you would like a great example of how these form classes and properties work 
 
 
 ## Questions
+
 #### Exercise - questions + building your own form and validations
 
 First, answer the following questions
@@ -118,11 +141,11 @@ First, answer the following questions
 - What validations would you add in an input to make sure that there is a minimum length of 4 and a maximum length of 20
 - What validation would you add in an input to make sure that only numbers between 1 and 5 are a valid input (use regular expressions for this!)
 
-## Exercise - styling our form and adding some error messages!
+## Exercise - styling the form and adding some error messages!
 
 Now that you have a solid understanding of these properties/classes, let's build another form with an action of "#" and four text inputs for a username, password, email and zip code. Your form should validate that the username and password are both between 3 and 12 characters long. It should also make sure that the email is a valid email and that the zip code is a five digit number (use ng-pattern and regular expressions for this!).
 
-Now that we have an idea of how to style and display error messages, let's do the following
+Now that you have an idea of how to style and display error messages, let's do the following
 
 - include bootstrap for styling
 - display error messages if inputs are invalid (write whatever you would like for the error message)
@@ -140,10 +163,9 @@ Your form should work like this:
 
 ## Bonus - refactor using ngMessages
 
-Our HTML is getting a bit messy, it would be nice to have an easier way to deal with error messages, that's where ng-messages comes in. Walk through [this](https://scotch.io/tutorials/angularjs-form-validation-with-ngmessages) or [this](http://www.yearofmoo.com/2014/05/how-to-use-ngmessages-in-angularjs.html) tutorial and refactor your form to use ng-messages.
+The HTML is getting a bit messy, it would be nice to have an easier way to deal with error messages, that's where ng-messages comes in. Walk through [this](https://scotch.io/tutorials/angularjs-form-validation-with-ngmessages) or [this](http://www.yearofmoo.com/2014/05/how-to-use-ngmessages-in-angularjs.html) tutorial and refactor your form to use ng-messages.
 
 ## Additional Resources
 
-[https://docs.angularjs.org/guide/forms](https://docs.angularjs.org/guide/forms)
-
-[https://docs.angularjs.org/api/ng/directive/input](https://docs.angularjs.org/api/ng/directive/input)
+- [https://docs.angularjs.org/guide/forms](https://docs.angularjs.org/guide/forms)
+- [https://docs.angularjs.org/api/ng/directive/input](https://docs.angularjs.org/api/ng/directive/input)

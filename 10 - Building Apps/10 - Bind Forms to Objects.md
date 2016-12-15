@@ -161,6 +161,14 @@ function controller() {
 
 Now when the form loads the first time, `Toyota` will be pre-filled-in, and when you submit the form and reset it, it will be restored as the default.
 
+#### Form Anti-Patterns
+
+An anti pattern is a way of writing code that is a bad practice in your framework.  There are a few things you should **not** do with `ng-submit`.
+
+1. Do not use `ng-submit` on the form and `ng-click` on the submit button at the same time. Use either ng-submit on the form and no directive on the submit button, or use `ng-click` on the submit button and no directive on the form. `ng-submit` is preferred in a form.
+2. Do not create separate properties directly on the controller object for each form field. Instead, create an object that contains all the form properties inside of it. In the above example, `$ctrl.car` is the object that will contain each form property.
+3. Never do any DOM manipulation in your controller. When submitting form data, it is often tempting to revert back to the jQuery way of doing things. For example, do not attempt to append the new form data to the DOM inside of your controller. In fact, **do not do any DOM manipulation in the controller**. Instead, add the data that you want to display to an object in the scope that will then be displayed in the view.
+
 ## Challenge?
 
 ![](https://students-gschool-production.s3.amazonaws.com/uploads/asset/file/109/ngmadlibs-p1.png)

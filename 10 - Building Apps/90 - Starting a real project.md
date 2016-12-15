@@ -24,7 +24,7 @@ cd !$
 yarn init -y
 yarn add --dev lite-server
 yarn add angular@1.6.0
-yarn add angular-ui-router@1.0.0-beta.1
+yarn add angular-ui-router@1.0.0-beta.3
 ```
 
 Next create an index.html file, and reference the version of Angular from node_modules:
