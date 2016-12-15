@@ -169,7 +169,75 @@ An anti pattern is a way of writing code that is a bad practice in your framewor
 2. Do not create separate properties directly on the controller object for each form field. Instead, create an object that contains all the form properties inside of it. In the above example, `$ctrl.car` is the object that will contain each form property.
 3. Never do any DOM manipulation in your controller. When submitting form data, it is often tempting to revert back to the jQuery way of doing things. For example, do not attempt to append the new form data to the DOM inside of your controller. In fact, **do not do any DOM manipulation in the controller**. Instead, add the data that you want to display to an object in the scope that will then be displayed in the view.
 
-## Challenge?
+## Questions
 
-![](https://students-gschool-production.s3.amazonaws.com/uploads/asset/file/109/ngmadlibs-p1.png)
-![](https://students-gschool-production.s3.amazonaws.com/uploads/asset/file/108/ngmadlibs-p2.png)
+### !challenge
+
+* type: multiple-choice
+* id: angular-curriculum-bind-forms-01
+* title: Object Shape #1
+
+##### !question
+Given the following form, how would you access the `height` that the user enter?
+
+```html
+<form>
+  <input type="text" name="tableWidth" ng-model="$ctrl.width" />
+  <input type="text" name="tableHeight" ng-model="$ctrl.height" />
+  <input type="text" name="tableDepth" ng-model="$ctrl.depth" />
+</form>
+```
+##### !end-question
+
+##### !options
+- `vm.tableHeight`
+- `vm.height`
+- `vm.$ctrl.height`
+- `tableHeight.height`
+- None of the above
+##### !end-options
+
+##### !answer
+`vm.height`
+##### !end-answer
+
+##### !explanation
+Since these fields bind directly to properties on the controller (an anti-pattern), the controller can just use `vm.height`
+##### !end-explanation
+### !end-challenge
+
+### !challenge
+
+* type: short-answer
+* id: angular-curriculum-bind-forms-02
+* title: Object Shape #2
+
+##### !question
+What `ng-model` code would you write in order to create an object of this shape?
+
+```js
+{
+  person: {
+    address: {
+      state: {
+        name: ""
+      }
+    }
+  }
+}
+```
+##### !end-question
+
+
+##### !placeholder
+ng-model="..."
+##### !end-placeholder
+
+##### !answer
+ng-model="person.address.state.name"
+##### !end-answer
+
+##### !explanation
+When Angular sees multiple chained properties, it constructs the appropriate object.
+##### !end-explanation
+### !end-challenge
