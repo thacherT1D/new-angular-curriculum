@@ -254,6 +254,7 @@ Also recall that you always want to run you app with a real server such as `lite
 ## Try it out yourself!
 
 - Follow [the instructions](./02 - Unit Overview.md) to update angular-drills, for example:
+
   ```
   git checkout master
   git fetch upstream
