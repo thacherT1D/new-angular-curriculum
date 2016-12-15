@@ -131,3 +131,36 @@ Take a moment to reflect on the pattern that's emerging here:
 - The DOM auto-updates when you make changes
 
 This will be a key concept in the the next lesson on toggling DOM elements.
+
+### !challenge
+* type: project
+* id: angular-curriculum-drill-list-management
+* title: Submit your app
+
+##### !question
+## Try it out yourself!
+
+- Follow [the instructions](./02 - Unit Overview.md) to update angular-drills, for example:
+
+  ```
+  git checkout master
+  git fetch upstream
+  git rebase upstream/master
+  git checkout -b list-management
+  git push -u origin list-management
+  ```
+- Complete the [list-management](https://github.com/gSchool/angular-drills/tree/master/list-management) challenge
+
+It comes with tests so you can see if you finished it correctly.  Make sure tests pass before submitting!
+
+Submit the URL to your solution below.
+##### !end-question
+
+##### !placeholder
+https://github.com/<your name>/angular-drills/tree/list-management/list-management
+##### !end-placeholder
+
+##### !explanation
+See the solutions folder (if you haven't already)
+##### !end-explanation
+### !end-challenge
