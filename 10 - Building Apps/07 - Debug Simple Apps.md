@@ -1,4 +1,4 @@
-# Questions about basic interactive apps
+# Debug Simple Apps
 
 Recall the 4-step process for setting up a simple app:
 

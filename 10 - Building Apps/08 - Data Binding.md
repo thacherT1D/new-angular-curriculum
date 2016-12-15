@@ -111,7 +111,11 @@ Replicate the exact same functionality without using Angular. In a new file, wri
 * title: Terminology #1
 
 ##### !question
-When you write `Hello there, {{$ctrl.name}}`, which term best describes what the curly braces (`{{}}`) do?
+Which term best describes the concept of adding in curly braces (`{{}}`) to regular HTML?  Such as:
+
+```
+Hello there, {{$ctrl.name}}
+```
 ##### !end-question
 
 ##### !options
