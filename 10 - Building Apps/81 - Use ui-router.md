@@ -82,6 +82,39 @@ function controller($state) {
 }
 ```
 
+## Questions
+
+### !challenge
+- type: short-answer
+- id: angular-curriculum-use-ui-router-01
+- title: ui-sref 1
+##### !question
+
+### Question
+Given the following state definitions, write a link (anchor tag) that will send you to `/preferences`
+
+```js
+$stateProvider
+  .state({ name: 'page-1', url: '/about', component: 'component1' })
+  .state({ name: 'page-2', url: '/preferences', component: 'component1' })
+```
+##### !end-question
+
+##### !answer
+<a ui-sref="page-2"></a>
+##### !end-answer
+
+##### !placeholder
+<a></a>
+##### !end-placeholder
+
+##### !explanation
+The '/preferences' path is defined with the name `page-2`.  The value of the `ui-sref` attribute should match the name of the state.  So the answer is:
+
+`<a ui-sref="page-2"></a>`
+##### !end-explanation
+### !end-challenge
+
 ## Resources
 
 - [Why ui-router from co-creator Nate Abele](https://www.youtube.com/watch?v=ZmrsDqMrAVo)
