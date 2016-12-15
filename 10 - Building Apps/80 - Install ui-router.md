@@ -1,4 +1,4 @@
-# Routing with ui-router
+# Install ui-router
 
 Standard: **Build an Angular application with routes (<a href="#">W0044</a>)**
 

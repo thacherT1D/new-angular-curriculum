@@ -1,4 +1,4 @@
-# Routing with ui-router
+# Use ui-router
 
 Standard: **Build an Angular application with routes (<a href="#">W0044</a>)**
 
@@ -85,9 +85,11 @@ function controller($state) {
 ## Questions
 
 ### !challenge
-- type: short-answer
-- id: angular-curriculum-use-ui-router-01
-- title: ui-sref 1
+
+* type: short-answer
+* id: angular-curriculum-use-ui-router-01
+* title: ui-sref 1
+
 ##### !question
 
 ### Question
