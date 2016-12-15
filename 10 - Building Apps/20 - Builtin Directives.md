@@ -25,22 +25,6 @@ Directives are Angular's way of extending HTML. Angular uses directives to add f
 
 Visit [https://docs.angularjs.org/api/ng/directive/](https://docs.angularjs.org/api/ng/directive/) to see the list of builtin directives.
 
-**EXERCISE**
-
-Add an ng-init with a  property called `symbols` with the value `['Spades', 'Clubs', 'Hearts', 'Diamonds']`. Use an `ng-repeat` to display each one in the body.
-
-BONUS: Figure out how to make these entity codes actually display as symbols, like the following image:
-
-![](http://content.screencast.com/users/ColtSteele1/folders/Jing/media/d75c95af-4729-4b8f-bf84-3b98a87f3213/00000003.png)
-
-**EXERCISE**
-
-Create a simple password validator like the one shown below. If the password is less than 6 characters, hide the submit button and show the error message. Otherwise, show the button and hide the error
-
-![](http://zippy.gfycat.com/FelineEqualElectriceel.gif)
-
-> View another example [here](https://github.com/gSchool/angular-examples/tree/master/ng-show-hide).
-
 ### ng-class
 
 `ng-class` will dynamically set an element's class depending on a provided expression.
@@ -53,24 +37,24 @@ Define the following CSS class:
 }
 ```
 
-We can use `ng-class` to selectively apply our 'highlight' class to elements.
+You can use `ng-class` to selectively apply the 'highlight' class to elements:
 
-```js
+```html
 <div ng-class='{highlight: 4 + 4 == 8}'> 4 + 4 = 8</div>
 <div ng-class='{highlight: 4 + 4 == 10}'>4 + 4 = 10</div>
 ```
 
-> Want more [examples](https://github.com/mjhea0/thinkful-mentor/tree/master/angular/fundamentals/built-in-directives/ngClass/ngClass-more-examples)?
+**Sequence of events**
 
-**EXERCISE**
+- Angular parses the template code, and sees the `ng-class` directive being applied
+- Angular parses the expression
+- Because `{highlight: 4 + 4 == 8}` will result in an object, Angular parses the right-hand side first
+- `4 + 4 == 8` is true, so the object is `{highlight: true}`
+- Angular loops over all of the properties in the object (in this case, just "highlight")
+- If the property's value is `true`, Angular adds that class
+- If the property's value `false`, Angular removes that class
 
-Build on top of the previous password validator exercise. Use `ng-class` to make the form and character count green when valid and red when invalid. Take a look at the following gif:
-
-![](http://zippy.gfycat.com/ActualBeautifulIzuthrush.gif)
-
-## Challenges
-
-- Ask students which directive to use from that page to do certain things
+See [more examples](https://github.com/mjhea0/thinkful-mentor/tree/master/angular/fundamentals/built-in-directives/ngClass/ngClass-more-examples)
 
 ## Bonus
 
