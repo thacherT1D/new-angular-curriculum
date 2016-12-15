@@ -133,45 +133,135 @@ You can chain filters, and it will have more or less the obvious result:
 
 NOTE: in Angular 2 filters are called _pipes_.
 
-**EXERCISE**
-
-Add a text input to a page that displays user input in all caps and all lowercase. You will need to use two of the other built-in filters<sup id="a1">[1](#f1)</sup>. Use the following gif as a reference:
-
-![](http://zippy.gfycat.com/CookedWelcomeDesertpupfish.gif)
-
-Let's try using another built-in filter to format our data. Angular has a `number` filter that allows us to round numbers to specific decimal places. Try the following:
-
-```html
-{{3.14159265359 | number:3}}
-{{3.14159265359 | number:6}}
-{{3.14159265359 | number:1}}
-```
-
-**EXERCISE**
-
-Create a drop down menu where the user can select how many digits to round pi to. BONUS: Find out how to pluralize "digit" correctly. Angular comes with a built-in way of pluralizing things! It should work like the following gif:
-
-![](http://zippy.gfycat.com/LegalThickIndochinesetiger.gif)
-
-**EXERCISE**
-
-Create a simple tip calculator using the Angular concepts that we've covered so far (and nothing more advanced). A user can enter a meal price into an input, then select a percentage to tip from a dropdown menu. Display the resulting tip at the bottom of the page. Check out the following gif to see how it should work.
-
-![](http://zippy.gfycat.com/FlamboyantQuickGordonsetter.gif)
-
-## Challenge
-
-Assume you have a div like this:
-
-```
-<div ng-repeat="post in $ctrl.posts">
-```
-
-Write the code to both search and order these items.
-
-Apply two filters (limit and sort) and see which result will happen
-
 ## Questions
+
+NOTE: you will need to reference the Angular docs to correctly answer these questions.
+
+### !challenge
+
+* type: short-answer
+* id: angular-curriculum-filters-01
+* title: Filter 1
+
+##### !question
+Given that `article.publishedOn` is February 5th, 2008, and that you have the following code:
+
+```
+{{article.publishedOn}}
+```
+
+How would you display that date in the format "02/05/2008"?
+##### !end-question
+
+##### !placeholder
+{{article.publishedOn | ??}}
+##### !end-placeholder
+
+##### !answer
+{{article.publishedOn | date:'MM-dd-yyyy'}}
+##### !end-answer
+
+##### !explanation
+You need `MM` so that the digits are padded to match the format: https://docs.angularjs.org/api/ng/filter/date
+##### !end-explanation
+### !end-challenge
+
+
+
+
+
+
+### !challenge
+
+* type: short-answer
+* id: angular-curriculum-filters-02
+* title: Filter 2
+
+##### !question
+Given that you have an array of objects such as:
+
+```
+[
+  {name: "Razor", price: 450},
+  {name: "Pen", price: 75},
+]
+```
+
+And given you have the following code in your template:
+
+```
+<div ng-repeat="product in $ctrl.products | orderBy:'name':true">
+```
+
+How would you present that data to the user sorted by the `name` in _descending_ order?
+##### !end-question
+
+##### !placeholder
+<div ng-repeat="product in $ctrl.products | ??">
+##### !end-placeholder
+
+##### !answer
+<div ng-repeat="product in $ctrl.products | orderBy:'name':true">
+##### !end-answer
+
+##### !explanation
+The `true` indicated that
+##### !end-explanation
+### !end-challenge
+
+
+### !challenge
+
+* type: short-answer
+* id: angular-curriculum-filters-03
+* title: Filter 3
+
+##### !question
+Given that you have an array of objects such as:
+
+```js
+[
+  {name: "Binder",  price: 5},
+  {name: "Pen",     price: 4},
+  {name: "Pencil",  price: 3},
+  {name: "Eraser",  price: 2},
+  {name: "Paper",   price: 1},
+]
+```
+
+And given you have the following code in your template:
+
+```
+<div ng-repeat="product in $ctrl.products">
+```
+
+How would you present that data to the user such that it:
+
+- orders by price
+- only displays the first 2 items
+
+So the output should be be:
+
+- "Paper"
+- "Eraser"
+
+##### !end-question
+
+##### !placeholder
+<div ng-repeat="product in $ctrl.products | ??">
+##### !end-placeholder
+
+##### !answer
+<div ng-repeat="product in $ctrl.products | orderBy:'price' | limitTo:2" >
+##### !end-answer
+
+##### !explanation
+You must have the order by _first_, otherwise it would limit, then sort the limited items.
+##### !end-explanation
+### !end-challenge
+
+
+
 
 ## Resources
 
