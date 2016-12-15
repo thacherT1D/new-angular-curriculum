@@ -52,6 +52,28 @@ Note:
 
 Feel free to Style / theme / rename the app to make it something you might put on your portfolio.
 
+### !challenge
+
+* type: project
+* id: angular-curriculum-assessment-1-reddit-clone-github-url
+* title: Submit your project
+
+##### !question
+
+### Question
+Submit the URL to your Reddit Clone repository on GitHub
+##### !end-question
+
+##### !placeholder
+Submit your github link
+##### !end-placeholder
+
+##### !explanation
+An instructor will review and score this.
+##### !end-explanation
+### !end-challenge
+
+
 ## Bonus Features
 
 - Animate posts as they are added and removed from the search results
