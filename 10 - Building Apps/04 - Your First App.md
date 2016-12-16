@@ -1,6 +1,6 @@
 # Introduction and Setup
 
-Standard: **Build an Angular application with routes (<a href="#">W0044</a>)**
+Standard: **Build an Angular application (<a href="#">W0044</a>)**
 
 ## What is Angular?
 

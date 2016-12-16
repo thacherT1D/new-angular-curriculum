@@ -1,6 +1,6 @@
 # Building a simple interactive app
 
-Standard: **Build an Angular application with routes (<a href="#">W0044</a>)**
+Standard: **Build an Angular application (<a href="#">W0044</a>)**
 
 ## Objectives
 
@@ -247,8 +247,8 @@ Also recall that you always want to run you app with a real server such as `lite
 
 ### !challenge
 * type: project
-* id: angular-curriculum-simple-interaction-github-url
-* title: Submit your app
+* id: angular-curriculum-drills-simple-interaction
+* title: Simple Interaction
 
 ##### !question
 ## Try it out yourself!
@@ -270,7 +270,7 @@ Submit the URL to your solution below.
 ##### !end-question
 
 ##### !placeholder
-https://github.com/<your name>/angular-drills/tree/solutions/simple-interaction
+https://github.com/<your name>/angular-drills/tree/simple-interaction/simple-interaction
 ##### !end-placeholder
 
 ##### !explanation
@@ -347,7 +347,7 @@ So if you change the component name to windsor, you need to change `<app></app>`
 ### !challenge
 * type: multiple-choice
 * id: wdi-angular-match-components-02
-* title: Match Component #1
+* title: Match Component #2
 
 ##### !question
 If you changed `ng-app="app"` to `ng-app="fraggle"`, which other line would have to change?
@@ -376,7 +376,7 @@ So if you change to `ng-app="fraggle"` you must also change to `angular.module("
 ### !challenge
 * type: multiple-choice
 * id: wdi-angular-match-components-03
-* title: Match Component #1
+* title: Match Component #3
 
 ##### !question
 If you changed `vm.app = "app"` to `vm.glee = "app"`, which other line would have to change?

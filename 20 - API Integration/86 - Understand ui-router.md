@@ -1,6 +1,6 @@
 # Understand ui-router
 
-Standard: **Build an Angular application with routes (<a href="#">W0044</a>)**
+Standard: **Build an Angular CRUD application against an HTTP API (<a href="#">W0045</a>)**
 
 ## Objectives
 

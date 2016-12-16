@@ -1,14 +1,12 @@
 # Assessment: Angular Reddit Clone
 
-Standard: **Build an Angular application with routes (<a href="#">W0044</a>)**
+Standard: **Build an Angular application (<a href="#">W0044</a>)**
 
 Your assessment will be considered successful when:
 
-- App has multiple routes, configured with clean urls (html5Mode)
 - Uses builtin directives and filters (ng-repeat, ng-class, ng-if etc...)
 - Uses data-binding (that is, doesn't use direct DOM manipulation)
 - Routes directly to components
-- Router doesn't matter (can use ui-router or ng-route)
 - Uses the following patterns from the Angular 1 Styleguide:
   - [iifes](https://github.com/johnpapa/angular-styleguide/tree/master/a1#iife)
   - [Named Functions](https://github.com/johnpapa/angular-styleguide/tree/master/a1#named-vs-anonymous-functions)
@@ -34,7 +32,7 @@ Note:
 
 ## Requirements
 
-- Each post has a title, author, image, and truncated description
+- Each post has a title, author, image, and description
   - See filters
 - Each post's date/time is displayed nicely: "Yesterday at 3:09pm", "Last Thursday at 4:42am", etc.
   - You will need an [external library](https://github.com/urish/angular-moment)
@@ -48,14 +46,13 @@ Note:
 - The new post form and comment forms can be toggled on and off
 - A user can search through posts
 - A user can sort posts by votes, date, and title
-- When a user clicks on a post title, they should be redirected to that post's page (`/posts/2`, `/posts/5`) and see the full post text
 
 Feel free to Style / theme / rename the app to make it something you might put on your portfolio.
 
 ### !challenge
 * type: project
 * id: angular-curriculum-assessment-1-reddit-clone-github-url
-* title: Submit your project
+* title: Reddit Clone Part 1
 
 ##### !question
 

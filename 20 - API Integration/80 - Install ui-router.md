@@ -1,6 +1,6 @@
 # Install ui-router
 
-Standard: **Build an Angular application with routes (<a href="#">W0044</a>)**
+Standard: **Build an Angular CRUD application against an HTTP API (<a href="#">W0045</a>)**
 
 ## Objectives
 
@@ -76,6 +76,12 @@ From NPM:
 
 ```
 yarn add angular-ui-router@1.0.0-beta.3
+```
+
+Then:
+
+```html
+<script src="/node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
 ```
 
 **Step 2: Register the module**

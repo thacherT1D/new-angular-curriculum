@@ -135,7 +135,7 @@ This will be a key concept in the the next lesson on toggling DOM elements.
 ### !challenge
 * type: project
 * id: angular-curriculum-drill-list-management
-* title: Submit your app
+* title: List Management
 
 ##### !question
 ## Try it out yourself!

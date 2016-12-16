@@ -2,7 +2,7 @@
 
 The lessons in this section all relate to the the following standard:
 
-> Build an Angular application with routes (W0044)
+> Build an Angular application (W0044)
 
 ## Assessment
 

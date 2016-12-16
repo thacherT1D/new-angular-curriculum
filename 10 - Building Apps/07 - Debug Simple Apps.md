@@ -238,7 +238,7 @@ The template doesn't reference `$ctrl` - it attempts to call `{{time}}` and `{{u
 
 * type: multiple-choice
 * id: wdi-angular-find-the-bug-05
-* title: Find the Bug #4
+* title: Find the Bug #5
 
 ##### !question
 In the code snippet above, where is the bug?
@@ -303,7 +303,7 @@ NOTE: it _would_ be OK to have `this.updateTime = () => {this.time = new Date()}
 
 * type: multiple-choice
 * id: wdi-angular-find-the-bug-06
-* title: Find the Bug #4
+* title: Find the Bug #6
 
 ##### !question
 In the code snippet above, where is the bug?

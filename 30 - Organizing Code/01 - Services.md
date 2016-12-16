@@ -90,7 +90,7 @@ To read more about the differences and why some choose factories over services a
 
 [Service VS Factory - ONCE AND FOR ALL](http://blog.thoughtram.io/angular/2015/07/07/service-vs-factory-once-and-for-all.html)
 
-[AngularJS: Factory vs Service vs Provider](http://tylermcginnis.com/angularjs-factory-vs-service-vs-provider/)
+[AngularJS: Factory vs Service vs Provider](https://tylermcginnis.com/angularjs-factory-vs-service-vs-provider-5f426cfe6b8c/)
 
 [AngularJS Providers Explained](https://gist.github.com/demisx/9605099)
 

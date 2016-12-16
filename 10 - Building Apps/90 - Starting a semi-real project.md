@@ -1,6 +1,6 @@
 # Starting a semi-real project
 
-Standard: **Build an Angular application with routes (<a href="#">W0044</a>)**
+Standard: **Build an Angular application (<a href="#">W0044</a>)**
 
 ## Objectives
 
@@ -32,7 +32,6 @@ cd !$
 yarn init -y
 yarn add --dev lite-server
 yarn add angular@1.6.0
-yarn add angular-ui-router@1.0.0-beta.3
 ```
 
 Next create an index.html file, and reference the version of Angular from node_modules:
@@ -46,7 +45,6 @@ Next create an index.html file, and reference the version of Angular from node_m
   </head>
   <body>
     <script src="/node_modules/angular/angular.min.js"></script>
-    <script src="/node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
   </body>
 </html>
 ```

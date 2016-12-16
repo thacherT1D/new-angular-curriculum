@@ -1,6 +1,6 @@
 # Dynamic Routes
 
-Standard: **Build an Angular application with routes (<a href="#">W0044</a>)**
+Standard: **Build an Angular CRUD application against an HTTP API (<a href="#">W0045</a>)**
 
 ## Objectives
 
@@ -19,7 +19,7 @@ By the end of this lesson you will:
 ##### !question
 ## Try it out yourself!
 
-- Follow [the instructions](./02 - Unit Overview.md) to update angular-drills, for example:
+- Follow [the instructions](../10 - Building Apps/02 - Unit Overview.md) to update angular-drills, for example:
 
   ```
   git checkout master

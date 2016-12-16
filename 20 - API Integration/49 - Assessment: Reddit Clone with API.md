@@ -6,6 +6,8 @@ The lessons in this section all relate to the the following standard:
 
 In order to demonstrate that you've mastered the core concepts, you will be asked to build an app where:
 
+- App has multiple routes, configured with clean urls (html5Mode)
+- When a user clicks on a post title, they should be redirected to that post's page (`/posts/2`, `/posts/5`) and see the full post text
 - Uses $http and promises well
 - App loads data from the server on page load (index page)
 - Allows users to create records that appear on the screen without refreshing, and appear the same when refreshing (new records must get the id)

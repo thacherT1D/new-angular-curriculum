@@ -238,7 +238,7 @@ app.factory('PiratesService', function ($http) {
 })
 
 ```
-[More on Services, Factories and Angular](http://tylermcginnis.com/angularjs-factory-vs-service-vs-provider/)
+[More on Services, Factories and Angular](https://tylermcginnis.com/angularjs-factory-vs-service-vs-provider-5f426cfe6b8c/)
 
 Ok, I gave you the code for free, but take a minute to look it over and really
 see what's happening here. What does my `PiratesService` do?

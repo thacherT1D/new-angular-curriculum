@@ -2,113 +2,141 @@
 
 Standard: **Build an Angular CRUD application against an HTTP API (<a href="#">W0045</a>)**
 
-Angular services are simply objects that contain some code that can be shared across your app.  Like most things we've discussed, Angular comes with some services already, but we can also write our own custom services too.  
+## Objectives
 
-You can see a list of the built-in Angular services [here](https://docs.angularjs.org/api/ng/service).  Some of the most important ones are:
+By the end of this lesson you will:
 
-* $http
-* $location
-* $rootScope
-* $q
-* $animate
-* $routeParams
+- Fetch data from an external API and load it into a controller
 
-According to the docs, the `$http` service:
+## Rationale
 
->facilitates communication with the remote HTTP servers via the browser's XMLHttpRequest object or via JSONP.
+Integrating with backend services is the bedrock of most single-page applications.
 
-It's **Angular's wrapper for AJAX calls.**  It's the easiest way of communicating with a server from an Angular app. Let's try it out!
+## Before you begin...
 
-**In order to use the `$http` service in a controller, we need to first add it as a dependency**.  Like this:
+Your code is about to get a little more complex, specifically the controller code.  So before getting into `$http`, you should organize your components a bit more.  Specifically, you should make the following 2 changes from now on:
+
+- Pull the controller function out to a named function
+- Put all code in `iife`s
+
+**Before**
 
 ```js
-app.controller('someControllerName', function($scope, $http) {
-});
+  angular.module('app')
+    .component('someComponent', {
+      controller: function () {
+        const vm = this
+        // etc...
+      }
+    })
 ```
 
-Now we can access all of the methods defined on the `$http` service. They are:
+**After**
 
-* $http.get
-* $http.head
+```js
+(function() {
+  'use strict';
+
+  angular.module('app')
+    .component('someComponent', {
+      controller: controller
+    })
+
+  function controller() {
+    const vm = this
+    // etc...
+  }
+
+}());
+```
+
+**Rationale**
+
+In a few steps you'll be injecting (passing arguments to) your controller function.  If the controller function is separate, it makes this easier.
+
+It's nice to name your controller function something simple, like `controller`, but you can't have more than one global function with the same name.  So if you put it in an `iife`, all of your components can have an identical structure!
+
+## The `$http` service
+
+Your Angular 1 application will communicate with a server via the `$http` service.  Here's what a simple example looks like:
+
+```js
+(function() {
+  'use strict';
+
+  angular.module('app')
+    .component('app', {
+      controller: controller,
+      template: `
+        <div ng-repeat="thing in $ctrl.things">
+          {{thing}}
+        </div>
+      `
+    })
+
+  controller.$inject = ['$http']
+  function controller($http) {
+    const vm = this
+
+    vm.$onInit = function () {
+      $http.get('/things.json').then(function (response) {
+        vm.things = response.data
+      })
+    }
+  }
+
+}());
+```
+
+Making an AJAX calls in your controller involves 4 steps:
+
+1. Inject the `$http` service by:
+  - Adding `controller.$inject = ['http']`
+  - Define an `$http` parameter in the controller
+1. Make the call to `$http.get`, `$http.post` etc...
+1. Pass a function to `.then` which receives a response
+1. Get the `response.data` and set properties on the controller `vm`
+
+## Loading data
+
+It's common to load data inside of `$onInit`.
+
+## Alter data on the server
+
 * $http.post
 * $http.put
-* $http.delete
-* $http.jsonp
 * $http.patch
+* $http.delete
 
+### !challenge
+* type: project
+* id: angular-curriculum-drill-http-calls
+* title: HTTP Calls
 
-We're going to start by using `$http.get()` to retrieve some very simple data from Github's Zen API located here: `https://api.github.com/zen` and then display the resulting data on the page. It's an extremely simple API; all that it does is respond with a single piece of zen programming wisdom.  Try visiting the api in your browser.
+##### !question
+## Try it out yourself!
 
-Don't forget that `$http.get()` returns a promise!
+- Follow [the instructions](../10 - Building Apps/02 - Unit Overview.md) to update angular-drills, for example:
 
-```js
-$http.get('https://api.github.com/zen').then(function(data){
-  $scope.view.zenData = data;
-});
-```
+  ```
+  git checkout master
+  git fetch upstream
+  git rebase upstream/master
+  git checkout -b http-calls
+  git push -u origin http-calls
+  ```
+- Complete the [http-calls](https://github.com/gSchool/angular-drills/tree/master/http-calls) challenge
 
-In your template, display the value of `zenData`.  You'll see that it's JSON with a few different properties:
+It comes with tests so you can see if you finished it correctly.  Make sure tests pass before submitting!
 
-```json
-{
-  "data":"Keep it logically awesome.",
-  "status":200,
-  "config": {
-    "method":"GET",
-    "transformRequest":[null],
-    "transformResponse":[null],
-    "url":"https://api.github.com/zen",
-    "headers":{
-      "Accept":"application/json, text/plain, */*"
-    }
-  },
-  "statusText":"OK"
-}
-```
+Submit the URL to your solution below.
+##### !end-question
 
-Most of time, we just want the actual response data, so let's change our code slightly:
+##### !placeholder
+https://github.com/<your name>/angular-drills/tree/http-calls/http-calls
+##### !end-placeholder
 
-```js
-$http.get('https://api.github.com/zen').then(function(data){
-  $scope.view.zenData = data.data;
-});
-```
-
-NOTE: If you have trouble sending GET requests to 'https://api.github.com/zen' ,
-create a new zen.json file in your application and send get requests to retrieve data from
-that newly created file.
-
-PS: sometimes the api reaches it's daily limit of calls and shuts down for the day
-
-**EXERCISE:** Read about [the same origin policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) ([wikipedia has some good info too](https://en.wikipedia.org/wiki/Same-origin_policy)) and [Cross-Origin Resource Sharing or CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS).  Describe what both the same origin policy and CORS are.
-
-**EXERCISE:** Try using `$http.get()` to make a request to `https://itunes.apple.com/search?term=jack+johnson` and display the title of every post on your template. You should get an error. What was the error?  Why did the api.github.com domain work and not the itunes.com domain?
-
-**EXERCISE:** Since making a request to `https://itunes.apple.com/search?term=jack+johnson` didn't work, go to the url in your browser and copy all the json that gets returned.  Save the json data into a file in your app called `itunes.json`.  Use the `$http.get()` service to make a request to get the `itunes.json` file.  Display the title of every post on your template.  Why does this method for getting the json data work?
-
-**EXERCISE:** Try making a request to an invalid URL.  Write code to properly handle a request that fails.  **Does Angular have any built-in functionality that could help you?**
-
-
-**EXERCISE:** Use `$http.get()` and `$http.post()` to interact with this [API that we've made for you](https://messagehttpservice.herokuapp.com/).  It's a simple collaborative chat app.  The API has two endpoints:
-
-The app is one Rails model, Message, which has two attributes: name and content.
-
-* GET `/messages` - responds with a list of all messages
-* POST `/messages` - creates a new message with the data you send to it
-
-Create a simple app that displays a list of all the messages coming from the API.  Also display a form that allows a user to submit a new message to the database.
-
-Remember that most Rails apps expect your data for a given model to be nested inside of a single object with the name of the model.  So the data you send should follow this format:
-
-```js
-{message: {
-  name: "Mary",
-  content: "This is such a cool API!"
-}}
-```
-
-## Questions
-
-* What is a service?  Is there a Ruby or JavaScript equivalent to Angular services?
-* Explain in as much detail as possible what happens under the hood of `$http.get()`
-* What is `$q` and how does it relate to `$http`?
+##### !explanation
+See the solutions folder (if you haven't already)
+##### !end-explanation
+### !end-challenge

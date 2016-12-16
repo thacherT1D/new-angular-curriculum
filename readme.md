@@ -4,7 +4,7 @@
 
 By the end of this curriculum you should be able to:
 
-- Build an Angular application with routes (W0044)
+- Build an Angular application (W0044)
 - Build an Angular CRUD application against an HTTP API (W0045)
 - Refactor Angular applications to use services and components (W0046)
 - Deploy a fullstack single-page application (W0047)
