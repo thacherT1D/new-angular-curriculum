@@ -149,9 +149,9 @@ https://docs.angularjs.org/api/ng/directive/ngHref
 Which directive can create a `<select>` and `<option>`s?
 ##### !end-question
 
-##### placeholder
-ngSomething
 ##### !placeholder
+ngSomething
+##### !end-placeholder
 
 ##### !answer
 ngOptions
@@ -172,9 +172,9 @@ https://docs.angularjs.org/api/ng/directive/ngOptions
 Which directive would you use to conditionally print either "1 _Thing_" or "2 _Things_", depending on the the number?
 ##### !end-question
 
-##### placeholder
-ngSomething
 ##### !placeholder
+ngSomething
+##### !end-placeholder
 
 ##### !answer
 ngPluralize
