@@ -52,12 +52,12 @@ angular.module('app', [])
 - When the page loads, and Angular loads the `<my-component>` component
   - Angular sees `$onInit` and runs it
   - `$onInit` sets the controller's `tab` property to 1
-  - Angular sees that the first div should be shown only if `tab == 1`, so it inserts it into the DOM
-  - Angular sees that the second div should be shown only if `tab == 2`, so it removes it from the DOM
+  - Angular sees that Tab 1 should be shown only if `tab == 1`, so it inserts Tab 1 into the DOM
+  - Angular sees that Tab 2 should be shown only if `tab == 2`, so it removes Tab 2 from the DOM
 - When a user clicks on the "Tab 2" button
   - Angular runs the `ng-click` expression, which sets `$ctrl.tab` to 2
-  - Angular sees that the first div should be shown only if `tab == 1`, so it removes it from the DOM
-  - Angular sees that the second div should be shown only if `tab == 2`, so it inserts it into the DOM
+  - Angular sees that Tab 1 should be shown only if `tab == 1`, so it removes Tab 1 from the DOM
+  - Angular sees that Tab 2 should be shown only if `tab == 2`, so it inserts Tab 2 into the DOM
 
 ### A slippery slope
 
@@ -98,3 +98,5 @@ angular.module('app', [])
 [ng-show](https://docs.angularjs.org/api/ng/directive/ngShow) works very similarly to `ng-if`.  
 
 Read the docs for [ng-if](https://docs.angularjs.org/api/ng/directive/ngIf) to find out what's different about `ng-show` and `ng-if`.
+
+See also [ngSwitch](https://docs.angularjs.org/api/ng/directive/ngSwitch)

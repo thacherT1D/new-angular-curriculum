@@ -42,7 +42,7 @@ let song = {
 }
 ```
 
-Angular 1 provides an incredibly easy way to make this happen.
+Angular 1 provides an easy, declarative way to make this happen.
 
 ## Sample Code
 
@@ -161,7 +161,7 @@ function controller() {
 
 Now when the form loads the first time, `Toyota` will be pre-filled-in, and when you submit the form and reset it, it will be restored as the default.
 
-#### Form Anti-Patterns
+## Form Anti-Patterns
 
 An anti pattern is a way of writing code that is a bad practice in your framework.  There are a few things you should **not** do with `ng-submit`.
 

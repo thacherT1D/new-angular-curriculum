@@ -14,7 +14,7 @@ By the end of this lesson you will:
 
 ## Rationale
 
-In a world where data is very controller-centric, it can be tempting to put display logic into the controller, since that's the source of truth for the data.  But controllers should predominantly concern themselves with coordinating the flow of data through the system, not altering the _display_ of data - that's the templates job.
+In a world where data is very controller-centric, it can be tempting to put display logic into the controller, since that's the source of truth for the data.  But controllers should predominantly concern themselves with coordinating the flow of data through the system, not altering the _display_ of data - that's the template's job.
 
 Filters allow you to alter the way data appears on the page, without altering the underlying data in the controller.
 
@@ -44,7 +44,7 @@ For example if you use the builtin number filter like so:
 {{$ctrl.myNumber | number:2}}
 ```
 
-Then the user will see `3.14` on the screen.  Even though they see `3.14`, in the controller the data is still
+Then the user will see `3.14` on the screen.  Even though they see `3.14`, in the controller the value is still `3.14159265359`.
 
 **Sequence of events**
 

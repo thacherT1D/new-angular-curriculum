@@ -56,6 +56,136 @@ You can use `ng-class` to selectively apply the 'highlight' class to elements:
 
 See [more examples](https://github.com/mjhea0/thinkful-mentor/tree/master/angular/fundamentals/built-in-directives/ngClass/ngClass-more-examples)
 
+## Questions
+
+### !challenge
+* type: multiple-choice
+* id: wdi-angular-curriculum-builtin-directives-01
+* title: Directives #1
+
+##### !question
+Read through the docs at https://docs.angularjs.org/api/ng/directive/
+
+Which of these is the correct way to set the `for` attributes on a label?
+##### !end-question
+
+##### !options
+- `<label ng-for="some-id">`
+- `<label for="some-id">`
+##### !end-options
+
+##### !answer
+`<label for="some-id">`
+##### !end-answer
+
+##### !explanation
+Angular 1 has no `ngFor` directive
+##### !end-explanation
+### !end-challenge
+
+
+### !challenge
+* type: multiple-choice
+* id: wdi-angular-curriculum-builtin-directives-02
+* title: Directives #2
+
+##### !question
+Read through the docs at https://docs.angularjs.org/api/ng/directive/
+
+Which of these is the correct way to set the `src` attribute on an image?
+##### !end-question
+
+##### !options
+- `<img src="{{url}}"/>`
+- `<img ng-src="{{url}}"/>`
+##### !end-options
+
+##### !answer
+`<img ng-src="{{url}}"/>`
+##### !end-answer
+
+##### !explanation
+If you use `src` then the browser will try to download an image called `{{url}}` first, then it will download the real one.
+
+https://docs.angularjs.org/api/ng/directive/ngSrc
+##### !end-explanation
+### !end-challenge
+
+
+### !challenge
+* type: multiple-choice
+* id: wdi-angular-curriculum-builtin-directives-03
+* title: Directives #3
+
+##### !question
+Read through the docs at https://docs.angularjs.org/api/ng/directive/
+
+Which of these is the correct way to set the `href` attribute on a an `<a>`?
+##### !end-question
+
+##### !options
+- `<a href="{{url}}">link1</a>`
+- `<a ng-href="{{url}}">link1</a>`
+##### !end-options
+
+##### !answer
+`<a ng-href="{{url}}">link1</a>`
+##### !end-answer
+
+##### !explanation
+If you use `href` to bind a value, and a user clicks on the link before Angular loads, they'll be sent to a url named `{{url}}`
+
+https://docs.angularjs.org/api/ng/directive/ngHref
+##### !end-explanation
+### !end-challenge
+
+
+### !challenge
+* type: short-answer
+* id: wdi-angular-curriculum-builtin-directives-04
+* title: Directives #4
+
+##### !question
+Which directive can create a `<select>` and `<option>`s?
+##### !end-question
+
+##### !placeholder
+ngSomething
+##### !placeholder
+
+##### !answer
+ngOptions
+##### !end-answer
+
+##### !explanation
+https://docs.angularjs.org/api/ng/directive/ngOptions
+##### !end-explanation
+### !end-challenge
+
+
+### !challenge
+* type: short-answer
+* id: wdi-angular-curriculum-builtin-directives-05
+* title: Directives #5
+
+##### !question
+Which directive would you use to conditionally print either "1 _Thing_" or "2 _Things_", depending on the the number?
+##### !end-question
+
+##### !placeholder
+ngSomething
+##### !placeholder
+
+##### !answer
+ngPluralize
+##### !end-answer
+
+##### !explanation
+https://docs.angularjs.org/api/ng/directive/ngPluralize
+##### !end-explanation
+### !end-challenge
+
+
 ## Bonus
 
 What's happening in each of these examples? What's the purpose of the directive?
