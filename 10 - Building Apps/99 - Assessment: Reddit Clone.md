@@ -18,36 +18,94 @@ Your assessment will be considered successful when:
 
 ---
 
-[![](https://i.gyazo.com/f9d435b4e198cf5ea3c29607d40a8958.png)](https://learn.galvanize.com/redirects/articles/4609)
-
-Video:
-<iframe src="https://player.vimeo.com/video/135778837?byline=0&portrait=0" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
-Note:
+## Angular Guidelines
 
 - All post data should only be stored in a controller
   - (If you want to store data in a Service that's OK too)
 - A page refresh will clear all added posts
 - You do _not_ have to make any ajax requests or actually contact the reddit API
 
-## Requirements
-
-- Each post has a title, author, image, and description
-  - See filters
-- Each post's date/time is displayed nicely: "Yesterday at 3:09pm", "Last Thursday at 4:42am", etc.
-  - You will need an [external library](https://github.com/urish/angular-moment)
-- A user can upvote/downvote posts
-- Posts dynamically reorder according to number of votes
-- A user can create new posts
-- A user cannot create a new post if any of the 4 inputs are blank (validations)
-- A user can click to view existing comments on a specific post
-- The number of comments is correctly pluralized
-- A user can add a new comment to a specific post
-- The new post form and comment forms can be toggled on and off
-- A user can search through posts
-- A user can sort posts by votes, date, and title
+## User Stories
 
 Feel free to Style / theme / rename the app to make it something you might put on your portfolio.
+
+**Users can create a post**
+
+- Users can toggle the "New Post" form
+- Users can create posts
+  - Each post has a title, author, image, and description
+- Users cannot create a new post if any of the inputs are blank
+  - Fields should only appear invalid once they've tabbed off
+- Users cannot click "Create Post" until the form is valid
+
+**Users can view posts**
+
+- Users see the number of comments correctly pluralized
+  - i.e. "0 comments" or "1 comment"
+- Users see posts dynamically reorder according to number of votes
+- Users see the post's date/time displayed nicely
+  - i.e. "Yesterday at 3:09pm", "4 minute ago", etc.
+  - You will need an [external library](https://github.com/urish/angular-moment)
+
+**Votes**
+
+- Users can upvote
+- Users can downvote
+  - But not make it go lower than 0
+
+**Filter**
+
+- Users can filter based on the post title
+
+**Sort**
+
+- Users see posts ordered by votes (most first) by default
+- Users can sort by Date or by Title
+
+**Comments**
+
+- Users can toggle comments
+- Users can add comments
+
+## Detailed Wireframes
+
+**Posts**
+
+Form toggle
+
+![](../images/reddit-clone-1/reddit-clone-form-toggle.gif)
+
+Validations
+
+![](../images/reddit-clone-1/reddit-clone-form-validations.gif)
+
+Creating and viewing a post
+
+![](../images/reddit-clone-1/reddit-clone-create-post.gif)
+
+**Votes**
+
+Upvoting
+
+![](../images/reddit-clone-1/reddit-clone-votes.gif)
+
+Downvoting
+
+![](../images/reddit-clone-1/reddit-clone-down-votes.gif)
+
+**Filter**
+
+![](../images/reddit-clone-1/reddit-clone-filter.gif)
+
+**Sort**
+
+![](../images/reddit-clone-1/reddit-clone-sort.gif)
+
+**Comments**
+
+![](../images/reddit-clone-1/reddit-clone-comments.gif)
+
+
 
 ### !challenge
 * type: project

@@ -132,20 +132,18 @@ First, answer the following questions
 - When does a form/input have a property of $touched? What class accompanies this property?
 - What does blurred mean? (research the `blur` event)
 
-#### For the next set of questions, assume that you have a form with a name="quizForm"
-
-- Create a text input with a name of "question" and give it a validation of "required". If it is $valid add a class of "valid"
-- For your text input with a name of question, add a paragraph tag with the text "please enter a valid question" if the input is not valid
-- Create a text input with a name of "answer" and give it a validation of "required" and a minimum length of 4 characters. If it is $valid and not $pristine add a class of "correct".
-- How would you access all of the errors (in an object) for an input with a name of `quizForm.username`
-- What validations would you add in an input to make sure that there is a minimum length of 4 and a maximum length of 20
-- What validation would you add in an input to make sure that only numbers between 1 and 5 are a valid input (use regular expressions for this!)
-
 ## Exercise - styling the form and adding some error messages!
 
-Now that you have a solid understanding of these properties/classes, let's build another form with an action of "#" and four text inputs for a username, password, email and zip code. Your form should validate that the username and password are both between 3 and 12 characters long. It should also make sure that the email is a valid email and that the zip code is a five digit number (use ng-pattern and regular expressions for this!).
+Now that you have a solid understanding of these properties/classes, build another form with an action of "#" and four text inputs for
 
-Now that you have an idea of how to style and display error messages, let's do the following
+- a username
+- password
+- email
+- zip code
+
+Your form should validate that the username and password are both between 3 and 12 characters long. It should also make sure that the email is a valid email and that the zip code is a five digit number (use `ng-pattern` and regular expressions for this!).
+
+Now that you have an idea of how to style and display error messages, do the following:
 
 - include bootstrap for styling
 - display error messages if inputs are invalid (write whatever you would like for the error message)
