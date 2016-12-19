@@ -23,3 +23,38 @@ In order to demonstrate that you've mastered the core concepts, you will be aske
   - There are at least 3 services
   - There are at least 5 components, with at least 2 of them nested inside others
   - There are no `$http` calls directly in controllers (must be in services)
+
+
+### !challenge
+* type: project
+* id: angular-curriculum-assessment-3-reddit-clone-with-services
+* title: Reddit Clone Part 3
+
+##### !question
+### Submit Your Solution
+Submit the URL to your Reddit Clone repository on GitHub
+
+- Follow [the instructions](../10 - Building Apps/02 - Unit Overview.md) to update angular-drills, for example:
+
+  ```
+  git checkout master
+  git fetch upstream
+  git rebase upstream/master
+  git checkout -b reddit-clone-part-3
+  git push -u origin reddit-clone-part-3
+  ```
+- Do the work in your existing [reddit-clone-part-2](https://github.com/gSchool/angular-drills/tree/master/reddit-clone-part-2) challenge
+
+Tests should already be passing, so run them often to make sure they are still green!
+
+Submit the URL to your solution below.
+##### !end-question
+
+##### !placeholder
+Submit your github link
+##### !end-placeholder
+
+##### !explanation
+An instructor will review and score this.
+##### !end-explanation
+### !end-challenge

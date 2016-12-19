@@ -28,6 +28,18 @@ Take your existing Reddit clone and persist everything to the database, specific
 - Voting (up or down)
 - Adding comments
 
+Also add the additional feature that users can edit a post.  
+
+- When a user views the homepage
+- Then every post should have an "edit" link
+- And when they click the "edit" link
+- They should be on `/posts/:id/edit`
+- And they should see a post form identical to the one on the homepage
+  - Except the button should say "Update Post"
+  - All the same validation rules apply
+- And when they click "Update Post"
+- Then they should be redirected to the homepage
+
 ### !challenge
 * type: project
 * id: angular-curriculum-assessment-2-reddit-clone-github-url
