@@ -35,7 +35,22 @@ Take your existing Reddit clone and persist everything to the database, specific
 
 ##### !question
 ### Submit Your Solution
-Submit the URL to your Reddit Clone repository Part 2 on GitHub
+Submit the URL to your Reddit Clone repository on GitHub
+
+- Follow [the instructions](../10 - Building Apps/02 - Unit Overview.md) to update angular-drills, for example:
+
+  ```
+  git checkout master
+  git fetch upstream
+  git rebase upstream/master
+  git checkout -b reddit-clone-part-2
+  git push -u origin reddit-clone-part-2
+  ```
+- Complete the [reddit-clone-part-2](https://github.com/gSchool/angular-drills/tree/master/reddit-clone-part-2) challenge
+
+It comes with tests so you can see if you finished it correctly.  Make sure tests pass before submitting!
+
+Submit the URL to your solution below.
 ##### !end-question
 
 ##### !placeholder

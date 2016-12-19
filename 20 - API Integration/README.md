@@ -18,7 +18,7 @@ In order to use `$http` and `ui-router` you'll also need to learn a little bit a
 
 ## Assessment
 
-To demonstrate your master of building CRUD apps against an API you will [integrate your Reddit Clone with a server-side API](49 - Assessment: Reddit Clone with API.md).
+To demonstrate your master of building CRUD apps against an API you will [integrate your Reddit Clone with a server-side API](95 - Assessment: Reddit Clone with API.md).
 
 ## How to proceed
 
