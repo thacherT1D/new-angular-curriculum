@@ -21,4 +21,28 @@ In order to demonstrate that you've mastered the core concepts, you will be aske
 
 ## Features
 
-- When a user clicks on a post title, they should be redirected to that post's page (`/posts/2`, `/posts/5`) and see the full post text
+Take your existing Reddit clone and persist everything to the database, specifically:
+
+- Loading posts and comments from the server
+- Adding posts
+- Voting (up or down)
+- Adding comments
+
+### !challenge
+* type: project
+* id: angular-curriculum-assessment-2-reddit-clone-github-url
+* title: Reddit Clone Part 2
+
+##### !question
+### Submit Your Solution
+Submit the URL to your Reddit Clone repository Part 2 on GitHub
+##### !end-question
+
+##### !placeholder
+Submit your github link
+##### !end-placeholder
+
+##### !explanation
+An instructor will review and score this.
+##### !end-explanation
+### !end-challenge

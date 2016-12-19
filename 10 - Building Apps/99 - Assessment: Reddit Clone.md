@@ -20,9 +20,8 @@ Your assessment will be considered successful when:
 
 ## Angular Guidelines
 
-- All post data should only be stored in a controller
-  - (If you want to store data in a Service that's OK too)
-- A page refresh will clear all added posts
+- All post data should only be stored in memory
+  - That is, a page refresh will clear all added posts, and that's OK
 - You do _not_ have to make any ajax requests or actually contact the reddit API
 
 ## User Stories
@@ -114,7 +113,7 @@ Downvoting
 
 ##### !question
 
-### Question
+### Submit Your Solution
 Submit the URL to your Reddit Clone repository on GitHub
 ##### !end-question
 

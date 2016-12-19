@@ -84,53 +84,58 @@ This table and the corresponding descriptions come from [this](https://scotch.io
 |  $dirty |  ng-dirty |   Boolean that's true if the form/input has been used. |   
 |  $touched |  ng-touched |  Boolean that's true if the input has been blurred |   
 
-## Accessing and targeting form and inputs
+## Setting up forms for validation
 
-In order to use angular form validation you have to abide by the following rules
+You will need to follow these steps in order for your form to make the best use of Angular validations:
 
-- You must give the form a name attribute (let's imagine a name attribute = "firstForm")
-	- You can then do things like `firstForm.$valid` (which returns true or false)
-- You have to put an ng-model on each of the inputs (remember to use the dot!)
+1. Add the `novalidate` option to the form like `<form novalidate>`
+1. Give the form a `name` attribute like `<form name="myForm">`
+1. Put an `ng-model` on each of the inputs
+1. Put a `name` attribute on each of the inputs like `<input name="firstName">`
 
-A couple extra things:
-- If you do not want to use the standard HTML5 validations you add `novalidate` as an attribute to the form
-- To access angular properties on the inputs you use the syntax `formName.inputName.angularProperty`.
-  + You can then do things like `firstForm.username.$valid` or `firstForm.username.$error` (to see an object with any errors)
+So a form setup for validation would look like this:
+
+```html
+<form novalidate name="newPersonForm">
+  <input name="firstName" ng-model="$ctrl.person.firstName">
+</form>
+```
+
+To access angular properties on the inputs you use the syntax `<formName>.<inputName>.<angularProperty>`.
+
+So to see if the `firstName` field is valid, you would write:
+
+```
+newPersonForm.firstName.$valid
+newPersonForm.firstName.$error
+```
 
 ## Styling the forms and displaying error messages:
 
-It would be much nicer if you could display a message to the user and style it accordingly. You are going to be using bootstrap as it gives us some nice classes for validation (you can read more about them [here](http://getbootstrap.com/css/#forms-control-validation))
+It would be much nicer if you could display a message to the user and style it accordingly.
 
 In order to add a class based off of a condition you are going to be using the built in `ng-class` directive (docs are [here](https://docs.angularjs.org/api/ng/directive/ngClass). There are a few ways to use `ng-class`, the way you will be using it is as follows (pay close attention to the quotes!)
 
-`ng-class="{ 'class-name' : expression, 'another-class': another expression }".`
+```html
+<div ng-class="{ 'has-error' : sampleForm.username.$invalid }"></div>
+```
 
-An example of this would be: `"{ 'has-error' : sampleForm.username.$invalid }"`
+But how about showing an error message? To do this you are going to be using the `ng-show` directive like so:
 
-But how about showing an error message? To do this you are going to be using the `ng-show` directive which works like this:
+```html
+<span ng-show="sampleForm.username.$invalid">Username is invalid</span>
+```
 
-`ng-show="condition"`
+## Summary
 
-An example of this would be:
-`<span ng-show="sampleForm.username.$invalid">Username is invalid</span>`
+In order to use Angular validations:
 
-## Visualization
-
-If you would like a great example of how these form classes and properties work (99% borrowed from scotch.io) - check out [these](http://sales-person-licks-61176.bitballoon.com) validation tables
-
-
-## Questions
-
-#### Exercise - questions + building your own form and validations
-
-First, answer the following questions
-
-- When does a form/input have a property of $valid? What class accompanies this property?
-- When does a form/input have a property of $invalid? What class accompanies this property?
-- When does a form/input have a property of $pristine? What class accompanies this property?
-- When does a form/input have a property of $dirty? What class accompanies this property?
-- When does a form/input have a property of $touched? What class accompanies this property?
-- What does blurred mean? (research the `blur` event)
+- Add `novalidate` and `name` attributes to forms
+- Add `ng-model` and `name` attributes to inputs
+- To reference a form's validation info, use `myForm.$valid` etc...
+- To reference a field's validation info, use `myForm.fieldName.$valid` etc...
+- Conditionally add error classes to inputs with `ng-class`
+- Conditionally show error messages by using `ng-show` and `.$errors`
 
 ## Exercise - styling the form and adding some error messages!
 
@@ -167,3 +172,4 @@ The HTML is getting a bit messy, it would be nice to have an easier way to deal 
 
 - [https://docs.angularjs.org/guide/forms](https://docs.angularjs.org/guide/forms)
 - [https://docs.angularjs.org/api/ng/directive/input](https://docs.angularjs.org/api/ng/directive/input)
+- Check out [these](http://sales-person-licks-61176.bitballoon.com) validation tables
