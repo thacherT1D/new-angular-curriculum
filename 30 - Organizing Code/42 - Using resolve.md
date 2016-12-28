@@ -32,4 +32,4 @@ router.get('/things', (req, res) => {
 })
 ```
 
-Obviously don't commit and push that code 😜
+Obviously don't commit and push that code (because it'll just make things slow 😜) but it's good for testing locally.

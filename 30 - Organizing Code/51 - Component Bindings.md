@@ -109,7 +109,7 @@ You can pass data in one of three ways:
 
 - `<` creates a one-way binding
 - `=` creates a two-way binding
-- `@` creates a _one-time_ binding (for strings)
+- `@` creates a one-way binding (for strings)
 
 They would look like this:
 
@@ -119,7 +119,7 @@ bindings: {
 
   person: '=', // two-way binding OR...
 
-  person: '@', // one-time binding (for strings)
+  person: '@', // one-way binding for strings
 },
 ```
 
@@ -137,35 +137,9 @@ When you define a two-way binding, then changes to the _outer_ component will be
 
 This is in some ways the easiest for beginners to learn, but can cause the thorniest problems down the line.
 
-**One-Time Binding with `@` for Strings**
+**One-Way Binding with `@` for Strings**
 
-This is useful for things like button text or simple messages or labels that will never change at all.  Once you pass it in, the value will never update.
-
-### !challenge
-* type: multiple-choice
-* id: wdi-angular-curriculum-component-bindings-01
-* title: Component Bindings #1
-
-##### !question
-Which is the most appropriate binding to use when you want to pass in an event handler?
-##### !end-question
-
-##### !options
-- `bindings: {product: '<'}`
-- `bindings: {product: '='}`
-- `bindings: {product: '@'}`
-- `bindings: {product: '&'}`
-##### !end-options
-
-##### !answer
-`bindings: {product: '&'}`
-##### !end-answer
-
-##### !explanation
-The `&` indicates that you will pass in a function, which is the most appropriate choice for an event handler.
-##### !end-explanation
-### !end-challenge
-
+This is useful for things like button text or class names or labels that.  It's similar to one-way binding with `<` but doesn't work for objects.
 
 
 ### !challenge
@@ -174,7 +148,7 @@ The `&` indicates that you will pass in a function, which is the most appropriat
 * title: Component Bindings #2
 
 ##### !question
-Which is the most appropriate binding to use when you want to pass in a simple text label that never changes?
+Which is the most appropriate binding to use when you want to pass in a simple text label?
 ##### !end-question
 
 ##### !options
@@ -189,7 +163,9 @@ Which is the most appropriate binding to use when you want to pass in a simple t
 ##### !end-answer
 
 ##### !explanation
-The `@` indicates that you want a one-time-only binding.
+The `@` indicates that you want a one-way binding and because you just care about text, `@` is the most appropriate.
+
+See [the docs](https://docs.angularjs.org/api/ng/service/$compile#-scope-)
 ##### !end-explanation
 ### !end-challenge
 
@@ -228,6 +204,8 @@ Which is the correct way to render it?
 
 ##### !explanation
 Both component names (`contactForm`) and binding names (`buttonText`) need to be dasherized when you reference them.
+
+See [the docs](https://docs.angularjs.org/api/ng/service/$compile#-scope-)
 ##### !end-explanation
 ### !end-challenge
 
@@ -268,6 +246,8 @@ If you wanted changes to `productComponent`'s `product` to stay in synch with ch
 
 ##### !explanation
 Only `=` sets up two-way binding, which is what allows objects to stay in synch between components.
+
+See [the docs](https://docs.angularjs.org/api/ng/service/$compile#-scope-)
 ##### !end-explanation
 ### !end-challenge
 
