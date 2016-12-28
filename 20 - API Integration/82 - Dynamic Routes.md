@@ -17,7 +17,7 @@ By the end of this lesson you will:
 * title: UI-Router Fundamentals
 
 ##### !question
-## Try it out yourself!
+## Build an app with simple routes
 
 - Follow [the instructions](../10 - Building Apps/02 - Unit Overview.md) to update angular-drills, for example:
 

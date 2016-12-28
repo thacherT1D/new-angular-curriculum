@@ -251,7 +251,7 @@ Also recall that you always want to run you app with a real server such as `lite
 * title: Simple Interaction
 
 ##### !question
-## Try it out yourself!
+## Build a Simple Interactive App
 
 - Follow [the instructions](./02 - Unit Overview.md) to update angular-drills, for example:
 

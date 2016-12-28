@@ -114,7 +114,7 @@ It's common to load data inside of `$onInit`.
 * title: HTTP Calls
 
 ##### !question
-## Try it out yourself!
+## Build a simple app with `$http`
 
 - Follow [the instructions](../10 - Building Apps/02 - Unit Overview.md) to update angular-drills, for example:
 

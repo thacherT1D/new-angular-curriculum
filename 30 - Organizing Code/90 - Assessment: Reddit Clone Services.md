@@ -6,7 +6,7 @@ The lessons in this section all relate to the the following standard:
 
 In order to demonstrate that you've mastered the core concepts, you will be asked to build an app where:
 
-- Components communicate through services/factories
+- Components communicate through Services
 - Components are nested inside other components (for example comments inside a post component)
 - Data is passed into components via attributes
 - Events in components are published to their parents
@@ -20,9 +20,13 @@ In order to demonstrate that you've mastered the core concepts, you will be aske
 
 - Take your Reddit clone
 - Refactor it such that:
-  - There are at least 3 services
-  - There are at least 5 components, with at least 2 of them nested inside others
-  - There are no `$http` calls directly in controllers (must be in services)
+  - At least 3 components use `templateUrl` instead of `template`
+  - There are at least 2 Services (posts and comments)
+    - and there are no `$http` calls in components
+  - You must have the following components:
+    - The "edit post form" and the "new post form" must be the same component
+    - Each post on the homepage must be a component
+    - The comments section of each post must be its own component
 
 
 ### !challenge

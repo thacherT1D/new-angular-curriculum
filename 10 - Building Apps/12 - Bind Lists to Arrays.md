@@ -138,7 +138,7 @@ This will be a key concept in the the next lesson on toggling DOM elements.
 * title: List Management
 
 ##### !question
-## Try it out yourself!
+## Build a simple list manager
 
 - Follow [the instructions](./02 - Unit Overview.md) to update angular-drills, for example:
 
