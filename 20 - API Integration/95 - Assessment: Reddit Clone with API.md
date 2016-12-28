@@ -6,7 +6,7 @@ The lessons in this section all relate to the the following standard:
 
 In order to demonstrate that you've mastered the core concepts, you will be asked to build an app where:
 
-- App has multiple routes, configured with clean urls (html5Mode)
+- App has routes with dynamic path segments, configured with clean urls (html5Mode)
 - Uses $http and promises well
 - App loads data from the server on page load (index page)
 - Allows users to create records that appear on the screen without refreshing, and appear the same when refreshing (new records must get the id)
@@ -39,6 +39,16 @@ Also add the additional feature that users can edit a post.
   - All the same validation rules apply
 - And when they click "Update Post"
 - Then they should be redirected to the homepage
+
+**Designs**
+
+Edit link:
+
+![](../images/reddit-clone-2/edit-link.png)
+
+Edit form:
+
+![](../images/reddit-clone-2/edit-screen.png)
 
 ### !challenge
 * type: project
