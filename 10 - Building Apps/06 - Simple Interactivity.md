@@ -42,13 +42,13 @@ Run `lite-server`
 
 The baseline for having an interactive in Angular requires you to complete at least 4 steps:
 
-1. Define and wire up a module
-1. Define and insert a component
-1. Define the component's Controller with event handlers
-  - (optionally) initialize the data for the controller
-1. Define the component's Template
+1. Define and wire up a [**module**](#modules)
+1. Define and insert a [**component**](#components)
+1. Define the component's [**Controller**](#controllers) with event handlers
+  - (optionally) [initialize](#$onInit) the data for the controller
+1. Define the component's [**Template**](#controllers)
   - Display the data from the controller
-  - Trigger the event handlers
+  - Trigger the [event handlers](#event)
 
 Take a look at this simple application.  Copy and paste the code into `index.html` and run [`lite-server`](https://scotch.io/bar-talk/a-fast-and-convenient-development-server-with-lite-server) to interact with it:
 
@@ -109,7 +109,7 @@ It can seem like 🎩 magic 🐰, in part because Angular does a lot of work for
 
 ![](../images/angular-1-anatomy.png)
 
-**#1 Modules**
+####Modules (1)
 
 Every Angular 1 application needs a top-level module.  Convention is to name it "app".
 
@@ -127,7 +127,7 @@ You _connect_ (or "wire up") the module to the page like so:
 
 > RULE: The name of the `ng-app` attribute _must_ match the first argument of `angular.module`.
 
-**#2 Components**
+####Components (2)
 
 Think of a Component as being a custom HTML tag that you get to define.
 
@@ -151,7 +151,7 @@ You _insert_ a component by writing it out as an HTML tag, like so:
 
 > RULE: When you _define_ a component, use camelCase.  When you display a component, use the lowercase-dasherized name
 
-**#3 Defining and Referencing Controllers / Templates**
+####Controllers / Templates (3)
 
 Controllers and Templates go hand-in-hand.
 
@@ -187,7 +187,7 @@ From within a Template, you _reference_ the controller with `$ctrl`.
 
 > RULE: You should always put `const vm = this` as the first line of the controller.
 
-**#4 Defining load-time behavior with `$onInit`**
+####$onInit - Define Load Time Behavior (4)
 
 Anything you'd like to do when the controller is loaded should be placed in the `$onInit` function.
 
@@ -205,7 +205,7 @@ controller: function () {
 
 However, you never _call_ `$onInit` - Angular calls it at the appropriate time.
 
-**#5 Defining Event Handlers and Triggering Events**
+####Event Handlers & Event Triggering (5)
 
 In order for your application to be interactive, you must be able to handle events.
 
