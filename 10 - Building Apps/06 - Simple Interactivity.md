@@ -42,13 +42,13 @@ Run `lite-server`
 
 The baseline for having an interactive in Angular requires you to complete at least 4 steps:
 
-1. Define and wire up a [**module**](#modules)
-1. Define and insert a [**component**](#components)
-1. Define the component's [**Controller**](#controllers) with event handlers
-  - (optionally) [initialize](#$onInit) the data for the controller
-1. Define the component's [**Template**](#controllers)
+1. Define and wire up a [**module**](#modules-1)
+1. Define and insert a [**component**](#components-2)
+1. Define the component's [**Controller**](#controllers--templates-3) with event handlers
+  - (optionally) [initialize](#oninit---define-load-time-behavior-4) the data for the controller
+1. Define the component's [**Template**](#controllers--templates-3)
   - Display the data from the controller
-  - Trigger the [event handlers](#event)
+  - Trigger the [event handlers](#event-handlers--event-triggering-5)
 
 Take a look at this simple application.  Copy and paste the code into `index.html` and run [`lite-server`](https://scotch.io/bar-talk/a-fast-and-convenient-development-server-with-lite-server) to interact with it:
 
