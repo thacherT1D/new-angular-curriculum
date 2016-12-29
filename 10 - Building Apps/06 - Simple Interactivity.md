@@ -50,7 +50,7 @@ The baseline for having an interactive in Angular requires you to complete at le
   - Display the data from the controller
   - Trigger the event handlers
 
-Take a look at this simple application.  Copy and paste the code into `index.html` and run `lite-server` to interact with it:
+Take a look at this simple application.  Copy and paste the code into `index.html` and run [`lite-server`](https://scotch.io/bar-talk/a-fast-and-convenient-development-server-with-lite-server) to interact with it:
 
 ```html
 <!DOCTYPE html>
