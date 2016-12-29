@@ -69,12 +69,12 @@ If you open angular-examples/bind-form-to-object you'll see that as you type, An
 
 Angular 1 makes it incredibly easy to build nested objects, so you can nest as deeply as you'd like.  Here's the sequence of events:
 
-1. The Angular app boots
-1. The user starts to type into one of the fields
+1. The Angular app initializes
+1. The user starts to type into the year field
 1. Angular sees that you declared `ng-model="$ctrl.car.year"`
 1. Angular looks for a `.car` property on the controller, and doesn't find it, so it creates an empty object
 1. Angular sets the `.year` property on the `car` in the controller
-1. The result is that in the controller, there is an object like `{year: 1985}`
+1. The result is that in the controller, there is an object under the `car` key that looks like: `{year: 1985}`
 
 ## Handling form submissions
 
