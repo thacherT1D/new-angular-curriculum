@@ -12,11 +12,11 @@ By the end of this lesson you will be able to:
 - Define a Controller and define event handlers
 - Define a Template that displays Controller data and triggers events
 
-## Rationale
+## Why learn Components, Templates, and Controllers?
 
 Getting a handle on the most basic aspects of interactivity in Angular 1 will be crucial to your success as an Angular developer.  Starting with a basic component / controller / template will serve as the foundation for learning every other aspect of Angular 1.
 
-## Running your application
+## Setup and Run
 
 To begin, create a directory and an `index.html` file:
 
@@ -38,7 +38,7 @@ Run `lite-server`
 
 > lite-server will auto-reload any changes you make, so you don't have to hit "refresh" in your browser.  If your text editor / IDE has autosave turned on, by the time you tab from your editor to your browser, it will have already refreshed 🎉
 
-## Example of a simple interactive app in Angular 1 (using components)
+## Getting started with simple interactive app in Angular 1 (using components)
 
 The baseline for having an interactive in Angular requires you to complete at least 4 steps:
 
