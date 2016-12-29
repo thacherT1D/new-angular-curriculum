@@ -56,7 +56,7 @@ Then the user will see `3.14` on the screen.  Even though they see `3.14`, in th
 
 ## Applying filters to arrays of Objects
 
-Imagine you have an array of comic book characters that you fetch from some API.  The API returns them ordered by their id, but you want to order the by their name.  Instead of writing your own sorting algorithm, you can simple write this:
+Imagine you have an array of comic book characters that you fetch from some API.  The API returns them ordered by their id, but you want to order them by their name.  Instead of writing your own sorting algorithm, you can simply write this:
 
 ```html
 <div ng-repeat="character in $ctrl.characters | orderBy:'name'">

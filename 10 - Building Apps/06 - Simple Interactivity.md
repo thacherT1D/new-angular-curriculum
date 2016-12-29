@@ -243,7 +243,7 @@ Recall that the basic steps to creating a dynamic app are:
   - Display the data from the controller
   - Trigger the event handlers
 
-Also recall that you always want to run you app with a real server such as `lite-server`.
+Also recall that you always want to run your app with a real server such as `lite-server`.
 
 ### !challenge
 * type: project
