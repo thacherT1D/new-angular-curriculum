@@ -17,7 +17,7 @@ Integrating with backend services is the bedrock of most single-page application
 Your code is about to get a little more complex, specifically the controller code.  So before getting into `$http`, you should organize your components a bit more.  Specifically, you should make the following 2 changes from now on:
 
 - Pull the controller function out to a named function
-- Put all code in `iife`s
+- Put all code in [`iife`s](https://github.com/johnpapa/angular-styleguide/tree/master/a1#iife)
 
 **Before**
 
