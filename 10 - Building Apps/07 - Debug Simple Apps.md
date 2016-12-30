@@ -281,6 +281,7 @@ NOTE: it _would_ be OK to have `this.updateTime = () => {this.time = new Date()}
       angular.module("app", [])
         .component('personDetail', {
           controller: function () {
+            const vm = this
             this.$onInit = function () {
               this.time = new Date()
             }
