@@ -13,7 +13,7 @@ By the end of this lesson you will:
 
 You _could_ build your application with no routes whatsoever.  One major problem with this approach is that you lose the ability to deep-link.  That is, you couldn't bookmark any of the pages, or send links to other people.
 
-If you app requires a user to click 4 or 5 times to see some data, and then they can't link back to it, that's a terrible user experience.
+If your app requires a user to click 4 or 5 times to see some data, and then they can't link back to it, that's a terrible user experience.
 
 By the end of this lesson you'll have the tools you need to setup basic client-side routes.
 
