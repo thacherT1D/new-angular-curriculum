@@ -40,7 +40,7 @@ Run `lite-server`
 
 ## Getting started with simple interactive app in Angular 1 (using components)
 
-The baseline for having an interactive in Angular requires you to complete at least 4 steps:
+The baseline for having an interactive app in Angular requires you to complete at least 4 steps:
 
 1. Define and wire up a [**module**](#modules-1)
 1. Define and insert a [**component**](#components-2)
@@ -101,7 +101,7 @@ When you click the "Update Time" button, the time on the screen changes.  But wh
 1. When you click "Update Time", Angular sees that you have a special attribute: `ng-click="$ctrl.updateTime()"`
 1. Angular knows to look for a Controller in the same Component, and to look for a method named `updateTime`
 1. The Controller's `updateTime` method gets called, which updates the `time` property on the controller
-1. Angular detects that the Controller's data has change, and re-renders the Template!
+1. Angular detects that the Controller's data has changed, and re-renders the Template!
 
 It can seem like 🎩 magic 🐰, in part because Angular does a lot of work for you.  But in order for Angular to do the work, you need to make sure that things are "wired up" correctly.  In the next section, you'll learn what all those touch points are.
 
@@ -155,7 +155,7 @@ You _insert_ a component by writing it out as an HTML tag, like so:
 
 Controllers and Templates go hand-in-hand.
 
-Each component has a controller.  This is similar to route handlers in Express.  Your controller is where you do things like define click-handlers and setup the data that your template needs.
+Each component has a controller.  This is similar to route handlers in Express.  Your controller is where you do things like define click-handlers and set up the data that your template needs.
 
 You _define_ a controller by setting the `controller` property of the component:
 
