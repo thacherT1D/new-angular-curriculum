@@ -241,6 +241,8 @@ When a user goes to your Angular app to a path like `/people/12/addresses`, then
 1. ---- This repeats for all static assets ----
 1. The browser loads the JS files, boots Angular, ui-router inspects `/people/12/addresses` and updates to DOM
 
+![](https://www.websequencediagrams.com/cgi-bin/cdraw?lz=dGl0bGUgU1BBIFJvdXRpbmcKCkJyb3dzZXItPkV4cHJlc3M6IEdFVCAvcGVvcGxlLzEyL2FkZHJlc3NlcwoAGwctPlN0YXRpYzogbWF0Y2gAFxU_CgAeBgBMC25vcGUAOQpBUEkAgH8FZXMAKR4AHgoAMhlXaWxkY2FyZDoKAAIIAIFCC3NlbmRGaWxlIGNsaWVudC9pbmRleC5odG1sAIFFCgCBfAc6IDxodG1sPgCBexhqcy9hcHAvYXBwLm1vZHVsZS5qAIF6GgAZFACCAhN5dXAAdRNzZW5kAFkXbm90ZSBsZWZ0IG9mIACBMQgKICAgIG5vdyB1aS1yb3V0ZXIgdGFrZXMgb3ZlcgAYBWFuZCBtYXBzIAAmBQCDSRUgICAgdG8gYSBzdGF0ZSwgYW5kAFMFdXBkYXRlcyB0aGUgRE9NCmVuZCBub3RlCg&s=default)
+
 _Phew!_ 🎉
 
 NOTE: it's important that your wildcard route go _below_ your API routes.  Otherwise the `*` route will match any other route.
@@ -253,3 +255,29 @@ In those cases it's better to render a 404.  After you have your fullstack SPA a
 
 - Asking for non-existent `/api/v1/*` routes renders a 404 JSON response
 - Making non-get requests does not render the `index.html` file
+
+## Resources
+
+```
+title SPA Routing
+
+Browser->Express: GET /people/12/addresses
+Express->Static: match /people/12/addresses?
+Static->Express: nope
+Express->API Routes: match /people/12/addresses?
+API Routes->Express: nope
+Express->Wildcard:
+Wildcard->Express: sendFile client/index.html
+Express->Browser: <html>
+Browser->Express: GET /js/app/app.module.js
+Express->Static: match /js/app/app.module.js?
+Static->Express: yup
+Express->Browser: send /js/app/app.module.js
+note left of Browser:
+    now ui-router takes over
+    and maps
+    /people/12/addresses
+    to a state, and
+    updates the DOM
+end note
+```
