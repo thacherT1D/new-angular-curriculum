@@ -230,11 +230,11 @@ What `ng-model` code would you write in order to create an object of this shape?
 
 
 ##### !placeholder
-ng-model="..."
+ng-model="$ctrl.??"
 ##### !end-placeholder
 
 ##### !answer
-ng-model="person.address.state.name"
+ng-model="$ctrl.person.address.state.name"
 ##### !end-answer
 
 ##### !explanation
