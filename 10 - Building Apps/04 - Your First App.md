@@ -30,7 +30,7 @@ The simplest possible algorithm for creating an Angular app is:
     <title>{{ greeting }} World</title>
   </head>
   <body>
-    <p>{{1 + 6}}<p>
+    <p>{{1 + 6}}</p>
     <br>
     <p>Say something to the world <input type="text" ng-model="greeting" ng-init="greeting='Hello, '"></p>
     <p>{{ greeting }} world!</p>
