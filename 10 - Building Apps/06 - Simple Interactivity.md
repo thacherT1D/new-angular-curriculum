@@ -141,7 +141,7 @@ angular.module("app", [])
   })
 ```
 
-The first argument, "app", is the _name_ of the component.  The second argument is an object that defines the component's behavior.
+The first argument, "someName", is the _name_ of the component.  The second argument is an object that defines the component's behavior.
 
 You _insert_ a component by writing it out as an HTML tag, like so:
 
