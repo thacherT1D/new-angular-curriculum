@@ -252,7 +252,7 @@ So the output should be be:
 ##### !end-placeholder
 
 ##### !answer
-<div ng-repeat="product in $ctrl.products | orderBy:'price' | limitTo:2" >
+<div ng-repeat="product in $ctrl.products | orderBy:'price' | limitTo:2">
 ##### !end-answer
 
 ##### !explanation
