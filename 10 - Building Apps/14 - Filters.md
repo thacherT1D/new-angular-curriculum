@@ -190,7 +190,7 @@ Given that you have an array of objects such as:
 And given you have the following code in your template:
 
 ```
-<div ng-repeat="product in $ctrl.products | orderBy:'name':true">
+<div ng-repeat="product in $ctrl.products">
 ```
 
 How would you present that data to the user sorted by the `name` in _descending_ order?
