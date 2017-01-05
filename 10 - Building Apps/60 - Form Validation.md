@@ -89,7 +89,7 @@ This table and the corresponding descriptions come from [this](https://scotch.io
 You will need to follow these steps in order for your form to make the best use of Angular validations:
 
 1. Add the `novalidate` option to the form like `<form novalidate>`
-1. Give the form a `name` attribute like `<form name="myForm">`
+1. Give the form a `name` attribute like `<form name="myForm" novalidate>`
 1. Put an `ng-model` on each of the inputs
 1. Put a `name` attribute on each of the inputs like `<input name="firstName">`
 
@@ -105,9 +105,10 @@ To access angular properties on the inputs you use the syntax `<formName>.<input
 
 So to see if the `firstName` field is valid, you would write:
 
-```
-newPersonForm.firstName.$valid
-newPersonForm.firstName.$error
+```javascript
+newPersonForm.firstName.$valid // true if valid
+newPersonForm.firstName.$invalid // false if valid
+newPersonForm.firstName.$error // an object of errors if invalid
 ```
 
 ## Styling the forms and displaying error messages:
@@ -125,6 +126,14 @@ But how about showing an error message? To do this you are going to be using the
 ```html
 <span ng-show="sampleForm.username.$invalid">Username is invalid</span>
 ```
+
+Specific error messages can be shown by matching them with the `$error.[validationName]`:
+
+```html
+<span ng-show="sampleForm.username.$error.minlength">Username needs to be at least 5 characters</span>
+```
+
+See [`$error` docs](https://docs.angularjs.org/api/ng/type/form.FormController#$error) for more info
 
 ## Summary
 
