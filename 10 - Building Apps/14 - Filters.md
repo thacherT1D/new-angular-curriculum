@@ -150,7 +150,7 @@ Given that `article.publishedOn` is February 5th, 2008, and that you have the fo
 {{article.publishedOn}}
 ```
 
-How would you display that date in the format "02/05/2008"?
+How would you display that date in the format "02-05-2008"?
 ##### !end-question
 
 ##### !placeholder
