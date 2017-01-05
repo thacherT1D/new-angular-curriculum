@@ -7,7 +7,7 @@ Standard: **Build an Angular CRUD application against an HTTP API (<a href="#">W
 By the end of this lesson you will:
 
 - Inject a dependency using `Function.$inject`
-- Describe how _define_ things that can be injected
+- Describe how to _define_ things that can be injected
 - Describe how to _inject_ these dependencies
 - Discuss why dependency injection exists
 
