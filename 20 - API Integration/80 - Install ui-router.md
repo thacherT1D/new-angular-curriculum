@@ -36,7 +36,7 @@ If you are not familiar with routes as a general concept, checkout [this article
 
 Always run your Angular 1 applications locally with a real webserver, such as `lite-server`.
 
-If you run your apps from `file:///` URLs, some features won't work.
+If you run your apps from `file:///` URLs, some features won't work and you'll spend hours debugging before finding the problem.
 
 ## Intro
 
@@ -48,14 +48,14 @@ A good example of this is gmail. gmail has different views for your inbox, viewi
 
 ## Getting setup
 
-To use hash-style URLs, there's a 4-step process to installing ui-router in your project:
+To use hash-style URLs (`#!/people1`), there's a 4-step process to installing ui-router in your project:
 
 1. Include the script tag
 1. Register the module
 1. Define a route
 1. Add `<ui-view>` to your HTML file
 
-To use hash-style URLs, there's a 6-step process to installing ui-router in your project:
+To use clean URLs (`/people/1`), there's a 6-step process to installing ui-router in your project:
 
 1. Include the script tag
 1. Register the module
@@ -166,9 +166,9 @@ In your index.html file, place the following tag somewhere in the body:
 
 ---
 
-## Configuring cleaner URLs
+## Configuring clean URLs
 
-**Step 5: Turning on html5Mode URLs**
+**Step 5: Turning on html5Mode**
 
 By default ui-router uses URL paths that look like `#!/people1` (they start with a `#`).
 
