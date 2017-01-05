@@ -240,7 +240,7 @@ How would you present that data to the user such that it:
 - orders by price
 - only displays the first 2 items
 
-So the output should be be:
+So the output should be:
 
 - "Paper"
 - "Eraser"
