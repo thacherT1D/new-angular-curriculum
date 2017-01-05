@@ -281,11 +281,12 @@ NOTE: it _would_ be OK to have `this.updateTime = () => {this.time = new Date()}
       angular.module("app", [])
         .component('personDetail', {
           controller: function () {
-            this.$onInit = function () {
-              this.time = new Date()
+            const vm = this
+            vm.$onInit = function () {
+              vm.time = new Date()
             }
-            this.updateTime = function () {
-              this.time = new Date()
+            vm.updateTime = function () {
+              vm.time = new Date()
             }
           },
           template: `
