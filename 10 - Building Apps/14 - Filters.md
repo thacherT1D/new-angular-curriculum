@@ -124,7 +124,7 @@ orderBy([{...}, {...}], "height")
 You can chain filters, and it will have more or less the obvious result:
 
 ```html
-<div ng-repeat="character in $ctrl.characters | orderBy:$ctrl.propertyToOrderBy">
+<div ng-repeat="character in $ctrl.characters | orderBy:$ctrl.propertyToOrderBy | limitTo:10">
   <div class="character">
     <p>{{character.name}}</p>
   </div>
