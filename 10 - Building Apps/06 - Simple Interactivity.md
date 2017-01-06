@@ -245,40 +245,6 @@ Recall that the basic steps to creating a dynamic app are:
 
 Also recall that you always want to run you app with a real server such as `lite-server`.
 
-### !challenge
-* type: project
-* id: angular-curriculum-drills-simple-interaction
-* title: Simple Interaction
-
-##### !question
-## Build a Simple Interactive App
-
-- Follow [the instructions](./02 - Unit Overview.md) to update angular-drills, for example:
-
-  ```
-  git checkout master
-  git fetch upstream
-  git rebase upstream/master
-  git checkout -b simple-interaction
-  git push -u origin simple-interaction
-  ```
-- Complete the [simple-interaction](https://github.com/gSchool/angular-drills/tree/master/simple-interaction) challenge
-
-It comes with tests so you can see if you finished it correctly.  Make sure tests pass before submitting!
-
-Submit the URL to your solution below.
-##### !end-question
-
-##### !placeholder
-https://github.com/<your name>/angular-drills/tree/simple-interaction/simple-interaction
-##### !end-placeholder
-
-##### !explanation
-See the solutions folder (if you haven't already)
-##### !end-explanation
-### !end-challenge
-
-
 ## Questions
 
 Consider the following application:

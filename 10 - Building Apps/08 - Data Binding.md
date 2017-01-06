@@ -90,6 +90,40 @@ Here's what happens:
 1. Next the browser runs your component definition `.component('app')`, looks for a matching `<app></app>` element and renders your template to the DOM
 1. When a user types into the input, Angular detects that the user changed the value, and Angular updates the controller's `firstName` property
 
+### !challenge
+* type: project
+* id: angular-curriculum-drills-simple-interaction
+* title: Simple Interaction
+
+##### !question
+## Build a Simple Interactive App
+
+- Follow [the instructions](./02 - Unit Overview.md) to update angular-drills, for example:
+
+  ```
+  git checkout master
+  git fetch upstream
+  git rebase upstream/master
+  git checkout -b simple-interaction
+  git push -u origin simple-interaction
+  ```
+- Complete the [simple-interaction](https://github.com/gSchool/angular-drills/tree/master/simple-interaction) challenge
+
+It comes with tests so you can see if you finished it correctly.  Make sure tests pass before submitting!
+
+Submit the URL to your solution below.
+##### !end-question
+
+##### !placeholder
+https://github.com/<your name>/angular-drills/tree/simple-interaction/simple-interaction
+##### !end-placeholder
+
+##### !explanation
+See the solutions folder (if you haven't already)
+##### !end-explanation
+### !end-challenge
+
+
 ## Resources
 
 * [Data Binding Reference](https://docs.angularjs.org/guide/databinding)
