@@ -91,7 +91,7 @@ Your Angular 1 application will communicate with a server via the `$http` servic
 Making an AJAX call in your controller involves 4 steps:
 
 1. Inject the `$http` service by:
-  - Adding `controller.$inject = ['http']`
+  - Adding `controller.$inject = ['$http']`
   - Define an `$http` parameter in the controller
 1. Make the call to `$http.get`, `$http.post` etc...
 1. Pass a function to `.then` which receives a response
