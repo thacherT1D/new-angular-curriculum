@@ -99,7 +99,7 @@ touch client/index.html
 
 Then put your client-side application in there.
 
-### Pair down `server/app.js`
+### Pare down `server/app.js`
 
 Your generated app.js file has a lot of cruft that you don't need:
 
