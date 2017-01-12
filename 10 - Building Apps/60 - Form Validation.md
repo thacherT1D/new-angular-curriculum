@@ -188,4 +188,3 @@ The HTML is getting a bit messy, it would be nice to have an easier way to deal 
 
 <iframe src="https://player.vimeo.com/video/198386363" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
-Open [with this link](https://vimeo.com/198386363) to view the video with full-size text.
