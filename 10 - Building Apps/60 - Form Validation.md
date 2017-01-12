@@ -179,9 +179,13 @@ The HTML is getting a bit messy, it would be nice to have an easier way to deal 
 
 ## Additional Resources
 
-<iframe src="https://player.vimeo.com/video/198386363" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
-- [Step-by-step walk-through of making a form with validations](https://vimeo.com/198386363)
 - [https://docs.angularjs.org/guide/forms](https://docs.angularjs.org/guide/forms)
 - [https://docs.angularjs.org/api/ng/directive/input](https://docs.angularjs.org/api/ng/directive/input)
 - Check out [these](http://sales-person-licks-61176.bitballoon.com) validation tables
+
+### Step-by-step screencast of building validations
+
+<iframe src="https://player.vimeo.com/video/198386363" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+Open [with this link](https://vimeo.com/198386363) to view the video with full-size text.
