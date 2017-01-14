@@ -14,7 +14,7 @@ It can be a crappy user experience to load an empty page and then have it fill i
 
 ## Using Resolve
 
-[https://github.com/angular-ui/ui-router/wiki#resolve][https://github.com/angular-ui/ui-router/wiki#resolve]
+[https://github.com/angular-ui/ui-router/wiki#resolve](https://github.com/angular-ui/ui-router/wiki#resolve)
 
 ## Simulating this in development
 
