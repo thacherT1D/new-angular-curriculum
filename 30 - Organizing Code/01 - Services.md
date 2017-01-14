@@ -154,7 +154,7 @@ In the example above notice how the component's controller has to:
 1. Assign comments to the person
 1. Set the result to `vm.person`
 
-What would happen if another component need the same data in the same format?  What if your controller needed lots of other bits of data as well?  In both cases that fat chunk of code will make it hard to work with and change.
+What would happen if another component needed the same data in the same format?  What if your controller needed lots of other bits of data as well?  In both cases that fat chunk of code will make it hard to work with and change.
 
 So following the rules above, if you make all `$http` calls in the service, your controller looks like this:
 
@@ -223,7 +223,7 @@ In Angular 1 there are lots of things that are similar to services, such as:
 - Values
 - Constants
 
-Angular 2 and in other web frameworks concepts like Angular 1 Factories, Values and Constants don't really apply.  So if you are looking to get good at legacy Angular 1 dig into those, but otherwise just get comfortable with Services.
+In Angular 2 and in other web frameworks concepts like Angular 1 Factories, Values and Constants don't really apply.  So if you are looking to get good at legacy Angular 1 dig into those, but otherwise just get comfortable with Services.
 
 # Resources
 
