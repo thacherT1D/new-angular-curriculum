@@ -205,7 +205,7 @@ How would you present that data to the user sorted by the `name` in _descending_
 ##### !end-answer
 
 ##### !explanation
-By using `true` for the reverse argument, the sorting order is reversed.
+By using the argument `true` for the reverse parameter, the sorting order is reversed.
 ##### !end-explanation
 ### !end-challenge
 
