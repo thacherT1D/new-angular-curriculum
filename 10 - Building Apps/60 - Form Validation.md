@@ -20,7 +20,7 @@ In [Defensive Design for the Web](https://www.amazon.com/Defensive-Design-Web-im
 - The default state
 - The error state
 
-When you create clear and friendly error messages, your application can help guide users towards success as opposed to frustrating them and making them want to smash their monitors over your developers heads.  This lesson provides you with the tools to create delightful error messages.
+When you create clear and friendly error messages, your application can help guide users towards success as opposed to frustrating them and making them want to smash their monitors over your developer's heads.  This lesson provides you with the tools to create delightful error messages.
 
 ## The case for client-side validation
 
