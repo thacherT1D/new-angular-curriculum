@@ -27,7 +27,7 @@ Assume you have the following component:
     .component('personForm', {
       controller: function() {
         const vm = this
-        this.submit = function () { /* do fancy stuff*/ }
+        vm.submit = function () { /* do fancy stuff*/ }
       },
       template: `<form ng-submit="$ctrl.submit()">
         <input ng-model="$ctrl.person.firstName">
@@ -57,7 +57,7 @@ But how could you pass a person in?  For that you would need _bindings_.  To def
       },
       controller: function() {
         const vm = this
-        this.submit = function () { /* do fancy stuff*/ }
+        vm.submit = function () { /* do fancy stuff*/ }
       },
       template: `<form ng-submit="$ctrl.submit()">
         <input ng-model="$ctrl.person.firstName">
