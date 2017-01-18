@@ -28,7 +28,7 @@ Assume you have a component like this:
       },
       controller: function() {
         const vm = this
-        this.submit = function () { /* do fancy stuff*/ }
+        vm.submit = function () { /* do fancy stuff*/ }
       },
       template: `<form ng-submit="$ctrl.submit()">
         <input ng-model="$ctrl.person.firstName">
