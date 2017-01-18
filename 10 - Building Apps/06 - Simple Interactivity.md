@@ -22,7 +22,7 @@ To begin, create a directory and an `index.html` file:
 
 ```
 mkdir simple-interactive-app
-cd !$
+cd simple-interactive-app
 touch index.html
 ```
 
