@@ -30,14 +30,14 @@ Here's an example:
   'use strict';
 
   angular
-    .module("app")
+    .module('app')
     .service('personService', service)
 
   function service() {
-    this.name = "Matt";
-    this.job = "Instructor";
+    this.name = 'Matt'
+    this.job = 'Instructor'
     this.sayHi = function(){
-      return "Hello!"
+      return 'Hello!'
     }
   }
 
@@ -189,7 +189,7 @@ Aaaahhh... Much nicer!  So what does the service look like?
   'use strict';
 
   angular
-    .module("app")
+    .module('app')
     .service('personService', service)
 
   function service() {
