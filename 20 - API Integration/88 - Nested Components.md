@@ -41,7 +41,7 @@ function config($stateProvider, $urlRouterProvider, $locationProvider){
     })
     .state({
       name: 'people.person',
-      url: '/people/:id',
+      url: '/:id',
       component: 'personComponent',
     })
 }
