@@ -232,8 +232,7 @@ You _trigger_ events in the Template with special `ng-<event>` attributes, like 
 ```
 
 ## Exercise
-What are the 4 basic steps of creating an interactive Angular web application?
-
+Turn and talk with your neighbor and discuss what the 4 basic steps of creating an interactive Angular web application. Be prepared to share your answer and show each step on a code example.
 
 ## Questions
 
