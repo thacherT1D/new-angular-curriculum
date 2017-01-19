@@ -16,7 +16,7 @@ It boils down to this: **Angular helps us build complex, single-page application
 
 We're going to start by setting up a very simple Angular app to say Hello World - Angular-style!
 
-The simplest possible algorithm for creating an Angular app is applying the following changes in a simple `html` document:
+The simplest possible algorithm for creating an Angular app is applying the following changes to a simple `html` document:
 
 1. Add a `script` tag to load Angular
 1. Add `ng-app` to a tag (such as `<html>`)
