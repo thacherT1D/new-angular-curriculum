@@ -28,7 +28,7 @@ Create your project directory and get your initial setup:
 
 ```
 mkdir my-project
-cd !$
+cd my-project
 yarn init -y
 yarn add --dev lite-server
 yarn add angular@1.6.0
