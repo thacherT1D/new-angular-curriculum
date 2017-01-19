@@ -14,7 +14,7 @@ You'll probably want to clone 2 separate repos:
 
 ### Angular Examples
 
-Clone https://github.com/gSchool/angular-examples (no need to fork).
+- Clone https://github.com/gSchool/angular-examples (no need to fork).
 
 This repo contains a number of reference applications.  While you _could_ look at them online, you may want to run them locally and play around with them, so take a moment and get these examples setup now.
 
