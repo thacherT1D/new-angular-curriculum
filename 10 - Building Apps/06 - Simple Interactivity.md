@@ -6,11 +6,7 @@ Standard: **Build an Angular application (<a href="#">W0044</a>)**
 
 By the end of this lesson you will be able to:
 
-- Follow a 4-step process to create a basic interactive app
-- Define and reference a Module
-- Define and insert a Component
-- Define a Controller and define event handlers
-- Define a Template that displays Controller data and triggers events
+- Follow a 4-step process to create a basic Angular interactive app
 
 ## Rationale
 
@@ -40,7 +36,7 @@ Run `lite-server`
 
 ## Example of a simple interactive app in Angular 1 (using components)
 
-The baseline for having an interactive in Angular requires you to complete at least 4 steps:
+Creating an interactive web application in Angular requires you to complete at least 4 steps:
 
 1. Define and wire up a module
 1. Define and insert a component
@@ -50,7 +46,7 @@ The baseline for having an interactive in Angular requires you to complete at le
   - Display the data from the controller
   - Trigger the event handlers
 
-Take a look at this simple application.  Copy and paste the code into `index.html` and run `lite-server` to interact with it:
+Take a look at this simple application.  Type the following code into `index.html` and run `lite-server` to interact with it:
 
 ```html
 <!DOCTYPE html>
