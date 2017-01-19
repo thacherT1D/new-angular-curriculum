@@ -170,11 +170,15 @@ You define a template like so:
 
 ```js
 .component('greeting', {
+  controller: function () {
+    const vm = this;
+    // code goes here
+  },
   template: `
     <p>What time is it?</p>
     <p>{{$ctrl.time}}</p>
   `
-})
+});
 ```
 
 From within the controller, you _reference_ the controller object with `vm`.
@@ -228,18 +232,8 @@ You _trigger_ events in the Template with special `ng-<event>` attributes, like 
 ```
 
 ## Exercise
+What are the 4 basic steps of creating an interactive Angular web application?
 
-Recall that the basic steps to creating a dynamic app are:
-
-1. Define and wire up a module
-1. Define and insert a component
-1. Define the component's Controller with event handlers
-  - (optionally) initialize the data for the controller
-1. Define the component's Template
-  - Display the data from the controller
-  - Trigger the event handlers
-
-Also recall that you always want to run you app with a real server such as `lite-server`.
 
 ## Questions
 
