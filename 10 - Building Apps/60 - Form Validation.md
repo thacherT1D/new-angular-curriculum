@@ -89,26 +89,26 @@ This table and the corresponding descriptions come from [this](https://scotch.io
 You will need to follow these steps in order for your form to make the best use of Angular validations:
 
 1. Add the `novalidate` option to the form like `<form novalidate>`
-1. Give the form a `name` attribute like `<form name="myForm" novalidate>`
+1. Give the form a `name` attribute like `<form name="$ctrl.myForm" novalidate>`
 1. Put an `ng-model` on each of the inputs
 1. Put a `name` attribute on each of the inputs like `<input name="firstName">`
 
 So a form setup for validation would look like this:
 
 ```html
-<form novalidate name="newPersonForm">
+<form novalidate name="$ctrl.newPersonForm">
   <input name="firstName" ng-model="$ctrl.person.firstName">
 </form>
 ```
 
-To access angular properties on the inputs you use the syntax `<formName>.<inputName>.<angularProperty>`.
+To access angular properties on the inputs you use the syntax `$ctrl.<formName>.<inputName>.<angularProperty>`.
 
 So to see if the `firstName` field is valid, you would write:
 
 ```javascript
-newPersonForm.firstName.$valid // true if valid
-newPersonForm.firstName.$invalid // false if valid
-newPersonForm.firstName.$error // an object of errors if invalid
+$ctrl.newPersonForm.firstName.$valid // true if valid
+$ctrl.newPersonForm.firstName.$invalid // false if valid
+$ctrl.newPersonForm.firstName.$error // an object of errors if invalid
 ```
 
 ## Styling the forms and displaying error messages:
@@ -118,19 +118,19 @@ It would be much nicer if you could display a message to the user and style it a
 In order to add a class based off of a condition you are going to be using the built in `ng-class` directive (docs are [here](https://docs.angularjs.org/api/ng/directive/ngClass). There are a few ways to use `ng-class`, the way you will be using it is as follows (pay close attention to the quotes!)
 
 ```html
-<div ng-class="{ 'has-error' : sampleForm.username.$invalid }"></div>
+<div ng-class="{ 'has-error' : $ctrl.sampleForm.username.$invalid }"></div>
 ```
 
 But how about showing an error message? To do this you are going to be using the `ng-show` directive like so:
 
 ```html
-<span ng-show="sampleForm.username.$invalid">Username is invalid</span>
+<span ng-show="$ctrl.sampleForm.username.$invalid">Username is invalid</span>
 ```
 
 Specific error messages can be shown by matching them with the `$error.[validationName]`:
 
 ```html
-<span ng-show="sampleForm.username.$error.minlength">Username needs to be at least 5 characters</span>
+<span ng-show="$ctrl.sampleForm.username.$error.minlength">Username needs to be at least 5 characters</span>
 ```
 
 See [`$error` docs](https://docs.angularjs.org/api/ng/type/form.FormController#$error) for more info
@@ -187,4 +187,3 @@ The HTML is getting a bit messy, it would be nice to have an easier way to deal 
 ### Step-by-step screencast of building validations
 
 <iframe src="https://player.vimeo.com/video/198386363" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
