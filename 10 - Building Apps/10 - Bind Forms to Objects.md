@@ -8,7 +8,7 @@ By the end of this lesson you will:
 
 - Bind multiple form controls to the same object
 - Use ng-submit to trigger controller actions
-- Clear a form (<-- it's soooo easy)
+- Clear a form
 
 ## Rationale
 
@@ -18,11 +18,11 @@ One of the most basic and common things you'll do in an interactive single-page 
 - Process and/or display that data (often in a list)
 - Clear the form
 
-This happens quite differently in Angular 1 than it would happen if you were writing raw DOM manipulation code.
+This happens differently in Angular 1 than it would happen if you were writing raw DOM manipulation code.
 
 ## Conceptually mapping forms to objects
 
-In most cases when you program a form, all of the fields of that form map nicely to an object.  For example if you are representing a song, your form might look like:
+In most cases when you program a form, the fields of that form map nicely to an object.  For example if you are representing a song, your form might look like:
 
 ```html
 <form>
