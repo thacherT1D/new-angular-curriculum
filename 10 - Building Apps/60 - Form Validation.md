@@ -117,9 +117,24 @@ It would be much nicer if you could display a message to the user and style it a
 
 In order to add a class based off of a condition you are going to be using the built in `ng-class` directive (docs are [here](https://docs.angularjs.org/api/ng/directive/ngClass). There are a few ways to use `ng-class`, the way you will be using it is as follows (pay close attention to the quotes!)
 
+>The has-error class is a bootstrap class. If you are not using bootstrap you can specify any other class in the ng-class directive.
+
 ```html
-<div ng-class="{ 'has-error' : $ctrl.sampleForm.username.$invalid }"></div>
+<form novalidate name="$ctrl.sampleForm" class="form">
+  <div
+    class="form-group"
+    ng-class="{
+      'has-error' : $ctrl.sampleForm.username.$invalid
+    }">
+    <label class="control-label" for="username">Username</label>
+    <input
+      ng-model="$ctrl.user.username"
+      type="text" class="form-control" name="username" id="username">
+  </div>
+</form>
 ```
+
+See the [boostrap docs](http://getbootstrap.com/css/#forms-control-validation) for more validation state classes.
 
 But how about showing an error message? To do this you are going to be using the `ng-show` directive like so:
 
