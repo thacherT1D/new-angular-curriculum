@@ -129,7 +129,12 @@ In order to add a class based off of a condition you are going to be using the b
     <label class="control-label" for="username">Username</label>
     <input
       ng-model="$ctrl.user.username"
-      type="text" class="form-control" name="username" id="username">
+      required
+      minlength="3"
+      type="text"
+      class="form-control"
+      name="username"
+      id="username">
   </div>
 </form>
 ```
