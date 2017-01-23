@@ -178,7 +178,7 @@ An anti pattern is a way of writing code that is a bad practice in your framewor
 * title: Object Shape #1
 
 ##### !question
-Given the following form, how would you access the `height` that the user enter?
+Given the following form, how would you access the `height` that the user entered?
 
 ```html
 <form>
